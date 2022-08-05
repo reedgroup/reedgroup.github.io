@@ -1,6 +1,6 @@
 # Welcome to our lab manual! 
 
-Home of such great information
+(Will be) home of such great information! Currently under development.
 
 ```{tableofcontents}
 ```
