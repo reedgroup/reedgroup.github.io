@@ -1,0 +1,1420 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Fisheries Training Part 1 - Harvest Optimization and MOEA Diagnostics &#8212; Reed group lab manual</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Reed group lab manual</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to our lab manual!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reed Group Lab Manual
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Section1/nbExample.html">
+   Jupyter notebook example
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Resources/Resources.html">
+   Group Resources
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Resources/Computing.html">
+     Computing resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Resources/Courses.html">
+     Annotated Course List
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Resources/DataVisualization.html">
+     Data visualization best practices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Resources/LifeAtCornell.html">
+     Some info on life here at Cornell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Resources/ReedGroupTools.html">
+     Tools by current and former group members
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Resources/WritingProcess.html">
+     Tips for writing your first paper
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Resources/CitationNetworkandDiscovery.html">
+     Citation Networks and Visualization
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Training.html">
+   Training
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="LakeProblem.html">
+     The Shallow Lake Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Linux_MOEAs_HPC.html">
+     Getting starting with MOEAs
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/reedgroup/reedgroup.github.io"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/reedgroup/reedgroup.github.io/issues/new?title=Issue%20on%20page%20%2FTraining/Training_Fisheres_Part1.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Training/Training_Fisheres_Part1.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#harvested-predator-prey-model">
+   Harvested predator-prey model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#harvesting-policy">
+   Harvesting policy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#radial-basis-functions">
+     Radial basis functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#harvest-strategy-objectives-trevor">
+   Harvest strategy objectives (Trevor)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objective-1-maximize-net-present-value">
+     Objective #1: Maximize net present value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objective-2-minimize-prey-population-deficit">
+     Objective #2: Minimize prey population deficit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objective-3-minimize-longest-duration-of-consecutive-low-harvest">
+     Objective #3: Minimize longest duration of consecutive low harvest
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objective-4-minimize-worst-harvest-instance">
+     Objective #4: Minimize worst harvest instance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objective-5-minimize-harvest-variance">
+     Objective #5: Minimize harvest variance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constraint-avoid-collapse-of-predator-population">
+     Constraint: avoid collapse of predator population
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-formulation">
+     Problem formulation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulation-model-of-the-harvested-system">
+   Simulation model of the harvested system
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-very-brief-overview-of-pyborg">
+   A (Very) Brief Overview of PyBorg
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optimization-of-the-fisheries-game">
+   Optimization of the Fisheries Game
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-all-libraries">
+     Import all libraries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formulating-the-problem">
+     Formulating the problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initialize-the-problem-for-optimization">
+     Initialize the problem for optimization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#define-parameters-for-optimization">
+     Define parameters for optimization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#begin-the-optimization">
+     Begin the optimization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-the-tradeoff-surface">
+     Plot the tradeoff surface
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#moea-diagnostics">
+   MOEA Diagnostics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hypervolume">
+     Hypervolume
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#defining-hypervolume-parameters">
+       Defining hypervolume parameters
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plotting-the-hypervolume">
+       Plotting the hypervolume
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#perform-random-seed-analysis">
+       Perform random seed analysis
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Fisheries Training Part 1 - Harvest Optimization and MOEA Diagnostics</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#harvested-predator-prey-model">
+   Harvested predator-prey model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#harvesting-policy">
+   Harvesting policy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#radial-basis-functions">
+     Radial basis functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#harvest-strategy-objectives-trevor">
+   Harvest strategy objectives (Trevor)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objective-1-maximize-net-present-value">
+     Objective #1: Maximize net present value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objective-2-minimize-prey-population-deficit">
+     Objective #2: Minimize prey population deficit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objective-3-minimize-longest-duration-of-consecutive-low-harvest">
+     Objective #3: Minimize longest duration of consecutive low harvest
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objective-4-minimize-worst-harvest-instance">
+     Objective #4: Minimize worst harvest instance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objective-5-minimize-harvest-variance">
+     Objective #5: Minimize harvest variance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constraint-avoid-collapse-of-predator-population">
+     Constraint: avoid collapse of predator population
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-formulation">
+     Problem formulation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulation-model-of-the-harvested-system">
+   Simulation model of the harvested system
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-very-brief-overview-of-pyborg">
+   A (Very) Brief Overview of PyBorg
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optimization-of-the-fisheries-game">
+   Optimization of the Fisheries Game
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-all-libraries">
+     Import all libraries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formulating-the-problem">
+     Formulating the problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initialize-the-problem-for-optimization">
+     Initialize the problem for optimization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#define-parameters-for-optimization">
+     Define parameters for optimization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#begin-the-optimization">
+     Begin the optimization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-the-tradeoff-surface">
+     Plot the tradeoff surface
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#moea-diagnostics">
+   MOEA Diagnostics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hypervolume">
+     Hypervolume
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#defining-hypervolume-parameters">
+       Defining hypervolume parameters
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plotting-the-hypervolume">
+       Plotting the hypervolume
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#perform-random-seed-analysis">
+       Perform random seed analysis
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="fisheries-training-part-1-harvest-optimization-and-moea-diagnostics">
+<h1>Fisheries Training Part 1 - Harvest Optimization and MOEA Diagnostics<a class="headerlink" href="#fisheries-training-part-1-harvest-optimization-and-moea-diagnostics" title="Permalink to this headline">#</a></h1>
+<p>This is the second post in a training series, studying decision making under deep uncertainty within the context of a complex harvested predator-prey fishery.</p>
+<p>The first post in this training series, <a class="reference external" href="https://waterprogramming.wordpress.com/2022/07/11/__trashed-3/">Fisheries Training 0: Exploring Predator-Prey Dynamics, can be found here</a>.</p>
+<p>The GitHub repository, containing all of the source code used throughout this series, is available <a class="reference external" href="https://github.com/TrevorJA/harvested_predator_prey_system_tutorial_series">here</a>.</p>
+<p>This post builds off of the initial post, and presents the following:</p>
+<ol class="simple">
+<li><p>A brief re-cap of the harvested predator-prey model</p></li>
+<li><p>Formulation of the harvesting policy (radial basis functions)</p></li>
+<li><p>Formulation of the policy objectives</p></li>
+<li><p>A simulation model for the harvested system</p></li>
+<li><p>Optimization of the harvesting policy using the PyBorg MOEA</p>
+<ol class="simple">
+<li><p>Installation of Platypus and PyBorg*</p></li>
+<li><p>Optimization problem formulation</p></li>
+<li><p>Basic MOEA diagnostics</p></li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<div><p>[!note]
+*The PyBorg MOEA used in this demonstration is derived from the Borg MOEA and may only be used with permission from its creators. Fortunately, it is freely available for academic and non-commercial use. Visit <a class="reference external" href="http://borgmoea.org/">BorgMOEA.org</a> to request access.</p>
+</div></blockquote>
+<p>Now, onto the tutorial.</p>
+<section id="harvested-predator-prey-model">
+<h2>Harvested predator-prey model<a class="headerlink" href="#harvested-predator-prey-model" title="Permalink to this headline">#</a></h2>
+<p>In the previous post, we introduced a modified form of the Lotka-Volterra system of ordinary differential equations (ODEs) defining predator-prey population dynamics.</p>
+<p>This modified version includes a non-linear predator population growth dynamic original proposed by Arditi and Akçakaya (1990), and includes a harvesting parameter, <span class="math notranslate nohighlight">\(z\)</span>. This system of equations is defined in <a class="reference external" href="https://www.hindawi.com/journals/complexity/2020/4170453/">Hadjimichael et al. (2020)</a> as:</p>
+<div class="math notranslate nohighlight">
+\[
+\tag{1.0}
+\frac{dx}{dt} = bx\Big(1 - \frac{x}{K}\Big) - \frac{\alpha xy}{y^m + \alpha hx} - zx
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{dy}{dt} = \frac{c\alpha xy}{y^m + \alpha hx} - dy
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(x\)</span> is the prey population being harvested and <span class="math notranslate nohighlight">\(y\)</span> is the predator population. Refer to <a class="reference external" href="https://waterprogramming.wordpress.com/2022/07/11/__trashed-3/">Post 0 of this series</a> for the rest of the parameter descriptions.</p>
+<p>The first post provided insight into the non-linear dynamics that result from these ODEs, and how the system shifts between different basins of stability or population collapse.</p>
+<p>The purpose of this post is to focus on the generation of <em>harvesting policies</em> which can be operated safely in the system without causing population collapse.</p>
+</section>
+<section id="harvesting-policy">
+<h2>Harvesting policy<a class="headerlink" href="#harvesting-policy" title="Permalink to this headline">#</a></h2>
+<p>Rather than assigning a deterministic, or specific harvest effort level for every time period, we can design an <em>adaptive</em> policy which is a function of the current state of the system:
+$<span class="math notranslate nohighlight">\(\tag{2.0} z_t = f(\cdot) \)</span>$</p>
+<p>The problem then becomes the optimization of the control rule, <span class="math notranslate nohighlight">\(f(\cdot)\)</span>, rather than the specific values, <span class="math notranslate nohighlight">\(z = (z_0, z_1,..., z_T)\)</span>. This process of optimizing the parameters of a state-aware control rule is referred to as <em>direct policy search</em>.</p>
+<p>Previous work done by <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1364815216302250">Quinn et al. (2017)</a> showed that an adaptive policy, generated using a direct policy search, was able to navigate deeply uncertain ecological tipping points more reliably than intertemporal policies which prescribed specific efforts at each timestep.</p>
+<section id="radial-basis-functions">
+<h3>Radial basis functions<a class="headerlink" href="#radial-basis-functions" title="Permalink to this headline">#</a></h3>
+<p><strong>Radial basis functions (RBFs)</strong> are flexible, parametric function formulations which can map the state of the system to policy action. Previous study by <a class="reference external" href="https://drive.google.com/file/d/1_sQL84YnmQvwpruedQWECOjLaFjFXth7/view">Giuliani et al (2015)</a> has shown that RBFs are highly effective in generating Pareto-approximate sets of solutions, and that they perform well when applied to horizons different from the optimized simulation horizon.</p>
+<p>There are various RBFs available, such as the <em>cubic RBF</em> used by Quinn et al. (2017).  Here, we use the Gaussian RBF initially used by Hadjimichael et al. (2020), where the harvest effort during the next timestep, <span class="math notranslate nohighlight">\(z_{t+1}\)</span>, is mapped to the current prey population levels, <span class="math notranslate nohighlight">\(x_t\)</span> by the function:</p>
+<div class="math notranslate nohighlight">
+\[
+\tag{3.0}
+z_{t+1} = \sum_{i=1}^n w_i \Big[exp\Big[-\Big(\frac{x_t-c_i}{b_i}\Big)^2\Big]\Big]
+\]</div>
+<p>In this formulation <span class="math notranslate nohighlight">\(c_i, r_i,\)</span> and <span class="math notranslate nohighlight">\(w_i\)</span> and the <em>center</em>, <em>radius</em>, and <em>weights</em> of each RBF.  Additionally, <span class="math notranslate nohighlight">\(n\)</span> is the number of RBFs used in the function; in this study we use <span class="math notranslate nohighlight">\(n = 2\)</span> RBFs. With two RBFs, there are a total of 6 parameters. Increasing the number of RBFs allows for more flexible function forms to be achieved, however two RBFs have been shown to be effective for this problem.</p>
+<p>The sum of the <em>weights</em> must be equal to one, such that:</p>
+<div class="math notranslate nohighlight">
+\[\tag{3.1}\sum_{i=1}^n w_i= 1\]</div>
+<p>The function <code class="docutils literal notranslate"><span class="pre">harvest_streategy()</span></code> is contained within the <code class="docutils literal notranslate"><span class="pre">fish_game_functions.py</span></code> script, which can be accessed <a class="reference external" href="https://github.com/TrevorJA/harvested_predator_prey_system_tutorial_series/blob/main/Part_1_MOEA_Diagnostics/fish_game_functions.py">here in the repository</a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">harvest_strategy()</span></code> function uses the RBF parameter values (i.e., <span class="math notranslate nohighlight">\([c_1, b_1, w_1, c_2, b_2, w_2]\)</span>), and the current prey population, to calculate the next year’s harvesting effort:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="k">def</span> <span class="nf">evaluate_RBF</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">RBF_params</span><span class="p">,</span> <span class="n">nRBFs</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Parameters:</span>
+<span class="sd">	-----------</span>
+<span class="sd">	x : float</span>
+<span class="sd">		The current state of the system.</span>
+<span class="sd">	RBF_params : list [3xnRBFs]</span>
+<span class="sd">		The RBF parameters in the order of [c, r, w,...,c, r, w].</span>
+<span class="sd">	nRBFs : int</span>
+<span class="sd">		The number of RBFs used in the mapping function.</span>
+
+<span class="sd">	Returns:</span>
+<span class="sd">	--------</span>
+<span class="sd">	z : float</span>
+<span class="sd">		The policy action.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">c</span> <span class="o">=</span> <span class="n">RBF_params</span><span class="p">[</span><span class="mi">0</span><span class="p">::</span><span class="mi">3</span><span class="p">]</span>
+	<span class="n">r</span> <span class="o">=</span> <span class="n">RBF_params</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">3</span><span class="p">]</span>
+	<span class="n">w</span> <span class="o">=</span> <span class="n">RBF_params</span><span class="p">[</span><span class="mi">2</span><span class="p">::</span><span class="mi">3</span><span class="p">]</span>
+
+	<span class="c1"># Normalize the weights</span>
+	<span class="n">w_norm</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="k">for</span> <span class="n">w_i</span> <span class="ow">in</span> <span class="n">w</span><span class="p">:</span>
+			<span class="n">w_norm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">w_i</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">w_norm</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">nRBFs</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+
+	<span class="n">z</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nRBFs</span><span class="p">):</span>
+
+		<span class="c1"># Avoid division by zero</span>
+		<span class="k">if</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="n">z</span> <span class="o">=</span> <span class="n">z</span> <span class="o">+</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">/</span><span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">z</span> <span class="o">=</span> <span class="n">z</span> <span class="o">+</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="mi">10</span><span class="o">**-</span><span class="mi">6</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+	<span class="k">return</span> <span class="n">z</span>
+</pre></div>
+</div>
+<p>To better understand the nature of the harvesting policy, it is helpful to visualize the policy function, <span class="math notranslate nohighlight">\(z = f(\cdot)\)</span>.</p>
+<p>For some arbitrary selection of RBF parameters:</p>
+<div class="math notranslate nohighlight">
+\[[c_1, b_1, w_1, c_2, b_2, w_2] = [0.2, 1.1, 0.41, 0.34,0.7, 0.59] \]</div>
+<p>The following function will plot the harvesting strategy:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">plot_RBF_policy</span><span class="p">(</span><span class="n">x_range</span><span class="p">,</span> <span class="n">x_label</span><span class="p">,</span> <span class="n">y_range</span><span class="p">,</span> <span class="n">y_label</span><span class="p">,</span> <span class="n">RBF_params</span><span class="p">,</span> <span class="n">nRBFs</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Parameters:</span>
+<span class="sd">	-----------</span>
+<span class="sd">	RBF_params : list [3xnRBFs]</span>
+<span class="sd">		The RBF parameters in the order of [c, r, w,...,c, r, w].</span>
+<span class="sd">	nRBFs : int</span>
+<span class="sd">		The number of RBFs used in the mapping function.</span>
+
+<span class="sd">	Returns:</span>
+<span class="sd">	--------</span>
+<span class="sd">	None.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="c1"># Step size</span>
+	<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+	<span class="n">x_min</span> <span class="o">=</span> <span class="n">x_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+	<span class="n">x_max</span> <span class="o">=</span> <span class="n">x_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+	<span class="n">y_min</span> <span class="o">=</span> <span class="n">y_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+	<span class="n">y_max</span> <span class="o">=</span> <span class="n">y_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+	<span class="c1"># Generate data</span>
+	<span class="n">x_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+	<span class="n">y_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+		<span class="n">y</span> <span class="o">=</span> <span class="n">evaluate_RBF</span><span class="p">(</span><span class="n">x_vals</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">RBF_params</span><span class="p">,</span> <span class="n">nRBFs</span><span class="p">)</span>
+
+		<span class="c1"># Check that assigned actions are within range</span>
+		<span class="k">if</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">y_min</span><span class="p">:</span>
+			<span class="n">y</span> <span class="o">=</span> <span class="n">y_min</span>
+		<span class="k">elif</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="n">y_max</span><span class="p">:</span>
+			<span class="n">y</span> <span class="o">=</span> <span class="n">y_max</span>
+
+		<span class="n">y_vals</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
+
+	<span class="c1"># Plot</span>
+	<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">200</span><span class="p">)</span>
+	<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Policy&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
+	<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">x_label</span><span class="p">)</span>
+	<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">y_label</span><span class="p">)</span>
+	<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;RBF Policy&#39;</span><span class="p">)</span>
+
+	<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+	<span class="k">return</span>
+</pre></div>
+</div>
+<p>Setting my problem-specific inputs, and running the function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the RBF parameters</span>
+<span class="n">nRBFs</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">RBF_params</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.41</span><span class="p">,</span> <span class="mf">0.34</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.59</span><span class="p">]</span>
+
+<span class="c1"># Specify plot ranges</span>
+<span class="n">x_range</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">x_label</span> <span class="o">=</span> <span class="s1">&#39;Population ($x$)&#39;</span>
+<span class="n">y_range</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">y_label</span> <span class="o">=</span> <span class="s1">&#39;Harvest Effort ($z$)&#39;</span>
+
+<span class="c1"># Plot the policy curve</span>
+<span class="n">plot_RBF_policy</span><span class="p">(</span><span class="n">x_range</span><span class="p">,</span> <span class="n">x_label</span><span class="p">,</span> <span class="n">y_range</span><span class="p">,</span> <span class="n">y_label</span><span class="p">,</span> <span class="n">RBF_params</span><span class="p">,</span> <span class="n">nRBFs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Insert rbf_plot_1 here</strong></p>
+<p>This policy does not make much intuitive sense… why should harvesting efforts be <em>decreased</em> when the fish population is <em>large</em>? Well, that’s because I chose these RBF parameter values randomly.</p>
+<p>To demonstrate the flexibility of the RBF functions, and the variety of policy functions that can result from them, I generated a few (<em>n = 7</em>) policies using a random sample of parameter values. The parameter values were sampled from a uniform distribution over each parameters range: <span class="math notranslate nohighlight">\(c_i, b_i, w_i \in [0,1]\)</span>. Below is a plot of the resulting random policy functions:</p>
+<p><strong>Insert rbf_plot_2 here</strong></p>
+<p>Finding the sets of RBF parameter values that result in Pareto-optimal harvesting policies is the next step in this process!</p>
+</section>
+</section>
+<section id="harvest-strategy-objectives-trevor">
+<h2>Harvest strategy objectives (Trevor)<a class="headerlink" href="#harvest-strategy-objectives-trevor" title="Permalink to this headline">#</a></h2>
+<p>We take a multi-objective approach to the generation of a harvesting strategy. Given that the populations are vulnerable to collapse, it is important to consider ecological objectives in the problem formulation.</p>
+<p>Here, we consider five objectives, described below.</p>
+<section id="objective-1-maximize-net-present-value">
+<h3>Objective #1: Maximize net present value<a class="headerlink" href="#objective-1-maximize-net-present-value" title="Permalink to this headline">#</a></h3>
+<p>The net present value is an economic objective corresponding to the amount of fish harvested.</p>
+<p>During the simulation-optimization process (later in this post), we simulate a single policy <span class="math notranslate nohighlight">\(N\)</span> times, and take the <em>average</em> objective score over the range of simulations. This method helps to account for variability in expected outcomes due to natural stochasticity. Here, we use <span class="math notranslate nohighlight">\(N = 100\)</span> realizations of stochasticity.</p>
+<p>With that in mind, the NPV (<span class="math notranslate nohighlight">\(O_1\)</span>) is calculated as:
+$<span class="math notranslate nohighlight">\(O_1 = \frac{1}{N} \sum_{i=1}^N\Big( \sum_{t=0}^T \frac{z_{t+1,i}x_{t,i}}{(1+\delta)^t}\Big)\)</span>$</p>
+<p>where <span class="math notranslate nohighlight">\(\delta\)</span> is the discount rate which converts future benefits to present economic value, here <span class="math notranslate nohighlight">\(\delta = 0.05\)</span>.</p>
+<br />
+</section>
+<section id="objective-2-minimize-prey-population-deficit">
+<h3>Objective #2: Minimize prey population deficit<a class="headerlink" href="#objective-2-minimize-prey-population-deficit" title="Permalink to this headline">#</a></h3>
+<p>The second objective aims to minimize the average prey population deficit, relative to the prey population carrying capacity, <span class="math notranslate nohighlight">\(K\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[O_2 = \frac{1}{N} \sum_{i=1}^N\Big( \frac{1}{T} \sum_{t=1}^T \frac{K - x_{t,i}}{K}\Big)\]</div>
+<br />
+</section>
+<section id="objective-3-minimize-longest-duration-of-consecutive-low-harvest">
+<h3>Objective #3: Minimize longest duration of consecutive low harvest<a class="headerlink" href="#objective-3-minimize-longest-duration-of-consecutive-low-harvest" title="Permalink to this headline">#</a></h3>
+<p>In order to maintain steady harvesting levels, we minimize the longest duration of consecutive low harvest. Here, a subjective definition of <em>low harvest</em> is imposed. In a practical decision making process, this threshold may be solicited from the relevant stakeholders.</p>
+<p>Objective #3 is defined as:</p>
+<div class="math notranslate nohighlight">
+\[O_3 = \frac{1}{N} \sum_{i=1}^N(max_T(\phi_{t,i}))\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\phi_{t,i} = \left\{
+	\begin{array}\\
+		\phi_{t-1,i} + 1 &amp; \text{if } \ z_t &lt; \text{limit}\\
+		0 &amp; \text{otherwise.}
+	\end{array}
+\right.
+\end{split}\]</div>
+<p>And the <em>low harvest limit</em> is: <span class="math notranslate nohighlight">\(limit = 5\%\)</span>.</p>
+<br />
+</section>
+<section id="objective-4-minimize-worst-harvest-instance">
+<h3>Objective #4: Minimize worst harvest instance<a class="headerlink" href="#objective-4-minimize-worst-harvest-instance" title="Permalink to this headline">#</a></h3>
+<p>In addition to avoiding long periods of continuously low harvest, the stakeholders have a desire to limit financial risks associated with very low harvests. Here, we minimize the <em>worst 1%</em> of harvest.</p>
+<p>The fourth objective is defined as:</p>
+<div class="math notranslate nohighlight">
+\[O_4 = \frac{1}{N} \sum_{i=1}^N(percentile_T(z_{t+1,i}x_{t,i}, 1))\]</div>
+<br />
+</section>
+<section id="objective-5-minimize-harvest-variance">
+<h3>Objective #5: Minimize harvest variance<a class="headerlink" href="#objective-5-minimize-harvest-variance" title="Permalink to this headline">#</a></h3>
+<p>Lastly, policies which result in low harvest variance are more easily implemented, and can limit corresponding variance in fish populations.</p>
+<p>The last objective minimizes the harvest variance, with the objective score defined as:</p>
+<div class="math notranslate nohighlight">
+\[O_5 = \frac{1}{N} \sum_{i=1}^N(Var_T(z_{t+1,i}x_{t,i}))\]</div>
+<br />
+</section>
+<section id="constraint-avoid-collapse-of-predator-population">
+<h3>Constraint: avoid collapse of predator population<a class="headerlink" href="#constraint-avoid-collapse-of-predator-population" title="Permalink to this headline">#</a></h3>
+<p>During the optimization process, we are able to include <em>constraints</em> on the harvesting policies.</p>
+<p>Since population collapse is a stable equilibrium point, from which the population will not regrow, it is imperative to consider policies which prevent collapse.</p>
+<p>With this in mind, the policy must not result in <em>any</em> population collapse across the <span class="math notranslate nohighlight">\(N\)</span> realizations of environmental stochasticity.  Mathematically, this is enforced by:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{N} \sum_{i=1}^N(\Psi_{t,i})) = \]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\Psi_{t,i} = \left\{
+	\begin{array}\\
+		1 &amp; \text{if } \ y_{t,i} &lt; 1\\
+		0 &amp; \text{otherwise.}
+	\end{array}
+\right.
+\end{split}\]</div>
+<br />
+</section>
+<section id="problem-formulation">
+<h3>Problem formulation<a class="headerlink" href="#problem-formulation" title="Permalink to this headline">#</a></h3>
+<p>Given the objectives described above, the optimization problem is:</p>
+<div class="math notranslate nohighlight">
+\[Minimize \ F(z_x) = (-O_1, O_2, O_3, -O_4, O_5)\]</div>
+</section>
+</section>
+<section id="simulation-model-of-the-harvested-system">
+<h2>Simulation model of the harvested system<a class="headerlink" href="#simulation-model-of-the-harvested-system" title="Permalink to this headline">#</a></h2>
+<p>Here, I provide an overview of the <code class="docutils literal notranslate"><span class="pre">fish_game_5_objs()</span></code> model which combines many of the preceding topics. The goal for this model is to take a set of RBF parameters, which define the harvesting strategy, simulate the policy for some length of time, and then return the objective scores resulting from the policy.</p>
+<p>Later, this model will allow for the optimization of the harvesting policy RBF parameters through a Multi-Objective Evolutionary Algorithm (MOEA). The MOEA will evaluate many thousands of policies (RBF parameter combinations) and attempt to find, through <em>evolution</em>, those RBF parameters which yield best objective performance.</p>
+<p>A brief summary of the model process is described here, but the curious learner is encouraged to take a deeper look at the code and dissect the process.</p>
+<p>The model can be understood as having three major sections:</p>
+<ol class="simple">
+<li><p>Initialization of storage vectors, stochastic variables, and assumed ODE parameters.</p></li>
+<li><p>Simulation of policy and fishery populations over time period T.</p></li>
+<li><p>Calculation of objective scores.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fish_game_5_objs</span><span class="p">(</span><span class="nb">vars</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Defines the full, 5-objective fish game problem to be solved</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    vars : list of floats</span>
+<span class="sd">        Contains the C, R, W values</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    objs, cnstr</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Get chosen strategy</span>
+    <span class="n">strategy</span> <span class="o">=</span> <span class="s1">&#39;Previous_Prey&#39;</span>
+
+    <span class="c1"># Define variables for RBFs</span>
+    <span class="n">nIn</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># no. of inputs (depending on selected strategy)</span>
+    <span class="n">nOut</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># no. of outputs (depending on selected strategy)</span>
+    <span class="n">nRBF</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># no. of RBFs to use</span>
+
+    <span class="n">nObjs</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">nCnstr</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># no. of constraints in output</span>
+
+    <span class="n">tSteps</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># no. of timesteps to run the fish game on</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># Number of realizations of environmental stochasticity</span>
+
+    <span class="c1"># Define assumed system parameters</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">0.005</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="mf">0.1</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="mf">0.1</span>
+    <span class="n">K</span> <span class="o">=</span> <span class="mi">2000</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="mf">0.7</span>
+    <span class="n">sigmaX</span> <span class="o">=</span> <span class="mf">0.004</span>
+    <span class="n">sigmaY</span> <span class="o">=</span> <span class="mf">0.004</span>
+
+    <span class="c1"># Initialize storage arrays for populations and harvest</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">tSteps</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Prey population</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">tSteps</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Predator population</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">tSteps</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Harvest effort</span>
+
+    <span class="c1"># Create array to store harvest for all realizations</span>
+    <span class="n">harvest</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">N</span><span class="p">,</span><span class="n">tSteps</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+    <span class="c1"># Create array to store effort for all realizations</span>
+    <span class="n">effort</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">N</span><span class="p">,</span><span class="n">tSteps</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+    <span class="c1"># Create array to store prey for all realizations</span>
+    <span class="n">prey</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">N</span><span class="p">,</span><span class="n">tSteps</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+    <span class="c1"># Create array to store predator for all realizations</span>
+    <span class="n">predator</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">N</span><span class="p">,</span><span class="n">tSteps</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="c1"># Create array to store metrics per realization</span>
+    <span class="n">NPV</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">cons_low_harv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">harv_1st_pc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">variance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+    <span class="c1"># Create arrays to store objectives and constraints</span>
+    <span class="n">objs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span><span class="o">*</span><span class="n">nObjs</span>
+    <span class="n">cnstr</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span><span class="o">*</span><span class="n">nCnstr</span>
+
+    <span class="c1"># Create array with environmental stochasticity for prey</span>
+    <span class="n">epsilon_prey</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">sigmaX</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+    <span class="c1"># Create array with environmental stochasticity for predator</span>
+    <span class="n">epsilon_predator</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">sigmaY</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+    <span class="c1"># Go through N possible realizations</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+
+        <span class="c1"># Initialize populations and values</span>
+        <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">prey</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">K</span>
+        <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">predator</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">250</span>
+        <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">effort</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">harvest_strategy</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="nb">vars</span><span class="p">,</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="n">K</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">nIn</span><span class="p">,</span> <span class="n">nOut</span><span class="p">,</span> <span class="n">nRBF</span><span class="p">)</span>
+        <span class="n">NPVharvest</span> <span class="o">=</span> <span class="n">harvest</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">effort</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="c1"># Go through all timesteps for prey, predator, and harvest</span>
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">tSteps</span><span class="p">):</span>
+
+            <span class="c1"># Solve discretized form of ODE at subsequent time step</span>
+            <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">y</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">/</span><span class="n">K</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="n">t</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">t</span><span class="p">],</span><span class="n">m</span><span class="p">)</span><span class="o">+</span><span class="n">a</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="p">])</span> <span class="o">-</span> <span class="n">z</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="p">])</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">epsilon_prey</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1"># Prey growth equation</span>
+                <span class="n">y</span><span class="p">[</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">+</span> <span class="n">c</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">t</span><span class="p">],</span><span class="n">m</span><span class="p">)</span><span class="o">+</span><span class="n">a</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="p">])</span> <span class="o">-</span> <span class="n">d</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="n">t</span><span class="p">])</span> <span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">epsilon_predator</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1"># Predator growth equation</span>
+
+                <span class="c1"># Solve for harvesting effort at next timestep</span>
+                <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;=</span> <span class="n">tSteps</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">strategy</span> <span class="o">==</span> <span class="s1">&#39;Previous_Prey&#39;</span><span class="p">:</span>
+                        <span class="n">input_ranges</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="n">K</span><span class="p">]]</span> <span class="c1"># Prey pop. range to use for normalization</span>
+                        <span class="n">output_ranges</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span> <span class="c1"># Range to de-normalize harvest to</span>
+                        <span class="n">z</span><span class="p">[</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">harvest_strategy</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="p">]],</span> <span class="nb">vars</span><span class="p">,</span> <span class="n">input_ranges</span><span class="p">,</span> <span class="n">output_ranges</span><span class="p">,</span> <span class="n">nIn</span><span class="p">,</span> <span class="n">nOut</span><span class="p">,</span> <span class="n">nRBF</span><span class="p">)</span>
+
+            <span class="c1"># Store values in arrays</span>
+            <span class="n">prey</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">predator</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">effort</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">harvest</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">NPVharvest</span> <span class="o">=</span> <span class="n">NPVharvest</span> <span class="o">+</span> <span class="n">harvest</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.05</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+
+        <span class="c1"># Solve for objectives and constraint</span>
+        <span class="n">NPV</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">NPVharvest</span>
+        <span class="n">low_hrv</span> <span class="o">=</span> <span class="p">[</span><span class="n">harvest</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">&lt;</span><span class="n">prey</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">/</span><span class="mi">20</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">harvest</span><span class="p">[</span><span class="n">i</span><span class="p">,:]))]</span> <span class="c1"># Returns a list of True values when there&#39;s harvest below 5%</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="p">[</span> <span class="nb">sum</span><span class="p">(</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">group</span> <span class="p">)</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span> <span class="n">low_hrv</span> <span class="p">)</span> <span class="k">if</span> <span class="n">key</span> <span class="p">]</span> <span class="c1"># Counts groups of True values in a row</span>
+        <span class="k">if</span> <span class="n">count</span><span class="p">:</span> <span class="c1"># Checks if theres at least one count (if not, np.max won&#39;t work on empty list)</span>
+            <span class="n">cons_low_harv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>  <span class="c1"># Finds the largest number of consecutive low harvests</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cons_low_harv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">harv_1st_pc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">harvest</span><span class="p">[</span><span class="n">i</span><span class="p">,:],</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">variance</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">harvest</span><span class="p">[</span><span class="n">i</span><span class="p">,:])</span>
+
+    <span class="c1"># Average objectives across N realizations</span>
+    <span class="n">objs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">NPV</span><span class="p">)</span> <span class="c1"># Mean NPV for all realizations</span>
+    <span class="n">objs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">K</span><span class="o">-</span><span class="n">prey</span><span class="p">)</span><span class="o">/</span><span class="n">K</span><span class="p">)</span> <span class="c1"># Mean prey deficit</span>
+    <span class="n">objs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">cons_low_harv</span><span class="p">)</span> <span class="c1"># Mean worst case of consecutive low harvest across realizations</span>
+    <span class="n">objs</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">harv_1st_pc</span><span class="p">)</span> <span class="c1"># Mean 1st percentile of all harvests</span>
+    <span class="n">objs</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">variance</span><span class="p">)</span> <span class="c1"># Mean variance of harvest</span>
+
+    <span class="n">cnstr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">predator</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># Mean number of predator extinction days per realization</span>
+
+    <span class="c1"># output should be all the objectives, and constraint</span>
+    <span class="k">return</span> <span class="n">objs</span><span class="p">,</span> <span class="n">cnstr</span>
+</pre></div>
+</div>
+<p>The next section shows how to optimize the harvest policy defined by <code class="docutils literal notranslate"><span class="pre">vars</span></code>, using the PyBorg MOEA.</p>
+</section>
+<section id="a-very-brief-overview-of-pyborg">
+<h2>A (Very) Brief Overview of PyBorg<a class="headerlink" href="#a-very-brief-overview-of-pyborg" title="Permalink to this headline">#</a></h2>
+<p>PyBorg is the secondary implementation of the Borg MOEA written entirely in Python by David Hadka and Andrew Dircks. It is made possible using functions from the <a class="reference external" href="https://github.com/Project-Platypus/Platypus">Platypus optimization library</a>, which is a Python evolutionary computing framework.</p>
+<p>As PyBorg is Borg’s Python wrapper and thus derived from the original Borg MOEA, it can only be used with permission from its creators. To obtain permission for download, please visit <a class="reference external" href="http://borgmoea.org/#contact">BorgMOEA</a> and complete the web form. You should receive an email with the link to the BitBucket repository shortly.</p>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
+<p>The repository you have access to should be named ‘Serial Borg MOEA’ and contain a number of folders, including one called <code class="docutils literal notranslate"><span class="pre">Python/</span></code>. Within the <code class="docutils literal notranslate"><span class="pre">Python/</span></code> folder, you will be able to locate a folder called <code class="docutils literal notranslate"><span class="pre">pyborg</span></code>. Once you have identified the folder, please follow these next steps carefully:<br></p>
+<ol class="simple">
+<li><p>Check your current Python version. <em>Python 3.5 or later is required to enable PyBorg implementation</em>.</p></li>
+<li><p>Download the <code class="docutils literal notranslate"><span class="pre">pyborg</span></code> folder and place it in the folder where this Jupyter Notebook all other Part 1 training material is located.</p></li>
+<li><p>Install the <code class="docutils literal notranslate"><span class="pre">platypus</span></code> library. This can be in done via your command line by running one of two options: <br>
+If you are using <code class="docutils literal notranslate"><span class="pre">pip</span></code></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install platypus-opt
+</pre></div>
+</div>
+<p>If you are using <code class="docutils literal notranslate"><span class="pre">conda</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="n">platypus</span><span class="o">-</span><span class="n">opt</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Make sure the following training startup files are located within the same folder as this Jupyter Notebook:
+a) <code class="docutils literal notranslate"><span class="pre">fish_game_functions.py</span></code>: Contains all function definitions to setup the problem, run the optimization, plot the hypervolume, and conduct random seed analysis.
+b) <code class="docutils literal notranslate"><span class="pre">Part</span> <span class="pre">1</span> <span class="pre">-</span> <span class="pre">Harvest</span> <span class="pre">Optimization</span> <span class="pre">and</span> <span class="pre">MOEA</span> <span class="pre">Diagnostics.ipynb</span></code>: This is the current notebook and where the Fisheries fame will be demonstrated.</p></li>
+</ol>
+<p>We are now ready to proceed!</p>
+</section>
+<section id="optimization-of-the-fisheries-game">
+<h2>Optimization of the Fisheries Game<a class="headerlink" href="#optimization-of-the-fisheries-game" title="Permalink to this headline">#</a></h2>
+<section id="import-all-libraries">
+<h3>Import all libraries<a class="headerlink" href="#import-all-libraries" title="Permalink to this headline">#</a></h3>
+<p>All functions required for this post can be found in the <code class="docutils literal notranslate"><span class="pre">fish_game_functions.py</span></code> file. This code is adapted from <a class="reference external" href="https://waterprogramming.wordpress.com/2021/08/13/introduction-to-pyborg-basic-setup-and-running/">Antonia Hadjimichael’s original post</a> on exploring the Fisheries Game dynamics using PyBorg.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all required libraries</span>
+<span class="kn">from</span> <span class="nn">platypus</span> <span class="kn">import</span> <span class="n">Problem</span><span class="p">,</span> <span class="n">Real</span><span class="p">,</span> <span class="n">Hypervolume</span><span class="p">,</span> <span class="n">Generator</span>
+<span class="kn">from</span> <span class="nn">pyborg</span> <span class="kn">import</span> <span class="n">BorgMOEA</span>
+<span class="kn">from</span> <span class="nn">fish_game_functions</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">platypus</span> <span class="kn">import</span> <span class="n">Problem</span><span class="p">,</span> <span class="n">Real</span><span class="p">,</span> <span class="n">Hypervolume</span><span class="p">,</span> <span class="n">Generator</span>
+<span class="kn">from</span> <span class="nn">pyborg</span> <span class="kn">import</span> <span class="n">BorgMOEA</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">random</span>
+</pre></div>
+</div>
+</section>
+<section id="formulating-the-problem">
+<h3>Formulating the problem<a class="headerlink" href="#formulating-the-problem" title="Permalink to this headline">#</a></h3>
+<p>Define number of decision variables, constraints, and specify problem formulation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the number of decision variables, constraints and performance objectives</span>
+<span class="n">nVars</span> <span class="o">=</span> <span class="mi">6</span>   <span class="c1"># Define number of decision variables</span>
+<span class="n">nObjs</span> <span class="o">=</span> <span class="mi">5</span>   <span class="c1"># Define number of objectives</span>
+<span class="n">nCnstr</span> <span class="o">=</span> <span class="mi">1</span>      <span class="c1"># Define number of decision constraints</span>
+
+<span class="c1"># Define the upper and lower bounds of the performance objectives</span>
+<span class="n">objs_lower_bounds</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">6000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">250</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">objs_upper_bounds</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">32000</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="initialize-the-problem-for-optimization">
+<h3>Initialize the problem for optimization<a class="headerlink" href="#initialize-the-problem-for-optimization" title="Permalink to this headline">#</a></h3>
+<p>We call the <code class="docutils literal notranslate"><span class="pre">fisheries_game_problem_setup.py</span></code> function to set up the optimization problem. This function returns a PyBorg object called <code class="docutils literal notranslate"><span class="pre">algorithm</span></code> in this exercise that will be optimized in the next step.<br></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fisheries_game_problem_setup</span><span class="p">(</span><span class="n">nVars</span><span class="p">,</span> <span class="n">nObjs</span><span class="p">,</span> <span class="n">nCnstr</span><span class="p">,</span> <span class="n">pop_size</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Sets up and runs the fisheries game for a given population size</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    nVars : int</span>
+<span class="sd">        Number of decision variables.</span>
+<span class="sd">    nObjs : int</span>
+<span class="sd">        Number of performance objectives.</span>
+<span class="sd">    nCnstr : int</span>
+<span class="sd">        Number of constraints.</span>
+<span class="sd">    pop_size : int, optional</span>
+<span class="sd">        Initial population size of the randomly-generated set of solutions.</span>
+<span class="sd">        The default is 100.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    algorithm : pyBorg object</span>
+<span class="sd">        The algorthm to optimize with a unique initial population size.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Set up the problem</span>
+    <span class="n">problem</span> <span class="o">=</span> <span class="n">Problem</span><span class="p">(</span><span class="n">nVars</span><span class="p">,</span> <span class="n">nObjs</span><span class="p">,</span> <span class="n">nCnstr</span><span class="p">)</span>
+    <span class="n">nVars</span> <span class="o">=</span> <span class="mi">6</span>   <span class="c1"># Define number of decision variables</span>
+    <span class="n">nObjs</span> <span class="o">=</span> <span class="mi">5</span>   <span class="c1"># Define number of objective -- USER DEFINED</span>
+    <span class="n">nCnstr</span> <span class="o">=</span> <span class="mi">1</span>      <span class="c1"># Define number of decision constraints</span>
+
+    <span class="n">problem</span> <span class="o">=</span> <span class="n">Problem</span><span class="p">(</span><span class="n">nVars</span><span class="p">,</span> <span class="n">nObjs</span><span class="p">,</span> <span class="n">nCnstr</span><span class="p">)</span>
+
+    <span class="c1"># set bounds for each decision variable</span>
+    <span class="n">problem</span><span class="o">.</span><span class="n">types</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">Real</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">problem</span><span class="o">.</span><span class="n">types</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">Real</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">problem</span><span class="o">.</span><span class="n">types</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">Real</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">problem</span><span class="o">.</span><span class="n">types</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">Real</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">problem</span><span class="o">.</span><span class="n">types</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">Real</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">problem</span><span class="o">.</span><span class="n">types</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">Real</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+
+    <span class="c1"># all values should be nonzero</span>
+    <span class="n">problem</span><span class="o">.</span><span class="n">constraints</span><span class="p">[:]</span> <span class="o">=</span> <span class="s2">&quot;==0&quot;</span>
+
+    <span class="c1"># set problem function</span>
+    <span class="k">if</span> <span class="n">nObjs</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">problem</span><span class="o">.</span><span class="n">function</span> <span class="o">=</span> <span class="n">fish_game_5_objs</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">problem</span><span class="o">.</span><span class="n">function</span> <span class="o">=</span> <span class="n">fish_game_3_objs</span>
+
+    <span class="n">algorithm</span> <span class="o">=</span> <span class="n">BorgMOEA</span><span class="p">(</span><span class="n">problem</span><span class="p">,</span> <span class="n">epsilons</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">population_size</span><span class="o">=</span><span class="n">pop_size</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">algorithm</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># initialize the optimization</span>
+<span class="n">algorithm</span> <span class="o">=</span> <span class="n">fisheries_game_problem_setup</span><span class="p">(</span><span class="n">nVars</span><span class="p">,</span> <span class="n">nObjs</span><span class="p">,</span> <span class="n">nCnstr</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="define-parameters-for-optimization">
+<h3>Define parameters for optimization<a class="headerlink" href="#define-parameters-for-optimization" title="Permalink to this headline">#</a></h3>
+<p>Before optimizing, we have to define our desired population size and number of function evaluations (NFEs). The NFEs correspond to the number of <em>evolutions</em> of the set of solutions. For complex, many-objective problems, it may be necessary for a large NFE.</p>
+<p>Here, we start with a small limit on NFE, to test the speed of the optimization. Limiting the optimization to 100 NFE is going to produce relatively poor performing solutions, however it is a good starting point for our diagnostic tests.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">init_nfe</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">init_pop_size</span> <span class="o">=</span> <span class="mi">100</span>
+</pre></div>
+</div>
+</section>
+<section id="begin-the-optimization">
+<h3>Begin the optimization<a class="headerlink" href="#begin-the-optimization" title="Permalink to this headline">#</a></h3>
+<p>In addition to running the optimization, we also time the optimization to get a general estimate on the time the full hypervolume analysis will require.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># begin timing the Borg run</span>
+<span class="n">borg_start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="n">algorithm</span> <span class="o">=</span> <span class="n">fisheries_game_problem_setup</span><span class="p">(</span><span class="n">nVars</span><span class="p">,</span> <span class="n">nObjs</span><span class="p">,</span> <span class="n">nCnstr</span><span class="p">,</span> <span class="n">pop_size</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">init_pop_size</span><span class="p">))</span>
+<span class="n">algorithm</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">init_nfe</span><span class="p">))</span>
+
+<span class="c1"># end timing and print optimization time</span>
+<span class="n">borg_end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="n">borg_total_time</span> <span class="o">=</span> <span class="n">borg_end_time</span> <span class="o">-</span> <span class="n">borg_start_time</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;borg_total_time=</span><span class="si">{</span><span class="n">borg_total_time</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Output</span><span class="p">:</span> <span class="n">borg_total_time</span><span class="o">=</span><span class="mf">34.226134300231934</span><span class="n">s</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>NOTICE:</strong>
+Running the PyBrog MOEA 100 times took ~34 seconds (on the machine which this was written on…).  Keep this in mind, that increasing the NFE will require correspondingly more time. If you increase the number too much, your machine may take a long time to compute the final Pareto-front.</p>
+</div></blockquote>
+</section>
+<section id="plot-the-tradeoff-surface">
+<h3>Plot the tradeoff surface<a class="headerlink" href="#plot-the-tradeoff-surface" title="Permalink to this headline">#</a></h3>
+<p>Here, we plot a 3-dimensional plot showing the tradeoff between a select number of objectives. If you have selected the 5-objective problem formulation, you should select the three objectives you would like to analyze the tradeoff surface for. Please select the (abbreviated) objective names from the following list:<br></p>
+<p><em>Objective 1: Mean NPV<br>
+Objective 2: Mean prey deficit<br>
+Objective 3: Mean WCLH<br>
+Objective 4: Mean 1% harvest<br>
+Objective 5: Mean harvest variance<br></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot objective tradeoff surface</span>
+<span class="n">fig_objs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">ax_objs</span> <span class="o">=</span> <span class="n">fig_objs</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+
+<span class="c1"># Select the objectives to plot from the list provided in the description above</span>
+<span class="n">obj1</span> <span class="o">=</span> <span class="s1">&#39;Mean NPV&#39;</span>
+<span class="n">obj2</span> <span class="o">=</span> <span class="s1">&#39;Mean prey deficit&#39;</span>
+<span class="n">obj3</span> <span class="o">=</span> <span class="s1">&#39;Mean 1</span><span class="si">% ha</span><span class="s1">rvest&#39;</span>
+
+<span class="n">plot_3d_tradeoff</span><span class="p">(</span><span class="n">algorithm</span><span class="p">,</span> <span class="n">ax_objs</span><span class="p">,</span> <span class="n">nObjs</span><span class="p">,</span> <span class="n">obj1</span><span class="p">,</span> <span class="n">obj2</span><span class="p">,</span> <span class="n">obj3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Insert PF_plot here</strong></p>
+<p>The objectives scores arn’t very good, but that is because the number of function evaluations is so low. In order to get a better set of solutions, we need to run the MOEA for many function evaluations.</p>
+<p>The next section demonstrates the change in objective performance with respect to the number of function evaluations.</p>
+</section>
+</section>
+<section id="moea-diagnostics">
+<h2>MOEA Diagnostics<a class="headerlink" href="#moea-diagnostics" title="Permalink to this headline">#</a></h2>
+<p>A good MOEA is assessed by it’s ability to quickly converge to a set of solutions (the Pareto-approximate set) that is also diverse. This means that the final set of solutions is close to the true set, as well as covers a large volume of the multi-dimensional problem space. There are three quantitative metrics via which convergence and diversity are evaluated:</p>
+<ol class="simple">
+<li><p><em>Generational distance</em> approximates the average distance between the true Pareto front and the Pareto-approximate reference set that your MOEA identifies. It is the easiest metric to meet.</p></li>
+<li><p><em>Epsilon indicator</em> is a harder metric than generational distance to me   et. A high-performing MOEA will have a low epsilon indicator value when the distance of its worst-performing approximate solution from the true Pareto set is small.</p></li>
+<li><p><em>Hypervolume</em> measures the ‘volume’ that a Pareto front covers across all dimensions of a problem. It is the hardest metric to meet and the most computationally intensive.</p></li>
+</ol>
+<p>Both the generational distance and epsilon indicator metrics require a reference set, which is the <em>known</em>, true Pareto front. Conversely, the hypervolume does not have such a requirement. Given that the Fisheries Game is a complex, multi-dimensional, many-stakeholder problem with no known solution, the hypervolume metric is thus the most suitable to evaluate the ability of PyBorg to quickly converge to a diverse Pareto-approximate set of solutions.</p>
+<p>More detailed descriptions of each metric are provided in <a class="reference external" href="https://waterprogramming.wordpress.com/2013/06/25/moea-performance-metrics/">this handy blog post by Joe Kasprzyk</a>.</p>
+<section id="hypervolume">
+<h3>Hypervolume<a class="headerlink" href="#hypervolume" title="Permalink to this headline">#</a></h3>
+<p>The hypervolume is a measure of the multi-dimensional volume <em>dominated</em> by the approximated pareto front. As the pareto front advances toward the “<em>ideal</em>” solution, this value approaches 1.</p>
+<p>The efficiency of an MOEA in optimizing a solution can be considered by measuring the hypervolume with respect to the number of function evaluations. This allows the user to understand how quickly the MOEA is converging to a good set of solutions, and how many function evaluations are needed to achieve a good set of solutions.</p>
+<section id="defining-hypervolume-parameters">
+<h4>Defining hypervolume parameters<a class="headerlink" href="#defining-hypervolume-parameters" title="Permalink to this headline">#</a></h4>
+<p>First, we define the maximum number of function evaluations (<code class="docutils literal notranslate"><span class="pre">maxevals</span></code>) and the NFE step size (<code class="docutils literal notranslate"><span class="pre">frequency</span></code>) for which we would like to evaluate the problem hypervolume over. Try modifying these values to see how the plot changes. <br>
+<br></p>
+<p>Mind that the value of <code class="docutils literal notranslate"><span class="pre">maxevals</span></code> should always be more than that of your initial NFE, and that the value of <code class="docutils literal notranslate"><span class="pre">frequency</span></code> should be less than that of the initial NFE. Both values should be integer values.</p>
+<p>Also be mindful that increasing the <code class="docutils literal notranslate"><span class="pre">maxevals</span></code> &gt; 1000 is going to result in long runtimes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">maxevals</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">frequency</span> <span class="o">=</span> <span class="mi">100</span>
+</pre></div>
+</div>
+</section>
+<section id="plotting-the-hypervolume">
+<h4>Plotting the hypervolume<a class="headerlink" href="#plotting-the-hypervolume" title="Permalink to this headline">#</a></h4>
+<p>Using these parameters, we then plot the hypervolume graph, showing the change in hypervolume value over the NFEs.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig_hvol</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">ax_hvol</span> <span class="o">=</span> <span class="n">fig_hvol</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+
+<span class="n">plot_hvol</span><span class="p">(</span><span class="n">algorithm</span><span class="p">,</span> <span class="n">maxevals</span><span class="p">,</span> <span class="n">frequency</span><span class="p">,</span> <span class="n">objs_lower_bounds</span><span class="p">,</span> <span class="n">objs_upper_bounds</span><span class="p">,</span> <span class="n">ax_hvol</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;PyBorg Runtime (Hypervolume)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Number of Function Evaluations&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Hypervolume&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Insert hvol_plot here</strong></p>
+</section>
+<section id="perform-random-seed-analysis">
+<h4>Perform random seed analysis<a class="headerlink" href="#perform-random-seed-analysis" title="Permalink to this headline">#</a></h4>
+<p>Next, we perform random seed analysis (RSA).<br></p>
+<p>Generally, RSA is performed to track an algorithm’s performance during search. In addition, it is also done to determine if an algorithm has discovered an acceptable approximation of the true Pareto set. More details on RSA can be found <a class="reference external" href="https://waterprogramming.wordpress.com/2019/04/17/performing-random-seed-analysis-and-runtime-diagnostics-with-the-serial-borg-matlab-wrapper/">here</a> in a blog post by Dave Gold.<br></p>
+<p>For the Fisheries Game, we conduct RSA to determine if PyBorg’s performance is sensitive to the size of its initial population. We do this using the folllowing steps:</p>
+<ol class="simple">
+<li><p>Run an ensemble of searches, each starting with a randomly sampled set of initial conditions (aka “random seeds”)</p></li>
+<li><p>Combine search results across all random seeds to generate a “reference set” that contains only the best non-dominated solutions across the ensemble</p></li>
+<li><p>Repeat steps 1 and 2 for an initial population size of 200, 400, etc.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pop_size_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]</span>
+
+<span class="n">fig_rand_seed</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">ax_rand_seed</span> <span class="o">=</span> <span class="n">fig_rand_seed</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pop_size_list</span><span class="p">)):</span>
+    <span class="n">fisheries_game_problem_setup</span><span class="p">(</span><span class="n">nVars</span><span class="p">,</span> <span class="n">nObjs</span><span class="p">,</span> <span class="n">nCnstr</span><span class="p">,</span> <span class="n">pop_size_list</span><span class="p">[</span><span class="n">p</span><span class="p">])</span>
+    <span class="n">algorithm</span> <span class="o">=</span> <span class="n">fisheries_game_problem_setup</span><span class="p">(</span><span class="n">nVars</span><span class="p">,</span> <span class="n">nObjs</span><span class="p">,</span> <span class="n">nCnstr</span><span class="p">,</span> <span class="n">pop_size</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">init_pop_size</span><span class="p">))</span>
+    <span class="n">algorithm</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">init_nfe</span><span class="p">))</span>
+
+    <span class="n">plot_hvol</span><span class="p">(</span><span class="n">algorithm</span><span class="p">,</span> <span class="n">maxevals</span><span class="p">,</span> <span class="n">frequency</span><span class="p">,</span> <span class="n">objs_lower_bounds</span><span class="p">,</span> <span class="n">objs_upper_bounds</span><span class="p">,</span>
+              <span class="n">ax_rand_seed</span><span class="p">,</span> <span class="n">pop_size_list</span><span class="p">[</span><span class="n">p</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;PyBorg Random Seed Analysis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Number of Function Evaluations&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Hypervolume&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Insert rsa_plot here</strong></p>
+</section>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<p>If you’ve made it this far, congratulate yourself and take a minute to think back on the progression of this post.</p>
+<p>This post went over the following:</p>
+<ol class="simple">
+<li><p>A brief re-cap of the harvested predator-prey model</p></li>
+<li><p>Formulation of the harvesting policy (radial basis functions)</p></li>
+<li><p>Formulation of the policy objectives</p></li>
+<li><p>A simulation model for the harvested system</p></li>
+<li><p>Optimization of the harvesting policy using the PyBorg MOEA</p>
+<ol class="simple">
+<li><p>Optimization problem formulation</p></li>
+<li><p>Basic MOEA diagnostics</p></li>
+</ol>
+</li>
+</ol>
+<p>A classic decision-making idiom says <em>‘defining the problem is the problem’</em>. Hopefully, this post has revealed that to be true; changes to the harvesting strategy functions, simulation model, or objective scores can result in changes to the resulting outcomes.</p>
+<p>If you’ve progressed through this tutorial via the Jupyter Notebook, I encourage you to re-visit the source code involved in this process. My best recommendation is to re-produce this problem from scratch, as this is the best way to develop a detailed understanding of the process.</p>
+<p><strong>Next time</strong>, we will explore the outcomes of this optimization, by considering the tradeoffs present across the Pareto set of solutions.</p>
+<p>Till then, thanks for reading!</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Training"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Reed Group at Cornell CEE<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
