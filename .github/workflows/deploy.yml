@@ -38,13 +38,13 @@ jobs:
     - uses: syphar/restore-virtualenv@v1
       id: cache-virtualenv
       with:
-        requirement_files: docs/requirements.txt
+        requirement_files: docs/requirements_py.txt
     - uses: syphar/restore-pip-download-cache@v1
       if: steps.cache-virtualenv.outputs.cache-hit != 'true'
 
     # install python dependencies    
     - name: Install python dependencies
-      run: pip install -r docs/requirements_r.txt
+      run: pip install -r docs/requirements_py.txt
       if: steps.cache-virtualenv.outputs.cache-hit != 'true'
 
     # update kernel of all jupyter notebooks to .venv to match GH action environment
