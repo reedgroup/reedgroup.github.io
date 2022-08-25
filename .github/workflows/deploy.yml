@@ -44,7 +44,7 @@ jobs:
 
     # install python dependencies    
     - name: Install python dependencies
-      run: pip install -r docs/requirements.txt
+      run: pip install -r docs/requirements_r.txt
       if: steps.cache-virtualenv.outputs.cache-hit != 'true'
 
     # update kernel of all jupyter notebooks to .venv to match GH action environment
