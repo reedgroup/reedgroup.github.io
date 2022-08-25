@@ -25,28 +25,36 @@ jobs:
         python-version: [3.8]
     steps:
     - uses: actions/checkout@v2
-    # Install CC
+
+    # Install python
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
+
+    # install virtual environment with caching, so only updates when requirements.txt changes,
+    # based on https://github.com/marketplace/actions/restore-or-create-a-python-virtualenv#custom_virtualenv_dir
+    # Note: virtual environment by default will be created under ~/.venv
+    - uses: syphar/restore-virtualenv@v1
+      id: cache-virtualenv
+      with:
+        requirement_files: docs/requirements.txt
+    - uses: syphar/restore-pip-download-cache@v1
+      if: steps.cache-virtualenv.outputs.cache-hit != 'true'
+
+    # install dependencies    
     - name: Install dependencies
-      run: |
-        pip install -r docs/requirements.txt
-    # Use default CC
-    #    - name: Cookiecutter no GHA
-    #  run: |
-    #    cookiecutter . --no-input include_ci=no
-    
-    # Install requirements.txt
-    #- name: Install requirements
-    #  run: |
-    #    pip install -r my_book/requirements.txt
-    
+      run: pip install -r docs/requirements.txt
+      if: steps.cache-virtualenv.outputs.cache-hit != 'true'
+
+    # update kernel of all jupyter notebooks to .venv to match GH action environment
+    - name: Update Jupyter Notebook kernels 
+      run: python docs/update_jupyter_kernels.py .venv
+
     # Build the example book
     - name: Build book
-      run: |
-        jupyter-book build --all docs/
+      run: jupyter-book build --all docs/
+
     # Deploy html to gh-pages
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.6.1
