@@ -117,7 +117,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Contents of this Manual
+  Reed Group Lab Manual
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -481,7 +481,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x242bacc9ab0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fe5d910b3d0&gt;
 </pre></div>
 </div>
 <img alt="../_images/nbExample_3_1.png" src="../_images/nbExample_3_1.png" />
@@ -497,7 +497,7 @@ pwd
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Couldn&#39;t find program: &#39;bash&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/reedgroup.github.io/reedgroup.github.io/docs/Section1
 </pre></div>
 </div>
 </div>
@@ -511,12 +511,7 @@ pwd
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unable to determine R home: [WinError 2] The system cannot find the file specified
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\dgold\pyproj\reedgrpmanual\lib\site-packages\rpy2\robjects\packages.py:367: UserWarning: The symbol &#39;quartz&#39; is not in this R namespace/package.
-  warnings.warn(
-C:\Users\dgold\pyproj\reedgrpmanual\lib\site-packages\rpy2\ipython\rmagic.py:73: UserWarning: The Python package `pandas` is strongly recommended when using `rpy2.ipython`. Unfortunately it could not be loaded (error: No module named &#39;pandas&#39;), but at least we found `numpy`.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/ipython/rmagic.py:73: UserWarning: The Python package `pandas` is strongly recommended when using `rpy2.ipython`. Unfortunately it could not be loaded (error: No module named &#39;pandas&#39;), but at least we found `numpy`.
   warnings.warn(&#39;The Python package `pandas` is strongly &#39;
 </pre></div>
 </div>
@@ -535,47 +530,63 @@ ggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R[write to console]: Error in library(ggforce) : there is no package called &#39;ggforce&#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R[write to console]: Error in library(ggforce) : there is no package called ‘ggforce’
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error in library(ggforce) : there is no package called &#39;ggforce&#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R[write to console]: In addition: 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R[write to console]: Warning message:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R[write to console]: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R[write to console]: 
+ 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R[write to console]:  libraries ‘/usr/local/lib/R/site-library’, ‘/usr/lib/R/site-library’ contain no packages
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error in library(ggforce) : there is no package called ‘ggforce’
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">RRuntimeError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
-<span class="nn">File ~\pyproj\reedgrpmanual\lib\site-packages\rpy2\ipython\rmagic.py:283,</span> in <span class="ni">RMagics.eval</span><span class="nt">(self, code)</span>
-<span class="g g-Whitespace">    </span><span class="mi">281</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="c1"># Need the newline in case the last line in code is a comment.</span>
-<span class="ne">--&gt; </span><span class="mi">283</span>     <span class="n">value</span><span class="p">,</span> <span class="n">visible</span> <span class="o">=</span> <span class="n">ro</span><span class="o">.</span><span class="n">r</span><span class="p">(</span><span class="s2">&quot;withVisible({</span><span class="si">%s</span><span class="se">\n</span><span class="s2">})&quot;</span> <span class="o">%</span> <span class="n">code</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">284</span> <span class="k">except</span> <span class="p">(</span><span class="n">ri</span><span class="o">.</span><span class="n">embedded</span><span class="o">.</span><span class="n">RRuntimeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">exception</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">285</span>     <span class="c1"># Otherwise next return seems to have copy of error.</span>
+<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/ipython/rmagic.py:285,</span> in <span class="ni">RMagics.eval</span><span class="nt">(self, code)</span>
+<span class="g g-Whitespace">    </span><span class="mi">283</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">284</span>     <span class="c1"># Need the newline in case the last line in code is a comment.</span>
+<span class="ne">--&gt; </span><span class="mi">285</span>     <span class="n">value</span><span class="p">,</span> <span class="n">visible</span> <span class="o">=</span> <span class="n">ro</span><span class="o">.</span><span class="n">r</span><span class="p">(</span><span class="s2">&quot;withVisible({</span><span class="si">%s</span><span class="se">\n</span><span class="s2">})&quot;</span> <span class="o">%</span> <span class="n">code</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">286</span> <span class="k">except</span> <span class="p">(</span><span class="n">ri</span><span class="o">.</span><span class="n">embedded</span><span class="o">.</span><span class="n">RRuntimeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">exception</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">287</span>     <span class="c1"># Otherwise next return seems to have copy of error.</span>
 
-<span class="nn">File ~\pyproj\reedgrpmanual\lib\site-packages\rpy2\robjects\__init__.py:459,</span> in <span class="ni">R.__call__</span><span class="nt">(self, string)</span>
+<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/robjects/__init__.py:459,</span> in <span class="ni">R.__call__</span><span class="nt">(self, string)</span>
 <span class="g g-Whitespace">    </span><span class="mi">458</span> <span class="n">p</span> <span class="o">=</span> <span class="n">rinterface</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
 <span class="ne">--&gt; </span><span class="mi">459</span> <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">460</span> <span class="k">return</span> <span class="n">conversion</span><span class="o">.</span><span class="n">get_conversion</span><span class="p">()</span><span class="o">.</span><span class="n">rpy2py</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
-<span class="nn">File ~\pyproj\reedgrpmanual\lib\site-packages\rpy2\robjects\functions.py:203,</span> in <span class="ni">SignatureTranslatedFunction.__call__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/robjects/functions.py:203,</span> in <span class="ni">SignatureTranslatedFunction.__call__</span><span class="nt">(self, *args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">202</span>         <span class="n">kwargs</span><span class="p">[</span><span class="n">r_k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
 <span class="ne">--&gt; </span><span class="mi">203</span> <span class="k">return</span> <span class="p">(</span><span class="nb">super</span><span class="p">(</span><span class="n">SignatureTranslatedFunction</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">204</span>         <span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
 
-<span class="nn">File ~\pyproj\reedgrpmanual\lib\site-packages\rpy2\robjects\functions.py:126,</span> in <span class="ni">Function.__call__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/robjects/functions.py:126,</span> in <span class="ni">Function.__call__</span><span class="nt">(self, *args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">125</span>         <span class="n">new_kwargs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">py2rpy</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 <span class="ne">--&gt; </span><span class="mi">126</span> <span class="n">res</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Function</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">new_args</span><span class="p">,</span> <span class="o">**</span><span class="n">new_kwargs</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">127</span> <span class="n">res</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">rpy2py</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
-<span class="nn">File ~\pyproj\reedgrpmanual\lib\site-packages\rpy2\rinterface_lib\conversion.py:45,</span> in <span class="ni">_cdata_res_to_rinterface.&lt;locals&gt;._</span><span class="nt">(*args, **kwargs)</span>
+<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/rinterface_lib/conversion.py:45,</span> in <span class="ni">_cdata_res_to_rinterface.&lt;locals&gt;._</span><span class="nt">(*args, **kwargs)</span>
 <span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">45</span>     <span class="n">cdata</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">46</span>     <span class="c1"># TODO: test cdata is of the expected CType</span>
 
-<span class="nn">File ~\pyproj\reedgrpmanual\lib\site-packages\rpy2\rinterface.py:813,</span> in <span class="ni">SexpClosure.__call__</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">812</span>     <span class="k">if</span> <span class="n">error_occured</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-<span class="ne">--&gt; </span><span class="mi">813</span>         <span class="k">raise</span> <span class="n">embedded</span><span class="o">.</span><span class="n">RRuntimeError</span><span class="p">(</span><span class="n">_rinterface</span><span class="o">.</span><span class="n">_geterrmessage</span><span class="p">())</span>
-<span class="g g-Whitespace">    </span><span class="mi">814</span> <span class="k">return</span> <span class="n">res</span>
+<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/rinterface.py:815,</span> in <span class="ni">SexpClosure.__call__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">814</span>     <span class="k">if</span> <span class="n">error_occured</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+<span class="ne">--&gt; </span><span class="mi">815</span>         <span class="k">raise</span> <span class="n">embedded</span><span class="o">.</span><span class="n">RRuntimeError</span><span class="p">(</span><span class="n">_rinterface</span><span class="o">.</span><span class="n">_geterrmessage</span><span class="p">())</span>
+<span class="g g-Whitespace">    </span><span class="mi">816</span> <span class="k">return</span> <span class="n">res</span>
 
-<span class="ne">RRuntimeError</span>: Error in library(ggforce) : there is no package called &#39;ggforce&#39;
+<span class="ne">RRuntimeError</span>: Error in library(ggforce) : there is no package called ‘ggforce’
 
 
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
@@ -584,37 +595,37 @@ ggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +
 <span class="nn">Input In [4],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;### R cell using </span><span class="si">%%</span><span class="s1">R magic</span><span class="se">\n\n</span><span class="s1">library(ggforce)</span><span class="se">\n</span><span class="s1">ggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +</span><span class="se">\n</span><span class="s1">    geom_point() +</span><span class="se">\n</span><span class="s1">    facet_zoom(x = Species == &quot;versicolor&quot;)</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="nn">File ~\pyproj\reedgrpmanual\lib\site-packages\IPython\core\interactiveshell.py:2358,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
+<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/IPython/core/interactiveshell.py:2358,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
 <span class="g g-Whitespace">   </span><span class="mi">2356</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">2357</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
 <span class="ne">-&gt; </span><span class="mi">2358</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">2359</span> <span class="k">return</span> <span class="n">result</span>
 
-<span class="nn">File ~\pyproj\reedgrpmanual\lib\site-packages\rpy2\ipython\rmagic.py:798,</span> in <span class="ni">RMagics.R</span><span class="nt">(self, line, cell, local_ns)</span>
-<span class="g g-Whitespace">    </span><span class="mi">796</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">e</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">err</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">797</span>         <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">err</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">798</span>     <span class="k">raise</span> <span class="n">e</span>
-<span class="g g-Whitespace">    </span><span class="mi">799</span> <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">800</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="s1">&#39;svg&#39;</span><span class="p">]:</span>
+<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/ipython/rmagic.py:801,</span> in <span class="ni">RMagics.R</span><span class="nt">(self, line, cell, local_ns)</span>
+<span class="g g-Whitespace">    </span><span class="mi">799</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">e</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">err</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">800</span>         <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">err</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">801</span>     <span class="k">raise</span> <span class="n">e</span>
+<span class="g g-Whitespace">    </span><span class="mi">802</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">803</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="s1">&#39;svg&#39;</span><span class="p">]:</span>
 
-<span class="nn">File ~\pyproj\reedgrpmanual\lib\site-packages\rpy2\ipython\rmagic.py:778,</span> in <span class="ni">RMagics.R</span><span class="nt">(self, line, cell, local_ns)</span>
-<span class="g g-Whitespace">    </span><span class="mi">776</span>         <span class="n">return_output</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">777</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">778</span>     <span class="n">text_result</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">visible</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">779</span>     <span class="n">text_output</span> <span class="o">+=</span> <span class="n">text_result</span>
-<span class="g g-Whitespace">    </span><span class="mi">780</span>     <span class="k">if</span> <span class="n">visible</span><span class="p">:</span>
+<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/ipython/rmagic.py:781,</span> in <span class="ni">RMagics.R</span><span class="nt">(self, line, cell, local_ns)</span>
+<span class="g g-Whitespace">    </span><span class="mi">779</span>         <span class="n">return_output</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">780</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">781</span>     <span class="n">text_result</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">visible</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">782</span>     <span class="n">text_output</span> <span class="o">+=</span> <span class="n">text_result</span>
+<span class="g g-Whitespace">    </span><span class="mi">783</span>     <span class="k">if</span> <span class="n">visible</span><span class="p">:</span>
 
-<span class="nn">File ~\pyproj\reedgrpmanual\lib\site-packages\rpy2\ipython\rmagic.py:287,</span> in <span class="ni">RMagics.eval</span><span class="nt">(self, code)</span>
-<span class="g g-Whitespace">    </span><span class="mi">284</span> <span class="k">except</span> <span class="p">(</span><span class="n">ri</span><span class="o">.</span><span class="n">embedded</span><span class="o">.</span><span class="n">RRuntimeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">exception</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">285</span>     <span class="c1"># Otherwise next return seems to have copy of error.</span>
-<span class="g g-Whitespace">    </span><span class="mi">286</span>     <span class="n">warning_or_other_msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">287</span>     <span class="k">raise</span> <span class="n">RInterpreterError</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">exception</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">288</span>                             <span class="n">warning_or_other_msg</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">289</span> <span class="n">text_output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">290</span> <span class="k">return</span> <span class="n">text_output</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">visible</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/ipython/rmagic.py:289,</span> in <span class="ni">RMagics.eval</span><span class="nt">(self, code)</span>
+<span class="g g-Whitespace">    </span><span class="mi">286</span> <span class="k">except</span> <span class="p">(</span><span class="n">ri</span><span class="o">.</span><span class="n">embedded</span><span class="o">.</span><span class="n">RRuntimeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">exception</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">287</span>     <span class="c1"># Otherwise next return seems to have copy of error.</span>
+<span class="g g-Whitespace">    </span><span class="mi">288</span>     <span class="n">warning_or_other_msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">289</span>     <span class="k">raise</span> <span class="n">RInterpreterError</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">exception</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">290</span>                             <span class="n">warning_or_other_msg</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">291</span> <span class="n">text_output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span> <span class="k">return</span> <span class="n">text_output</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">visible</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="ne">RInterpreterError</span>: Failed to parse and evaluate line &#39;### R cell using %%R magic\n\nlibrary(ggforce)\nggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +\n    geom_point() +\n    facet_zoom(x = Species == &quot;versicolor&quot;)\n&#39;.
-<span class="n">R</span> <span class="n">error</span> <span class="n">message</span><span class="p">:</span> <span class="s2">&quot;Error in library(ggforce) : there is no package called &#39;ggforce&#39;&quot;</span>
+<span class="n">R</span> <span class="n">error</span> <span class="n">message</span><span class="p">:</span> <span class="s1">&#39;Error in library(ggforce) : there is no package called ‘ggforce’&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -631,16 +642,16 @@ ggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: ".venv"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: ".venv",
             path: "./Section1"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = '.venv'</script>
 
               </div>
               
