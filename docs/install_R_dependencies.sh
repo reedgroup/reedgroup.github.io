@@ -4,4 +4,4 @@
 while IFS=" " read -r package;
 do
 	Rscript -e "install.packages('"$package"')";
-done < "docs/requirements_r.txt"
+done < "/home/fs02/pmr82_0001/rg727/reedgroup.github.io/docs/requirements_r.txt"
