@@ -4,4 +4,4 @@
 while IFS=" " read -r package;
 do
 	Rscript -e "install.packages('"$package"')";
-done < docs/requirements_r.txt"
+done < "docs/requirements_r.txt"
