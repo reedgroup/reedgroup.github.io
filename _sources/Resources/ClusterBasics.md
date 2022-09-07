@@ -10,7 +10,7 @@ Specs on the Cube: https://www.cac.cornell.edu/wiki/index.php?title=THECUBE_Clus
 ## Hopper
 Hopper is a newer cluster that is headed by the Srikrishnan Group in BEE and is shared across four groups: Srikrishnan, Steinschneider, Reed, and Anderson. Any student in Reed Group will also be allowed access to Hopper. In order to get access, email Vivek Srikrishnan and provide your name, email, address, and phone number so that he can register you as a user. You will get an email with your login information and a notice to set a password. 
 
-Specs on the Cube: https://www.cac.cornell.edu/wiki/index.php?title=Hopper_Cluster
+Specs on Hopper: https://www.cac.cornell.edu/wiki/index.php?title=Hopper_Cluster
   
 
 
@@ -21,7 +21,7 @@ In order to access the cluster, which is housed and maintained by Cornell Univer
 
 The easiest way to remote into the above clusters if you are a Windows user is to download MobaXterm here: https://mobaxterm.mobatek.net/. Start the local terminal and then ssh into the terminal as in the following image, but using you own username. 
 
-![mobaxterm](mobaxterm.png "SSH into the Cube Using MobaXterm"){ width=60% }
+![mobaxterm](mobaxterm.png "SSH into the Cube Using MobaXterm")
 
 MobaXterm allows you to see the file structure in the left hand side SFTP which is convenient for navigating.  
 
