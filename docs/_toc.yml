@@ -4,7 +4,7 @@
 format: jb-book
 root: intro
 parts:
-  chapters:
+- chapters:
   - file: ExamplePages/ExamplePages.md
     sections:
     - file: ExamplePages/mdExample.md
