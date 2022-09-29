@@ -1,5 +1,6 @@
 # Group Resources
-
+```{tableofcontents}
+```
 
 ## Computing tools
 - Python
