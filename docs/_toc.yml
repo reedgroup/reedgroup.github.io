@@ -6,7 +6,10 @@ root: intro
 parts:
 - caption: Reed Group Lab Manual
   chapters:
-  - file: Section1/nbExample.ipynb
+  - file: ExamplesPages/ExamplePages.md
+    sections:
+    - file: ExamplePages/mdExample.md
+    - file: ExamplePages/nbExample.ipynb
   - file: Resources/Resources.md
     sections:
     - file: Resources/ClusterBasics.md
@@ -19,7 +22,8 @@ parts:
     - file: Resources/CitationNetworkandDiscovery.md
   - file: Training/Training.md
     sections:
+    - file: Training/Schedule.md
+    - file: Training/Reading.md
     - file: Training/LakeProblem.md
     - file: Training/Training_Fisheries_Part1.md
     - file: Training/Linux_MOEAs_HPC.md
-    - file: Training/TrainingSchedule.md
