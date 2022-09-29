@@ -4,7 +4,6 @@
 format: jb-book
 root: intro
 parts:
-- caption: Reed Group Lab Manual
   chapters:
   - file: ExamplesPages/ExamplePages.md
     sections:

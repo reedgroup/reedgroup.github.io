@@ -19,4 +19,4 @@ e = mc^2
 
 And here comes a cute image!
 
-![capybara and friends](capybaraFriends.jpg "Capybara and friends"){ width=60% }
+![capybara and friends](capybaraFriends.jpg "Capybara and friends")

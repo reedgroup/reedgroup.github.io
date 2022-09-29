@@ -63,7 +63,8 @@ jobs:
 
     # Build the example book
     - name: Build book
-      run: jupyter-book build --all docs/
+      run: jupyter-book clean docs/
+           jupyter-book build --all docs/
 
     # Deploy html to gh-pages
     - name: GitHub Pages action
