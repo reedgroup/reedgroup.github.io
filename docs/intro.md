@@ -8,5 +8,4 @@ The purpose of this site is to help new students and collaborators get up to spe
 
 This manual was created using the Jupyter Books Python package, and is hosted with GitHub Pages. You can find our source code at https://github.com/reedgroup/reedgroup.github.io.
 
-```{tableofcontents}
-```
+```{tableofcontents}```

@@ -1,4 +1,3 @@
 # Example Pages with JupyterBooks
-```{tableofcontents}
-```
+```{tableofcontents}```
 

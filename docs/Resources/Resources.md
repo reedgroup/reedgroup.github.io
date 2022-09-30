@@ -1,4 +1,3 @@
 # Group Resources
-```{tableofcontents}
-```
+```{tableofcontents}```
 
