@@ -497,7 +497,7 @@ title="Print to PDF"
 <section id="quiz">
 <h2>Quiz<a class="headerlink" href="#quiz" title="Permalink to this headline">#</a></h2>
 <p>It’s easy to run Borg but takes effort to understand the inner workings. It’s helpful to make sure that you take time periodically to reflect on what you’re doing in the training exercises.</p>
-<ol class="simple">
+<ol>
 <li><p>Take a look at the makefile in the Borg folder.</p>
 <ul class="simple">
 <li><p>What is a makefile?</p></li>
@@ -510,10 +510,8 @@ title="Print to PDF"
 <li><p>DTLZ2 is a mathematical test case that can be extended to multiple objectives. The script is currently set to run the 2 objective version, but if you want to run the three objective version, change the number of objectives to 3 and number of variables= number of objectives + 9 for this test case specifically.</p></li>
 <li><p>The main function is where the dtlz2 formulation is hooked up to Borg to find the optimal decision variables. Make sure all of this make sense to you because this is how all future problems will be connected to Borg (with slight variations).</p></li>
 </ul>
-</li>
-</ol>
 <p><img alt="mobaxterm" src="../_images/Borg_Main.png" /></p>
-<ol class="simple">
+</li>
 <li><p>If you are confused as to what specific functions mean, take a look at borg.c and borg.h.</p>
 <ul class="simple">
 <li><p>As with every C program, there is a .c file and .h file. The .h file contains the definitions of the functions that make up Borg. The .c file contains the actual implementations of the functions.</p></li>
