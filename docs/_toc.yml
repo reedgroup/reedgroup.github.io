@@ -12,6 +12,7 @@ parts:
   - file: Resources/Resources.md
     sections:
     - file: Resources/ClusterBasics.md
+    - file: Resources/IntroToBorg.md
     - file: Resources/Computing.md
     - file: Resources/Courses.md
     - file: Resources/DataVisualization.md
