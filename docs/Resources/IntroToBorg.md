@@ -26,23 +26,26 @@ In the Borg repository, there is a UserGuide.pdf that can help troubleshoot! Tak
 
 ## Quiz
 
-It's easy to run Borg but takes effort to understand the inner workings. It's helpful to make sure that you take time periodically to reflect on what you're doing in the training exercises.  \
+It's easy to run Borg but takes effort to understand the inner workings. It's helpful to make sure that you take time periodically to reflect on what you're doing in the training exercises.  
 
-a.	Take a look at the makefile in the Borg folder.\
-	i.	What is a makefile? \
-	ii.	To compile the serial version of borg (borg.c), we are using the GNU compiler, gcc. We use mpicc to compile our parallel versions of borg (borgms.c, borgmm.c). You can explore more of what the GNU variables stand for here: https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html\
-	iii. Try to outline and identify the sequence of steps that the makefile is executing to create the borg executables. \
+1.	Take a look at the makefile in the Borg folder.
+
+	-	What is a makefile? 
+	-	To compile the serial version of borg (borg.c), we are using the GNU compiler, gcc. We use mpicc to compile our parallel versions of borg (borgms.c, borgmm.c). You can explore more of what the GNU variables stand for here: https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html 
+	- Try to outline and identify the sequence of steps that the makefile is executing to create the borg executables. 
 
 
-b.	Take a look at the test case, dtlz2_serial.c\
-	i.	DTLZ2 is a mathematical test case that can be extended to multiple objectives. The script is currently set to run the 2 objective version, but if you want to run the three objective version, change the number of objectives to 3 and number of variables= number of objectives + 9 for this test case specifically. \
-	ii.	The main function is where the dtlz2 formulation is hooked up to Borg to find the optimal decision variables. Make sure all of this make sense to you because this is how all future problems will be connected to Borg (with slight variations).\
+2.	Take a look at the test case, dtlz2_serial.c
+
+	-	DTLZ2 is a mathematical test case that can be extended to multiple objectives. The script is currently set to run the 2 objective version, but if you want to run the three objective version, change the number of objectives to 3 and number of variables= number of objectives + 9 for this test case specifically. 
+	-	The main function is where the dtlz2 formulation is hooked up to Borg to find the optimal decision variables. Make sure all of this make sense to you because this is how all future problems will be connected to Borg (with slight variations). 
 
 
 
 ![mobaxterm](Borg_Main.png "Borg main function")
 
 
-c.	If you are confused as to what specific functions mean, take a look at borg.c and borg.h\
-	i. As with every C program, there is a .c file and .h file. The .h file contains the definitions of the functions that make up Borg. The .c file contains the actual implementations of the functions. \
-	ii. Search in the borg.c file for BORG_Algorithm_run. What is this function doing? See if you can map out the components of this function, which is driving the whole optimization. \
+3.	If you are confused as to what specific functions mean, take a look at borg.c and borg.h.
+
+	- As with every C program, there is a .c file and .h file. The .h file contains the definitions of the functions that make up Borg. The .c file contains the actual implementations of the functions. 
+	- Search in the borg.c file for BORG_Algorithm_run. What is this function doing? See if you can map out the components of this function, which is driving the whole optimization. 
