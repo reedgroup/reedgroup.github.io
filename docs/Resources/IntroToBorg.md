@@ -41,8 +41,7 @@ It's easy to run Borg but takes effort to understand the inner workings. It's he
 	-	The main function is where the dtlz2 formulation is hooked up to Borg to find the optimal decision variables. Make sure all of this make sense to you because this is how all future problems will be connected to Borg (with slight variations). 
 
 
-
-![mobaxterm](Borg_Main.png "Borg main function")
+    ![mobaxterm](Borg_Main.png "Borg main function")
 
 
 3.	If you are confused as to what specific functions mean, take a look at borg.c and borg.h.
