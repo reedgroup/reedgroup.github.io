@@ -1,2 +1,3 @@
 # Training
-```{tableofcontents}```
+```{tableofcontents}
+```
