@@ -23,6 +23,7 @@ parts:
     - file: Resources/CitationNetworkandDiscovery.md
     - file: Resources/MOEADiagnostics.md
     - file: Resources/SyntheticWeatherGeneration.md
+    - file: Resoures/BorgWrappers.md
   - file: Training/Training.md
     sections:
     - file: Training/Schedule.md
