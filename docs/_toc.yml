@@ -21,6 +21,8 @@ parts:
     - file: Resources/ReedGroupTools.md
     - file: Resources/WritingProcess.md
     - file: Resources/CitationNetworkandDiscovery.md
+    - file: Resources/MOEADiagnostics.md
+    - file: Resources/SyntheticWeatherGeneration.md
   - file: Training/Training.md
     sections:
     - file: Training/Schedule.md
