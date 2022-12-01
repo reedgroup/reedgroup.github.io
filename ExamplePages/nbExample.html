@@ -518,17 +518,17 @@ title="Print to PDF"
 <p>And here comes some code!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### python is the default for code cells, since we are running a Python3 kernel. This could be changed though.</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>### python is the default for code cells, since we are running a Python3 kernel. This could be changed though.
+import numpy as np
+import matplotlib.pyplot as plt
 
-<span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="mi">1000</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xy</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">xy</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+xy = np.random.multivariate_normal([0,0], [[1, 0.8], [0.8, 1]], 1000)
+plt.scatter(xy[:,0], xy[:,1], alpha=0.3)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fc25c0c9250&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd61915a0a0&gt;
 </pre></div>
 </div>
 <img alt="../_images/nbExample_3_1.png" src="../_images/nbExample_3_1.png" />
@@ -536,7 +536,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%bash
 ## bash cells can be run using %%bash magic
 
 pwd
@@ -551,28 +551,16 @@ pwd
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> rpy2.ipython
-<span class="c1">### Can also use R cells, after installing R and python library rpy2, and loading rpy2.ipython</span>
-<span class="c1">### following https://evodify.com/python-r-bash-jupyter-notebook/</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
-package ‘methods’ was built under R version 4.2.2 
-During startup - Warning messages:
-1: package ‘datasets’ was built under R version 4.2.2 
-2: package ‘utils’ was built under R version 4.2.2 
-3: package ‘grDevices’ was built under R version 4.2.2 
-4: package ‘graphics’ was built under R version 4.2.2 
-5: package ‘stats’ was built under R version 4.2.2 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%load_ext rpy2.ipython
+### Can also use R cells, after installing R and python library rpy2, and loading rpy2.ipython
+### following https://evodify.com/python-r-bash-jupyter-notebook/
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%R
 ### R cell using %%R magic
 
 library(ggforce)
@@ -591,13 +579,13 @@ ggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>  
-    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>  
-        <span class="k">if</span> <span class="p">(</span><span class="n">row</span><span class="o">==</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">col</span> <span class="o">%</span><span class="k">3</span> !=0)or(row==1 and col %3==0) or(row-col==2) or(row+col==8):  
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>  
-        <span class="k">else</span><span class="p">:</span>  
-            <span class="nb">print</span><span class="p">(</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>  
-    <span class="nb">print</span><span class="p">()</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for row in range(6):  
+    for col in range(7):  
+        if (row==0 and col %3 !=0)or(row==1 and col %3==0) or(row-col==2) or(row+col==8):  
+            print(&quot;*&quot;,end=&quot; &quot;)  
+        else:  
+            print(end=&quot; &quot;)  
+    print() 
 </pre></div>
 </div>
 </div>
