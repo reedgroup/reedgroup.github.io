@@ -32,3 +32,4 @@ parts:
     - file: Training/Training_Fisheries_Part1.md
     - file: Training/Linux_MOEAs_HPC.md
     - file: Training/StateMod.md
+    - file: Training/Machine_Learning_Resources.md
