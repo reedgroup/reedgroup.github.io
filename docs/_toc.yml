@@ -24,6 +24,7 @@ parts:
     - file: Resources/MOEADiagnostics.md
     - file: Resources/SyntheticWeatherGeneration.md
     - file: Resoures/BorgWrappers.md
+    - file: Resources/SyntheticStreamflowGeneration.md
   - file: Training/Training.md
     sections:
     - file: Training/Schedule.md

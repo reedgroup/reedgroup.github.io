@@ -28,6 +28,8 @@ One style of study that Reed Group conducts often is called an MOEA Diagnostics.
 - Part 4/4: https://waterprogramming.wordpress.com/2019/08/20/moeaframework-training-part-4-processing-metrics-and-creating-visualizations/
 
 
+5.	One of the more complex diagnostics that can be done is on the multi-master version of Borg. Step-by-step instructions on analyzing master and operator dynamics can be found [here](https://cornell.app.box.com/folder/188733058270)
+
 
 
 
