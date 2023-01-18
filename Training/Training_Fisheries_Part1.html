@@ -208,6 +208,11 @@ const thebe_selector_output = ".output, .cell_output"
      Synthetic Weather Generation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Resources/SyntheticStreamflowGeneration.html">
+     Synthetic Weather Generation
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -817,7 +822,7 @@ z_{t+1} = \sum_{i=1}^n w_i \Big[exp\Big[-\Big(\frac{x_t-c_i}{b_i}\Big)^2\Big]\Bi
 <p>The <code class="docutils literal notranslate"><span class="pre">harvest_strategy()</span></code> function uses the RBF parameter values (i.e., <span class="math notranslate nohighlight">\([c_1, b_1, w_1, c_2, b_2, w_2]\)</span>), and the current prey population, to calculate the next year’s harvesting effort:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="k">def</span> <span class="nf">evaluate_RBF</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">RBF_params</span><span class="p">,</span> <span class="n">nRBFs</span><span class="p">):</span>
-	<span class="sd">&quot;&quot;&quot;</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">	Parameters:</span>
 <span class="sd">	-----------</span>
 <span class="sd">	x : float</span>
@@ -867,7 +872,7 @@ z_{t+1} = \sum_{i=1}^n w_i \Big[exp\Big[-\Big(\frac{x_t-c_i}{b_i}\Big)^2\Big]\Bi
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="k">def</span> <span class="nf">plot_RBF_policy</span><span class="p">(</span><span class="n">x_range</span><span class="p">,</span> <span class="n">x_label</span><span class="p">,</span> <span class="n">y_range</span><span class="p">,</span> <span class="n">y_label</span><span class="p">,</span> <span class="n">RBF_params</span><span class="p">,</span> <span class="n">nRBFs</span><span class="p">):</span>
-	<span class="sd">&quot;&quot;&quot;</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">	Parameters:</span>
 <span class="sd">	-----------</span>
 <span class="sd">	RBF_params : list [3xnRBFs]</span>
@@ -1029,7 +1034,7 @@ $<span class="math notranslate nohighlight">\(O_1 = \frac{1}{N} \sum_{i=1}^N\Big
 <li><p>Calculation of objective scores.</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fish_game_5_objs</span><span class="p">(</span><span class="nb">vars</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Defines the full, 5-objective fish game problem to be solved</span>
 
 <span class="sd">    Parameters</span>
@@ -1168,7 +1173,7 @@ $<span class="math notranslate nohighlight">\(O_1 = \frac{1}{N} \sum_{i=1}^N\Big
 <li><p>Install the <code class="docutils literal notranslate"><span class="pre">platypus</span></code> library. This can be in done via your command line by running one of two options: <br>
 If you are using <code class="docutils literal notranslate"><span class="pre">pip</span></code></p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install platypus-opt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>platypus-opt
 </pre></div>
 </div>
 <p>If you are using <code class="docutils literal notranslate"><span class="pre">conda</span></code></p>
@@ -1217,7 +1222,7 @@ b) <code class="docutils literal notranslate"><span class="pre">Part</span> <spa
 <h3>Initialize the problem for optimization<a class="headerlink" href="#initialize-the-problem-for-optimization" title="Permalink to this headline">#</a></h3>
 <p>We call the <code class="docutils literal notranslate"><span class="pre">fisheries_game_problem_setup.py</span></code> function to set up the optimization problem. This function returns a PyBorg object called <code class="docutils literal notranslate"><span class="pre">algorithm</span></code> in this exercise that will be optimized in the next step.<br></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fisheries_game_problem_setup</span><span class="p">(</span><span class="n">nVars</span><span class="p">,</span> <span class="n">nObjs</span><span class="p">,</span> <span class="n">nCnstr</span><span class="p">,</span> <span class="n">pop_size</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Sets up and runs the fisheries game for a given population size</span>
 
 <span class="sd">    Parameters</span>

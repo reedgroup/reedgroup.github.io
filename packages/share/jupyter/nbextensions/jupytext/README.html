@@ -204,6 +204,11 @@ const thebe_selector_output = ".output, .cell_output"
      Synthetic Weather Generation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../../Resources/SyntheticStreamflowGeneration.html">
+     Synthetic Weather Generation
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -487,8 +492,8 @@ title="Print to PDF"
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
 <p>The extension requires <a class="reference external" href="https://github.com/mwouts/jupytext/blob/master/README.md">Jupytext</a>. Please make sure that Jupytext is installed on you system, and that its contents manager is active, i.e. that Markdown files and scripts are displayed with a notebook icon.</p>
 <p>Installing Jupytext activates the Jupytext Menu by default. If you want to install and activate it manually, use the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter nbextension install --py jupytext
-jupyter nbextension <span class="nb">enable</span> --py jupytext
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>nbextension<span class="w"> </span>install<span class="w"> </span>--py<span class="w"> </span>jupytext
+jupyter<span class="w"> </span>nbextension<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--py<span class="w"> </span>jupytext
 </pre></div>
 </div>
 <p>Add <code class="docutils literal notranslate"><span class="pre">--user</span></code> to these commands if you want to activate the extension only for the current user.</p>
@@ -496,9 +501,9 @@ jupyter nbextension <span class="nb">enable</span> --py jupytext
 <section id="how-to-develop-this-extension">
 <h2>How to develop this extension<a class="headerlink" href="#how-to-develop-this-extension" title="Permalink to this headline">#</a></h2>
 <p>If you wish to develop this extension, install the javascript file locally with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> jupytext/nbextension
-jupyter nbextension install index.js --symlink --user
-jupyter nbextension <span class="nb">enable</span> index --user
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>jupytext/nbextension
+jupyter<span class="w"> </span>nbextension<span class="w"> </span>install<span class="w"> </span>index.js<span class="w"> </span>--symlink<span class="w"> </span>--user
+jupyter<span class="w"> </span>nbextension<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>index<span class="w"> </span>--user
 </pre></div>
 </div>
 <p>Then, make the desired changes to <code class="docutils literal notranslate"><span class="pre">index.js</span></code> and reload the extension by simply refreshing the notebook (Ctrl+R). In case your OS does not allow symlinks, edit the copy of <code class="docutils literal notranslate"><span class="pre">index.js</span></code> that is actually used by Jupyter (refer to the output of <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">nbextension</span> <span class="pre">install</span> <span class="pre">--user</span> <span class="pre">index.js</span></code>).</p>

@@ -208,6 +208,11 @@ const thebe_selector_output = ".output, .cell_output"
      Synthetic Weather Generation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Resources/SyntheticStreamflowGeneration.html">
+     Synthetic Weather Generation
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -528,17 +533,17 @@ title="Print to PDF"
 <p>And here comes some code!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>### python is the default for code cells, since we are running a Python3 kernel. This could be changed though.
-import numpy as np
-import matplotlib.pyplot as plt
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### python is the default for code cells, since we are running a Python3 kernel. This could be changed though.</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-xy = np.random.multivariate_normal([0,0], [[1, 0.8], [0.8, 1]], 1000)
-plt.scatter(xy[:,0], xy[:,1], alpha=0.3)
+<span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xy</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">xy</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f4cb415da30&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fc2bcf8f9d0&gt;
 </pre></div>
 </div>
 <img alt="../_images/nbExample_3_1.png" src="../_images/nbExample_3_1.png" />
@@ -546,7 +551,7 @@ plt.scatter(xy[:,0], xy[:,1], alpha=0.3)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%bash
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
 ## bash cells can be run using %%bash magic
 
 pwd
@@ -561,16 +566,16 @@ pwd
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%load_ext rpy2.ipython
-### Can also use R cells, after installing R and python library rpy2, and loading rpy2.ipython
-### following https://evodify.com/python-r-bash-jupyter-notebook/
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> rpy2.ipython
+<span class="c1">### Can also use R cells, after installing R and python library rpy2, and loading rpy2.ipython</span>
+<span class="c1">### following https://evodify.com/python-r-bash-jupyter-notebook/</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%R
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
 ### R cell using %%R magic
 
 library(ggforce)
@@ -584,21 +589,18 @@ ggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R[write to console]: Loading required package: ggplot2
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R[write to console]: Need help? Try Stackoverflow: https://stackoverflow.com/tags/ggplot2
-</pre></div>
-</div>
-<img alt="../_images/nbExample_6_2.png" src="../_images/nbExample_6_2.png" />
+<img alt="../_images/nbExample_6_1.png" src="../_images/nbExample_6_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for row in range(6):  
-    for col in range(7):  
-        if (row==0 and col %3 !=0)or(row==1 and col %3==0) or(row-col==2) or(row+col==8):  
-            print(&quot;*&quot;,end=&quot; &quot;)  
-        else:  
-            print(end=&quot; &quot;)  
-    print() 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>  
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>  
+        <span class="k">if</span> <span class="p">(</span><span class="n">row</span><span class="o">==</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">col</span> <span class="o">%</span><span class="k">3</span> !=0)or(row==1 and col %3==0) or(row-col==2) or(row+col==8):  
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>  
+        <span class="k">else</span><span class="p">:</span>  
+            <span class="nb">print</span><span class="p">(</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>  
+    <span class="nb">print</span><span class="p">()</span> 
 </pre></div>
 </div>
 </div>
