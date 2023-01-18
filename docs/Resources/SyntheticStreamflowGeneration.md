@@ -1,4 +1,4 @@
-# Synthetic Weather Generation
+# Synthetic Streamflow Generation
 
 There are a series of excellent blog posts that step through different types of synthetic streamflow generation techniques that the group often uses. 
 
