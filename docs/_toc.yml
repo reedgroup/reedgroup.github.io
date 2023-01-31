@@ -5,10 +5,6 @@ format: jb-book
 root: intro.md
 parts:
 - chapters:
-  - file: ExamplePages/ExamplePages.md
-    sections:
-    - file: ExamplePages/mdExample.md
-    - file: ExamplePages/nbExample.ipynb
   - file: Resources/Resources.md
     sections:
     - file: Resources/ClusterBasics.md
@@ -17,6 +13,7 @@ parts:
     - file: Resources/Computing.md
     - file: Resources/Courses.md
     - file: Resources/DataVisualization.md
+    - file: Resources/Sphinx_JB_GHA_GHP.md
     - file: Resources/LifeAtCornell.md
     - file: Resources/ReedGroupTools.md
     - file: Resources/WritingProcess.md
@@ -35,3 +32,8 @@ parts:
     - file: Training/StateMod.md
     - file: Training/python_crash_course.md
     - file: Training/Machine_Learning_Resources.md
+  - file: Contributing/Contributing.md
+    sections:
+    - file: Contributing/Instructions.md
+    - file: Contributing/mdExample.md
+    - file: Contributing/nbExample.ipynb
