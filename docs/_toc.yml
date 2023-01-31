@@ -13,7 +13,7 @@ parts:
     - file: Resources/Computing.md
     - file: Resources/Courses.md
     - file: Resources/DataVisualization.md
-    - file: Resources/Sphinx_JB_GHA_GHP.md
+    - file: Resources/Websites.md
     - file: Resources/LifeAtCornell.md
     - file: Resources/ReedGroupTools.md
     - file: Resources/WritingProcess.md
