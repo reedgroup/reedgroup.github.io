@@ -1,4 +1,4 @@
-# Contributing to the lab manual
+# Instructions on contributing to the lab manual
 This lab manual is built using [Jupyter Books](https://jupyterbook.org/en/stable/intro.html), a Python-based static site generator built around markdown and Jupyter Notebooks. To contribute, you will need to be a verified member of the reedgroup GitHub organization. Assuming this is the case, you can contribute by following these steps:
 
 - Initial setup
