@@ -5,22 +5,24 @@ format: jb-book
 root: intro.md
 parts:
 - chapters:
-  - file: ExamplePages/ExamplePages.md
-    sections:
-    - file: ExamplePages/mdExample.md
-    - file: ExamplePages/nbExample.ipynb
   - file: Resources/Resources.md
     sections:
     - file: Resources/ClusterBasics.md
     - file: Resources/IntroToLinux.md
     - file: Resources/IntroToBorg.md
     - file: Resources/Computing.md
+    - file: Resources/CitationReferenceManagementTools.md
     - file: Resources/Courses.md
     - file: Resources/DataVisualization.md
+    - file: Resources/Websites.md
     - file: Resources/LifeAtCornell.md
     - file: Resources/ReedGroupTools.md
     - file: Resources/WritingProcess.md
     - file: Resources/CitationNetworkandDiscovery.md
+    - file: Resources/MOEADiagnostics.md
+    - file: Resources/SyntheticWeatherGeneration.md
+    - file: Resoures/BorgWrappers.md
+    - file: Resources/SyntheticStreamflowGeneration.md
   - file: Training/Training.md
     sections:
     - file: Training/Schedule.md
@@ -28,3 +30,11 @@ parts:
     - file: Training/LakeProblem.md
     - file: Training/Training_Fisheries_Part1.md
     - file: Training/Linux_MOEAs_HPC.md
+    - file: Training/StateMod.md
+    - file: Training/python_crash_course.md
+    - file: Training/Machine_Learning_Resources.md
+  - file: Contributing/Contributing.md
+    sections:
+    - file: Contributing/Instructions.md
+    - file: Contributing/mdExample.md
+    - file: Contributing/nbExample.ipynb
