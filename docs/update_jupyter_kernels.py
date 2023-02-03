@@ -1,5 +1,5 @@
 ### script to update the kernel for all Jupyter notebooks to user-specified name, given as argv
-### this will be run by GitHub action bto set to .venv efore deploying website. Can also be run by user if their env has different name.
+### this will be run by GitHub Action to set Kernel to .venv before deploying website. Can also be run by user if their env has different name.
 import glob
 import json
 import sys
