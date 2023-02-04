@@ -12,12 +12,12 @@ here](https://mybinder.org/v2/gh/lbl59/lab_manual_resources.git/HEAD). After com
 6. Apply the CSV, NumPy, Pandas, and Matplotlib packages for data analysis and visualization
 
 You will find that the Binder contains the following files and their contents:
-1. [Getting Started with Python and Pandas I.ipynb](https://hub-binder.mybinder.ovh/user/lbl59-lab_manual_resources-4arakzxg/lab/tree/Getting%20started%20with%20Python%20and%20Pandas%20I.ipynb)
+1. [Getting Started with Python and Pandas I.ipynb](https://mybinder.org/v2/gh/lbl59/lab_manual_resources/65924fc71a0573165f97eee04f18f1076473d6ad?urlpath=lab%2Ftree%2FGetting%20started%20with%20Python%20and%20Pandas%20I.ipynb)
 	- Introduction to Python
 	- Python Data Types
 	- Using the CSV Package
 	- Using the NumPy Package
-2. [Getting Started with Python and Pandas II.ipynb](https://hub-binder.mybinder.ovh/user/lbl59-lab_manual_resources-4arakzxg/lab/tree/Getting%20started%20with%20Python%20and%20Pandas%20II.ipynb)
+2. [Getting Started with Python and Pandas II.ipynb](https://mybinder.org/v2/gh/lbl59/lab_manual_resources/65924fc71a0573165f97eee04f18f1076473d6ad?urlpath=lab%2Ftree%2FGetting%20started%20with%20Python%20and%20Pandas%20II.ipynb)
 	- Using the Pandas Package I
 	- Using the Pandas Package II
 	- Using the Matplotlib Package
