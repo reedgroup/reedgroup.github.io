@@ -32,6 +32,7 @@ parts:
     - file: Training/Linux_MOEAs_HPC.md
     - file: Training/StateMod.md
     - file: Training/python_crash_course.md
+    - file: Training/intro_to_sensitivity_analysis.md
     - file: Training/Machine_Learning_Resources.md
   - file: Contributing/Contributing.md
     sections:
