@@ -10,6 +10,7 @@ parts:
     - file: Resources/ClusterBasics.md
     - file: Resources/IntroToLinux.md
     - file: Resources/IntroToBorg.md
+    - file: Resources/IntroToGitHub.md
     - file: Resources/Computing.md
     - file: Resources/CitationReferenceManagementTools.md
     - file: Resources/Courses.md
@@ -18,7 +19,6 @@ parts:
     - file: Resources/LifeAtCornell.md
     - file: Resources/ReedGroupTools.md
     - file: Resources/WritingProcess.md
-    - file: Resources/CitationNetworkandDiscovery.md
     - file: Resources/MOEADiagnostics.md
     - file: Resources/SyntheticWeatherGeneration.md
     - file: Resoures/BorgWrappers.md
