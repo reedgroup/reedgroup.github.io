@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Fisheries Training Part 1 - Harvest Optimization and MOEA Diagnostics &#8212; Reed group lab manual</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -52,61 +63,93 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Training/Training_Fisheries_Part1';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Getting starting with MOEAs" href="Linux_MOEAs_HPC.html" />
     <link rel="prev" title="The Shallow Lake Problem" href="LakeProblem.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Reed group lab manual</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -116,686 +159,296 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Resources/Resources.html">
-   Group Resources
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Resources/ClusterBasics.html">
-     Cluster Basics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Resources/IntroToLinux.html">
-     Introduction to Linux
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Resources/IntroToBorg.html">
-     Introduction to Borg
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Resources/IntroToGitHub.html">
-     Introduction to Git &amp; GitHub
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Resources/Computing.html">
-     Get Started Coding
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Resources/CitationReferenceManagementTools.html">
-     Citation and Reference Management Tools
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Resources/Courses.html">
-     Annotated Course List
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Resources/DataVisualization.html">
-     Data visualization best practices
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Resources/Websites.html">
-     Building and deploying websites with Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Resources/LifeAtCornell.html">
-     Some info on life here at Cornell
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Resources/ReedGroupTools.html">
-     Tools by current and former group members
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Resources/WritingProcess.html">
-     Tips for writing your first paper
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Resources/MOEADiagnostics.html">
-     Introduction to MOEA Diagnostics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Resources/SyntheticWeatherGeneration.html">
-     Synthetic Weather Generation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Resources/SyntheticStreamflowGeneration.html">
-     Synthetic Streamflow Generation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="Training.html">
-   Training
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="Schedule.html">
-     Suggested training schedule
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Reading.html">
-     Suggested reading
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="LakeProblem.html">
-     The Shallow Lake Problem
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Fisheries Training Part 1 - Harvest Optimization and MOEA Diagnostics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Linux_MOEAs_HPC.html">
-     Getting starting with MOEAs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="StateMod.html">
-     Getting starting with StateMod
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="python_crash_course.html">
-     Crash Course in Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="intro_to_sensitivity_analysis.html">
-     Introduction to Sensitivity Analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Machine_Learning_Resources.html">
-     Machine Learning Resources
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Contributing/Contributing.html">
-   Contributing to this lab manual
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Contributing/Instructions.html">
-     Instructions on contributing to the lab manual
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Contributing/mdExample.html">
-     Markdown example
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Contributing/nbExample.html">
-     Jupyter notebook example
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Resources/Resources.html">Group Resources</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Resources/ClusterBasics.html">Cluster Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Resources/IntroToLinux.html">Introduction to Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Resources/IntroToBorg.html">Introduction to Borg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Resources/IntroToGitHub.html">Introduction to Git &amp; GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Resources/Computing.html">Get Started Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Resources/CitationReferenceManagementTools.html">Citation and Reference Management Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Resources/Courses.html">Annotated Course List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Resources/DataVisualization.html">Data visualization best practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Resources/Websites.html">Building and deploying websites with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Resources/LifeAtCornell.html">Some info on life here at Cornell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Resources/ReedGroupTools.html">Tools by current and former group members</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Resources/WritingProcess.html">Tips for writing your first paper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Resources/MOEADiagnostics.html">Introduction to MOEA Diagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Resources/SyntheticWeatherGeneration.html">Synthetic Weather Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Resources/SyntheticStreamflowGeneration.html">Synthetic Streamflow Generation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Training.html">Training</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Schedule.html">Suggested training schedule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Reading.html">Suggested reading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LakeProblem.html">The Shallow Lake Problem</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Fisheries Training Part 1 - Harvest Optimization and MOEA Diagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux_MOEAs_HPC.html">Getting starting with MOEAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="StateMod.html">Getting starting with StateMod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_crash_course.html">Crash Course in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_to_sensitivity_analysis.html">Introduction to Sensitivity Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Machine_Learning_Resources.html">Machine Learning Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Contributing/Contributing.html">Contributing to this lab manual</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Contributing/Instructions.html">Instructions on contributing to the lab manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Contributing/mdExample.html">Markdown example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Contributing/nbExample.html">Jupyter notebook example</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/reedgroup/reedgroup.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/reedgroup/reedgroup.github.io/issues/new?title=Issue%20on%20page%20%2FTraining/Training_Fisheries_Part1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Training/Training_Fisheries_Part1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/reedgroup/reedgroup.github.io"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/reedgroup/reedgroup.github.io/issues/new?title=Issue%20on%20page%20%2FTraining/Training_Fisheries_Part1.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/Training/Training_Fisheries_Part1.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#harvested-predator-prey-model">
-   Harvested predator-prey model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#harvesting-policy">
-   Harvesting policy
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#radial-basis-functions">
-     Radial basis functions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#harvest-strategy-objectives-trevor">
-   Harvest strategy objectives (Trevor)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objective-1-maximize-net-present-value">
-     Objective #1: Maximize net present value
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objective-2-minimize-prey-population-deficit">
-     Objective #2: Minimize prey population deficit
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objective-3-minimize-longest-duration-of-consecutive-low-harvest">
-     Objective #3: Minimize longest duration of consecutive low harvest
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objective-4-minimize-worst-harvest-instance">
-     Objective #4: Minimize worst harvest instance
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objective-5-minimize-harvest-variance">
-     Objective #5: Minimize harvest variance
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#constraint-avoid-collapse-of-predator-population">
-     Constraint: avoid collapse of predator population
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-formulation">
-     Problem formulation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simulation-model-of-the-harvested-system">
-   Simulation model of the harvested system
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-very-brief-overview-of-pyborg">
-   A (Very) Brief Overview of PyBorg
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#installation">
-   Installation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#optimization-of-the-fisheries-game">
-   Optimization of the Fisheries Game
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#import-all-libraries">
-     Import all libraries
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#formulating-the-problem">
-     Formulating the problem
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#initialize-the-problem-for-optimization">
-     Initialize the problem for optimization
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#define-parameters-for-optimization">
-     Define parameters for optimization
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#begin-the-optimization">
-     Begin the optimization
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plot-the-tradeoff-surface">
-     Plot the tradeoff surface
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#moea-diagnostics">
-   MOEA Diagnostics
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hypervolume">
-     Hypervolume
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#defining-hypervolume-parameters">
-       Defining hypervolume parameters
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#plotting-the-hypervolume">
-       Plotting the hypervolume
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#perform-random-seed-analysis">
-       Perform random seed analysis
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conclusion">
-   Conclusion
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Fisheries Training Part 1 - Harvest Optimization and MOEA Diagnostics</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#harvested-predator-prey-model">
-   Harvested predator-prey model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#harvesting-policy">
-   Harvesting policy
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#radial-basis-functions">
-     Radial basis functions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#harvest-strategy-objectives-trevor">
-   Harvest strategy objectives (Trevor)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objective-1-maximize-net-present-value">
-     Objective #1: Maximize net present value
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objective-2-minimize-prey-population-deficit">
-     Objective #2: Minimize prey population deficit
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objective-3-minimize-longest-duration-of-consecutive-low-harvest">
-     Objective #3: Minimize longest duration of consecutive low harvest
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objective-4-minimize-worst-harvest-instance">
-     Objective #4: Minimize worst harvest instance
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objective-5-minimize-harvest-variance">
-     Objective #5: Minimize harvest variance
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#constraint-avoid-collapse-of-predator-population">
-     Constraint: avoid collapse of predator population
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-formulation">
-     Problem formulation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simulation-model-of-the-harvested-system">
-   Simulation model of the harvested system
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-very-brief-overview-of-pyborg">
-   A (Very) Brief Overview of PyBorg
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#installation">
-   Installation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#optimization-of-the-fisheries-game">
-   Optimization of the Fisheries Game
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#import-all-libraries">
-     Import all libraries
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#formulating-the-problem">
-     Formulating the problem
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#initialize-the-problem-for-optimization">
-     Initialize the problem for optimization
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#define-parameters-for-optimization">
-     Define parameters for optimization
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#begin-the-optimization">
-     Begin the optimization
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plot-the-tradeoff-surface">
-     Plot the tradeoff surface
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#moea-diagnostics">
-   MOEA Diagnostics
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hypervolume">
-     Hypervolume
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#defining-hypervolume-parameters">
-       Defining hypervolume parameters
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#plotting-the-hypervolume">
-       Plotting the hypervolume
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#perform-random-seed-analysis">
-       Perform random seed analysis
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conclusion">
-   Conclusion
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fisheries Training Part 1 - Harvest Optimization and MOEA Diagnostics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harvested-predator-prey-model">Harvested predator-prey model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harvesting-policy">Harvesting policy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#radial-basis-functions">Radial basis functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harvest-strategy-objectives-trevor">Harvest strategy objectives (Trevor)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-1-maximize-net-present-value">Objective #1: Maximize net present value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-2-minimize-prey-population-deficit">Objective #2: Minimize prey population deficit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-3-minimize-longest-duration-of-consecutive-low-harvest">Objective #3: Minimize longest duration of consecutive low harvest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-4-minimize-worst-harvest-instance">Objective #4: Minimize worst harvest instance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-5-minimize-harvest-variance">Objective #5: Minimize harvest variance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constraint-avoid-collapse-of-predator-population">Constraint: avoid collapse of predator population</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-formulation">Problem formulation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-model-of-the-harvested-system">Simulation model of the harvested system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-very-brief-overview-of-pyborg">A (Very) Brief Overview of PyBorg</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-of-the-fisheries-game">Optimization of the Fisheries Game</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-all-libraries">Import all libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formulating-the-problem">Formulating the problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-the-problem-for-optimization">Initialize the problem for optimization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-parameters-for-optimization">Define parameters for optimization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-the-optimization">Begin the optimization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-tradeoff-surface">Plot the tradeoff surface</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moea-diagnostics">MOEA Diagnostics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hypervolume">Hypervolume</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-hypervolume-parameters">Defining hypervolume parameters</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-hypervolume">Plotting the hypervolume</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-random-seed-analysis">Perform random seed analysis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="fisheries-training-part-1-harvest-optimization-and-moea-diagnostics">
-<h1>Fisheries Training Part 1 - Harvest Optimization and MOEA Diagnostics<a class="headerlink" href="#fisheries-training-part-1-harvest-optimization-and-moea-diagnostics" title="Permalink to this headline">#</a></h1>
+<h1>Fisheries Training Part 1 - Harvest Optimization and MOEA Diagnostics<a class="headerlink" href="#fisheries-training-part-1-harvest-optimization-and-moea-diagnostics" title="Permalink to this heading">#</a></h1>
 <p>This is the second post in a training series, studying decision making under deep uncertainty within the context of a complex harvested predator-prey fishery.</p>
 <p>The first post in this training series, <a class="reference external" href="https://waterprogramming.wordpress.com/2022/07/11/__trashed-3/">Fisheries Training 0: Exploring Predator-Prey Dynamics, can be found here</a>.</p>
 <p>The GitHub repository, containing all of the source code used throughout this series, is available <a class="reference external" href="https://github.com/TrevorJA/harvested_predator_prey_system_tutorial_series">here</a>.</p>
 <p>This post builds off of the initial post, and presents the following:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>A brief re-cap of the harvested predator-prey model</p></li>
 <li><p>Formulation of the harvesting policy (radial basis functions)</p></li>
 <li><p>Formulation of the policy objectives</p></li>
 <li><p>A simulation model for the harvested system</p></li>
 <li><p>Optimization of the harvesting policy using the PyBorg MOEA</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Installation of Platypus and PyBorg*</p></li>
 <li><p>Optimization problem formulation</p></li>
 <li><p>Basic MOEA diagnostics</p></li>
@@ -808,7 +461,7 @@ title="Print to PDF"
 </div></blockquote>
 <p>Now, onto the tutorial.</p>
 <section id="harvested-predator-prey-model">
-<h2>Harvested predator-prey model<a class="headerlink" href="#harvested-predator-prey-model" title="Permalink to this headline">#</a></h2>
+<h2>Harvested predator-prey model<a class="headerlink" href="#harvested-predator-prey-model" title="Permalink to this heading">#</a></h2>
 <p>In the previous post, we introduced a modified form of the Lotka-Volterra system of ordinary differential equations (ODEs) defining predator-prey population dynamics.</p>
 <p>This modified version includes a non-linear predator population growth dynamic original proposed by Arditi and Akçakaya (1990), and includes a harvesting parameter, <span class="math notranslate nohighlight">\(z\)</span>. This system of equations is defined in <a class="reference external" href="https://www.hindawi.com/journals/complexity/2020/4170453/">Hadjimichael et al. (2020)</a> as:</p>
 <div class="math notranslate nohighlight">
@@ -825,13 +478,13 @@ title="Print to PDF"
 <p>The purpose of this post is to focus on the generation of <em>harvesting policies</em> which can be operated safely in the system without causing population collapse.</p>
 </section>
 <section id="harvesting-policy">
-<h2>Harvesting policy<a class="headerlink" href="#harvesting-policy" title="Permalink to this headline">#</a></h2>
+<h2>Harvesting policy<a class="headerlink" href="#harvesting-policy" title="Permalink to this heading">#</a></h2>
 <p>Rather than assigning a deterministic, or specific harvest effort level for every time period, we can design an <em>adaptive</em> policy which is a function of the current state of the system:
 $<span class="math notranslate nohighlight">\(\tag{2.0} z_t = f(\cdot) \)</span>$</p>
 <p>The problem then becomes the optimization of the control rule, <span class="math notranslate nohighlight">\(f(\cdot)\)</span>, rather than the specific values, <span class="math notranslate nohighlight">\(z = (z_0, z_1,..., z_T)\)</span>. This process of optimizing the parameters of a state-aware control rule is referred to as <em>direct policy search</em>.</p>
 <p>Previous work done by <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1364815216302250">Quinn et al. (2017)</a> showed that an adaptive policy, generated using a direct policy search, was able to navigate deeply uncertain ecological tipping points more reliably than intertemporal policies which prescribed specific efforts at each timestep.</p>
 <section id="radial-basis-functions">
-<h3>Radial basis functions<a class="headerlink" href="#radial-basis-functions" title="Permalink to this headline">#</a></h3>
+<h3>Radial basis functions<a class="headerlink" href="#radial-basis-functions" title="Permalink to this heading">#</a></h3>
 <p><strong>Radial basis functions (RBFs)</strong> are flexible, parametric function formulations which can map the state of the system to policy action. Previous study by <a class="reference external" href="https://drive.google.com/file/d/1_sQL84YnmQvwpruedQWECOjLaFjFXth7/view">Giuliani et al (2015)</a> has shown that RBFs are highly effective in generating Pareto-approximate sets of solutions, and that they perform well when applied to horizons different from the optimized simulation horizon.</p>
 <p>There are various RBFs available, such as the <em>cubic RBF</em> used by Quinn et al. (2017).  Here, we use the Gaussian RBF initially used by Hadjimichael et al. (2020), where the harvest effort during the next timestep, <span class="math notranslate nohighlight">\(z_{t+1}\)</span>, is mapped to the current prey population levels, <span class="math notranslate nohighlight">\(x_t\)</span> by the function:</p>
 <div class="math notranslate nohighlight">
@@ -967,11 +620,11 @@ z_{t+1} = \sum_{i=1}^n w_i \Big[exp\Big[-\Big(\frac{x_t-c_i}{b_i}\Big)^2\Big]\Bi
 </section>
 </section>
 <section id="harvest-strategy-objectives-trevor">
-<h2>Harvest strategy objectives (Trevor)<a class="headerlink" href="#harvest-strategy-objectives-trevor" title="Permalink to this headline">#</a></h2>
+<h2>Harvest strategy objectives (Trevor)<a class="headerlink" href="#harvest-strategy-objectives-trevor" title="Permalink to this heading">#</a></h2>
 <p>We take a multi-objective approach to the generation of a harvesting strategy. Given that the populations are vulnerable to collapse, it is important to consider ecological objectives in the problem formulation.</p>
 <p>Here, we consider five objectives, described below.</p>
 <section id="objective-1-maximize-net-present-value">
-<h3>Objective #1: Maximize net present value<a class="headerlink" href="#objective-1-maximize-net-present-value" title="Permalink to this headline">#</a></h3>
+<h3>Objective #1: Maximize net present value<a class="headerlink" href="#objective-1-maximize-net-present-value" title="Permalink to this heading">#</a></h3>
 <p>The net present value is an economic objective corresponding to the amount of fish harvested.</p>
 <p>During the simulation-optimization process (later in this post), we simulate a single policy <span class="math notranslate nohighlight">\(N\)</span> times, and take the <em>average</em> objective score over the range of simulations. This method helps to account for variability in expected outcomes due to natural stochasticity. Here, we use <span class="math notranslate nohighlight">\(N = 100\)</span> realizations of stochasticity.</p>
 <p>With that in mind, the NPV (<span class="math notranslate nohighlight">\(O_1\)</span>) is calculated as:
@@ -980,14 +633,14 @@ $<span class="math notranslate nohighlight">\(O_1 = \frac{1}{N} \sum_{i=1}^N\Big
 <br />
 </section>
 <section id="objective-2-minimize-prey-population-deficit">
-<h3>Objective #2: Minimize prey population deficit<a class="headerlink" href="#objective-2-minimize-prey-population-deficit" title="Permalink to this headline">#</a></h3>
+<h3>Objective #2: Minimize prey population deficit<a class="headerlink" href="#objective-2-minimize-prey-population-deficit" title="Permalink to this heading">#</a></h3>
 <p>The second objective aims to minimize the average prey population deficit, relative to the prey population carrying capacity, <span class="math notranslate nohighlight">\(K\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[O_2 = \frac{1}{N} \sum_{i=1}^N\Big( \frac{1}{T} \sum_{t=1}^T \frac{K - x_{t,i}}{K}\Big)\]</div>
 <br />
 </section>
 <section id="objective-3-minimize-longest-duration-of-consecutive-low-harvest">
-<h3>Objective #3: Minimize longest duration of consecutive low harvest<a class="headerlink" href="#objective-3-minimize-longest-duration-of-consecutive-low-harvest" title="Permalink to this headline">#</a></h3>
+<h3>Objective #3: Minimize longest duration of consecutive low harvest<a class="headerlink" href="#objective-3-minimize-longest-duration-of-consecutive-low-harvest" title="Permalink to this heading">#</a></h3>
 <p>In order to maintain steady harvesting levels, we minimize the longest duration of consecutive low harvest. Here, a subjective definition of <em>low harvest</em> is imposed. In a practical decision making process, this threshold may be solicited from the relevant stakeholders.</p>
 <p>Objective #3 is defined as:</p>
 <div class="math notranslate nohighlight">
@@ -1006,7 +659,7 @@ $<span class="math notranslate nohighlight">\(O_1 = \frac{1}{N} \sum_{i=1}^N\Big
 <br />
 </section>
 <section id="objective-4-minimize-worst-harvest-instance">
-<h3>Objective #4: Minimize worst harvest instance<a class="headerlink" href="#objective-4-minimize-worst-harvest-instance" title="Permalink to this headline">#</a></h3>
+<h3>Objective #4: Minimize worst harvest instance<a class="headerlink" href="#objective-4-minimize-worst-harvest-instance" title="Permalink to this heading">#</a></h3>
 <p>In addition to avoiding long periods of continuously low harvest, the stakeholders have a desire to limit financial risks associated with very low harvests. Here, we minimize the <em>worst 1%</em> of harvest.</p>
 <p>The fourth objective is defined as:</p>
 <div class="math notranslate nohighlight">
@@ -1014,7 +667,7 @@ $<span class="math notranslate nohighlight">\(O_1 = \frac{1}{N} \sum_{i=1}^N\Big
 <br />
 </section>
 <section id="objective-5-minimize-harvest-variance">
-<h3>Objective #5: Minimize harvest variance<a class="headerlink" href="#objective-5-minimize-harvest-variance" title="Permalink to this headline">#</a></h3>
+<h3>Objective #5: Minimize harvest variance<a class="headerlink" href="#objective-5-minimize-harvest-variance" title="Permalink to this heading">#</a></h3>
 <p>Lastly, policies which result in low harvest variance are more easily implemented, and can limit corresponding variance in fish populations.</p>
 <p>The last objective minimizes the harvest variance, with the objective score defined as:</p>
 <div class="math notranslate nohighlight">
@@ -1022,7 +675,7 @@ $<span class="math notranslate nohighlight">\(O_1 = \frac{1}{N} \sum_{i=1}^N\Big
 <br />
 </section>
 <section id="constraint-avoid-collapse-of-predator-population">
-<h3>Constraint: avoid collapse of predator population<a class="headerlink" href="#constraint-avoid-collapse-of-predator-population" title="Permalink to this headline">#</a></h3>
+<h3>Constraint: avoid collapse of predator population<a class="headerlink" href="#constraint-avoid-collapse-of-predator-population" title="Permalink to this heading">#</a></h3>
 <p>During the optimization process, we are able to include <em>constraints</em> on the harvesting policies.</p>
 <p>Since population collapse is a stable equilibrium point, from which the population will not regrow, it is imperative to consider policies which prevent collapse.</p>
 <p>With this in mind, the policy must not result in <em>any</em> population collapse across the <span class="math notranslate nohighlight">\(N\)</span> realizations of environmental stochasticity.  Mathematically, this is enforced by:</p>
@@ -1041,19 +694,19 @@ $<span class="math notranslate nohighlight">\(O_1 = \frac{1}{N} \sum_{i=1}^N\Big
 <br />
 </section>
 <section id="problem-formulation">
-<h3>Problem formulation<a class="headerlink" href="#problem-formulation" title="Permalink to this headline">#</a></h3>
+<h3>Problem formulation<a class="headerlink" href="#problem-formulation" title="Permalink to this heading">#</a></h3>
 <p>Given the objectives described above, the optimization problem is:</p>
 <div class="math notranslate nohighlight">
 \[Minimize \ F(z_x) = (-O_1, O_2, O_3, -O_4, O_5)\]</div>
 </section>
 </section>
 <section id="simulation-model-of-the-harvested-system">
-<h2>Simulation model of the harvested system<a class="headerlink" href="#simulation-model-of-the-harvested-system" title="Permalink to this headline">#</a></h2>
+<h2>Simulation model of the harvested system<a class="headerlink" href="#simulation-model-of-the-harvested-system" title="Permalink to this heading">#</a></h2>
 <p>Here, I provide an overview of the <code class="docutils literal notranslate"><span class="pre">fish_game_5_objs()</span></code> model which combines many of the preceding topics. The goal for this model is to take a set of RBF parameters, which define the harvesting strategy, simulate the policy for some length of time, and then return the objective scores resulting from the policy.</p>
 <p>Later, this model will allow for the optimization of the harvesting policy RBF parameters through a Multi-Objective Evolutionary Algorithm (MOEA). The MOEA will evaluate many thousands of policies (RBF parameter combinations) and attempt to find, through <em>evolution</em>, those RBF parameters which yield best objective performance.</p>
 <p>A brief summary of the model process is described here, but the curious learner is encouraged to take a deeper look at the code and dissect the process.</p>
 <p>The model can be understood as having three major sections:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Initialization of storage vectors, stochastic variables, and assumed ODE parameters.</p></li>
 <li><p>Simulation of policy and fishery populations over time period T.</p></li>
 <li><p>Calculation of objective scores.</p></li>
@@ -1185,14 +838,14 @@ $<span class="math notranslate nohighlight">\(O_1 = \frac{1}{N} \sum_{i=1}^N\Big
 <p>The next section shows how to optimize the harvest policy defined by <code class="docutils literal notranslate"><span class="pre">vars</span></code>, using the PyBorg MOEA.</p>
 </section>
 <section id="a-very-brief-overview-of-pyborg">
-<h2>A (Very) Brief Overview of PyBorg<a class="headerlink" href="#a-very-brief-overview-of-pyborg" title="Permalink to this headline">#</a></h2>
+<h2>A (Very) Brief Overview of PyBorg<a class="headerlink" href="#a-very-brief-overview-of-pyborg" title="Permalink to this heading">#</a></h2>
 <p>PyBorg is the secondary implementation of the Borg MOEA written entirely in Python by David Hadka and Andrew Dircks. It is made possible using functions from the <a class="reference external" href="https://github.com/Project-Platypus/Platypus">Platypus optimization library</a>, which is a Python evolutionary computing framework.</p>
 <p>As PyBorg is Borg’s Python wrapper and thus derived from the original Borg MOEA, it can only be used with permission from its creators. To obtain permission for download, please visit <a class="reference external" href="http://borgmoea.org/#contact">BorgMOEA</a> and complete the web form. You should receive an email with the link to the BitBucket repository shortly.</p>
 </section>
 <section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
 <p>The repository you have access to should be named ‘Serial Borg MOEA’ and contain a number of folders, including one called <code class="docutils literal notranslate"><span class="pre">Python/</span></code>. Within the <code class="docutils literal notranslate"><span class="pre">Python/</span></code> folder, you will be able to locate a folder called <code class="docutils literal notranslate"><span class="pre">pyborg</span></code>. Once you have identified the folder, please follow these next steps carefully:<br></p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Check your current Python version. <em>Python 3.5 or later is required to enable PyBorg implementation</em>.</p></li>
 <li><p>Download the <code class="docutils literal notranslate"><span class="pre">pyborg</span></code> folder and place it in the folder where this Jupyter Notebook all other Part 1 training material is located.</p></li>
 <li><p>Install the <code class="docutils literal notranslate"><span class="pre">platypus</span></code> library. This can be in done via your command line by running one of two options: <br>
@@ -1206,7 +859,7 @@ If you are using <code class="docutils literal notranslate"><span class="pre">pi
 <span class="n">conda</span> <span class="n">install</span> <span class="n">platypus</span><span class="o">-</span><span class="n">opt</span>
 </pre></div>
 </div>
-<ol class="simple">
+<ol class="arabic simple" start="4">
 <li><p>Make sure the following training startup files are located within the same folder as this Jupyter Notebook:
 a) <code class="docutils literal notranslate"><span class="pre">fish_game_functions.py</span></code>: Contains all function definitions to setup the problem, run the optimization, plot the hypervolume, and conduct random seed analysis.
 b) <code class="docutils literal notranslate"><span class="pre">Part</span> <span class="pre">1</span> <span class="pre">-</span> <span class="pre">Harvest</span> <span class="pre">Optimization</span> <span class="pre">and</span> <span class="pre">MOEA</span> <span class="pre">Diagnostics.ipynb</span></code>: This is the current notebook and where the Fisheries fame will be demonstrated.</p></li>
@@ -1214,9 +867,9 @@ b) <code class="docutils literal notranslate"><span class="pre">Part</span> <spa
 <p>We are now ready to proceed!</p>
 </section>
 <section id="optimization-of-the-fisheries-game">
-<h2>Optimization of the Fisheries Game<a class="headerlink" href="#optimization-of-the-fisheries-game" title="Permalink to this headline">#</a></h2>
+<h2>Optimization of the Fisheries Game<a class="headerlink" href="#optimization-of-the-fisheries-game" title="Permalink to this heading">#</a></h2>
 <section id="import-all-libraries">
-<h3>Import all libraries<a class="headerlink" href="#import-all-libraries" title="Permalink to this headline">#</a></h3>
+<h3>Import all libraries<a class="headerlink" href="#import-all-libraries" title="Permalink to this heading">#</a></h3>
 <p>All functions required for this post can be found in the <code class="docutils literal notranslate"><span class="pre">fish_game_functions.py</span></code> file. This code is adapted from <a class="reference external" href="https://waterprogramming.wordpress.com/2021/08/13/introduction-to-pyborg-basic-setup-and-running/">Antonia Hadjimichael’s original post</a> on exploring the Fisheries Game dynamics using PyBorg.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all required libraries</span>
 <span class="kn">from</span> <span class="nn">platypus</span> <span class="kn">import</span> <span class="n">Problem</span><span class="p">,</span> <span class="n">Real</span><span class="p">,</span> <span class="n">Hypervolume</span><span class="p">,</span> <span class="n">Generator</span>
@@ -1230,7 +883,7 @@ b) <code class="docutils literal notranslate"><span class="pre">Part</span> <spa
 </div>
 </section>
 <section id="formulating-the-problem">
-<h3>Formulating the problem<a class="headerlink" href="#formulating-the-problem" title="Permalink to this headline">#</a></h3>
+<h3>Formulating the problem<a class="headerlink" href="#formulating-the-problem" title="Permalink to this heading">#</a></h3>
 <p>Define number of decision variables, constraints, and specify problem formulation:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the number of decision variables, constraints and performance objectives</span>
 <span class="n">nVars</span> <span class="o">=</span> <span class="mi">6</span>   <span class="c1"># Define number of decision variables</span>
@@ -1244,7 +897,7 @@ b) <code class="docutils literal notranslate"><span class="pre">Part</span> <spa
 </div>
 </section>
 <section id="initialize-the-problem-for-optimization">
-<h3>Initialize the problem for optimization<a class="headerlink" href="#initialize-the-problem-for-optimization" title="Permalink to this headline">#</a></h3>
+<h3>Initialize the problem for optimization<a class="headerlink" href="#initialize-the-problem-for-optimization" title="Permalink to this heading">#</a></h3>
 <p>We call the <code class="docutils literal notranslate"><span class="pre">fisheries_game_problem_setup.py</span></code> function to set up the optimization problem. This function returns a PyBorg object called <code class="docutils literal notranslate"><span class="pre">algorithm</span></code> in this exercise that will be optimized in the next step.<br></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fisheries_game_problem_setup</span><span class="p">(</span><span class="n">nVars</span><span class="p">,</span> <span class="n">nObjs</span><span class="p">,</span> <span class="n">nCnstr</span><span class="p">,</span> <span class="n">pop_size</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1303,7 +956,7 @@ b) <code class="docutils literal notranslate"><span class="pre">Part</span> <spa
 </div>
 </section>
 <section id="define-parameters-for-optimization">
-<h3>Define parameters for optimization<a class="headerlink" href="#define-parameters-for-optimization" title="Permalink to this headline">#</a></h3>
+<h3>Define parameters for optimization<a class="headerlink" href="#define-parameters-for-optimization" title="Permalink to this heading">#</a></h3>
 <p>Before optimizing, we have to define our desired population size and number of function evaluations (NFEs). The NFEs correspond to the number of <em>evolutions</em> of the set of solutions. For complex, many-objective problems, it may be necessary for a large NFE.</p>
 <p>Here, we start with a small limit on NFE, to test the speed of the optimization. Limiting the optimization to 100 NFE is going to produce relatively poor performing solutions, however it is a good starting point for our diagnostic tests.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">init_nfe</span> <span class="o">=</span> <span class="mi">100</span>
@@ -1312,7 +965,7 @@ b) <code class="docutils literal notranslate"><span class="pre">Part</span> <spa
 </div>
 </section>
 <section id="begin-the-optimization">
-<h3>Begin the optimization<a class="headerlink" href="#begin-the-optimization" title="Permalink to this headline">#</a></h3>
+<h3>Begin the optimization<a class="headerlink" href="#begin-the-optimization" title="Permalink to this heading">#</a></h3>
 <p>In addition to running the optimization, we also time the optimization to get a general estimate on the time the full hypervolume analysis will require.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># begin timing the Borg run</span>
 <span class="n">borg_start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
@@ -1337,7 +990,7 @@ Running the PyBrog MOEA 100 times took ~34 seconds (on the machine which this wa
 </div></blockquote>
 </section>
 <section id="plot-the-tradeoff-surface">
-<h3>Plot the tradeoff surface<a class="headerlink" href="#plot-the-tradeoff-surface" title="Permalink to this headline">#</a></h3>
+<h3>Plot the tradeoff surface<a class="headerlink" href="#plot-the-tradeoff-surface" title="Permalink to this heading">#</a></h3>
 <p>Here, we plot a 3-dimensional plot showing the tradeoff between a select number of objectives. If you have selected the 5-objective problem formulation, you should select the three objectives you would like to analyze the tradeoff surface for. Please select the (abbreviated) objective names from the following list:<br></p>
 <p><em>Objective 1: Mean NPV<br>
 Objective 2: Mean prey deficit<br>
@@ -1362,9 +1015,9 @@ Objective 5: Mean harvest variance<br></em></p>
 </section>
 </section>
 <section id="moea-diagnostics">
-<h2>MOEA Diagnostics<a class="headerlink" href="#moea-diagnostics" title="Permalink to this headline">#</a></h2>
+<h2>MOEA Diagnostics<a class="headerlink" href="#moea-diagnostics" title="Permalink to this heading">#</a></h2>
 <p>A good MOEA is assessed by it’s ability to quickly converge to a set of solutions (the Pareto-approximate set) that is also diverse. This means that the final set of solutions is close to the true set, as well as covers a large volume of the multi-dimensional problem space. There are three quantitative metrics via which convergence and diversity are evaluated:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><em>Generational distance</em> approximates the average distance between the true Pareto front and the Pareto-approximate reference set that your MOEA identifies. It is the easiest metric to meet.</p></li>
 <li><p><em>Epsilon indicator</em> is a harder metric than generational distance to me   et. A high-performing MOEA will have a low epsilon indicator value when the distance of its worst-performing approximate solution from the true Pareto set is small.</p></li>
 <li><p><em>Hypervolume</em> measures the ‘volume’ that a Pareto front covers across all dimensions of a problem. It is the hardest metric to meet and the most computationally intensive.</p></li>
@@ -1372,11 +1025,11 @@ Objective 5: Mean harvest variance<br></em></p>
 <p>Both the generational distance and epsilon indicator metrics require a reference set, which is the <em>known</em>, true Pareto front. Conversely, the hypervolume does not have such a requirement. Given that the Fisheries Game is a complex, multi-dimensional, many-stakeholder problem with no known solution, the hypervolume metric is thus the most suitable to evaluate the ability of PyBorg to quickly converge to a diverse Pareto-approximate set of solutions.</p>
 <p>More detailed descriptions of each metric are provided in <a class="reference external" href="https://waterprogramming.wordpress.com/2013/06/25/moea-performance-metrics/">this handy blog post by Joe Kasprzyk</a>.</p>
 <section id="hypervolume">
-<h3>Hypervolume<a class="headerlink" href="#hypervolume" title="Permalink to this headline">#</a></h3>
+<h3>Hypervolume<a class="headerlink" href="#hypervolume" title="Permalink to this heading">#</a></h3>
 <p>The hypervolume is a measure of the multi-dimensional volume <em>dominated</em> by the approximated pareto front. As the pareto front advances toward the “<em>ideal</em>” solution, this value approaches 1.</p>
 <p>The efficiency of an MOEA in optimizing a solution can be considered by measuring the hypervolume with respect to the number of function evaluations. This allows the user to understand how quickly the MOEA is converging to a good set of solutions, and how many function evaluations are needed to achieve a good set of solutions.</p>
 <section id="defining-hypervolume-parameters">
-<h4>Defining hypervolume parameters<a class="headerlink" href="#defining-hypervolume-parameters" title="Permalink to this headline">#</a></h4>
+<h4>Defining hypervolume parameters<a class="headerlink" href="#defining-hypervolume-parameters" title="Permalink to this heading">#</a></h4>
 <p>First, we define the maximum number of function evaluations (<code class="docutils literal notranslate"><span class="pre">maxevals</span></code>) and the NFE step size (<code class="docutils literal notranslate"><span class="pre">frequency</span></code>) for which we would like to evaluate the problem hypervolume over. Try modifying these values to see how the plot changes. <br>
 <br></p>
 <p>Mind that the value of <code class="docutils literal notranslate"><span class="pre">maxevals</span></code> should always be more than that of your initial NFE, and that the value of <code class="docutils literal notranslate"><span class="pre">frequency</span></code> should be less than that of the initial NFE. Both values should be integer values.</p>
@@ -1387,7 +1040,7 @@ Objective 5: Mean harvest variance<br></em></p>
 </div>
 </section>
 <section id="plotting-the-hypervolume">
-<h4>Plotting the hypervolume<a class="headerlink" href="#plotting-the-hypervolume" title="Permalink to this headline">#</a></h4>
+<h4>Plotting the hypervolume<a class="headerlink" href="#plotting-the-hypervolume" title="Permalink to this heading">#</a></h4>
 <p>Using these parameters, we then plot the hypervolume graph, showing the change in hypervolume value over the NFEs.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig_hvol</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
 <span class="n">ax_hvol</span> <span class="o">=</span> <span class="n">fig_hvol</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
@@ -1403,11 +1056,11 @@ Objective 5: Mean harvest variance<br></em></p>
 <p><strong>Insert hvol_plot here</strong></p>
 </section>
 <section id="perform-random-seed-analysis">
-<h4>Perform random seed analysis<a class="headerlink" href="#perform-random-seed-analysis" title="Permalink to this headline">#</a></h4>
+<h4>Perform random seed analysis<a class="headerlink" href="#perform-random-seed-analysis" title="Permalink to this heading">#</a></h4>
 <p>Next, we perform random seed analysis (RSA).<br></p>
 <p>Generally, RSA is performed to track an algorithm’s performance during search. In addition, it is also done to determine if an algorithm has discovered an acceptable approximation of the true Pareto set. More details on RSA can be found <a class="reference external" href="https://waterprogramming.wordpress.com/2019/04/17/performing-random-seed-analysis-and-runtime-diagnostics-with-the-serial-borg-matlab-wrapper/">here</a> in a blog post by Dave Gold.<br></p>
 <p>For the Fisheries Game, we conduct RSA to determine if PyBorg’s performance is sensitive to the size of its initial population. We do this using the folllowing steps:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Run an ensemble of searches, each starting with a randomly sampled set of initial conditions (aka “random seeds”)</p></li>
 <li><p>Combine search results across all random seeds to generate a “reference set” that contains only the best non-dominated solutions across the ensemble</p></li>
 <li><p>Repeat steps 1 and 2 for an initial population size of 200, 400, etc.</p></li>
@@ -1437,16 +1090,16 @@ Objective 5: Mean harvest variance<br></em></p>
 </section>
 </section>
 <section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
 <p>If you’ve made it this far, congratulate yourself and take a minute to think back on the progression of this post.</p>
 <p>This post went over the following:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>A brief re-cap of the harvested predator-prey model</p></li>
 <li><p>Formulation of the harvesting policy (radial basis functions)</p></li>
 <li><p>Formulation of the policy objectives</p></li>
 <li><p>A simulation model for the harvested system</p></li>
 <li><p>Optimization of the harvesting policy using the PyBorg MOEA</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Optimization problem formulation</p></li>
 <li><p>Basic MOEA diagnostics</p></li>
 </ol>
@@ -1479,50 +1132,141 @@ Objective 5: Mean harvest variance<br></em></p>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="LakeProblem.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">The Shallow Lake Problem</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="LakeProblem.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Shallow Lake Problem</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="Linux_MOEAs_HPC.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="Linux_MOEAs_HPC.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Getting starting with MOEAs</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By The Reed Group at Cornell CEE<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harvested-predator-prey-model">Harvested predator-prey model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harvesting-policy">Harvesting policy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#radial-basis-functions">Radial basis functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harvest-strategy-objectives-trevor">Harvest strategy objectives (Trevor)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-1-maximize-net-present-value">Objective #1: Maximize net present value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-2-minimize-prey-population-deficit">Objective #2: Minimize prey population deficit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-3-minimize-longest-duration-of-consecutive-low-harvest">Objective #3: Minimize longest duration of consecutive low harvest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-4-minimize-worst-harvest-instance">Objective #4: Minimize worst harvest instance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-5-minimize-harvest-variance">Objective #5: Minimize harvest variance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constraint-avoid-collapse-of-predator-population">Constraint: avoid collapse of predator population</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-formulation">Problem formulation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-model-of-the-harvested-system">Simulation model of the harvested system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-very-brief-overview-of-pyborg">A (Very) Brief Overview of PyBorg</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-of-the-fisheries-game">Optimization of the Fisheries Game</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-all-libraries">Import all libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formulating-the-problem">Formulating the problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-the-problem-for-optimization">Initialize the problem for optimization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-parameters-for-optimization">Define parameters for optimization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-the-optimization">Begin the optimization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-tradeoff-surface">Plot the tradeoff surface</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moea-diagnostics">MOEA Diagnostics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hypervolume">Hypervolume</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-hypervolume-parameters">Defining hypervolume parameters</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-hypervolume">Plotting the hypervolume</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-random-seed-analysis">Perform random seed analysis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Reed Group at Cornell CEE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
