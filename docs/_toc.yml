@@ -28,7 +28,7 @@ parts:
   - file: Software/Software.md
     sections:
     - file: Software/IntroToBorg.md
-    - file: Software/BorgWarppers.md
+    - file: Software/BorgWrappers.md
     - file: Software/WaterPaths.md
     - file: Software/PywrDRB.md
     - file: Software/SALib.md
@@ -48,7 +48,7 @@ parts:
     - file: Training/FisheriesGame.md
   - file: FigureLibrary/FigureLibrary.md
     sections:
-    - file: FigureLibrary/PrallelAxisPlot.md
+    - file: FigureLibrary/ParallelAxisPlot.md
   - file: Contributing/Contributing.md
     sections:
     - file: Contributing/Instructions.md
