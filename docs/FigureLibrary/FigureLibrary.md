@@ -1,2 +1,3 @@
+# Figure Library
 ```{tableofcontents}
 ```

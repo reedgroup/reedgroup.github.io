@@ -30,7 +30,6 @@ parts:
     - file: Software/IntroToBorg.md
     - file: Software/BorgWarppers.md
     - file: Software/WaterPaths.md
-    - file: Software/StateMod.md
     - file: Software/PywrDRB.md
     - file: Software/SALib.md
     - file: Software/Rhodium.md
