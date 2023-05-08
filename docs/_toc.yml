@@ -47,7 +47,7 @@ parts:
     - file: Training/StateModTraining.md
     - file: Training/FisheriesGame.md
   - file: FigureLibrary/FigureLibrary.md
-  sections:
+    sections:
     - file: FigureLibrary/PrallelAxisPlot.md
   - file: Contributing/Contributing.md
     sections:
