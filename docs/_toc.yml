@@ -11,6 +11,7 @@ parts:
     - file: LifeInTheReedGroup/Courses.md
     - file: LifeInTheReedGroup/Conferences.md
     - file: LifeInTheReedGroup/PresentationTemplates.md
+    - file: LifeInTheReedGroup/WritingProcess.md
   - file: ComputationalResources/ComputationalResources.md
     sections:
     - file: ComputationalResources/ClusterBasics.md
@@ -24,7 +25,6 @@ parts:
     - file: ComputationalResources/Websites.md
     - file: ComputationalResources/MOEADiagnostics.md
     - file: ComputationalResources/SyntheticWeatherGeneration.md
-    - file: ComputationalResources/SyntheticStreamflowGeneration.md
   - file: Software/Software.md
     sections:
     - file: Software/IntroToBorg.md
@@ -44,6 +44,7 @@ parts:
     - file: Training/LakeProblem.md
     - file: Training/intro_to_sensitivity_analysis.md
     - file: Training/IntroScenarioDiscovery.md
+    - file: Training/SyntheticStreamflowGeneration.md
     - file: Training/StateModTraining.md
     - file: Training/FisheriesGame.md
   - file: FigureLibrary/FigureLibrary.md
