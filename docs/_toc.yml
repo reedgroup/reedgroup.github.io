@@ -48,7 +48,7 @@ parts:
     - file: Training/FisheriesGame.md
   - file: FigureLibrary/FigureLibrary.md
   sections:
-    - FigureLibrary/PrallelAxisPlot.md
+    - file: FigureLibrary/PrallelAxisPlot.md
   - file: Contributing/Contributing.md
     sections:
     - file: Contributing/Instructions.md
