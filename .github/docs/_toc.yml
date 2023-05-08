@@ -1,0 +1,56 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro.md
+parts:
+- chapters:
+  - file: LifeInTheReedGroup/LifeInTheReedGroup.md
+    sections:
+    - file: LifeInTheReedGroup/LifeAtCornell.md
+    - file: LifeInTheReedGroup/Courses.md
+    - file: LifeInTheReedGroup/Conferences.md
+    - file: LifeInTheReedGroup/PresentationTemplates.md
+  - file: ComputationalResources/ComputationalResources.md
+    sections:
+    - file: ComputationalResources/ClusterBasics.md
+    - file: ComputationalResources/python_crash_course.md
+    - file: ComputationalResources/Machine_Learning_Resources.md
+    - file: ComputationalResources/IntroToLinux.md
+    - file: ComputationalResources/IntroToGitHub.md
+    - file: ComputationalResources/Computing.md
+    - file: ComputationalResources/CitationReferenceManagementTools.md
+    - file: ComputationalResources/DataVisualization.md
+    - file: ComputationalResources/Websites.md
+    - file: ComputationalResources/MOEADiagnostics.md
+    - file: ComputationalResources/SyntheticWeatherGeneration.md
+    - file: ComputationalResources/SyntheticStreamflowGeneration.md
+  - file: Software/Software.md
+    sections:
+    - file: Software/IntroToBorg.md
+    - file: Software/BorgWarppers.md
+    - file: Software/WaterPaths.md
+    - file: Software/StateMod.md
+    - file: Software/PywrDRB.md
+    - file: Software/SALib.md
+    - file: Software/Rhodium.md
+    - file: Software/MOEAFramework.md
+    - file: Software/J3.md
+  - file: Training/Training.md
+    sections:
+    - file: Training/Schedule.md
+    - file: Training/Reading.md
+    - file: Training/Linux_MOEAs_HPC.md
+    - file: Training/LakeProblem.md
+    - file: Training/intro_to_sensitivity_analysis.md
+    - file: Training/IntroScenarioDiscovery.md
+    - file: Training/StateModTraining.md
+    - file: Training/FisheriesGame.md
+  - file: FigureLibrary/FigureLibrary.md
+  sections:
+    - FigureLibrary/PrallelAxisPlot.md
+  - file: Contributing/Contributing.md
+    sections:
+    - file: Contributing/Instructions.md
+    - file: Contributing/mdExample.md
+    - file: Contributing/nbExample.ipynb
