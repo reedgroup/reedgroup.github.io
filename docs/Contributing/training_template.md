@@ -14,3 +14,7 @@ Provide some context and motivation for the training activity.
 ## Reading list
 \[1] First citation
 \[2] Second citation
+
+## Recommended software
+\[1] First software and link
+\[2] Second citation and link
