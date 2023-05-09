@@ -427,22 +427,62 @@ document.write(`
 <p>There are a series of excellent blog posts that step through different types of synthetic streamflow generation techniques that the group often uses. Some techniques, like the Hidden Markov Model-based generation are appropriate for regions like the Western U.S. that exhibit persistence in the form of longer decadal to multi-decadal drought. The Kirsch-Nowak Generator has been used in location such as the Lower Susquehanna River Basin, Red River, Research Triangle region.</p>
 <section id="activities">
 <h3>Activities<a class="headerlink" href="#activities" title="Permalink to this heading">#</a></h3>
-<p>| Activity              | Est. Time   |  Topic      | Readings | Tasks |
-| ———————-|————-| ———– | ———| ——– | ————————————— |
-| HMM-Based Generation  | 0.5 hrs     |<a class="reference external" href="https://waterprogramming.wordpress.com/2018/07/03/fitting-hidden-markov-models-part-i-background-and-methods/">Background and Methods</a>  | [1] | None |
-| HMM-Based Generation  | 1 hr        |<a class="reference external" href="https://waterprogramming.wordpress.com/2018/07/03/fitting-hidden-markov-models-part-ii-sample-python-script/">Fitting and Validation</a>  | [2] |Produce a single-site HMM|
-| HMM-Based Generation  | 1 hr        |<a class="reference external" href="https://uc-ebook.org/docs/html/A2_Jupyter_Notebooks.html#a-hidden-markov-modeling-approach-to-creating-synthetic-streamflow-scenarios-tutorial">Interactive Notebook</a>  | [2] |Produce a single-site HMM, understand convergence and sampling,drought metrics|
-| Kirsch-Nowak Generator| 0.5 hrs     |<a class="reference external" href="https://waterprogramming.wordpress.com/2017/08/29/open-source-streamflow-generator-part-i-synthetic-generation/">Background and Methods</a> | [3],[4] |None|
-| Kirsch-Nowak Generator| 0.5 hrs     |<a class="reference external" href="https://waterprogramming.wordpress.com/2017/08/29/open-source-streamflow-generator-part-ii-validation/">Validation</a> | [3],[4] ||
-| Kirsch-Nowak Generator| 0.5 hrs     |<a class="reference external" href="https://waterprogramming.wordpress.com/2019/03/27/from-matlab-to-julia-insights-from-translating-an-opensource-kirsch-nowak-streamflow-generator-in-julia">Translation to Julia</a> | [3],[4] |None|</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Activity</p></th>
+<th class="head"><p>Est. Time</p></th>
+<th class="head"><p>Topic</p></th>
+<th class="head"><p>Readings</p></th>
+<th class="head"><p>Tasks</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HMM-Based Generation</p></td>
+<td><p>0.5 hrs</p></td>
+<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2018/07/03/fitting-hidden-markov-models-part-i-background-and-methods/">Background and Methods</a></p></td>
+<td><p>[1]</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>HMM-Based Generation</p></td>
+<td><p>1 hr</p></td>
+<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2018/07/03/fitting-hidden-markov-models-part-ii-sample-python-script/">Fitting and Validation</a></p></td>
+<td><p>[2]</p></td>
+<td><p>Produce a single-site HMM</p></td>
+</tr>
+<tr class="row-even"><td><p>HMM-Based Generation</p></td>
+<td><p>1 hr</p></td>
+<td><p><a class="reference external" href="https://uc-ebook.org/docs/html/A2_Jupyter_Notebooks.html#a-hidden-markov-modeling-approach-to-creating-synthetic-streamflow-scenarios-tutorial">Interactive Notebook</a></p></td>
+<td><p>[2]</p></td>
+<td><p>Produce a single-site HMM, understand convergence and sampling,drought metrics</p></td>
+</tr>
+<tr class="row-odd"><td><p>Kirsch-Nowak Generator</p></td>
+<td><p>0.5 hrs</p></td>
+<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2017/08/29/open-source-streamflow-generator-part-i-synthetic-generation/">Background and Methods</a></p></td>
+<td><p>[3],[4]</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Kirsch-Nowak Generator</p></td>
+<td><p>0.5 hrs</p></td>
+<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2017/08/29/open-source-streamflow-generator-part-ii-validation/">Validation</a></p></td>
+<td><p>[3],[4]</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Kirsch-Nowak Generator</p></td>
+<td><p>0.5 hrs</p></td>
+<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2019/03/27/from-matlab-to-julia-insights-from-translating-an-opensource-kirsch-nowak-streamflow-generator-in-julia">Translation to Julia</a></p></td>
+<td><p>[3],[4]</p></td>
+<td><p>None</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="reading-list">
 <h2>Reading list<a class="headerlink" href="#reading-list" title="Permalink to this heading">#</a></h2>
-<p>[1] Bracken, C., Rajagopalan, B., &amp; Zagona, E. (2014). A hidden M arkov model combined with climate indices for multidecadal streamflow simulation. Water Resources Research, 50(10), 7836-7846.
-[2] Hadjimichael, A., Quinn, J., Wilson, E., Reed, P., Basdekas, L., Yates, D., &amp; Garrison, M. (2020). Defining robustness, vulnerabilities, and consequential scenarios for diverse stakeholder interests in institutionally complex river basins. Earth’s Future, 8(7), e2020EF001503.
-[3] Kirsch, B. R., Characklis, G. W., &amp; Zeff, H. B. (2013). Evaluating the impact of alternative hydro-climate scenarios on transfer agreements: Practical improvement for generating synthetic streamflows. Journal of Water Resources Planning and Management, 139(4), 396-406.
-[4] Nowak, K., Prairie, J., Rajagopalan, B., &amp; Lall, U. (2010). A nonparametric stochastic approach for multisite disaggregation of annual to daily streamflow. Water Resources Research, 46(8).</p>
+<p>[1]: Bracken, C., Rajagopalan, B., &amp; Zagona, E. (2014). A hidden M arkov model combined with climate indices for multidecadal streamflow simulation. Water Resources Research, 50(10), 7836-7846.</p>
+<p>[2]: Hadjimichael, A., Quinn, J., Wilson, E., Reed, P., Basdekas, L., Yates, D., &amp; Garrison, M. (2020). Defining robustness, vulnerabilities, and consequential scenarios for diverse stakeholder interests in institutionally complex river basins. Earth’s Future, 8(7), e2020EF001503.</p>
+<p>[3]: Kirsch, B. R., Characklis, G. W., &amp; Zeff, H. B. (2013). Evaluating the impact of alternative hydro-climate scenarios on transfer agreements: Practical improvement for generating synthetic streamflows. Journal of Water Resources Planning and Management, 139(4), 396-406.</p>
+<p>[4]: Nowak, K., Prairie, J., Rajagopalan, B., &amp; Lall, U. (2010). A nonparametric stochastic approach for multisite disaggregation of annual to daily streamflow. Water Resources Research, 46(8).</p>
 </section>
 </section>
 
