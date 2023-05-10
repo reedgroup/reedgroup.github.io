@@ -26,8 +26,8 @@ The bottom line: make this training your own, and be curious!
 \[7] Hadka, D. and Reed, P. (2015) ‘Large-scale parallelization of the Borg multiobjective evolutionary algorithm to enhance the management of Complex Environmental Systems’, Environmental Modelling \& Software; Software, 69, pp. 353–369. [doi:10.1016/j.envsoft.2014.10.014](https://dl.acm.org/doi/10.1016/j.envsoft.2014.10.014). <br>
 \[8] Reed, P.M. and Kollat, J.B. (2013) ‘Visual analytics clarify the scalability and effectiveness of massively parallel many-objective optimization: A groundwater monitoring design example’, Advances in Water Resources, 56, pp. 1–13. [doi:10.1016/j.advwatres.2013.01.011](https://www.sciencedirect.com/science/article/pii/S030917081300033X?via%3Dihub). <br>
 \[9] Woodruff, M.J., Reed, P.M. and Simpson, T.W. (2013) ‘Many objective visual analytics: Rethinking the design of Complex Engineered Systems’, Structural and Multidisciplinary Optimization, 48(1), pp. 201–219. [doi:10.1007/s00158-013-0891-z](https://link.springer.com/article/10.1007/s00158-013-0891-z). <br>
-\[10] Knaflic, C.N. (2015) Storytelling with data: A Data Visualization Guide for Business Professionals. Hoboken, NJ: John Wiley &amp; Sons, Inc.[Cornell Library](https://catalog.library.cornell.edu/catalog/12015645) <br>
-\[11] https://catalog.library.cornell.edu/catalog/9458682. [Cornell Library](https://catalog.library.cornell.edu/catalog/9458682https://catalog.library.cornell.edu/catalog/9458682)
+\[10] Knaflic, C.N. (2015) Storytelling with data: A Data Visualization Guide for Business Professionals. Hoboken, NJ: John Wiley &amp; Sons, Inc. [Cornell Library](https://catalog.library.cornell.edu/catalog/12015645) <br>
+\[11] Cairo, A. (2020) The truthful art: Data, charts, and maps for communication. Berkeley: New Riders. [Cornell Library](https://catalog.library.cornell.edu/catalog/9458682https://catalog.library.cornell.edu/catalog/9458682)
 
 ## Recommended software 
 1. Download HPC APIs:
