@@ -46,6 +46,7 @@ parts:
     - file: Training/SyntheticStreamflowGeneration.md
     - file: Training/StateModTraining.md
     - file: Training/FisheriesGame.md
+    - file: Training/WaterPaths_Training.md
   - file: FigureLibrary/FigureLibrary.md
     sections:
     - file: FigureLibrary/ParallelAxisPlot.md
