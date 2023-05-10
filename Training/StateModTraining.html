@@ -404,7 +404,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activities">Activities</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a></li>
 </ul>
             </nav>
         </div>
@@ -418,31 +422,42 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="getting-starting-with-statemod">
 <h1>Getting starting with StateMod<a class="headerlink" href="#getting-starting-with-statemod" title="Permalink to this heading">#</a></h1>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>StateMod was developed to support comprehensive assessments of water demand, allocation, and use, as well as reservoir operations. It represents all of the major sub-basins within the state of Colorado (i.e., Parsons &amp; Bennett, 2006; White, Yampa, Upper Colorado, Gunnison,Dolores, San Juan, and San Miguel CWCB, 2012). StateMod replicates each basin’s unique application and enforcement of the prior appropriation doctrine and accounts for all of the consumptive use within the basins. To do so, it relies on the detailed historic demand and operation records contained in HydroBase thatinclude individual water right information for all consumptive use, data on water structures (wells, ditches,reservoirs, and tunnels), and streamflow data. Further, StateMod uses irrigation consumptive use data out-put from StateCU, which calculates water consumption based on soil moisture, crop type, irrigated acreage,and conveyance and application efficiencies for each individual irrigation unit in the region. These detailed,fine-scale inputs allow StateMod to resolve the effect of all users and water rights on water availability, which can in turn be used to simulate hypothetical scenarios to assess the impacts of changes in hydrology, waterrights, or infrastructure on any and all represented water rights (Hadjimichael et al., 2020).</p>
 <p>Various students in Reed Group have used StateMod for exploratory analyses and have put together various trainings to help step through the following processes:</p>
+<section id="activities">
+<h3>Activities<a class="headerlink" href="#activities" title="Permalink to this heading">#</a></h3>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Topic</p></th>
-<th class="head"><p>Resource</p></th>
+<tr class="row-odd"><th class="head"><p>Activity</p></th>
+<th class="head"><p>Est. Time</p></th>
+<th class="head"><p>Topic</p></th>
+<th class="head"><p>Readings</p></th>
+<th class="head"><p>Tasks</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Compiling StateMod</p></td>
-<td><p><a class="reference external" href="https://cornell.app.box.com/file/828171348437?s=xlwk6smzrikykmwyt2d7vxb7042puit0">Training 1</a>  <br>  <a class="reference external" href="https://cornell.box.com/s/f2ykd7hnlod3r2y8s91wjwg9tbu2ko5o">Updated/Alternative Training</a></p></td>
+<tr class="row-even"><td><p>Intro to StateMod</p></td>
+<td><p>1 hrs</p></td>
+<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2018/07/03/fitting-hidden-markov-models-part-i-background-and-methods/">Compiling and Running StateMod and Extracting User Shortages</a></p></td>
+<td><p>[1]</p></td>
+<td><p>StateMod executable compiled and the ability to run the San Juan Datset</p></td>
 </tr>
-<tr class="row-odd"><td><p>Description of Files</p></td>
-<td><p><a class="reference external" href="https://cornell.app.box.com/file/841967112739?s=jb1ch27lgqm3lx0521dax8y9hhg93a96">Training 2</a></p></td>
-</tr>
-<tr class="row-even"><td><p>Running StateMod</p></td>
-<td><p><a class="reference external" href="https://cornell.app.box.com/file/828171348437?s=xlwk6smzrikykmwyt2d7vxb7042puit0">Training 3</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Extracting User Shortages</p></td>
-<td><p><a class="reference external" href="https://cornell.app.box.com/folder/140253226518?s=obmxicki2qpbxgio4wh23dyrjxgribaq">Training 4</a></p></td>
+<tr class="row-odd"><td><p>StateMod Background</p></td>
+<td><p>1 hrs</p></td>
+<td><p><a class="reference external" href="https://cornell.app.box.com/file/841967112739?s=jb1ch27lgqm3lx0521dax8y9hhg93a96">Description of Files</a></p></td>
+<td><p>[2]</p></td>
+<td><p>None</p></td>
 </tr>
 </tbody>
 </table>
+</section>
+</section>
+<section id="reading-list">
+<h2>Reading list<a class="headerlink" href="#reading-list" title="Permalink to this heading">#</a></h2>
+<p>[1] Hadjimichael, A., Quinn, J., Wilson, E., Reed, P., Basdekas, L., Yates, D., &amp; Garrison, M. (2020). Defining robustness, vulnerabilities, and consequential scenarios for diverse stakeholder interests in institutionally complex river basins. Earth’s Future, 8(7), e2020EF001503.</p>
+<p>[2] <a class="reference external" href="https://opencdss.state.co.us/statemod/latest/doc-user/">https://opencdss.state.co.us/statemod/latest/doc-user/</a></p>
 </section>
 </section>
 
@@ -513,7 +528,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activities">Activities</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a></li>
 </ul>
   </nav></div>
 
