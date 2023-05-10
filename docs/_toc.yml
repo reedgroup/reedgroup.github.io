@@ -27,8 +27,7 @@ parts:
     - file: ComputationalResources/SyntheticWeatherGeneration.md
   - file: Software/Software.md
     sections:
-    - file: Software/IntroToBorg.md
-    - file: Software/BorgWrappers.md
+    - file: Software/BorgMOEA.md
     - file: Software/WaterPaths.md
     - file: Software/PywrDRB.md
     - file: Software/SALib.md
