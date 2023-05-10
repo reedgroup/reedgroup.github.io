@@ -6,8 +6,18 @@ This training is designed to replicate the study presented in [Antonia Hadjimich
 
 This training consists of three parts, detailed in the Activities below and presented on the WaterProgramming blog. All of the code used in the tutorial is hosted in a GitHub repository: [harvested_predator_prey_system_tutorial_series.](https://github.com/TrevorJA/harvested_predator_prey_system_tutorial_series)
 
+## Learning objectives
 
-### Activities
+- Summary of a learning outcome
+- Another summary of a different outcome
+
+## Prerequisites
+
+Make note of other trainings and skills that are needed for the activities and link to internal Computational Resources pages.
+
+See the Necessary Software at the bottom of this page prior to starting the training activities.
+
+## Activities
 
 | Activity | Est. Time   |  Topic      | Resources | Readings | Tasks                                   |
 | -------- | ----------- | ----------- | --------- | -------- | --------------------------------------- |
