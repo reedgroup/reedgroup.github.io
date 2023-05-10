@@ -1,0 +1,3 @@
+# Graduate Student Resources
+```{tableofcontents}
+```
