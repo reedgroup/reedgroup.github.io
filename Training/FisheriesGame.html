@@ -180,8 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Software/Software.html">Software</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Software/IntroToBorg.html">Introduction to Borg</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Software/BorgWrappers.html">BORG Wrappers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/BorgMOEA.html">Borg MOEA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Software/WaterPaths.html">WaterPaths</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Software/PywrDRB.html">Pywr-DRB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Software/SALib.html">SALib</a></li>
@@ -382,7 +381,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -398,6 +399,19 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activities">Activities</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-software">Necessary software</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -409,62 +423,67 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-fisheries-game">
 <h1>The Fisheries Game<a class="headerlink" href="#the-fisheries-game" title="Permalink to this heading">#</a></h1>
-<p><em>Under construction</em></p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<p>This training is designed to replicate the study presented in <a class="reference external" href="https://www.hindawi.com/journals/complexity/2020/4170453/">Antonia Hadjimichael’s 2020 paper, *Navigating Deeply Uncertain Tradeoffs in Harvested Predator-Prey Systems.</a></p>
+<p>This training consists of three parts, detailed in the Activities below and presented on the WaterProgramming blog. All of the code used in the tutorial is hosted in a GitHub repository: <a class="reference external" href="https://github.com/TrevorJA/harvested_predator_prey_system_tutorial_series">harvested_predator_prey_system_tutorial_series.</a></p>
+<section id="activities">
+<h3>Activities<a class="headerlink" href="#activities" title="Permalink to this heading">#</a></h3>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Sequence</p></th>
-<th class="head"><p>Week</p></th>
+<tr class="row-odd"><th class="head"><p>Activity</p></th>
+<th class="head"><p>Est. Time</p></th>
 <th class="head"><p>Topic</p></th>
 <th class="head"><p>Resources</p></th>
 <th class="head"><p>Readings</p></th>
+<th class="head"><p>Tasks</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>Linux and Command Line</p></td>
-<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2015/03/17/terminal-basics-for-the-truly-newbies/">Terminal Basics</a>  <br>  <a class="reference external" href="https://www.codecademy.com/learn/learn-the-command-line">Code Academy Tutorial</a> <br>  <a class="reference external" href="https://www.git-tower.com/blog/command-line-cheat-sheet/">Cheat Sheet</a> <br> <a class="reference external" href="https://www.cygwin.com/">Download Cygwin</a></p></td>
-<td><p></p></td>
+<td><p>1 days</p></td>
+<td><p>Intro reading</p></td>
+<td><p>Reading</p></td>
+<td><p>[1]</p></td>
+<td><p>- None</p></td>
 </tr>
 <tr class="row-odd"><td><p>2</p></td>
-<td><p>2</p></td>
-<td><p>Intro to MOEAs</p></td>
-<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2012/01/23/moeas-basic-concepts-and-reading/">MOEA Basics</a>  <br> <a class="reference external" href="https://waterprogramming.wordpress.com/2013/06/25/moea-performance-metrics/">Performance Metrics</a></p></td>
-<td><p></p></td>
+<td><p>1 days</p></td>
+<td><p>Lotka-Volterra ODEs</p></td>
+<td><p>Blog</p></td>
+<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2022/07/11/__trashed-3/">Training Part 0</a></p></td>
+<td><p>- Explore equations</p></td>
 </tr>
 <tr class="row-even"><td><p>3</p></td>
-<td><p>2</p></td>
-<td><p>MOEAFramework</p></td>
-<td><p></p></td>
-<td><p></p></td>
+<td><p>3 days</p></td>
+<td><p>Harvest optimization</p></td>
+<td><p>Blog</p></td>
+<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2022/08/08/fisheries-training-part-1-harvest-optimization-and-moea-diagnostics/">Training Part 1</a></p></td>
+<td><p>- Run optimization</p></td>
 </tr>
 <tr class="row-odd"><td><p>4</p></td>
-<td><p>3</p></td>
-<td><p>Borg 101</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>5</p></td>
-<td><p>4</p></td>
-<td><p>Random Seed analysis</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>6</p></td>
-<td><p>4</p></td>
-<td><p>Up and running on HPC</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>7</p></td>
-<td><p>5</p></td>
-<td><p>Diagnostics and visualiztion</p></td>
-<td><p></p></td>
-<td><p></p></td>
+<td><p>2 days</p></td>
+<td><p>Tradeoff Visualization</p></td>
+<td><p>Blog</p></td>
+<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2022/09/14/fisheries-training-part-2-tradeoff-visualization-and-introduction-to-j3/">Training Part 2</a></p></td>
+<td><p>- View tradeoffs</p></td>
 </tr>
 </tbody>
 </table>
+</section>
+</section>
+<section id="reading-list">
+<h2>Reading list<a class="headerlink" href="#reading-list" title="Permalink to this heading">#</a></h2>
+<p>[1] <a class="reference external" href="https://www.hindawi.com/journals/complexity/2020/4170453/">Hadjimichael, A., Reed, P. M., &amp; Quinn, J. D. (2020). Navigating deeply uncertain tradeoffs in harvested predator-prey systems. Complexity, 2020, 1-18.</a></p>
+</section>
+<section id="necessary-software">
+<h2>Necessary software<a class="headerlink" href="#necessary-software" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://moeaframework.org/">MOEA Framework</a></p></li>
+<li><p><a class="reference internal" href="../Software/BorgMOEA.html"><span class="doc std std-doc">Borg MOEA</span></a></p></li>
+<li><p><a class="reference internal" href="../Software/J3.html"><span class="doc std std-doc">J3</span></a></p></li>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -525,6 +544,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activities">Activities</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-software">Necessary software</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

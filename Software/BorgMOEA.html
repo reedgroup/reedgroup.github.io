@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>BORG Wrappers &#8212; Reed group lab manual</title>
+    <title>Borg MOEA &#8212; Reed group lab manual</title>
   
   
   
@@ -61,11 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Software/BorgWrappers';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Software/BorgMOEA';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="WaterPaths" href="WaterPaths.html" />
-    <link rel="prev" title="Introduction to Borg" href="IntroToBorg.html" />
+    <link rel="prev" title="Software" href="Software.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,8 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Software.html">Software</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="IntroToBorg.html">Introduction to Borg</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">BORG Wrappers</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Borg MOEA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="WaterPaths.html">WaterPaths</a></li>
 <li class="toctree-l2"><a class="reference internal" href="PywrDRB.html">Pywr-DRB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SALib.html">SALib</a></li>
@@ -283,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reedgroup/reedgroup.github.io/issues/new?title=Issue%20on%20page%20%2FSoftware/BorgWrappers.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reedgroup/reedgroup.github.io/issues/new?title=Issue%20on%20page%20%2FSoftware/BorgMOEA.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -313,7 +312,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Software/BorgWrappers.md" target="_blank"
+      <li><a href="../_sources/Software/BorgMOEA.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -395,7 +394,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>BORG Wrappers</h1>
+    <h1>Borg MOEA</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -405,7 +404,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#borg-r-wrapper">Borg R Wrapper</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#borg-wrappers">BORG Wrappers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#borg-r-wrapper">Borg R Wrapper</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -417,12 +419,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="borg-wrappers">
-<h1>BORG Wrappers<a class="headerlink" href="#borg-wrappers" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="borg-moea">
+<h1>Borg MOEA<a class="headerlink" href="#borg-moea" title="Permalink to this heading">#</a></h1>
+<p>As you are getting acclimated with the group, one of the tools you will hear a lot about is the Borg Multi-Objective Evolutionary Algorithm (MOEA). The Borg MOEA was developed by Pat and Dave Hadka at Penn State and has become an essential evolutionary algorithm for performing multi-objective optimization in our case studies. The first step to using Borg is to read the associated paper. It’s normal to not understand every detail, but as you start working on tutorials through your first semester, you’ll find that the paper becomes more understandable and a good resource.</p>
+<section id="borg-wrappers">
+<h2>BORG Wrappers<a class="headerlink" href="#borg-wrappers" title="Permalink to this heading">#</a></h2>
 <p>The BORG MOEA is written in C++ which makes it very fast. However, many problems that our collaborators bring to us are written in different languages like Python, R, and MATLAB. Thus, there have been a variety of wrappers that have been created that allows problems written in these languages to still be connected to the C version of Borg.</p>
 <section id="borg-r-wrapper">
-<h2>Borg R Wrapper<a class="headerlink" href="#borg-r-wrapper" title="Permalink to this heading">#</a></h2>
+<h3>Borg R Wrapper<a class="headerlink" href="#borg-r-wrapper" title="Permalink to this heading">#</a></h3>
 <p>Currently, we have a Borg R wrapper that supports serial BORG (i.e. no parallelization). However, we spent a lot of time getting this wrapper to be somewhat foolproof so if you follow the steps of this post, everything should work out. Functionality that you might be used to like runtime files and implementing different seeds of Borg must be added after you download the wrapper, but these steps are all demonstrated in the post: <a class="reference external" href="https://waterprogramming.wordpress.com/2020/06/19/the-new-and-improved-r-wrapper/">https://waterprogramming.wordpress.com/2020/06/19/the-new-and-improved-r-wrapper/</a></p>
+</section>
 </section>
 </section>
 
@@ -458,12 +464,12 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="IntroToBorg.html"
+       href="Software.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction to Borg</p>
+        <p class="prev-next-title">Software</p>
       </div>
     </a>
     <a class="right-next"
@@ -493,7 +499,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#borg-r-wrapper">Borg R Wrapper</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#borg-wrappers">BORG Wrappers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#borg-r-wrapper">Borg R Wrapper</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
