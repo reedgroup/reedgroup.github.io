@@ -5,13 +5,13 @@ format: jb-book
 root: intro.md
 parts:
 - chapters:
-  - file: LifeInTheReedGroup/LifeInTheReedGroup.md
+  - file: GraduateStudentResources/GraduateStudentResources.md
     sections:
-    - file: LifeInTheReedGroup/LifeAtCornell.md
-    - file: LifeInTheReedGroup/Courses.md
-    - file: LifeInTheReedGroup/Conferences.md
-    - file: LifeInTheReedGroup/PresentationTemplates.md
-    - file: LifeInTheReedGroup/WritingProcess.md
+    - file: GraduateStudentResources/LifeAtCornell.md
+    - file: GraduateStudentResources/Courses.md
+    - file: GraduateStudentResources/Conferences.md
+    - file: GraduateStudentResources/PresentationTemplates.md
+    - file: GraduateStudentResources/WritingProcess.md
   - file: ComputationalResources/ComputationalResources.md
     sections:
     - file: ComputationalResources/ClusterBasics.md
@@ -55,3 +55,4 @@ parts:
     - file: Contributing/Instructions.md
     - file: Contributing/mdExample.md
     - file: Contributing/nbExample.ipynb
+    - file: Contributing/training_template.md
