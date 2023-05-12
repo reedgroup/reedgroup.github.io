@@ -407,7 +407,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activities">Activities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-activities">Training activities</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-relevant-pages-on-this-site">Other relevant pages on this site</a></li>
 </ul>
@@ -423,52 +424,57 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="waterpaths">
 <h1>WaterPaths<a class="headerlink" href="#waterpaths" title="Permalink to this heading">#</a></h1>
+<p><em>Under construction</em></p>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>WaterPaths [1] is a generalizable, open-source, exploratory modeling tool designed to explore and inform long- and short-term regional water supply management and infrastructure planing. It exploits dynamic and adaptive risk-of-failure (ROF) rules [2] to trigger drought mitigation, financial, and infrastructure construction actions to generate planning and management pathways. It is capable for handling a wide range of deep uncertainties that range from hydrological and climate extremes, demand growth, financial risk, as well as infrastructure construction and financing.</p>
 <p>Use of WaterPaths require some familiarity with C/C++. To begin working with WaterPaths, we suggest the following training sequence:</p>
 </section>
-<section id="activities">
-<h2>Activities<a class="headerlink" href="#activities" title="Permalink to this heading">#</a></h2>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<p>Familiarity with C/C++ is highly recommended. If you are learning C/C++ for the first time, complete the set of tasks associated with the “C/C++ Crash Course” topic below. Otherwise, feel free to skip this first topic.</p>
+</section>
+<section id="training-activities">
+<h2>Training activities<a class="headerlink" href="#training-activities" title="Permalink to this heading">#</a></h2>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Activity</p></th>
-<th class="head"><p>Est. Time</p></th>
-<th class="head"><p>Resources</p></th>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>Commitment</p></th>
+<th class="head"><p>Tasks</p></th>
 <th class="head"><p>Readings</p></th>
 <th class="head"><p>Outcomes</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>C/C++ Crash Course</p></td>
-<td><p>1 month</p></td>
+<td><p>Long</p></td>
 <td><p><a class="reference external" href="https://www.linkedin.com/learning/c-plus-plus-essential-training-15106801/learn-c-plus-plus?autoplay=true&amp;u=76816458">C++ Essential Training</a> <br> <a class="reference external" href="https://www.hackerrank.com/domains/tutorials/30-days-of-code">HackerRank 30 Days of Code</a></p></td>
 <td><p></p></td>
-<td><p>1. Able to read and understand C/C++ syntax <br> 2. Write, compile and run a C/C++ function</p></td>
+<td><p>1. Understand C/C++ syntax <br> 2. Write, compile and run a C/C++ function</p></td>
 </tr>
 <tr class="row-odd"><td><p>Intro to WaterPaths</p></td>
-<td><p>5 hrs</p></td>
+<td><p>Short</p></td>
 <td><p><a class="reference external" href="https://github.com/bernardoct/WaterPaths">Download and compile WaterPaths</a></p></td>
 <td><p>[1]</p></td>
-<td><p>1. Download and compile WaterPaths <br> 2. Follow along the GitHub Repo tutorial</p></td>
+<td><p>1. Download and compile WaterPaths <br> 2. Replicate examples on the GitHub Repo tutorial</p></td>
 </tr>
 <tr class="row-even"><td><p>Intro to ROF Triggers</p></td>
-<td><p>1 week</p></td>
+<td><p>Medium</p></td>
 <td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2017/02/14/calculating-risk-of-failures-as-in-the-research-triangle-papers-2014-2016/">Calculating ROF Triggers</a> <br> <a class="reference external" href="https://waterprogramming.wordpress.com/2021/03/22/mordm-basics-ii-risk-of-failure-triggers-and-table-generation/">Calculating ROF Triggers</a> <br> <a class="reference external" href="https://waterprogramming.wordpress.com/2021/04/26/mordm-basics-iii-rof-triggers-and-performance-objective-tradeoffs/">Generating ROF Tables</a> <br> <a class="reference external" href="https://waterprogramming.wordpress.com/2021/05/31/mordm-basics-iv-visualizing-rof-storage-dynamics-finally/">Visualizing ROF Trigger Dynamics</a></p></td>
 <td><p>[2]</p></td>
-<td><p>1. Understand how ROF triggers are calculated <br> 2. Generate ROF tables using WaterPaths <br> 3. Plot ROF and reservoir storage dynamics</p></td>
+<td><p>1. Understand ROF triggers <br> 2. Generate ROF tables using WaterPaths <br> 3. Plot ROF and reservoir storage dynamics</p></td>
 </tr>
 <tr class="row-odd"><td><p>Optimization with WaterPaths</p></td>
-<td><p>1 week</p></td>
+<td><p>Medium</p></td>
 <td><p><a class="reference external" href="https://github.com/bernardoct/WaterPaths">Running WaterPaths in Optimization Mode</a> <br> <a class="reference external" href="https://waterprogramming.wordpress.com/2021/08/02/mordm-basics-v-waterpaths-tutorial/">WaterPaths Tutorial</a> <br> <a class="reference external" href="https://waterprogramming.wordpress.com/2021/10/12/mordm-basics-vi-processing-the-output-and-reevaluating-for-robustness/">Visualize performance tradeoffs</a></p></td>
 <td><p>[3]</p></td>
-<td><p>1. Optimize the in-built problem using WaterPaths and Borg <br> 2. Process and plot performance tradeoffs.</p></td>
+<td><p>1. Optimize the Sedento Valley test case <br> 2. Plot performance tradeoffs.</p></td>
 </tr>
 <tr class="row-even"><td><p>Large-scale simulation with WaterPaths</p></td>
 <td><p>2 weeks</p></td>
 <td><p><a class="reference external" href="https://github.com/bernardoct/WaterPaths">Running WaterPaths in Simulation Mode</a> <br> <a class="reference external" href="https://waterprogramming.wordpress.com/2022/03/01/mordm-vii-optimality-robustness-and-reevaluation-under-deep-uncertainty/">Re-evaluation under Deep Uncertainty</a></p></td>
-<td><p></p></td>
-<td><p>1. Understand the difference between optimality and robustness <br> 2. Apply prior training on Linux and using HPC <br> 3. Simulate a large-scale experiment on the Cube cluster.</p></td>
+<td><p>[4]</p></td>
+<td><p>1. Clearly ifferentiate optimality and robustness <br> 2. Apply skills in Linux and using HPC <br> 3. Simulate a large-scale experiment on a HPC cluster.</p></td>
 </tr>
 </tbody>
 </table>
@@ -558,7 +564,8 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activities">Activities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-activities">Training activities</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-relevant-pages-on-this-site">Other relevant pages on this site</a></li>
 </ul>
