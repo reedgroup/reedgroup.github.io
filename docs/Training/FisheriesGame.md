@@ -1,17 +1,36 @@
 # The Fisheries Game
 
-*Under construction*
+## Overview
+
+This training is designed to replicate the study presented in [Antonia Hadjimichael's 2020 paper, *Navigating Deeply Uncertain Tradeoffs in Harvested Predator-Prey Systems.](https://www.hindawi.com/journals/complexity/2020/4170453/)
+
+This training consists of three parts, detailed in the Activities below and presented on the WaterProgramming blog. All of the code used in the tutorial is hosted in a GitHub repository: [harvested_predator_prey_system_tutorial_series.](https://github.com/TrevorJA/harvested_predator_prey_system_tutorial_series)
+
+## Learning objectives
+
+- Summary of a learning outcome
+- Another summary of a different outcome
+
+## Prerequisites
+
+Make note of other trainings and skills that are needed for the activities and link to internal Computational Resources pages.
+
+See the Necessary Software at the bottom of this page prior to starting the training activities.
+
+## Activities
+
+| Activity | Est. Time   |  Topic      | Resources | Readings | Tasks                                   |
+| -------- | ----------- | ----------- | --------- | -------- | --------------------------------------- |
+| 1        | 1 days | Intro reading | Reading    | \[1]         | - None |
+| 2        | 1 days | Lotka-Volterra ODEs | Blog    | [Training Part 0](https://waterprogramming.wordpress.com/2022/07/11/__trashed-3/) | - Explore equations |
+| 3        | 3 days      | Harvest optimization| Blog    | [Training Part 1](https://waterprogramming.wordpress.com/2022/08/08/fisheries-training-part-1-harvest-optimization-and-moea-diagnostics/)         | - Run optimization |
+| 4        | 2 days      | Tradeoff Visualization | Blog    | [Training Part 2](https://waterprogramming.wordpress.com/2022/09/14/fisheries-training-part-2-tradeoff-visualization-and-introduction-to-j3/) | - View tradeoffs |
 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Reading list
+\[1] [Hadjimichael, A., Reed, P. M., & Quinn, J. D. (2020). Navigating deeply uncertain tradeoffs in harvested predator-prey systems. Complexity, 2020, 1-18.](https://www.hindawi.com/journals/complexity/2020/4170453/)
 
-
-| Sequence | Week | Topic                         | Resources | Readings |
-|----------|------|-------------------------------|-----------|----------|
-| 1        | 1    | Linux and Command Line        | [Terminal Basics](https://waterprogramming.wordpress.com/2015/03/17/terminal-basics-for-the-truly-newbies/)  <br>  [Code Academy Tutorial](https://www.codecademy.com/learn/learn-the-command-line) <br>  [Cheat Sheet](https://www.git-tower.com/blog/command-line-cheat-sheet/) <br> [Download Cygwin](https://www.cygwin.com/)   |          |
-| 2        | 2    | Intro to MOEAs                | [MOEA Basics](https://waterprogramming.wordpress.com/2012/01/23/moeas-basic-concepts-and-reading/)  <br> [Performance Metrics](https://waterprogramming.wordpress.com/2013/06/25/moea-performance-metrics/)      |          |
-| 3        | 2    | MOEAFramework                 |           |          |
-| 4        | 3    | Borg 101                      |           |          |
-| 5        | 4    | Random Seed analysis          |           |          |
-| 6        | 4    | Up and running on HPC         |           |          |
-| 7        | 5    | Diagnostics and visualiztion  |           |          |
+## Necessary software
+1. [MOEA Framework](http://moeaframework.org/)
+2. [Borg MOEA](../Software/BorgMOEA.md)
+3. [J3](../Software/J3.md)
