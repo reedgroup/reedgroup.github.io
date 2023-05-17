@@ -5,3 +5,4 @@ pandas
 seaborn
 rpy2
 ghp-import
+scipy
