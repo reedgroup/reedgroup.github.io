@@ -84,7 +84,7 @@ Once we create the plot itself, we will make the colorbar to show how the utilit
 ```python
 # Create the color bar
 # the darker the color, the higher the regret
-norm3d = plt.Normalize(INPC.min(), NPC.max())
+norm3d = plt.Normalize(INPC_regret.min(), INPC_regret.max())
 cax3d = fig3d.add_axes([0.95, 0.25, 0.03, 0.55])  # [left, bottom, width, height]
 cax3d.set_title('NPC regret', pad=20, fontsize=15)
 cbar3d = fig3d.colorbar(mpl.cm.ScalarMappable(norm=norm3d, cmap='viridis_r'), cax=cax3d, orientation='vertical')
