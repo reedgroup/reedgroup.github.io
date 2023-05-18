@@ -18,7 +18,7 @@ sns.set_theme(style="white")
 Nice work! Now, let's use the `pd.read_csv()` function to read in our dataset, `scatter_colorbar.csv`. This dataset contains three variables:
 1. A water utility's water-use restriction frequency (`RF`)
 2. Its infrastructure trigger (`inf_trigger`, or how often it is constructing new infrastructure). More information on these triggers can be found [here](https://waterprogramming.wordpress.com/2021/04/26/mordm-basics-iii-rof-triggers-and-performance-objective-tradeoffs/).
-3. Each restriction frequency's regret measure (`RF_regret`, more on that [here](https://waterprogramming.wordpress.com/2019/06/27/examining-robustness-metrics-using-rhodium/)). 
+3. The restriction frequency's regret measure (`RF_regret`, more on that [here](https://waterprogramming.wordpress.com/2019/06/27/examining-robustness-metrics-using-rhodium/)). 
 
 ```python
 # import data
