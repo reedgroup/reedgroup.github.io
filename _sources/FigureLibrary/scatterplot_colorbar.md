@@ -47,14 +47,14 @@ fig, ax = plt.subplots(1, 1, figsize=(5, 5))
 
 # plot the data using the reversed viridis colormap
 ax.scatter(inf_trigger, RF,  c=normalize_regret(RF_regret), cmap='viridis_r', s=20, alpha=0.8)
-ax.set_xlabel("Infrastructure\ntriggher")
+ax.set_xlabel("Infrastructure\ntrigger")
 ax.set_ylabel("Restriction freq.")
 ax.set_title("Example scatter plot")
 
 # Create the color bar
 # the darker the color, the higher the regret
 norm = plt.Normalize(normalize_regret(RF_regret).min(), normalize_regret(RF_regret).max())
-cax = fig.add_axes([0.92, 0.1, 0.05, 0.75])  # [left, bottom, width 5% of figure width, height 75% of figure height]
+cax = fig.add_axes([0.94, 0.1, 0.05, 0.75])  # [left, bottom, width 5% of figure width, height 75% of figure height]
 cax.set_title('RF regret')
 cbar = fig.colorbar(mpl.cm.ScalarMappable(norm=norm, cmap='viridis_r'), cax=cax, orientation='vertical')
 
@@ -76,6 +76,7 @@ Whoa, what just went down here? Let's walk through this.
     - And then we placed the colorbar into the figure at position `cax` with a vertical orientation. The first argument into the `colorbar` function, `mpl.cm.ScalarMappable(norm=norm, cmap='viridis_r')` ensures that the color gradient in the colorbar is appropriate according to the values of `RF_regret` and uses the `viridis_r` colormap.
 
 If the code ran successfully, you should be able to display and save the following figure:
+
 ![Example scatter plot with colorbar](scatter_colorbar.png)
 
 Great work!

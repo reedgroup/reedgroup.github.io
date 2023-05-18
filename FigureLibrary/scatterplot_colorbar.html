@@ -453,14 +453,14 @@ document.write(`
 
 <span class="c1"># plot the data using the reversed viridis colormap</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">inf_trigger</span><span class="p">,</span> <span class="n">RF</span><span class="p">,</span>  <span class="n">c</span><span class="o">=</span><span class="n">normalize_regret</span><span class="p">(</span><span class="n">RF_regret</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis_r&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Infrastructure</span><span class="se">\n</span><span class="s2">triggher&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Infrastructure</span><span class="se">\n</span><span class="s2">trigger&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Restriction freq.&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Example scatter plot&quot;</span><span class="p">)</span>
 
 <span class="c1"># Create the color bar</span>
 <span class="c1"># the darker the color, the higher the regret</span>
 <span class="n">norm</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">normalize_regret</span><span class="p">(</span><span class="n">RF_regret</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">normalize_regret</span><span class="p">(</span><span class="n">RF_regret</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-<span class="n">cax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.92</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">])</span>  <span class="c1"># [left, bottom, width 5% of figure width, height 75% of figure height]</span>
+<span class="n">cax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.94</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">])</span>  <span class="c1"># [left, bottom, width 5% of figure width, height 75% of figure height]</span>
 <span class="n">cax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;RF regret&#39;</span><span class="p">)</span>
 <span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">mpl</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis_r&#39;</span><span class="p">),</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">)</span>
 
@@ -481,8 +481,8 @@ document.write(`
 </ul>
 </li>
 </ol>
-<p>If the code ran successfully, you should be able to display and save the following figure:
-<img alt="Example scatter plot with colorbar" src="../_images/scatter_colorbar.png" /></p>
+<p>If the code ran successfully, you should be able to display and save the following figure:</p>
+<p><img alt="Example scatter plot with colorbar" src="../_images/scatter_colorbar.png" /></p>
 <p>Great work!</p>
 </section>
 
