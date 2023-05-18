@@ -50,6 +50,7 @@ parts:
   - file: FigureLibrary/FigureLibrary.md
     sections:
     - file: FigureLibrary/ParallelAxisPlot.md
+    - file: FigureLibrary/scatterplot_colorbar.md
     - file: FigureLibrary/MOEADiagnostics.ipynb
   - file: Contributing/Contributing.md
     sections:
