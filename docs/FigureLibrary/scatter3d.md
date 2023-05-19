@@ -42,7 +42,7 @@ INPC_regret = df_scatter['INPC_regret']
 
 ```
 
-We will also use a function to normalize our point colors for us. More information on this can be found [here](FigureLibrary/scatterplot_colorbar.md)
+We will also use a function to normalize our point colors for us. More information on this can be found [here](scatterplot_colorbar.md)
 
 ```python
 def normalize_regret(regret_df):
@@ -79,7 +79,7 @@ The last line of code here is important: by varying the values of the `azim` par
 
 Note that `s=REL*200`. This is scaling the `REL` values up by a factor of 200, since these values (as they are) are between the values of 0-1. Points of these sizes will be nearly invisible on the plot; we need scale them up so they are visible on the 3D plot. Feel free to experiment with different scaling factors!
 
-Once we create the plot itself, we will make the colorbar to show how the utility's infrastructure NPC regret, `NPC_regret`, varies with the three values on the axes. Take a look at [this page on the Lab Manual](FigureLibrary/scatterplot_colorbar.md) for more details on color bars, and how to make them. For now, let's just make one:
+Once we create the plot itself, we will make the colorbar to show how the utility's infrastructure NPC regret, `NPC_regret`, varies with the three values on the axes. Take a look at [this page on the Lab Manual](scatterplot_colorbar.md) for more details on color bars, and how to make them. For now, let's just make one:
 
 ```python
 # Create the color bar
