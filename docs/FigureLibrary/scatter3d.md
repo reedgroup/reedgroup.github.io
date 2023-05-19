@@ -1,4 +1,4 @@
-# Three-dimensional scatter plots, playing with point size, and positioning legends
+# 3D scatter plots, point sizes, and positioning legends
 
 Another way to represent high-dimensional data is using a three-dimensional plot (any more axes is just showing off and/or unecessary visual load). Additional dimensions can be visualized using other techniques such as playing with point color and point size. It is also important that your audience knows that they are looking at, which is why we will also look into legend placement. Therefore, this resource provides information on three fronts:
 
