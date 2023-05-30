@@ -5,7 +5,6 @@ format: jb-book
 root: intro.md
 parts:
 - chapters:
-  - file: WaterProgramming/waterprogramming_post_catalog.md
   - file: GraduateStudentResources/GraduateStudentResources.md
     sections:
     - file: GraduateStudentResources/LifeAtCornell.md
@@ -48,6 +47,8 @@ parts:
     - file: Training/FisheriesGame.md
     - file: Training/WaterPaths_Training.md
     - file: Training/intro_mordm.md
+  - file: WaterProgramming/post_catalog.html
+    title: WaterProgramming Post Catalog
   - file: FigureLibrary/FigureLibrary.md
     sections:
     - file: FigureLibrary/ParallelAxisPlot.md
