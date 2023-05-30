@@ -41,14 +41,13 @@ parts:
     - file: Training/Linux_MOEAs_HPC.md
     - file: Training/LakeProblem.md
     - file: Training/intro_to_sensitivity_analysis.md
-    - file: Training/IntroScenarioDiscovery.md
+    - file: Training/intro_to_scenario_discovery.md
     - file: Training/SyntheticStreamflowGeneration.md
     - file: Training/StateModTraining.md
     - file: Training/FisheriesGame.md
     - file: Training/WaterPaths_Training.md
     - file: Training/intro_mordm.md
-  - file: WaterProgramming/post_catalog.html
-    title: WaterProgramming Post Catalog
+  - file: WaterProgramming/waterprogramming_post_catalog.md
   - file: FigureLibrary/FigureLibrary.md
     sections:
     - file: FigureLibrary/ParallelAxisPlot.md
