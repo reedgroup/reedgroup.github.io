@@ -65,13 +65,6 @@ jobs:
     - name: Build book
       run: jupyter-book build --all docs/
 
-    # Manually copy files
-    - name: copy files
-      uses: canastro/copy-file-action@master
-      with:
-        source: "docs/WaterProgramming/post_catalog.html"
-        target: "docs/_build/html/WaterProgramming/post_catalog.html"
-
     # Deploy html to gh-pages
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.6.1
