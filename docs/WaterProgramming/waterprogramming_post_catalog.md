@@ -1,5 +1,5 @@
 # WaterProgramming Post Catalog
 
-{% raw %}
-{% include post_catalog.html %}
-{% endraw %}
+```{raw} html
+:file: post_catalog.html
+```
