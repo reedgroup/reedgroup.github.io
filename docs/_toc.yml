@@ -5,6 +5,7 @@ format: jb-book
 root: intro.md
 parts:
 - chapters:
+  - file: WaterProgramming/waterprogramming_post_catalog.md
   - file: GraduateStudentResources/GraduateStudentResources.md
     sections:
     - file: GraduateStudentResources/LifeAtCornell.md
