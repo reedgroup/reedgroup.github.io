@@ -19,6 +19,10 @@ latex:
 bibtex_bibfiles:
   - references.bib
 
+parse:
+  myst_enable_extensions:
+  - html_admonitions
+
 # Information about where the book exists on the web
 repository:
   url: https://github.com/reedgroup/reedgroup.github.io  # Online location of your book
@@ -29,3 +33,4 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  allow_embed: true
