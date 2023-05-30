@@ -423,18 +423,18 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-borg">
+  <section id="introduction-to-borg">
 <h1>Introduction to Borg<a class="headerlink" href="#introduction-to-borg" title="Permalink to this heading">#</a></h1>
 <section id="step-1-reading-the-borg-paper">
 <h2>Step 1: Reading the Borg Paper<a class="headerlink" href="#step-1-reading-the-borg-paper" title="Permalink to this heading">#</a></h2>
 <p>As you are getting acclimated with the group, one of the tools you will hear a lot about is the Borg Multi-Objective Evolutionary Algorithm (MOEA). The Borg MOEA was developed by Pat and Dave Hadka at Penn State and has become an essential evolutionary algorithm for performing multi-objective optimization in our case studies. The first step to using Borg is to read the associated paper. It’s normal to not understand every detail, but as you start working on tutorials through your first semester, you’ll find that the paper becomes more understandable and a good resource.</p>
-<p>Download the Paper Here: <a class="reference external" href="https://ieeexplore.ieee.org/document/6793867">https://ieeexplore.ieee.org/document/6793867</a></p>
+<p>Download the Paper Here: https://ieeexplore.ieee.org/document/6793867</p>
 </section>
 <section id="step-2-basic-borg-for-newbies">
 <h2>Step 2: Basic Borg For Newbies<a class="headerlink" href="#step-2-basic-borg-for-newbies" title="Permalink to this heading">#</a></h2>
-<p>On the group blog (<a class="reference external" href="https://waterprogramming.wordpress.com/">https://waterprogramming.wordpress.com/</a>), there are two blog posts that will start you on basic Borg use. Post 1 outlines how to acquire and compile Borg. Post 2 goes through a simple optimization of DTLZ2-3 objectives, a well-behaved mathematical test that has a clearly defined set of solutions.</p>
-<p>Post 1: <a class="reference external" href="https://waterprogramming.wordpress.com/2015/06/25/basic-borg-moea-use-for-the-truly-newbies-part-12/">https://waterprogramming.wordpress.com/2015/06/25/basic-borg-moea-use-for-the-truly-newbies-part-12/</a></p>
-<p>Post 2: <a class="reference external" href="https://waterprogramming.wordpress.com/2015/06/25/basic-borg-moea-use-for-the-truly-newbies-part-22/">https://waterprogramming.wordpress.com/2015/06/25/basic-borg-moea-use-for-the-truly-newbies-part-22/</a></p>
+<p>On the group blog (https://waterprogramming.wordpress.com/), there are two blog posts that will start you on basic Borg use. Post 1 outlines how to acquire and compile Borg. Post 2 goes through a simple optimization of DTLZ2-3 objectives, a well-behaved mathematical test that has a clearly defined set of solutions.</p>
+<p>Post 1: https://waterprogramming.wordpress.com/2015/06/25/basic-borg-moea-use-for-the-truly-newbies-part-12/</p>
+<p>Post 2: https://waterprogramming.wordpress.com/2015/06/25/basic-borg-moea-use-for-the-truly-newbies-part-22/</p>
 <p>If you find errors in these posts, please look at the comments at the bottom of the posts that address some issues.</p>
 </section>
 <section id="take-note-of-the-user-guide">
@@ -448,7 +448,7 @@ document.write(`
 <li><p>Take a look at the makefile in the Borg folder.</p>
 <ul class="simple">
 <li><p>What is a makefile?</p></li>
-<li><p>To compile the serial version of borg (borg.c), we are using the GNU compiler, gcc. We use mpicc to compile our parallel versions of borg (borgms.c, borgmm.c). You can explore more of what the GNU variables stand for here: <a class="reference external" href="https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html">https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html</a></p></li>
+<li><p>To compile the serial version of borg (borg.c), we are using the GNU compiler, gcc. We use mpicc to compile our parallel versions of borg (borgms.c, borgmm.c). You can explore more of what the GNU variables stand for here: https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html</p></li>
 <li><p>Try to outline and identify the sequence of steps that the makefile is executing to create the borg executables.</p></li>
 </ul>
 </li>
