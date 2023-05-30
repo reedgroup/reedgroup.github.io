@@ -1,5 +1,6 @@
 # WaterProgramming Post Catalog
 
-```{raw} html
-:file: post_catalog.html
+```{eval-rst}
+.. raw:: html
+    :file: post_catalog.html
 ```
