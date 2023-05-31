@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Getting starting with MOEAs &#8212; Reed group lab manual</title>
+    <title>Introduction to MOEA Diagnostics &#8212; Reed group lab manual</title>
   
   
   
@@ -61,11 +61,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Training/Linux_MOEAs_HPC';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Training/MOEADiagnostics_old';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The Shallow Lake Problem" href="LakeProblem.html" />
-    <link rel="prev" title="Suggested reading" href="Reading.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -156,7 +154,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../GraduateStudentResources/GraduateStudentResources.html">Graduate Student Resources</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/LifeAtCornell.html">Some info on life here at Cornell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Courses.html">Course List</a></li>
@@ -187,10 +185,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Software/J3.html">J3 Visualization</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Training.html">Training</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Training.html">Training</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="Schedule.html">Suggested training schedule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Reading.html">Suggested reading</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Getting starting with MOEAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux_MOEAs_HPC.html">Getting starting with MOEAs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LakeProblem.html">The Shallow Lake Problem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_to_sensitivity_analysis.html">Introduction to Sensitivity Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SyntheticStreamflowGeneration.html">Synthetic Streamflow Generation</a></li>
@@ -288,7 +286,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reedgroup/reedgroup.github.io/issues/new?title=Issue%20on%20page%20%2FTraining/Linux_MOEAs_HPC.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reedgroup/reedgroup.github.io/issues/new?title=Issue%20on%20page%20%2FTraining/MOEADiagnostics_old.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -318,7 +316,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Training/Linux_MOEAs_HPC.md" target="_blank"
+      <li><a href="../_sources/Training/MOEADiagnostics_old.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -387,9 +385,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -400,23 +396,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Getting starting with MOEAs</h1>
+    <h1>Introduction to MOEA Diagnostics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-activities">Training activities</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-software">Necessary software</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -426,103 +410,39 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="getting-starting-with-moeas">
-<h1>Getting starting with MOEAs<a class="headerlink" href="#getting-starting-with-moeas" title="Permalink to this heading">#</a></h1>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
-<p>Welcome! If you are new to the Reed Group, this will very likely be the first set of training activities that you will be expected to complete. Bear in mind that the sequence here is meant to be a guide, and the time it takes to complete each component might vary depending on class load, prior experience, etc. As you go through the training, the contents of “Resources” will be your main guide. Further supplementary reading can be found in “Reading”. This material is optional, but highly recommended to get into the weeds of the why we do what we do here in the Reed Group. Take a look at “Recommended software” to get an idea of what you might need to download and install to help speed your training along.</p>
-<p>The bottom line: make this training your own, and be curious!</p>
-</section>
-<section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
-<p>See the Required Software at the bottom of this page prior to starting the training activities.</p>
-</section>
-<section id="training-activities">
-<h2>Training activities<a class="headerlink" href="#training-activities" title="Permalink to this heading">#</a></h2>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Topic</p></th>
-<th class="head"><p>Commitment</p></th>
-<th class="head"><p>Tasks</p></th>
-<th class="head"><p>Readings</p></th>
-<th class="head"><p>Outcomes</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Linux and Command Line</p></td>
-<td><p>Medium</p></td>
-<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2015/03/17/terminal-basics-for-the-truly-newbies/">Terminal Basics</a>  <br>  <a class="reference external" href="https://www.codecademy.com/learn/learn-the-command-line">Code Academy Tutorial</a> <br>  <a class="reference external" href="https://www.git-tower.com/blog/command-line-cheat-sheet/">Cheat Sheet</a></p></td>
-<td><p></p></td>
-<td><p>Familiarity with Linux syntax</p></td>
-</tr>
-<tr class="row-odd"><td><p>Intro to MOEAs</p></td>
-<td><p>Long</p></td>
-<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2012/01/23/moeas-basic-concepts-and-reading/">MOEA Basics</a>  <a class="reference external" href="https://waterprogramming.wordpress.com/2021/06/21/the-abcs-of-moeas/">The ABCs of MOEAs</a> <br> <a class="reference external" href="https://waterprogramming.wordpress.com/2013/06/25/moea-performance-metrics/">Performance Metrics</a></p></td>
-<td><p>[1] <br> [2] <br> [3]</p></td>
-<td><p>Can explain basic MOEA concepts</p></td>
-</tr>
-<tr class="row-even"><td><p>MOEAFramework</p></td>
-<td><p>Medium</p></td>
-<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2019/04/15/moeaframework-training-part-1-connecting-an-external-problem/">Connecting an External Problem</a> <br> <a class="reference external" href="https://waterprogramming.wordpress.com/2019/05/29/moeaframework-training-part-2-optimization-of-an-external-problem/">Optimization of an External Problem</a> <br></p></td>
-<td><p>[4] <br> [5]</p></td>
-<td><p>1.Install Java and MOEAFramework <br> 2. Navigate MOEAFramework’s user interface <br> 3. Use MOEAFramework to optimize a test case <br> 4. Measure the performance of the MOEA.</p></td>
-</tr>
-<tr class="row-odd"><td><p>Borg 101</p></td>
-<td><p>Long</p></td>
-<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2015/06/25/basic-borg-moea-use-for-the-truly-newbies-part-12/">1-Downloading and Compiling Borg</a> <br>  <a class="reference external" href="https://waterprogramming.wordpress.com/2015/06/25/basic-borg-moea-use-for-the-truly-newbies-part-22/">2-Connecting Borg with Test Problems</a></p></td>
-<td><p>[6]</p></td>
-<td><p>1. Understand basic Borg concepts <br> 2. Obtain and install MS Borg <br> 3. Optimize a test case with Borg <br> 4. Measure the performance of Borg</p></td>
-</tr>
-<tr class="row-even"><td><p>Random Seed Analysis</p></td>
-<td><p>Medium</p></td>
-<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2015/07/03/random-seed-analysis-for-the-borg-moea-using-dtlz2-3-objective-instance/">Random Seed Analysis for Borg MOEA</a></p></td>
-<td><p></p></td>
-<td><p>Perform random seed analysis using Borg and MOEAFramework</p></td>
-</tr>
-<tr class="row-odd"><td><p>High Performance Computing (HPC)</p></td>
-<td><p>Medium</p></td>
-<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2018/06/25/job-scheduling-on-hpc-resources/">Job Scheduling on HPC Resources</a> <br> <a class="reference external" href="https://waterprogramming.wordpress.com/2019/07/29/on-parallelization-of-the-borg-moea-part-1-parallel-architectures/">Parallelization Basics</a></p></td>
-<td><p>[7]</p></td>
-<td><p>1. Install a HPC API <br> 2. Obtain access to the Cube/Hopper <br> 3. SSH to the Cube/Hopper via the API</p></td>
-</tr>
-<tr class="row-even"><td><p>Diagnostics and visualization</p></td>
-<td><p>Medium</p></td>
-<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2019/07/01/moeaframework-training-part-3-calculating-metrics/">Calculating Metrics</a> <br> <a class="reference external" href="https://waterprogramming.wordpress.com/2019/08/20/moeaframework-training-part-4-processing-metrics-and-creating-visualizations/">Processing Metrics and Creating Visualizations</a> <br> <a class="reference external" href="https://davidfgold.github.io/ParallelCoordinatePlot/">Basic Parallel Axis Plots</a> <br> <a class="reference external" href="https://davidfgold.github.io/Categorical-ParallelCoordinatePlot/">Parallel Axis Plot Tool (With Groups) </a></p></td>
-<td><p>[8] <br> [9] <br> [10] <br> [11]</p></td>
-<td><p>1. Understand and explore different forms of visualization <br> 2. Generate a parallel axis plot</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="reading-list">
-<h2>Reading list<a class="headerlink" href="#reading-list" title="Permalink to this heading">#</a></h2>
-<p>[1] Bankes, S. (1993) ‘Exploratory Modeling for Policy Analysis’, Operations Research, 41(3), pp. 435–449. <a class="reference external" href="https://pubsonline.informs.org/doi/abs/10.1287/opre.41.3.435">doi:10.1287/opre.41.3.435.</a> <br>
-[2] Coello Coello, C., Lamont, G.B. and Van Veldhuizen, D.A. (2007) ‘Evolutionary Algorithms for Solving Multi-Objective Problems (Chapter 1)’, Genetic and Evolutionary Computation Series [Preprint]. <a class="reference external" href="https://link.springer.com/book/10.1007/978-0-387-36797-2">doi:10.1007/978-0-387-36797-2</a>. <br>
-[3] Coello Coello, C., Lamont, G.B. and Van Veldhuizen, D.A. (2007) ‘ Evolutionary Algorithms for Solving Multi-Objective Problems ’, Genetic and Evolutionary Computation Series [Preprint]. <a class="reference external" href="https://link.springer.com/book/10.1007/978-3-540-72964-8">doi:10.1007/978-0-387-36797-2</a>. <br>
-[4] Hadka, D. (2016) Beginner’s Guide to the MOEA Framework (Chapters 1-3). Available at: <a class="reference external" href="https://www.lulu.com/shop/david-hadka/beginners-guide-to-the-moea-framework/ebook/product-22522401.html?page=1&amp;pageSize=4">https://www.lulu.com</a>. <br>
-[5] Reed, P.M. et al. (2013) ‘Evolutionary multiobjective optimization in water resources: The past, present, and future’, Advances in Water Resources, 51, pp. 438–456. <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0309170812000073">doi:10.1016/j.advwatres.2012.01.005</a>. <br>
-[6] Hadka, D., &amp; Reed, P. (2013). Borg: An auto-adaptive many-objective evolutionary computing framework. Evolutionary computation, 21(2), 231-259, <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0309170812000073">https://doi.org/10.1016/j.advwatres.2012.01.005</a> <br>
-[7] Hadka, D. and Reed, P. (2015) ‘Large-scale parallelization of the Borg multiobjective evolutionary algorithm to enhance the management of Complex Environmental Systems’, Environmental Modelling &amp; Software; Software, 69, pp. 353–369. <a class="reference external" href="https://dl.acm.org/doi/10.1016/j.envsoft.2014.10.014">doi:10.1016/j.envsoft.2014.10.014</a>. <br>
-[8] Reed, P.M. and Kollat, J.B. (2013) ‘Visual analytics clarify the scalability and effectiveness of massively parallel many-objective optimization: A groundwater monitoring design example’, Advances in Water Resources, 56, pp. 1–13. <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S030917081300033X?via%3Dihub">doi:10.1016/j.advwatres.2013.01.011</a>. <br>
-[9] Woodruff, M.J., Reed, P.M. and Simpson, T.W. (2013) ‘Many objective visual analytics: Rethinking the design of Complex Engineered Systems’, Structural and Multidisciplinary Optimization, 48(1), pp. 201–219. <a class="reference external" href="https://link.springer.com/article/10.1007/s00158-013-0891-z">doi:10.1007/s00158-013-0891-z</a>. <br>
-[10] Knaflic, C.N. (2015) Storytelling with data: A Data Visualization Guide for Business Professionals. Hoboken, NJ: John Wiley &amp; Sons, Inc. <a class="reference external" href="https://catalog.library.cornell.edu/catalog/12015645">Cornell Library</a> <br>
-[11] Cairo, A. (2020) The truthful art: Data, charts, and maps for communication. Berkeley: New Riders. <a class="reference external" href="https://catalog.library.cornell.edu/catalog/9458682https://catalog.library.cornell.edu/catalog/9458682">Cornell Library</a></p>
-</section>
-<section id="necessary-software">
-<h2>Necessary software<a class="headerlink" href="#necessary-software" title="Permalink to this heading">#</a></h2>
+  <section id="introduction-to-moea-diagnostics">
+<h1>Introduction to MOEA Diagnostics<a class="headerlink" href="#introduction-to-moea-diagnostics" title="Permalink to this heading">#</a></h1>
+<p>One style of study that Reed Group conducts often is called an MOEA Diagnostics. At a high level, the goal of these studies are to demonstrate the ability of different types of MOEAs to solve either theoretical or real-world optimization problems. Often times, MOEAs use different methods of searching for solutions and some are better than others. We want our MOEAs to be able to find the best Pareto fronts (i.e. that are close to a hypothetical ideal) and that can find a diverse set of solutions that span the space. Below, we provide links to the key posts that have been written on diagnostics.</p>
 <ol class="arabic simple">
-<li><p>Download your desired HPC APIs. Some recommendations include:</p>
+<li><p>The ABCs of MOEAs and Basic Concepts- These posts are a good place to start to become familiar with terms associated with optimization and MOEA diagnostics.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.cygwin.com/">Cygwin</a> for Mac OR Windwos</p></li>
-<li><p><a class="reference external" href="https://mobaxterm.mobatek.net/download.html">MobaXTerm</a>  for Windows</p></li>
-<li><p><a class="reference external" href="https://cyberduck.io/">CyberDuck</a> for Mac</p></li>
+<li><p>https://waterprogramming.wordpress.com/2021/06/21/the-abcs-of-moeas/</p></li>
+<li><p>https://waterprogramming.wordpress.com/2012/01/23/moeas-basic-concepts-and-reading/</p></li>
 </ul>
 </li>
-<li><p>Download <a class="reference external" href="https://www.java.com/en/download/manual.jsp">Java</a> for running MOEAFramework</p></li>
-<li><p>Download the <a class="reference external" href="http://moeaframework.org/downloads.html">MOEAFramework Demo Application</a></p></li>
-<li><p>Download <a class="reference external" href="http://borgmoea.org/#download">Borg MOEA</a></p></li>
+<li><p>Next, we recommend reading some of our group’s diagnostics papers which will provide some high level overview of the experimental setup and the styles of visualizations that we use to convey the results from the diagnostics. If you want to read more about the different MOEAs that we test, there are specific sections in each of these papers that also list the fundamental papers that introduce each algorithm.</p>
+<ul class="simple">
+<li><p>Salazar, J. Z., Reed, P. M., Herman, J. D., Giuliani, M., &amp; Castelletti, A. (2016). A diagnostic assessment of evolutionary algorithms for multi-objective surface water reservoir control. Advances in water resources, 92, 172-185.</p></li>
+<li><p>Gupta, R. S., Hamilton, A. L., Reed, P. M., &amp; Characklis, G. W. (2020). Can modern multi-objective evolutionary algorithms discover high-dimensional financial risk portfolio tradeoffs for snow-dominated water-energy systems?. Advances in Water Resources, 145, 103718.</p></li>
+</ul>
+</li>
+<li><p>At this point, you’re ready to try out some diagnostics by yourself. First, we recommend doing the most simple diagnostic tutorial that is available that compares Borg and NSGA-II using MOEAFramework. Details on how to get MOEAFramework are shared in these posts as well.</p>
+<ul class="simple">
+<li><p>Part 1/3: https://waterprogramming.wordpress.com/2015/08/25/moea-diagnostics-for-a-simple-test-case-part-13/</p></li>
+<li><p>Part 2/3: https://waterprogramming.wordpress.com/2015/08/26/moea-diagnostics-for-a-simple-test-case-part-23/</p></li>
+<li><p>Part 3/3: https://waterprogramming.wordpress.com/2015/09/04/moea-diagnostics-for-a-simple-test-case-part-33/</p></li>
+</ul>
+</li>
+<li><p>In the prior post, the problem that the MOEAs were trying to solve was a theoretical test case that is built into MOEAFramework but for all of our publications, it’s necessary to hook up an external problem to MOEAFramework. There have been a series of posts created to help facilitate this process.</p>
+<ul class="simple">
+<li><p>Part 1/4: https://waterprogramming.wordpress.com/2019/04/15/moeaframework-training-part-1-connecting-an-external-problem/</p></li>
+<li><p>Part 2/4: https://waterprogramming.wordpress.com/2019/05/29/moeaframework-training-part-2-optimization-of-an-external-problem/</p></li>
+<li><p>Part 3/4: https://waterprogramming.wordpress.com/2019/07/01/moeaframework-training-part-3-calculating-metrics/</p></li>
+<li><p>Part 4/4: https://waterprogramming.wordpress.com/2019/08/20/moeaframework-training-part-4-processing-metrics-and-creating-visualizations/</p></li>
+</ul>
+</li>
+<li><p>One of the more complex diagnostics that can be done is on the multi-master version of Borg. Step-by-step instructions on analyzing master and operator dynamics can be found <a class="reference external" href="https://cornell.app.box.com/folder/188733058270">here</a></p></li>
 </ol>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -556,24 +476,6 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="Reading.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Suggested reading</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="LakeProblem.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">The Shallow Lake Problem</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -583,24 +485,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-activities">Training activities</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-software">Necessary software</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

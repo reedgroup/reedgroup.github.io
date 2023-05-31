@@ -387,7 +387,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -403,6 +405,19 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-activities">Training activities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-software">Necessary software</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -414,37 +429,103 @@ document.write(`
                   
   <section id="introduction-to-moea-diagnostics">
 <h1>Introduction to MOEA Diagnostics<a class="headerlink" href="#introduction-to-moea-diagnostics" title="Permalink to this heading">#</a></h1>
-<p>One style of study that Reed Group conducts often is called an MOEA Diagnostics. At a high level, the goal of these studies are to demonstrate the ability of different types of MOEAs to solve either theoretical or real-world optimization problems. Often times, MOEAs use different methods of searching for solutions and some are better than others. We want our MOEAs to be able to find the best Pareto fronts (i.e. that are close to a hypothetical ideal) and that can find a diverse set of solutions that span the space. Below, we provide links to the key posts that have been written on diagnostics.</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>One style of study that Reed Group conducts often is called an MOEA Diagnostic. At a high level, the goal of these studies are to demonstrate the ability of different types of MOEAs to solve either theoretical or real-world optimization problems. Often times, MOEAs use different methods of searching for solutions and some are better than others. We want our MOEAs to be able to find the best Pareto fronts (i.e. that are close to a hypothetical ideal) and that can find a diverse set of solutions that span the space. Below, we provide links to the key posts that have been written on diagnostics.</p>
+</section>
+<section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
+<p>This training is the next step after completing the introductory “Getting Started with MOEAs” training. This training focuses more on application to real-world problems rather than simpler mathematical test cases.</p>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<p>Please complete the training called “Getting Started with MOEAs” first.</p>
+</section>
+<section id="training-activities">
+<h2>Training activities<a class="headerlink" href="#training-activities" title="Permalink to this heading">#</a></h2>
+<table class="table" id="id1">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Synthetic Weather Generation Reading</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>Commitment</p></th>
+<th class="head"><p>Tasks</p></th>
+<th class="head"><p>Readings</p></th>
+<th class="head"><p>Outcomes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reading</p></td>
+<td><p>S</p></td>
+<td><p>Read the two papers cited below</p></td>
+<td><p>[1],[2]</p></td>
+<td><p>You will learn about two real-world problems in which MOEA diagnostics are used to assess the performance of evolutionary algorithms.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simple Diagnostics of Borg vs. NSGA-II for DTLZ2 (3-Objective)- Generating Reference Set</p></td>
+<td><p>M</p></td>
+<td><p>Do this blog post <a class="reference external" href="https://waterprogramming.wordpress.com/2015/08/25/moea-diagnostics-for-a-simple-test-case-part-13/">link</a></p></td>
+<td><p>N/A</p></td>
+<td><p>You will learn run each of these algorithms for DTLZ2 (3-objective case) and create a reference set.</p></td>
+</tr>
+<tr class="row-even"><td><p>Simple Diagnostics of Borg vs. NSGA-II for DTLZ2 (3-Objective)- Generating Metrics</p></td>
+<td><p>S</p></td>
+<td><p>Do this blog post <a class="reference external" href="https://waterprogramming.wordpress.com/2015/08/26/moea-diagnostics-for-a-simple-test-case-part-23/">link</a></p></td>
+<td><p>N/A</p></td>
+<td><p>You will learn how to generate metrics such as hypervolume.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simple Diagnostics of Borg vs. NSGA-II for DTLZ2 (3-Objective)- Generating Visualizations</p></td>
+<td><p>S</p></td>
+<td><p>Do this blog post <a class="reference external" href="https://waterprogramming.wordpress.com/2015/09/04/moea-diagnostics-for-a-simple-test-case-part-33/">link</a></p></td>
+<td><p>N/A</p></td>
+<td><p>You will learn how to create visualizations like control maps and attainment plots.</p></td>
+</tr>
+<tr class="row-even"><td><p>Hooking up an External Problem to MOEAFramework- Creating the Connection</p></td>
+<td><p>S</p></td>
+<td><p>Do this blog post <a class="reference external" href="https://waterprogramming.wordpress.com/2019/04/15/moeaframework-training-part-1-connecting-an-external-problem/">link</a></p></td>
+<td><p>N/A</p></td>
+<td><p>You will learn how to turn your problem into a java class executable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Hooking up an External Problem to MOEAFramework- Optimization</p></td>
+<td><p>S</p></td>
+<td><p>Do this blog post <a class="reference external" href="https://waterprogramming.wordpress.com/2019/05/29/moeaframework-training-part-2-optimization-of-an-external-problem/">link</a></p></td>
+<td><p>N/A</p></td>
+<td><p>You will learn how to use MOEAFramework to optimize your problem for a set of algorithms</p></td>
+</tr>
+<tr class="row-even"><td><p>Hooking up an External Problem to MOEAFramework- Calculating Metrics</p></td>
+<td><p>S</p></td>
+<td><p>Do this blog post <a class="reference external" href="https://waterprogramming.wordpress.com/2019/07/01/moeaframework-training-part-3-calculating-metrics/">link</a></p></td>
+<td><p>N/A</p></td>
+<td><p>You will generate a reference set along with basic hypervolume, generational distance, and epsilon indicator metrics</p></td>
+</tr>
+<tr class="row-odd"><td><p>Hooking up an External Problem to MOEAFramework- Creating Visualization</p></td>
+<td><p>S</p></td>
+<td><p>Do this blog post <a class="reference external" href="https://waterprogramming.wordpress.com/2019/08/20/moeaframework-training-part-4-processing-metrics-and-creating-visualizations/">link</a></p></td>
+<td><p>N/A</p></td>
+<td><p>You will learn to create control maps, attainment plots, and show the random seed analysis</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Commitment: S = Short ( &lt; 1 day), M = Medium (1-5 days), L = Long (&gt;5 days)</p></li>
+</ul>
+</section>
+<section id="reading-list">
+<h2>Reading list<a class="headerlink" href="#reading-list" title="Permalink to this heading">#</a></h2>
+<p>[1]  Salazar, J. Z., Reed, P. M., Herman, J. D., Giuliani, M., &amp; Castelletti, A. (2016). A diagnostic assessment of evolutionary algorithms for multi-objective surface water reservoir control. Advances in water resources, 92, 172-185.</p>
+<p>[2] Gupta, R. S., Hamilton, A. L., Reed, P. M., &amp; Characklis, G. W. (2020). Can modern multi-objective evolutionary algorithms discover high-dimensional financial risk portfolio tradeoffs for snow-dominated water-energy systems?. Advances in Water Resources, 145, 103718.</p>
+</section>
+<section id="necessary-software">
+<h2>Necessary software<a class="headerlink" href="#necessary-software" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>The ABCs of MOEAs and Basic Concepts- These posts are a good place to start to become familiar with terms associated with optimization and MOEA diagnostics.</p>
+<li><p>Download your desired HPC APIs. Some recommendations include:</p>
 <ul class="simple">
-<li><p>https://waterprogramming.wordpress.com/2021/06/21/the-abcs-of-moeas/</p></li>
-<li><p>https://waterprogramming.wordpress.com/2012/01/23/moeas-basic-concepts-and-reading/</p></li>
+<li><p><a class="reference external" href="https://mobaxterm.mobatek.net/download.html">MobaXTerm</a>  for Windows</p></li>
+<li><p><a class="reference external" href="https://cyberduck.io/">CyberDuck</a> for Mac</p></li>
 </ul>
 </li>
-<li><p>Next, we recommend reading some of our group’s diagnostics papers which will provide some high level overview of the experimental setup and the styles of visualizations that we use to convey the results from the diagnostics. If you want to read more about the different MOEAs that we test, there are specific sections in each of these papers that also list the fundamental papers that introduce each algorithm.</p>
-<ul class="simple">
-<li><p>Salazar, J. Z., Reed, P. M., Herman, J. D., Giuliani, M., &amp; Castelletti, A. (2016). A diagnostic assessment of evolutionary algorithms for multi-objective surface water reservoir control. Advances in water resources, 92, 172-185.</p></li>
-<li><p>Gupta, R. S., Hamilton, A. L., Reed, P. M., &amp; Characklis, G. W. (2020). Can modern multi-objective evolutionary algorithms discover high-dimensional financial risk portfolio tradeoffs for snow-dominated water-energy systems?. Advances in Water Resources, 145, 103718.</p></li>
-</ul>
-</li>
-<li><p>At this point, you’re ready to try out some diagnostics by yourself. First, we recommend doing the most simple diagnostic tutorial that is available that compares Borg and NSGA-II using MOEAFramework. Details on how to get MOEAFramework are shared in these posts as well.</p>
-<ul class="simple">
-<li><p>Part 1/3: https://waterprogramming.wordpress.com/2015/08/25/moea-diagnostics-for-a-simple-test-case-part-13/</p></li>
-<li><p>Part 2/3: https://waterprogramming.wordpress.com/2015/08/26/moea-diagnostics-for-a-simple-test-case-part-23/</p></li>
-<li><p>Part 3/3: https://waterprogramming.wordpress.com/2015/09/04/moea-diagnostics-for-a-simple-test-case-part-33/</p></li>
-</ul>
-</li>
-<li><p>In the prior post, the problem that the MOEAs were trying to solve was a theoretical test case that is built into MOEAFramework but for all of our publications, it’s necessary to hook up an external problem to MOEAFramework. There have been a series of posts created to help facilitate this process.</p>
-<ul class="simple">
-<li><p>Part 1/4: https://waterprogramming.wordpress.com/2019/04/15/moeaframework-training-part-1-connecting-an-external-problem/</p></li>
-<li><p>Part 2/4: https://waterprogramming.wordpress.com/2019/05/29/moeaframework-training-part-2-optimization-of-an-external-problem/</p></li>
-<li><p>Part 3/4: https://waterprogramming.wordpress.com/2019/07/01/moeaframework-training-part-3-calculating-metrics/</p></li>
-<li><p>Part 4/4: https://waterprogramming.wordpress.com/2019/08/20/moeaframework-training-part-4-processing-metrics-and-creating-visualizations/</p></li>
-</ul>
-</li>
-<li><p>One of the more complex diagnostics that can be done is on the multi-master version of Borg. Step-by-step instructions on analyzing master and operator dynamics can be found <a class="reference external" href="https://cornell.app.box.com/folder/188733058270">here</a></p></li>
+<li><p>Download <a class="reference external" href="https://www.java.com/en/download/manual.jsp">Java</a> for running MOEAFramework</p></li>
+<li><p>Download the <a class="reference external" href="http://moeaframework.org/downloads.html">MOEAFramework Demo Application</a></p></li>
 </ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -505,6 +586,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-activities">Training activities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-software">Necessary software</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
