@@ -31,25 +31,25 @@ None
 * - Non-parametric Generators
   - S
   - Read this blog post [link](https://waterprogramming.wordpress.com/2015/08/19/synthetic-weather-generation-part-ii/) 
-  -N/A
+  - N/A
   - You will learn about non-parametric generators, in which the underlying distribution is not known, and future realizations are simulated by resampling from the historical record.
 
 * - Multi-Site Weather Generators
   - S
   - Read this blog post [link](https://waterprogramming.wordpress.com/2016/02/15/synthetic-weather-generation-part-iii/) 
-  -N/A
+  - N/A
   - You will learn about generating correlated weather data.
 
 * - Conditioning Synthetic Weather Generation on Climate Change Projections
   - S
   - Read this blog post [link](https://waterprogramming.wordpress.com/2016/04/13/synthetic-weather-generation-part-iv/) 
-  -N/A
+  - N/A
   - You will learn about modifications to parametric and non-parametric weather generators to simulate weather that is consistent with climate change projections.
 
 * - Conditioning Synthetic Weather Generation on Seasonal Climate Forecasts
   - S
   - Read this blog post [link](https://waterprogramming.wordpress.com/2016/07/25/synthetic-weather-generation-part-v/) 
-  -N/A
+  - N/A
   - You will learn about modifications to parametric and non-parametric weather generators to simulate weather that is consistent with shorter seasonal forecasts.  
 ```
 
