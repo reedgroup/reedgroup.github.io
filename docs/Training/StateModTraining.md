@@ -12,7 +12,7 @@ This training requires an understanding of using a cluster. You can learn more a
 
 ## Training activities
 
-```{list-table} TRAINING TITLE Activities
+```{list-table} StateMod Training
 :header-rows: 1
 
 * - Topic
@@ -25,7 +25,7 @@ This training requires an understanding of using a cluster. You can learn more a
   - S
   - Complete this training on compiling and running StateMod [link](https://waterprogramming.wordpress.com/2018/07/03/fitting-hidden-markov-models-part-i-background-and-methods/)
   - [1]
-  - You will have working version of StateMod <br> You have methods to extract shortages for users in the San Juan
+  - You will have working version of StateMod and a bank of methods to extract shortages for users in the San Juan
 
 * - Reading the StateMod Online Manual
   - M
