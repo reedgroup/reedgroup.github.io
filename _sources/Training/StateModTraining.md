@@ -1,4 +1,4 @@
-# Getting starting with StateMod
+# Getting Started with StateMod
 
 ## Introduction
 
