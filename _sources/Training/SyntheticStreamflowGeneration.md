@@ -9,7 +9,7 @@ There are a series of excellent blog posts that step through different types of 
 In these blog posts, you will learn how to build and use the primary streamflow generators that are used in Reed Group in order to generate synthetic traces of streamflow. 
 
 ## Prerequisites 
-These training require general proficiency in Python. If you are new to Python, you can get started here [here](https://reedgroup.github.io/ComputationalResources/python_crash_course.html). 
+These training require general proficiency in Python. If you are new to Python, you can get started [here](https://reedgroup.github.io/ComputationalResources/python_crash_course.html). 
 
 ### Activities
 
