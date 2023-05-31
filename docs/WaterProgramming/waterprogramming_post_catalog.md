@@ -1,7 +1,8 @@
 # WaterProgramming Post Catalog
 
-<div style="position:relative; display:flex; flex-grow: 1;">
+<div style="position:relative; height: 100%;">
   <iframe src="post_catalog.html" title = "Blog Post Catalog" 
-  frameborder="0" allowfullscreen style="flex-grow: 1;">
+  style="width: 100%; height: 100%;"
+  frameborder="0" allowfullscreen>
   </iframe>
 </div>
