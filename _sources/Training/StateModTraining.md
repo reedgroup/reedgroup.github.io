@@ -5,7 +5,7 @@
  StateMod was developed to support comprehensive assessments of water demand, allocation, and use, as well as reservoir operations. It represents all of the major sub-basins within the state of Colorado (i.e., Parsons & Bennett, 2006; White, Yampa, Upper Colorado, Gunnison, Dolores, San Juan, and San Miguel CWCB, 2012). StateMod replicates each basin's unique application and enforcement of the prior appropriation doctrine and accounts for all of the consumptive use within the basins. To do so, it relies on the detailed historic demand and operation records contained in HydroBase thatinclude individual water right information for all consumptive use, data on water structures (wells, ditches,reservoirs, and tunnels), and streamflow data. Further, StateMod uses irrigation consumptive use data out-put from StateCU, which calculates water consumption based on soil moisture, crop type, irrigated acreage,and conveyance and application efficiencies for each individual irrigation unit in the region. These detailed,fine-scale inputs allow StateMod to resolve the effect of all users and water rights on water availability, which can in turn be used to simulate hypothetical scenarios to assess the impacts of changes in hydrology, water rights, or infrastructure on any and all represented water rights (Hadjimichael et al., 2020).
 
 ## Learning Objectives
- Various students in Reed Group have used StateMod for exploratory analyses and have put together various trainings. Generally, the objectives of these trainings are to get StateMod compiled on Hopper or your HPC resource of choice. Then to run a StateMod simulation with an example dataset. Here we demonstrate running StateMod in the San Juan basin. Finally, we include 
+ Various students in Reed Group have used StateMod for exploratory analyses and have put together various trainings. Generally, the objectives of these trainings are to get StateMod compiled on Hopper or your HPC resource of choice. Then to run a StateMod simulation with an example dataset. Here we demonstrate running StateMod in the San Juan basin. Finally, we include links to the StateMod manual which will be a useful supplemental resource.  
 
 ## Prerequisites 
 This training requires an understanding of using a cluster. You can learn more about our local clusters [here](https://reedgroup.github.io/ComputationalResources/ClusterBasics.html). You will also need some proficiency in [Linux](https://reedgroup.github.io/ComputationalResources/IntroToLinux.html).
@@ -25,7 +25,7 @@ This training requires an understanding of using a cluster. You can learn more a
   - S
   - Complete this training on compiling and running StateMod [link](https://waterprogramming.wordpress.com/2018/07/03/fitting-hidden-markov-models-part-i-background-and-methods/)
   - [1]
-  - You will have working version of StateMod and a bank of methods to extract shortages for users in the San Juan
+  - You will have working version of StateMod and a bank of methods to extract shortages for users in the San Juan basin.
 
 * - Reading the StateMod Online Manual
   - M
