@@ -1,5 +1,5 @@
 # Getting starting with MOEAs
-*Under construction*
+
 ## Introduction
 Welcome! If you are new to the Reed Group, this will very likely be the first set of training activities that you will be expected to complete. Bear in mind that the sequence here is meant to be a guide, and the time it takes to complete each component might vary depending on class load, prior experience, etc. As you go through the training, the contents of "Resources" will be your main guide. Further supplementary reading can be found in "Reading". This material is optional, but highly recommended to get into the weeds of the why we do what we do here in the Reed Group. Take a look at "Recommended software" to get an idea of what you might need to download and install to help speed your training along. 
 

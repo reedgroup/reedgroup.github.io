@@ -42,6 +42,7 @@ parts:
     - file: Training/intro_to_scenario_discovery.md
     - file: Training/SyntheticStreamflowGeneration.md
     - file: Training/StateModTraining.md
+    - file: Training/Linux_MOEAs_HPC.md	
     - file: Training/MOEADiagnostics.md
     - file: Training/SyntheticWeatherGeneration.md
     - file: Training/FisheriesGame.md
