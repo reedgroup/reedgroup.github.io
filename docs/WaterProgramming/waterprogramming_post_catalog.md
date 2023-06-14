@@ -4,7 +4,7 @@ The table below contains posts from the [WaterProgramming](https://waterprogramm
 
 <div style="position:relative; height: 700;">
   <iframe src="post_catalog.html" 
-  style="width: 100%; height: 100%;"
+  style="width: 100%; height: 700;"
   frameborder="0" allowfullscreen>
   </iframe>
 </div>
