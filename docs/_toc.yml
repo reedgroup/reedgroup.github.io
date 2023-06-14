@@ -28,6 +28,7 @@ parts:
     - file: Software/BorgMOEA.md
     - file: Software/WaterPaths.md
     - file: Software/PywrDRB.md
+    - file: Software/CALFEWS.md
     - file: Software/SALib.md
     - file: Software/Rhodium.md
     - file: Software/MOEAFramework.md
@@ -35,7 +36,7 @@ parts:
   - file: Training/Training.md
     sections:
     - file: Training/Schedule.md
-    - file: Training/Reading.md
+      #    - file: Training/Reading.md
     - file: Training/Linux_MOEAs_HPC.md
     - file: Training/LakeProblem.md
     - file: Training/intro_to_sensitivity_analysis.md
