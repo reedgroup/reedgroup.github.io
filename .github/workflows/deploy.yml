@@ -17,7 +17,7 @@ on:
 
 jobs: 
   install-dependencies:
-    if: "contains(github.event.head_commit.message, '[install]')"
+    if: "contains(github.event.head_commit.message, '[ipynb]')"
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -63,7 +63,6 @@ jobs:
 
   # This job deploys the example book
   deploy-example-book:
-    if: "contains(github.event.head_commit.message, '[build]')"
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
