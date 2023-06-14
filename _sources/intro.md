@@ -1,7 +1,7 @@
 # Welcome to our lab manual! 
 
 ```{warning}
-This site is still under construction
+This site is still under construction. If you see any mistakes or would like to request any additional material, please submit a new [Issue on GitHub](https://github.com/reedgroup/reedgroup.github.io/issues).
 ```
 
 ![Reed Group](ReedGroup.jpg)
