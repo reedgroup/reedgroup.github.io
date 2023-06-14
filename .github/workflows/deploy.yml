@@ -16,8 +16,8 @@ on:
     - cron: '0 0 1 * *'
 
 jobs: 
-  # This job deploys the example book
-  deploy-example-book:
+  install-dependencies:
+    if: "contains(github.event.head_commit.message, '[install]')"
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -50,7 +50,7 @@ jobs:
     # update kernel of all jupyter notebooks to .venv to match GH action environment
     - name: Update Jupyter Notebook kernels 
       run: python docs/update_jupyter_kernels.py .venv |
-           python -m ipykernel install --user --name=.venv
+          python -m ipykernel install --user --name=.venv
 
     # install R
     - name: Install R
@@ -60,6 +60,17 @@ jobs:
     # install R dependencies
     - name: Install R dependencies
       run: sh docs/install_R_dependencies.sh
+
+  # This job deploys the example book
+  deploy-example-book:
+    if: "contains(github.event.head_commit.message, '[build]')"
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: [3.8]
+    steps:
+    - uses: actions/checkout@v2
 
     # Build the example book
     - name: Build book
