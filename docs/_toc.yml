@@ -52,6 +52,7 @@ parts:
   - file: FigureLibrary/FigureLibrary.md
     sections:
     - file: FigureLibrary/ParallelAxisPlot.md
+    - file: FigureLibrary/synthetic_generation_diagnostics.ipynb
     - file: FigureLibrary/scatterplot_colorbar.md
     - file: FigureLibrary/scatter3d.md
     - file: FigureLibrary/MOEADiagnostics.ipynb
