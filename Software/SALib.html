@@ -388,7 +388,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -404,6 +406,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -415,13 +425,22 @@ document.write(`
                   
   <section id="salib">
 <h1>SALib<a class="headerlink" href="#salib" title="Permalink to this heading">#</a></h1>
-<p>The Sensitivity Analysis Library in Python (<a class="reference external" href="https://salib.readthedocs.io/en/latest/">SALib</a>) is a package used to perform various sensitivity analysis techniques.</p>
-<p>SALib can be used to generate samples of input parameters, and calculate various sensitivity indices associated with each parameter. For information on how to use SALib, see the following collection of WaterProgramming blog posts as well as the <a class="reference external" href="https://salib.readthedocs.io/en/latest/">SALib documentation here</a>:</p>
+<p><img alt="SALib Logo" src="../_images/SALib_logo.png" /></p>
+<blockquote>
+<div><p><a class="reference external" href="https://salib.readthedocs.io/en/latest/">SALib</a>is used to implement <em>“…commonly used sensitivity analysis methods, including Sobol, Morris, and FAST methods. Useful in systems modeling to calculate the effects of model inputs or exogenous factors on outputs of interest.”</em></p>
+</div></blockquote>
+<p>SALib can be used to generate samples of input parameters, and calculate various sensitivity indices associated with each parameter using a suite of different methods.</p>
+<p>For information on how to use SALib, see referenced publications below, the <a class="reference external" href="https://salib.readthedocs.io/en/latest/">SALib documentation</a>, and the following collection of WaterProgramming blog posts:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://waterprogramming.wordpress.com/2013/09/23/method-of-morris-elementary-effects-using-salib/">Method of Morris (Elementary Effects) using SALib</a></p></li>
 <li><p><a class="reference external" href="https://waterprogramming.wordpress.com/2013/08/05/running-sobol-sensitivity-analysis-using-salib/">Running Sobol Sensitivity Analysis using SALib</a></p></li>
 <li><p><a class="reference external" href="https://waterprogramming.wordpress.com/2014/02/11/extensions-of-salib-for-more-complex-sensitivity-analyses/">Extensions of SALib for more complex sensitivity analysis</a></p></li>
 </ul>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<p>Iwanaga, T., Usher, W., &amp; Herman, J. (2022). Toward SALib 2.0: Advancing the accessibility and interpretability of global sensitivity analyses. Socio-Environmental Systems Modelling, 4, 18155. doi:10.18174/sesmo.18155</p>
+<p>Herman, J. and Usher, W. (2017) SALib: An open-source Python library for sensitivity analysis. Journal of Open Source Software, 2(9). doi:10.21105/joss.00097</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -482,6 +501,20 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
