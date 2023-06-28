@@ -12,16 +12,15 @@ parts:
     - file: GraduateStudentResources/Conferences.md
     - file: GraduateStudentResources/PresentationTemplates.md
     - file: GraduateStudentResources/WritingProcess.md
-  - file: ComputationalResources/ComputationalResources.md
+    - file: GraduateStudentResources/Organization.md
+    - file: ComputationalResources/ComputationalResources.md
     sections:
     - file: ComputationalResources/ClusterBasics.md
     - file: ComputationalResources/python_crash_course.md
     - file: ComputationalResources/Machine_Learning_Resources.md
     - file: ComputationalResources/IntroToLinux.md
     - file: ComputationalResources/IntroToGitHub.md
-    - file: ComputationalResources/Computing.md
     - file: ComputationalResources/CitationReferenceManagementTools.md
-    - file: ComputationalResources/DataVisualization.md
     - file: ComputationalResources/Websites.md
   - file: Software/Software.md
     sections:
