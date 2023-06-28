@@ -38,6 +38,7 @@ See the Necessary Software at the bottom of this page prior to starting the trai
 ## Reading list
 
 \[1] First citation
+
 \[2] Second citation
 
 ## Necessary Software
