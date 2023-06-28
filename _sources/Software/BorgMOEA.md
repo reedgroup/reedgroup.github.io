@@ -1,5 +1,5 @@
 # Borg MOEA
-
+![](Borg_logo.png)
 As you are getting acclimated with the group, one of the tools you will hear a lot about is the Borg Multi-Objective Evolutionary Algorithm (MOEA). The Borg MOEA was developed by Pat and Dave Hadka at Penn State and has become an essential evolutionary algorithm for performing multi-objective optimization in our case studies. The first step to using Borg is to read the associated paper. It's normal to not understand every detail, but as you start working on tutorials through your first semester, you'll find that the paper becomes more understandable and a good resource.   
 
 ## BORG Wrappers
