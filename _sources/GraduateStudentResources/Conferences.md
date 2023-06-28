@@ -1,4 +1,5 @@
 # Conferences
+![](Poster.jpg)
 Here are some great conferences that Reed Group members commonly attend:
 - [ASCE EWRI World Environmental & Water Resources Congress](https://www.ewricongress.org/). This is a medium-sized conference (~1000 people) focused on water resources. We typically present in sessions within the smaller Planning and Management track. EWRI Congress typically occurs late May or early June, and the location changes each year. Abstracts generally due far in advance (e.g., September).
 - [AGU Fall Meeting](https://www.agu.org/fall-meeting). This is a huge conference (>25,000 people) covering everything from hydrology to earthquakes to Martian geology. We typically present in sessions within the Global Environmental Change or Hydrology sections, although there can be interesting sessions in other sections as well. AGU typically takes place in mid December and rotates between a few locations such as San Francisco, New Orleans, and Washington DC. Abstracts generally due in July or August.
