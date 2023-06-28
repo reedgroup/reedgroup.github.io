@@ -1,6 +1,6 @@
 #!/bin/bash
 html_file=WaterProgramming/waterprogramming_post_catalog.html
-line=$(grep -n '<article class="bd-article" role="main"' '_build/html/'$html_file | tr ":" " " | tr "<" " " | tr ">" " " | tr '"' ' ')
+line=$(grep -n '<article class="bd-article" role="main"' 'docs/_build/html/'$html_file | tr ":" " " | tr "<" " " | tr ">" " " | tr '"' ' ')
 #line=($line)
 #line=${line[0]}
 #let line--
