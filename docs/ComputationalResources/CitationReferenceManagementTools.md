@@ -15,26 +15,19 @@ Research Rabbit can also be integrated with Zotero folders to create categories 
 Further information on Research Rabbit can be found [here](https://researchrabbit.notion.site/Welcome-to-the-FAQ-c33b4a61e453431482015e27e8af40d5#d15aebe6726647e086cdc935f2067bf5).
 
 ### [Connected Papers](https://www.connectedpapers.com/)
-Some description about Connected Papers
+Connected papers is a tool that allows you to connect a paper to others that are similar. The tool builds a visual graph that connects a paper of interest to other papers in the field. It is easy to use and can be a helpful supplementary tool during a literature review.
 
 ### [Citation Tree](https://www.citationtree.org/)
-Some description about Citation Tree here
+Citation tree is quite similar to Connected Papers, but uses slightly different methodology and presents graphs using a different visual style. It is also very easy to use and a helpful supplementary tool during a literature review. 
 
 ### [Elicit](https://elicit.org/)
 Some description about Elicit here
 
 
 ## Reference Management 
-There are two popular reference management tools in the ether: Zotero and Mendeley. We'll compare the two here to help you choose the one that suits your purposes best!
 
 ### [Zotero](https://www.zotero.org/)
-Some description about Zotero here
-
-### [Mendeley](https://www.mendeley.com/)
-Some description about Mendeley here
-
-### [Notion](https://www.notion.so/)
-Some description about Notion here. 
+Zotero is a free, open-source reference managment software. Using Zotero, you can build a database of papers, storing information such as authors, title, publication and date fileds. The software also allows you to organize, tag and search the database. A great feature of Zotero is its ability to integrate with web browers. When the web browser extension is installed, you can add a paper to your database with a single button click. 
 
 ## Visualizing this information
 Everything is (or potentially is) connected! There are visualization tools you can use to view our group's and our collaborators' bibliographic networks.
