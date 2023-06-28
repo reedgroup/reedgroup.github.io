@@ -3,4 +3,5 @@ As part of the Reed Group you'll be managing research projects, course work, and
 
 ## Notion
 ![](Notion_logo.png)
+
 [Notion](https://www.notion.so/product) is an organizational tool to help you organize thoughts, manage projects, and keep track of notes. The app is highly customizable and has a variety of prebuilt templates to get started. Notion pages can be made collaboratively or shared to groups. It has extensive multimedia capabilities and some advanced methods for managing data. A major drawback of Notion is that it is entirely web-based, so you need an internet connection to use the app (as of June 2023).
