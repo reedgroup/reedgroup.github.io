@@ -98,6 +98,10 @@ jobs:
         source: "docs/WaterProgramming/post_catalog.html"
         target: "docs/_build/html/WaterProgramming/post_catalog.html"
 
+    # manually edit html to increase size of Water Programming Blog post table
+    - name: edit table html
+      run: sh docs/update_WaterProgramming_table_html.sh
+
     # Deploy html to gh-pages
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.6.1
