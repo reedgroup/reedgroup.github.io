@@ -14,7 +14,7 @@
 3. [Getting Started with StateMOD](StateModTraining.md)
 
 
-## Optional training
+## Additional training
 1. [Introduction to WaterPaths](WaterPaths_Training.md)
 
 ## Accompanying Resources
