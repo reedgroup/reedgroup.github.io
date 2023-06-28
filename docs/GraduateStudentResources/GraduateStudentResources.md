@@ -1,5 +1,5 @@
 # Graduate Student Resources
-![](Hollister_Hall.png)
+![](Hollister_Hall.jpg)
 
 ```{tableofcontents}
 ```
