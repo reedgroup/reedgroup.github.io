@@ -1,5 +1,5 @@
 #!/bin/bash
-html_file=docs/_build/html/WaterProgramming/waterprogramming_post_catalog.html
+html_file=WaterProgramming/waterprogramming_post_catalog.html
 line=$(grep -n '<article class="bd-article" role="main"' '_build/html/'$html_file | tr ":" " " | tr "<" " " | tr ">" " " | tr '"' ' ')
 #line=($line)
 #line=${line[0]}
