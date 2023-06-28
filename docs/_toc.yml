@@ -13,7 +13,7 @@ parts:
     - file: GraduateStudentResources/PresentationTemplates.md
     - file: GraduateStudentResources/WritingProcess.md
     - file: GraduateStudentResources/Organization.md
-    - file: ComputationalResources/ComputationalResources.md
+  - file: ComputationalResources/ComputationalResources.md
     sections:
     - file: ComputationalResources/ClusterBasics.md
     - file: ComputationalResources/python_crash_course.md
