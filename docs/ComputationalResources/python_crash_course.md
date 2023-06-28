@@ -1,7 +1,5 @@
 # Crash Course in Python
 
-*This site is still under construction*
-
 If you're new (or learning) Python, you've come to the right place! Please follow the two Python tutorials found at the [Jupyter Binder
 here](https://mybinder.org/v2/gh/lbl59/lab_manual_resources.git/HEAD). After completing these tutorials, you will be able to:
 1. Install and use Python and all its packages
@@ -38,6 +36,8 @@ myenv\Scripts\activate
 deactivate
 ```
 
+
+### A starter exercise
 You will find that the Binder contains the following files and their contents:
 1. [Getting Started with Python and Pandas I.ipynb](https://mybinder.org/v2/gh/lbl59/lab_manual_resources/65924fc71a0573165f97eee04f18f1076473d6ad?urlpath=lab%2Ftree%2FGetting%20started%20with%20Python%20and%20Pandas%20I.ipynb)
 	- Introduction to Python
