@@ -102,6 +102,14 @@ jobs:
     - name: edit table html
       run: bash .github/workflows/update_WaterProgramming_table_html.sh
 
+    # Copy images to build
+    - name: copy images
+      uses: canastro/copy-file-action@master
+      with:
+        source: docs/images/.
+        target: docs/_build/html/_images/
+        flags: '-r'
+        
     # Deploy html to gh-pages
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.6.1
