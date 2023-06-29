@@ -44,7 +44,7 @@ jobs:
     # install python dependencies - only if [ipynb] triggered and environment out of date
     - name: Install python dependencies
       run: pip install -r docs/requirements_py.txt
-      if: "contains(github.event.head_commit.message, '[ipynb]')" && (steps.cache-virtualenv.outputs.cache-hit != 'true')
+      if: "contains(github.event.head_commit.message, '[ipynb]')" #&& (steps.cache-virtualenv.outputs.cache-hit != 'true')
 
     # update kernel of all jupyter notebooks to .venv to match GH action environment - only if [ipynb] triggered
     - name: Update Jupyter Notebook kernels 
