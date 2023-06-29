@@ -16,8 +16,7 @@ on:
     - cron: '0 0 1 * *'
 
 jobs: 
-  install-dependencies:
-    if: "contains(github.event.head_commit.message, '[ipynb]')"
+  rebuild-and-deploy-book:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -42,52 +41,27 @@ jobs:
     - uses: syphar/restore-pip-download-cache@v1
       if: steps.cache-virtualenv.outputs.cache-hit != 'true'
 
-    # install python dependencies    
+    # install python dependencies - only if [ipynb] triggered and environment out of date
     - name: Install python dependencies
       run: pip install -r docs/requirements_py.txt
-      if: steps.cache-virtualenv.outputs.cache-hit != 'true'
+      if: steps.cache-virtualenv.outputs.cache-hit != 'true' && "contains(github.event.head_commit.message, '[ipynb]')"
 
-    # update kernel of all jupyter notebooks to .venv to match GH action environment
+    # update kernel of all jupyter notebooks to .venv to match GH action environment - only if [ipynb] triggered
     - name: Update Jupyter Notebook kernels 
       run: python .github/workflows/update_jupyter_kernels.py .venv |
           python -m ipykernel install --user --name=.venv
+      if: "contains(github.event.head_commit.message, '[ipynb]')"
 
-    # install R
+    # install R - only if [ipynb] triggered
     - name: Install R
       uses: r-lib/actions/setup-r@v2
       with:
         use-public-rspm: true
+      if: "contains(github.event.head_commit.message, '[ipynb]')"
     # install R dependencies
     - name: Install R dependencies
       run: bash .github/workflows/install_R_dependencies.sh
-
-  # This job deploys the example book 
-  deploy-example-book:
-    if: ${{ always() }}
-    needs: install-dependencies
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        python-version: [3.8]
-    steps:
-    - uses: actions/checkout@v2
-
-    # Install python
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v1
-      with:
-        python-version: ${{ matrix.python-version }}
-
-    # install virtual environment with caching, so only updates when requirements.txt changes,
-    # based on https://github.com/marketplace/actions/restore-or-create-a-python-virtualenv#custom_virtualenv_dir
-    # Note: virtual environment by default will be created under ~/.venv
-    - uses: syphar/restore-virtualenv@v1
-      id: cache-virtualenv
-      with:
-        requirement_files: docs/requirements_py.txt
-    - uses: syphar/restore-pip-download-cache@v1
-      if: steps.cache-virtualenv.outputs.cache-hit != 'true'
+      if: "contains(github.event.head_commit.message, '[ipynb]')"
 
     # Build the example book
     - name: Build book
