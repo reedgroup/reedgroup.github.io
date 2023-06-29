@@ -3,7 +3,7 @@
 
 title: Reed group lab manual
 author: The Reed Group at Cornell CEE
-logo: logo.png
+logo: images/logo.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
