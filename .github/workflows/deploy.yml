@@ -49,7 +49,7 @@ jobs:
 
     # update kernel of all jupyter notebooks to .venv to match GH action environment
     - name: Update Jupyter Notebook kernels 
-      run: python docs/update_jupyter_kernels.py .venv |
+      run: python .github/workflows/update_jupyter_kernels.py .venv |
           python -m ipykernel install --user --name=.venv
 
     # install R
@@ -59,7 +59,7 @@ jobs:
         use-public-rspm: true
     # install R dependencies
     - name: Install R dependencies
-      run: sh docs/install_R_dependencies.sh
+      run: bash .github/workflows/install_R_dependencies.sh
 
   # This job deploys the example book
   deploy-example-book:
@@ -100,7 +100,7 @@ jobs:
 
     # manually edit html to increase size of Water Programming Blog post table
     - name: edit table html
-      run: bash docs/update_WaterProgramming_table_html.sh
+      run: bash .github/workflows/update_WaterProgramming_table_html.sh
 
     # Deploy html to gh-pages
     - name: GitHub Pages action
