@@ -100,7 +100,7 @@ jobs:
 
     # manually edit html to increase size of Water Programming Blog post table
     - name: edit table html
-      run: sh docs/update_WaterProgramming_table_html.sh
+      run: bash docs/update_WaterProgramming_table_html.sh
 
     # Deploy html to gh-pages
     - name: GitHub Pages action
