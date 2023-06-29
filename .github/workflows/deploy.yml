@@ -63,6 +63,7 @@ jobs:
 
   # This job deploys the example book
   deploy-example-book:
+    needs: install-dependencies
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
