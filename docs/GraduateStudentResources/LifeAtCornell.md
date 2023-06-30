@@ -1,4 +1,4 @@
-# Housing around Cornell 
+# Housing Around Cornell 
 
 ![](Cornell_University.jpg)
 
@@ -7,7 +7,7 @@ March/April is ideal time to find a lease that begins in August, though there ar
 
 
 ## Ithaca Neighborhoods 
-![](../images/![](Cornell_University.jpg)
+![](../images/Ithaca_Neighborhoods.png)
 It helps to describe Ithaca’s geography a bit. Ithaca is surrounded by three hills and a lake (to the north). Cornell is on the east hill, Ithaca College on the south hill. Downtown is situated in the middle of the hills. Around Ithaca are a variety of neighborhoods that students can live in. 
 
 
