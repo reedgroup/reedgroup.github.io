@@ -21,13 +21,12 @@ Connected papers is a tool that allows you to connect a paper to others that are
 Citation tree is quite similar to Connected Papers, but uses slightly different methodology and presents graphs using a different visual style. It is also very easy to use and a helpful supplementary tool during a literature review. 
 
 ### [Elicit](https://elicit.org/)
-Some description about Elicit here
-
+Elicit is an academic search engine similar to that of Google (but for papers!) that uses natural language processing (NLP) algorithms to contextualize a user's search terms and accelerate the search of papers relevant to your field of interest. Similar to many other citations tools, it has filtering function that includes options to filter by citation count, publication year, author, journal, etc. You can also upload a paper that you have read as a PDF to extract information such as its key findings, specific details on the paper's methodology, and its limitations. All this information is presented in the form of a table (unliek the graph/network style of prior citation tools) where you can easily hide or reveal columns depending on your requirements.
 
 ## Reference Management 
 
 ### [Zotero](https://www.zotero.org/)
-Zotero is a free, open-source reference managment software. Using Zotero, you can build a database of papers, storing information such as authors, title, publication and date fileds. The software also allows you to organize, tag and search the database. A great feature of Zotero is its ability to integrate with web browers. When the web browser extension is installed, you can add a paper to your database with a single button click. 
+Zotero is a free, open-source reference managment software. Using Zotero, you can build a database of papers, storing information such as authors, title, publication and date fileds. The software also allows you to organize, tag and search the database. A great feature of Zotero is its ability to integrate with web browers. When the web browser extension is installed, you can add a paper to your database with a single button click. It also integrates well with Microsoft Word, allowing you to auto-update your References section when you add a new citation in your text using the Zotero Word plugin. 
 
 ## Visualizing this information
 Everything is (or potentially is) connected! There are visualization tools you can use to view our group's and our collaborators' bibliographic networks.
