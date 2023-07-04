@@ -13,4 +13,5 @@ We also have a supporting folder within the Reed Group Box folder called [Disser
 2. Zinsser, W. (2006). On writing well: The classic guide to writing nonfiction. HarperCollins. [Borrow from Cornell Library here.](https://catalog.library.cornell.edu/catalog/3261133)
 
 Happy writing!
+
 ![writing capybara](../images/capybara_writing.jpg "Be like Kafkabara")
