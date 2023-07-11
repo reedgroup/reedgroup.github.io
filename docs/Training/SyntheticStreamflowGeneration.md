@@ -11,8 +11,6 @@ In these blog posts, you will learn how to build and use the primary streamflow 
 ## Prerequisites 
 These training require general proficiency in Python. If you are new to Python, you can get started [here](https://reedgroup.github.io/ComputationalResources/python_crash_course.html). 
 
-### Activities
-
 
 ## Training activities
 
