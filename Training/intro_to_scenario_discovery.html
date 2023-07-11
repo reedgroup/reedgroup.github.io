@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Reed group lab manual</title>
+    <title>Intro to Scenario Discovery &#8212; Reed group lab manual</title>
   
   
   
@@ -156,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../GraduateStudentResources/GraduateStudentResources.html">Graduate Student Resources</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/LifeAtCornell.html">Housing Around Cornell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Courses.html">Course List</a></li>
@@ -187,11 +187,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Software/J3.html">J3 Visualization</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Training.html">Training</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Training.html">Training</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Schedule.html">Suggested training schedule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Linux_MOEAs_HPC.html">Getting starting with MOEAs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LakeProblem.html">The Shallow Lake Problem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_to_sensitivity_analysis.html">Introduction to Sensitivity Analysis</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Intro to Scenario Discovery</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SyntheticStreamflowGeneration.html">Synthetic Streamflow Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="StateModTraining.html">Getting Started with StateMod</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MOEADiagnostics.html">Introduction to MOEA Diagnostics</a></li>
@@ -400,7 +401,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Intro to Scenario Discovery</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -409,9 +410,14 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-activities">Training activities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-software">Necessary Software</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -422,7 +428,57 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  
+  <section id="intro-to-scenario-discovery">
+<h1>Intro to Scenario Discovery<a class="headerlink" href="#intro-to-scenario-discovery" title="Permalink to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>When attempting to make decisions in the presence of an uncertain scenario, it can be valuable to understand <em>what future conditions lead to unsuccessful outcomes.</em></p>
+<p>Scenario discovery is the process of identifying conditions which lead to failure of performance objectives.  In an exploratory modeling context, the scenario discovery process generally involves:</p>
+<ul class="simple">
+<li><p>Simulating a wide variety of different future conditions</p></li>
+<li><p>Assessing the performance objectives in each state of the world as successful or failure</p></li>
+<li><p>Using a classification strategy to define regions of success or failure in the uncertainty space</p></li>
+</ul>
+</section>
+<section id="learning-objectives">
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Understand the role of scenario discovery in the context robust decision making methods</p></li>
+<li><p>Become familiar with various classification methods used in scenario discovery, along with strengths and weaknesses:</p>
+<ul>
+<li><p>Logistic Regression</p></li>
+<li><p>Patient Rule Induction Method</p></li>
+<li><p>Classification and Regression Trees</p></li>
+<li><p>Gradient Boosted Trees</p></li>
+</ul>
+</li>
+<li><p>Learn about recent advancements in scenario discovery (time-evolving studies)</p></li>
+</ul>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<p>No prerequisites are required. However, the following scenario discovery training activities pair well with the <a class="reference internal" href="LakeProblem.html"><span class="doc std std-doc">Lake Problem training.</span></a> If the Lake Problem has been completed, then you can apply the following scenario discovery methods to the set of uncertainty inputs and objectives from the Lake Problem, otherwise you will need to rely on sample data available in the following trainings or create fake data to work with.</p>
+<p>See the Necessary Software at the bottom of this page prior to starting the training activities.</p>
+</section>
+<section id="training-activities">
+<h2>Training activities<a class="headerlink" href="#training-activities" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Commitment: S = Short ( &lt; 1 day), M = Medium (1-5 days), L = Long (&gt;5 days)</p></li>
+</ul>
+</section>
+<section id="reading-list">
+<h2>Reading list<a class="headerlink" href="#reading-list" title="Permalink to this heading">#</a></h2>
+<p>[1] Groves, D. G., &amp; Lempert, R. J. (2007). A new analytic method for finding policy-relevant scenarios. Global Environmental Change, 17(1), 73-85.</p>
+<p>[2] Bryant, B. P., &amp; Lempert, R. J. (2010). Thinking inside the box: A participatory, computer-assisted approach to scenario discovery. <em>Technological Forecasting and Social Change</em>, <em>77</em>(1), 34-49.</p>
+</section>
+<section id="necessary-software">
+<h2>Necessary Software<a class="headerlink" href="#necessary-software" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Programming language of choice.</p></li>
+</ol>
+</section>
+</section>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -489,9 +545,14 @@ document.write(`
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-activities">Training activities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-software">Necessary Software</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
