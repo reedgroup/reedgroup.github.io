@@ -27,8 +27,7 @@ The following training sequence is suggested, but should be used as a general gu
 | Understanding different SA methods | Medium | None | \[1] [Sensitivity Analysis: The Basics](https://uc-ebook.org/docs/html/3_sensitivity_analysis_the_basics.html) | Distinguishing different SA methods (variance-based, PDF-based, etc.) | 
 | Exploring sensitivity analysis in different languages | Short | None | [Sensitivity analysis tools in different computing languages](https://waterprogramming.wordpress.com/2020/02/25/open-source-sensitivity-analysis-tools/) | Explore different SA packages available | 
 | Using the SALib package | Short | [Download SALib](https://salib.readthedocs.io/en/latest/) | \[2] | Obtain and install the SALib package |
-| Performing sensitivity analysis | Medium | Complete the [Jupyter notebook
-activity](https://mybinder.org/v2/gh/lbl59/lab_manual_resources/8546b1278e46f9d8b31d9de4bac6a74352799377?urlpath=lab%2Ftree%2Fsensitivity_analysis.ipynb) | None | Apply SA on a simple water wholesaler problem | 
+| Performing sensitivity analysis | Medium | Complete the [Jupyter notebook activity](https://mybinder.org/v2/gh/lbl59/lab_manual_resources/8546b1278e46f9d8b31d9de4bac6a74352799377?urlpath=lab%2Ftree%2Fsensitivity_analysis.ipynb) | None | Apply SA on a simple water wholesaler problem | 
 
 ## Reading list
 Once you've completed this tutorial, here are some other resources to help you advance your sensitivity analysis skills:
