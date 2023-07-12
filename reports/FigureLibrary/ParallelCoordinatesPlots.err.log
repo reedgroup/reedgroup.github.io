@@ -22,7 +22,7 @@ custom_parallel_coordinates(objs, columns_axes=objs.columns, axis_labels = axis_
 ------------------
 
 ----- stderr -----
-/tmp/ipykernel_1860/17955147.py:38: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.
+/tmp/ipykernel_7268/4250043441.py:38: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.
   color = cm.get_cmap(color_palette_continuous)(value)
 ------------------
 
