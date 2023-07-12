@@ -28,43 +28,37 @@ See the Necessary Software at the bottom of this page prior to starting the trai
 ## Training activities
 
 ```{list-table} Scenario Discovery Training Activities
-
 :header-rows: 1
 
 * - Topic
-  - Commitment
-  - Tasks
-  - Readings
-  - Outcomes
-
+  - Commitment
+  - Tasks
+  - Readings
+  - Outcomes
 
 * - Concepts
-  - S
-  - Read background literature.
-  - [1], [2]
-  - Understand goals of SD
-
+  - S
+  - Read background literature.
+  - [1], [2]
+  - Understand goals of SD.
 
 * - Logistic Regression
-  - M
-  - See [Julie's blog post.](https://waterprogramming.wordpress.com/2018/05/04/logistic-regression-for-scenario-discovery/)
-  - None
-  - Replicate logistic regression code
-
+  - M
+  - See [Julie's blog post.](https://waterprogramming.wordpress.com/2018/05/04/logistic-regression-for-scenario-discovery/)
+  - None
+  - Replicate logistic regression code
 
 * - Gradient Boosted Trees
-  - M
-  - Complete [Dave's blog tutorial.](https://waterprogramming.wordpress.com/2022/04/22/a-step-by-step-tutorial-for-scenario-discovery-with-gradient-boosted-trees/)
-  - None
-  - Replicate GBT code<br>Complete tutorial  
+  - M
+  - Complete [Dave's blog tutorial.](https://waterprogramming.wordpress.com/2022/04/22/a-step-by-step-tutorial-for-scenario-discovery-with-gradient-boosted-trees/)
+  - None
+  - Replicate GBT code<br>Complete tutorial  
 
-
-* - Time-Evolving Dynamics
-  - S
-  - Step through the [interactive EBook tutorial.](https://uc-ebook.org/docs/html/A2_Jupyter_Notebooks.html#time-evolving-scenario-discovery-for-infrastructure-pathways)
-  - None
-  - Complete interactive tutorial
-
+* - Time Evolving Dynamics
+  - S
+  - Step through the [interactive EBook tutorial.](https://uc-ebook.org/docs/html/A2_Jupyter_Notebooks.html#time-evolving-scenario-discovery-for-infrastructure-pathways)
+  - None
+  - Complete interactive tutorial
 ```
 
 * Commitment: S = Short ( < 1 day), M = Medium (1-5 days), L = Long (>5 days)
