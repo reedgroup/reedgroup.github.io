@@ -19,7 +19,7 @@ In this tutorial, some experience with using Python is useful. You should also h
 Please ensure that both these files are in the same folder as your Jupyter notebook before beginning. 
 
 ## Training activities
-The following training sequence is suggested, but should be used as a general guideline instead of a fixed schedule. We will also be referencing a significant amount of material from the [MSD UC E-Book](https://uc-ebook.org/docs/html/index.html). <br>
+The following training sequence is suggested, but should be used as a general guideline instead of a fixed schedule. We will also be referencing a significant amount of material from the [MSD UC E-Book](https://uc-ebook.org/docs/html/index.html).
 
 | Topic               | Commitment   |  Tasks      | Readings | Outcomes |
 | ---------------------- |-------------| --------------- | ---------| ---------|
@@ -30,7 +30,8 @@ The following training sequence is suggested, but should be used as a general gu
 | Performing sensitivity analysis | Medium | Complete the [Jupyter notebook activity](https://mybinder.org/v2/gh/lbl59/lab_manual_resources/8546b1278e46f9d8b31d9de4bac6a74352799377?urlpath=lab%2Ftree%2Fsensitivity_analysis.ipynb) | None | Apply SA on a simple water wholesaler problem | 
 
 ## Reading list
-Once you've completed this tutorial, here are some other resources to help you advance your sensitivity analysis skills:
+Once you've completed this tutorial, here are some other resources to help you advance your sensitivity analysis skills: 
+
 \[1] Reed, P.M., Hadjimichael, A., Malek, K., Karimi, T., Vernon, C.R., Srikrishnan, V., Gupta, R.S., Gold, D.F., Lee, B., Keller, K., Thurber, T.B, & Rice, J.S. (2022). Addressing Uncertainty in Multisector Dynamics Research [Book]. Zenodo. https://doi.org/10.5281/zenodo.6110623 <br>
 \[2] Herman, J., &amp; Usher, W. (2017). Salib: An open-source python library for Sensitivity Analysis. The Journal of Open Source Software, 2(9), 97. https://doi.org/10.21105/joss.00097 <br>
 \[3] [Sensitivity analysis tools in different computing languages](https://waterprogramming.wordpress.com/2020/02/25/open-source-sensitivity-analysis-tools/)<br>
