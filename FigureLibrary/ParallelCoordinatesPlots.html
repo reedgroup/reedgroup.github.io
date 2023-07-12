@@ -1,0 +1,1015 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Parallel Coordinates Plots &#8212; Reed group lab manual</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'FigureLibrary/ParallelCoordinatesPlots';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Synthetic Streamflow Diagnostic Figure Library" href="synthetic_generation_diagnostics.html" />
+    <link rel="prev" title="Figure Library" href="FigureLibrary.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to our lab manual!
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../GraduateStudentResources/GraduateStudentResources.html">Graduate Student Resources</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/LifeAtCornell.html">Housing Around Cornell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Courses.html">Course List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Conferences.html">Conferences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/PresentationTemplates.html">Presentation Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/WritingProcess.html">Writing your first paper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Organization.html">Organizational Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ComputationalResources/ComputationalResources.html">Computational Resources</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/ClusterBasics.html">Cluster Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/python_crash_course.html">Crash Course in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/Machine_Learning_Resources.html">Machine Learning Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/IntroToLinux.html">Introduction to Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/IntroToGitHub.html">Introduction to Git &amp; GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/CitationReferenceManagementTools.html">Citation and Reference Management Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/Websites.html">Building and deploying websites with Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Software/Software.html">Software</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Software/BorgMOEA.html">Borg MOEA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/WaterPaths.html">WaterPaths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/PywrDRB.html">Pywr-DRB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/CALFEWS.html">CALFEWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/SALib.html">SALib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/Rhodium.html">Rhodium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/MOEAFramework.html">MOEA Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/J3.html">J3 Visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Training/Training.html">Training</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Training/Schedule.html">Suggested training schedule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/Linux_MOEAs_HPC.html">Getting starting with MOEAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/LakeProblem.html">The Shallow Lake Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/intro_to_sensitivity_analysis.html">Introduction to Sensitivity Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/intro_to_scenario_discovery.html">Intro to Scenario Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/SyntheticStreamflowGeneration.html">Synthetic Streamflow Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/StateModTraining.html">Getting Started with StateMod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/MOEADiagnostics.html">Introduction to MOEA Diagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/SyntheticWeatherGeneration.html">Synthetic Weather Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/FisheriesGame.html">The Fisheries Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/WaterPaths_Training.html">WaterPaths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/intro_mordm.html">Intro to MORDM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../WaterProgramming/waterprogramming_post_catalog.html">Water Programming Blog Post Catalog</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="FigureLibrary.html">Figure Library</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Parallel Coordinates Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="synthetic_generation_diagnostics.html">Synthetic Streamflow Diagnostic Figure Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scatterplot_colorbar.html">Scatter plots and colorbars using Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scatter3d.html">3D scatter plots, point sizes, and positioning legends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MOEADiagnostics.html">MOEA Diagnostics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Contributing/Contributing.html">Contributing to this lab manual</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Contributing/Instructions.html">Instructions on contributing to the lab manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Contributing/mdExample.html">Markdown example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Contributing/nbExample.html">Jupyter notebook example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Contributing/training_template.html">Training Title</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/reedgroup/reedgroup.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/reedgroup/reedgroup.github.io/issues/new?title=Issue%20on%20page%20%2FFigureLibrary/ParallelCoordinatesPlots.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/FigureLibrary/ParallelCoordinatesPlots.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Parallel Coordinates Plots</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="parallel-coordinates-plots">
+<h1>Parallel Coordinates Plots<a class="headerlink" href="#parallel-coordinates-plots" title="Permalink to this heading">#</a></h1>
+<p>Parallel coordinates plots (also known as parallel axis plots) are a common way to visualize many-dimensional data. There are many different tools that can be used to create parallel coordinates plots in Python. For example, Pandas has a built-in version, as demonstrated in the <a class="reference external" href="https://reedgroup.github.io/FigureLibrary/MOEADiagnostics.html">MOEA Diagnostics page</a> of this manual. There are also many different posts on the Water Programming Blog that demonstrate different ways to create parallel coordinates plots in Python as well as several GUI-based visualization engines (e.g., <a class="reference external" href="https://waterprogramming.wordpress.com/2020/11/09/parallel-axis-plots-for-the-absolute-beginner/">Lau 2020</a>, <a class="reference external" href="https://waterprogramming.wordpress.com/2022/09/14/fisheries-training-part-2-tradeoff-visualization-and-introduction-to-j3/">Lau 2022</a>, <a class="reference external" href="https://waterprogramming.wordpress.com/2020/08/10/using-rhodium-for-exploratory-modeling/">Dircks 2020</a>, <a class="reference external" href="https://waterprogramming.wordpress.com/2018/05/18/creating-parallel-axis-plots-with-multiple-datasets-color-gradients-and-brushing-in-python/">Trindade 2018</a>, <a class="reference external" href="https://waterprogramming.wordpress.com/2018/11/05/introduction-to-discoverydv/">Gupta 2018</a>, and more.</p>
+<p>So why the need for this figure library entry? In my experience, the pre-packaged functions for creating parallel coordinates plots (e.g., Pandas) are great for getting a quick-and-dirty look at the data, but they are insufficiently flexible to create more complex and aesthetically pleasing figures. When it comes time to create figures for papers and presentations, I have generally had to start from scratch to create a parallel coordinates plot that suits my particular needs. I imagine this is true for many other Reed Group members and other researchers as well.</p>
+<p>The goal of this page is to present a baseline set of scripts for creating flexible and attractive parallel coordinates plots. The functions below are capable of applying a range of customizations, such as:</p>
+<ol class="arabic simple">
+<li><p>Automatic normalization of data consistent with user-selected direction of preference for parallel axes (“top” or “bottom”) and user-selected direction of optimization preference for each axis (“min” or “max”)</p></li>
+<li><p>Support for user-defined continuous or categorical color palettes, and choice of which axis to color lines by</p></li>
+<li><p>Choice of which axis to order lines by (i.e., how to stack overlapping lines)</p></li>
+<li><p>Automated solution brushing based on satisficing criteria for one or more axes.</p></li>
+</ol>
+<p>My hope is that others will add to this over time as new use cases arise so that we can all benefit from improved flexibility &amp; functionality and not have to reinvent the wheel each time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
+<span class="kn">from</span> <span class="nn">matplotlib.collections</span> <span class="kn">import</span> <span class="n">PatchCollection</span>
+<span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Rectangle</span>
+<span class="kn">from</span> <span class="nn">matplotlib.lines</span> <span class="kn">import</span> <span class="n">Line2D</span>
+<span class="kn">from</span> <span class="nn">pandas.plotting</span> <span class="kn">import</span> <span class="n">parallel_coordinates</span>
+
+<span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### get dataset. This is a Pareto set after reevaluation from Hamilton et al, 2023, (In review).</span>
+<span class="n">objs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;example_data/objs_wcu_pareto_5objs.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+<span class="n">columns_axes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;n_p&#39;</span><span class="p">,</span><span class="s1">&#39;cwg_p&#39;</span><span class="p">,</span><span class="s1">&#39;ap_p&#39;</span><span class="p">,</span> <span class="s1">&#39;cwg_np&#39;</span><span class="p">,</span><span class="s1">&#39;cog_wp_p90&#39;</span><span class="p">]</span>
+<span class="n">axis_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Number of</span><span class="se">\n</span><span class="s1">partners&#39;</span><span class="p">,</span> <span class="s1">&#39;Captured water</span><span class="se">\n</span><span class="s1">gain (GL/yr)&#39;</span><span class="p">,</span> <span class="s1">&#39;Pumping reduction</span><span class="se">\n</span><span class="s1">(GL/yr)&#39;</span><span class="p">,</span> 
+              <span class="s1">&#39;Captured water</span><span class="se">\n</span><span class="s1">gain for non-</span><span class="se">\n</span><span class="s1">partners (GL/yr)&#39;</span><span class="p">,</span><span class="s1">&#39;Cost of gains for</span><span class="se">\n</span><span class="s1">worst-off partner</span><span class="se">\n</span><span class="s1">($/ML)&#39;</span><span class="p">]</span>
+<span class="n">objs</span> <span class="o">=</span> <span class="n">objs</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">columns_axes</span><span class="p">]</span>
+
+<span class="c1">### as in paper, map all costs &gt;1000 to $1000 for visual clarity</span>
+<span class="n">objs</span><span class="p">[</span><span class="s1">&#39;cog_wp_p90&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">objs</span><span class="p">[</span><span class="s1">&#39;cog_wp_p90&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">objs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1860/3983194004.py:2: ParserWarning: Falling back to the &#39;python&#39; engine because the &#39;c&#39; engine does not support regex separators (separators &gt; 1 char and different from &#39;\s+&#39; are interpreted as regex); you can avoid this warning by specifying engine=&#39;python&#39;.
+  objs = pd.read_csv(&#39;example_data/objs_wcu_pareto_5objs.csv&#39;, delimiter=&#39;, &#39;)
+/tmp/ipykernel_1860/3983194004.py:9: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  objs[&#39;cog_wp_p90&#39;].loc[objs[&#39;cog_wp_p90&#39;] &gt; 1000] = 1000
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>n_p</th>
+      <th>cwg_p</th>
+      <th>ap_p</th>
+      <th>cwg_np</th>
+      <th>cog_wp_p90</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3</td>
+      <td>65.286506</td>
+      <td>25.517769</td>
+      <td>23.581953</td>
+      <td>119.515925</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>14</td>
+      <td>83.519969</td>
+      <td>60.988011</td>
+      <td>10.534398</td>
+      <td>261.605829</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>16</td>
+      <td>88.828797</td>
+      <td>64.907146</td>
+      <td>5.730221</td>
+      <td>1000.000000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>17</td>
+      <td>92.460681</td>
+      <td>68.455763</td>
+      <td>-9.325362</td>
+      <td>1000.000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>12</td>
+      <td>92.651047</td>
+      <td>58.407270</td>
+      <td>13.067463</td>
+      <td>1000.000000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>369</th>
+      <td>8</td>
+      <td>86.194462</td>
+      <td>51.207598</td>
+      <td>17.240311</td>
+      <td>218.698388</td>
+    </tr>
+    <tr>
+      <th>370</th>
+      <td>9</td>
+      <td>106.223722</td>
+      <td>47.046693</td>
+      <td>-4.389908</td>
+      <td>290.474609</td>
+    </tr>
+    <tr>
+      <th>371</th>
+      <td>11</td>
+      <td>77.769762</td>
+      <td>40.167874</td>
+      <td>20.107271</td>
+      <td>253.288096</td>
+    </tr>
+    <tr>
+      <th>372</th>
+      <td>11</td>
+      <td>89.655118</td>
+      <td>53.916342</td>
+      <td>15.455185</td>
+      <td>225.967740</td>
+    </tr>
+    <tr>
+      <th>373</th>
+      <td>6</td>
+      <td>70.471262</td>
+      <td>22.766874</td>
+      <td>26.831650</td>
+      <td>196.743411</td>
+    </tr>
+  </tbody>
+</table>
+<p>374 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### function to normalize data based on direction of preference and whether each objective is minimized or maximized</span>
+<span class="c1">###   -&gt; output dataframe will have values ranging from 0 (which maps to bottom of figure) to 1 (which maps to top)</span>
+<span class="k">def</span> <span class="nf">reorganize_objs</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">columns_axes</span><span class="p">,</span> <span class="n">ideal_direction</span><span class="p">,</span> <span class="n">minmaxs</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">ideal_direction</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">,</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span>
+    
+    <span class="k">if</span> <span class="n">minmaxs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">minmaxs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">columns_axes</span><span class="p">)</span>
+        
+    <span class="n">objs_reorg</span> <span class="o">=</span> <span class="n">objs</span><span class="p">[</span><span class="n">columns_axes</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">ideal_direction</span> <span class="o">==</span> <span class="s1">&#39;bottom&#39;</span><span class="p">:</span>
+        <span class="n">tops</span> <span class="o">=</span> <span class="n">objs_reorg</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">bottoms</span> <span class="o">=</span> <span class="n">objs_reorg</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">minmax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">minmaxs</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">minmax</span> <span class="o">==</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>
+                <span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">bottoms</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">tops</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">tops</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">bottoms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">ideal_direction</span> <span class="o">==</span> <span class="s1">&#39;top&#39;</span><span class="p">:</span>
+        <span class="n">tops</span> <span class="o">=</span> <span class="n">objs_reorg</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">bottoms</span> <span class="o">=</span> <span class="n">objs_reorg</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">minmax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">minmaxs</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">minmax</span> <span class="o">==</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>
+                <span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">bottoms</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">tops</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">tops</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">bottoms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">objs_reorg</span><span class="p">,</span> <span class="n">tops</span><span class="p">,</span> <span class="n">bottoms</span>
+
+
+<span class="c1">### function to get color based on continuous color map or categorical map</span>
+<span class="k">def</span> <span class="nf">get_color</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">color_by_continuous</span><span class="p">,</span> <span class="n">color_palette_continuous</span><span class="p">,</span> <span class="n">color_by_categorical</span><span class="p">,</span> <span class="n">color_dict_categorical</span><span class="p">):</span>
+    <span class="c1">### color method cannot be both continuous and categorical</span>
+    <span class="k">assert</span> <span class="n">color_by_continuous</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">color_by_categorical</span> <span class="ow">is</span> <span class="kc">None</span>
+    
+    <span class="k">if</span> <span class="n">color_by_continuous</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="n">color_palette_continuous</span><span class="p">)(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">color_by_categorical</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">color_dict_categorical</span><span class="p">[</span><span class="n">value</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">color</span>
+
+<span class="c1">### function to get zorder value for ordering lines on plot. This works by binning a given axis&#39; values and mapping to discrtete classes.</span>
+<span class="k">def</span> <span class="nf">get_zorder</span><span class="p">(</span><span class="n">norm_value</span><span class="p">,</span> <span class="n">zorder_num_classes</span><span class="p">,</span> <span class="n">zorder_direction</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">zorder_direction</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;ascending&#39;</span><span class="p">,</span> <span class="s1">&#39;descending&#39;</span><span class="p">]</span>
+    
+    <span class="n">xgrid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.001</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">zorder_num_classes</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">zorder_direction</span> <span class="o">==</span> <span class="s1">&#39;ascending&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">norm_value</span> <span class="o">&gt;</span> <span class="n">xgrid</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">zorder_direction</span> <span class="o">==</span> <span class="s1">&#39;descending&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">norm_value</span> <span class="o">&lt;</span> <span class="n">xgrid</span><span class="p">)</span>
+    
+        
+
+<span class="c1">### customizable parallel coordinates plot</span>
+<span class="k">def</span> <span class="nf">custom_parallel_coordinates</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">columns_axes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis_labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ideal_direction</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">minmaxs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">brushing_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                                <span class="n">color_by_continuous</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color_palette_continuous</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">colorbar_ticks_continuous</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                                <span class="n">color_by_categorical</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color_palette_categorical</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color_dict_categorical</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                <span class="n">zorder_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zorder_num_classes</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">zorder_direction</span><span class="o">=</span><span class="s1">&#39;ascending&#39;</span><span class="p">,</span> 
+                                <span class="n">alpha_base</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">lw_base</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">6</span><span class="p">)):</span>
+    <span class="k">assert</span> <span class="n">ideal_direction</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">,</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">zorder_direction</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;ascending&#39;</span><span class="p">,</span> <span class="s1">&#39;descending&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">minmaxs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">minmax</span> <span class="ow">in</span> <span class="n">minmaxs</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="n">minmax</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">columns_axes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">columns_axes</span> <span class="o">=</span> <span class="n">objs</span><span class="o">.</span><span class="n">columns</span>
+    <span class="k">if</span> <span class="n">axis_labels</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">axis_labels</span> <span class="o">=</span> <span class="n">column_axes</span>
+    
+    <span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span> <span class="n">gridspec_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;hspace&#39;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;wspace&#39;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">})</span>
+
+    <span class="c1">### reorganize &amp; normalize objective data</span>
+    <span class="n">objs_reorg</span><span class="p">,</span> <span class="n">tops</span><span class="p">,</span> <span class="n">bottoms</span> <span class="o">=</span> <span class="n">reorganize_objs</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">columns_axes</span><span class="p">,</span> <span class="n">ideal_direction</span><span class="p">,</span> <span class="n">minmaxs</span><span class="p">)</span>
+
+    <span class="c1">### apply any brushing criteria</span>
+    <span class="k">if</span> <span class="n">brushing_dict</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">satisfice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">objs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="mf">0.</span>
+        <span class="c1">### iteratively apply all brushing criteria to get satisficing set of solutions</span>
+        <span class="k">for</span> <span class="n">col_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">threshold</span><span class="p">,</span> <span class="n">operator</span><span class="p">)</span> <span class="ow">in</span> <span class="n">brushing_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">:</span>
+                <span class="n">satisfice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">satisfice</span><span class="p">,</span> <span class="n">objs</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="n">col_idx</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;&lt;=&#39;</span><span class="p">:</span>
+                <span class="n">satisfice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">satisfice</span><span class="p">,</span> <span class="n">objs</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="n">col_idx</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">threshold</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;&gt;&#39;</span><span class="p">:</span>
+                <span class="n">satisfice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">satisfice</span><span class="p">,</span> <span class="n">objs</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="n">col_idx</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;&gt;=&#39;</span><span class="p">:</span>
+                <span class="n">satisfice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">satisfice</span><span class="p">,</span> <span class="n">objs</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="n">col_idx</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">threshold</span><span class="p">)</span>
+
+            <span class="c1">### add rectangle patch to plot to represent brushing</span>
+            <span class="n">threshold_norm</span> <span class="o">=</span> <span class="p">(</span><span class="n">threshold</span> <span class="o">-</span> <span class="n">bottoms</span><span class="p">[</span><span class="n">col_idx</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">tops</span><span class="p">[</span><span class="n">col_idx</span><span class="p">]</span> <span class="o">-</span> <span class="n">bottoms</span><span class="p">[</span><span class="n">col_idx</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">ideal_direction</span> <span class="o">==</span> <span class="s1">&#39;top&#39;</span> <span class="ow">and</span> <span class="n">minmaxs</span><span class="p">[</span><span class="n">col_idx</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;=&#39;</span><span class="p">]:</span>
+                    <span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">([</span><span class="n">col_idx</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">threshold_norm</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">threshold_norm</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;=&#39;</span><span class="p">]:</span>
+                    <span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">([</span><span class="n">col_idx</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">threshold_norm</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">ideal_direction</span> <span class="o">==</span> <span class="s1">&#39;top&#39;</span> <span class="ow">and</span> <span class="n">minmaxs</span><span class="p">[</span><span class="n">col_idx</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;=&#39;</span><span class="p">]:</span>
+                    <span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">([</span><span class="n">col_idx</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">threshold_norm</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;=&#39;</span><span class="p">]:</span>
+                    <span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">([</span><span class="n">col_idx</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">threshold_norm</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">threshold_norm</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">ideal_direction</span> <span class="o">==</span> <span class="s1">&#39;bottom&#39;</span> <span class="ow">and</span> <span class="n">minmaxs</span><span class="p">[</span><span class="n">col_idx</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;=&#39;</span><span class="p">]:</span>
+                    <span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">([</span><span class="n">col_idx</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">threshold_norm</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;=&#39;</span><span class="p">]:</span>
+                    <span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">([</span><span class="n">col_idx</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">threshold_norm</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">threshold_norm</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">ideal_direction</span> <span class="o">==</span> <span class="s1">&#39;bottom&#39;</span> <span class="ow">and</span> <span class="n">minmaxs</span><span class="p">[</span><span class="n">col_idx</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;=&#39;</span><span class="p">]:</span>
+                    <span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">([</span><span class="n">col_idx</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">threshold_norm</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">threshold_norm</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;=&#39;</span><span class="p">]:</span>
+                    <span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">([</span><span class="n">col_idx</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">threshold_norm</span><span class="p">)</span>
+                    
+            <span class="n">pc</span> <span class="o">=</span> <span class="n">PatchCollection</span><span class="p">([</span><span class="n">rect</span><span class="p">],</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">add_collection</span><span class="p">(</span><span class="n">pc</span><span class="p">)</span>
+    
+    <span class="c1">### loop over all solutions/rows &amp; plot on parallel axis plot</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">objs_reorg</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">color_by_continuous</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="n">get_color</span><span class="p">(</span><span class="n">objs_reorg</span><span class="p">[</span><span class="n">columns_axes</span><span class="p">[</span><span class="n">color_by_continuous</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">color_by_continuous</span><span class="p">,</span> 
+                              <span class="n">color_palette_continuous</span><span class="p">,</span> <span class="n">color_by_categorical</span><span class="p">,</span> <span class="n">color_dict_categorical</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">color_by_categorical</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="n">get_color</span><span class="p">(</span><span class="n">objs</span><span class="p">[</span><span class="n">color_by_categorical</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">color_by_continuous</span><span class="p">,</span> <span class="n">color_palette_continuous</span><span class="p">,</span> <span class="n">color_by_categorical</span><span class="p">,</span> <span class="n">color_dict_categorical</span><span class="p">)</span>
+                        
+        <span class="c1">### order lines according to ascending or descending values of one of the objectives?</span>
+        <span class="k">if</span> <span class="n">zorder_by</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">zorder</span> <span class="o">=</span> <span class="mi">4</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">zorder</span> <span class="o">=</span> <span class="n">get_zorder</span><span class="p">(</span><span class="n">objs_reorg</span><span class="p">[</span><span class="n">columns_axes</span><span class="p">[</span><span class="n">zorder_by</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">zorder_num_classes</span><span class="p">,</span> <span class="n">zorder_direction</span><span class="p">)</span>
+        <span class="c1">### apply any brushing?</span>
+        <span class="k">if</span> <span class="n">brushing_dict</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">satisfice</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha_base</span>
+                <span class="n">lw</span> <span class="o">=</span> <span class="n">lw_base</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span>
+                <span class="n">lw</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="n">zorder</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha_base</span>
+            <span class="n">lw</span> <span class="o">=</span> <span class="n">lw_base</span>
+            
+        <span class="c1">### loop over objective/column pairs &amp; plot lines between parallel axes</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">objs_reorg</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]]</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="n">zorder</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">)</span>
+            
+            
+    <span class="c1">### add top/bottom ranges</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">columns_axes</span><span class="p">)):</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">tops</span><span class="p">[</span><span class="n">j</span><span class="p">])),</span> <span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mf">1.02</span><span class="p">],</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">columns_axes</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">bottoms</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.02</span><span class="p">],</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>    
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">bottoms</span><span class="p">[</span><span class="n">j</span><span class="p">])),</span> <span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.02</span><span class="p">],</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>    
+
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1">### other aesthetics</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+    
+    <span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">,</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span><span class="s1">&#39;left&#39;</span><span class="p">,</span><span class="s1">&#39;right&#39;</span><span class="p">]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">spine</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">ideal_direction</span> <span class="o">==</span> <span class="s1">&#39;top&#39;</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.08</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">ideal_direction</span> <span class="o">==</span> <span class="s1">&#39;bottom&#39;</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.08</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;Direction of preference&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">1.1</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">l</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axis_labels</span><span class="p">):</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="o">-</span><span class="mf">0.12</span><span class="p">),</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    
+
+    <span class="c1">### colorbar</span>
+    <span class="k">if</span> <span class="n">color_by_continuous</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mappable</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">color_palette_continuous</span><span class="p">)</span>
+        <span class="n">mappable</span><span class="o">.</span><span class="n">set_clim</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">objs</span><span class="p">[</span><span class="n">columns_axes</span><span class="p">[</span><span class="n">color_by_continuous</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">vmax</span><span class="o">=</span><span class="n">objs</span><span class="p">[</span><span class="n">columns_axes</span><span class="p">[</span><span class="n">color_by_continuous</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+        <span class="n">cb</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">mappable</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">axis_labels</span><span class="p">[</span><span class="n">color_by_continuous</span><span class="p">],</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha_base</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">colorbar_ticks_continuous</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_</span> <span class="o">=</span> <span class="n">cb</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">colorbar_ticks_continuous</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">cb</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">cb</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xlabel</span><span class="p">(),</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>  
+    <span class="k">elif</span> <span class="n">color_by_categorical</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">leg</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">label</span><span class="p">,</span><span class="n">color</span> <span class="ow">in</span> <span class="n">color_dict_categorical</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">leg</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha_base</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">))</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="n">leg</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower center&#39;</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">color_dict_categorical</span><span class="p">)),</span>
+                      <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="o">-</span><span class="mf">0.07</span><span class="p">],</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+
+            
+            
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### basic parallel axis plot</span>
+<span class="n">custom_parallel_coordinates</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">columns_axes</span><span class="o">=</span><span class="n">objs</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">axis_labels</span> <span class="o">=</span> <span class="n">axis_labels</span><span class="p">,</span> <span class="n">color_by_continuous</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">zorder_by</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ideal_direction</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span>
+                            <span class="n">alpha_base</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">lw_base</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
+                            <span class="n">minmaxs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">],</span> <span class="n">colorbar_ticks_continuous</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1860/17955147.py:38: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.
+  color = cm.get_cmap(color_palette_continuous)(value)
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">### basic parallel axis plot</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">custom_parallel_coordinates</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">columns_axes</span><span class="o">=</span><span class="n">objs</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">axis_labels</span> <span class="o">=</span> <span class="n">axis_labels</span><span class="p">,</span> <span class="n">color_by_continuous</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">zorder_by</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ideal_direction</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>                             <span class="n">alpha_base</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">lw_base</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>                             <span class="n">minmaxs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">],</span> <span class="n">colorbar_ticks_continuous</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="nn">Cell In[3], line 187,</span> in <span class="ni">custom_parallel_coordinates</span><span class="nt">(objs, columns_axes, axis_labels, ideal_direction, minmaxs, brushing_dict, color_by_continuous, color_palette_continuous, colorbar_ticks_continuous, color_by_categorical, color_palette_categorical, color_dict_categorical, zorder_by, zorder_num_classes, zorder_direction, alpha_base, lw_base, fontsize, figsize)</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span>     <span class="n">cb</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">mappable</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">axis_labels</span><span class="p">[</span><span class="n">color_by_continuous</span><span class="p">],</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha_base</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span>     <span class="k">if</span> <span class="n">colorbar_ticks_continuous</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">187</span>         <span class="n">_</span> <span class="o">=</span> <span class="n">cb</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">colorbar_ticks_continuous</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span>     <span class="n">_</span> <span class="o">=</span> <span class="n">cb</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">cb</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xlabel</span><span class="p">(),</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>  
+<span class="g g-Whitespace">    </span><span class="mi">189</span> <span class="k">elif</span> <span class="n">color_by_categorical</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/matplotlib/axes/_base.py:74,</span> in <span class="ni">_axis_method_wrapper.__set_name__.&lt;locals&gt;.wrapper</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">74</span>     <span class="k">return</span> <span class="n">get_method</span><span class="p">(</span><span class="bp">self</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/matplotlib/axis.py:2072,</span> in <span class="ni">Axis.set_ticks</span><span class="nt">(self, ticks, labels, minor, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2038</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2039</span><span class="sd"> Set this Axis&#39; tick locations and optionally labels.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2040</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2069</span><span class="sd"> ticks.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2070</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2071</span> <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">kwargs</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2072</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;labels argument cannot be None when &#39;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2073</span>                      <span class="s1">&#39;kwargs are passed&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2074</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set_tick_locations</span><span class="p">(</span><span class="n">ticks</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="n">minor</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2075</span> <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="ne">ValueError</span>: labels argument cannot be None when kwargs are passed
+</pre></div>
+</div>
+<img alt="../_images/4371f5d1cb9c8c09b541c65a3f912cd5b374db346d79aeae3979c96681db1473.png" src="../_images/4371f5d1cb9c8c09b541c65a3f912cd5b374db346d79aeae3979c96681db1473.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### flip direction of preference &amp; color/order by axis 3 (note zero-indexing; Captured Water Gain for Non-partners)</span>
+<span class="n">custom_parallel_coordinates</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">columns_axes</span><span class="o">=</span><span class="n">objs</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">axis_labels</span> <span class="o">=</span> <span class="n">axis_labels</span><span class="p">,</span> <span class="n">color_by_continuous</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">zorder_by</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">ideal_direction</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span>
+                            <span class="n">alpha_base</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">lw_base</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
+                            <span class="n">minmaxs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">],</span> <span class="n">colorbar_ticks_continuous</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span><span class="o">-</span><span class="mf">12.5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">12.5</span><span class="p">,</span><span class="mi">25</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fa5c106c73ed56e1819a225b5333d64c676015203c0a6b3d46ec8b4ed1189c98.png" src="../_images/fa5c106c73ed56e1819a225b5333d64c676015203c0a6b3d46ec8b4ed1189c98.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### basic parallel axis plot with brushing. Grey rectangles cover filtered-out solutions based on user-defined brushing criteria.</span>
+<span class="n">custom_parallel_coordinates</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">columns_axes</span><span class="o">=</span><span class="n">objs</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">axis_labels</span> <span class="o">=</span> <span class="n">axis_labels</span><span class="p">,</span> <span class="n">color_by_continuous</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">zorder_by</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ideal_direction</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span>
+                            <span class="n">alpha_base</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">lw_base</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
+                            <span class="n">minmaxs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">],</span> <span class="n">colorbar_ticks_continuous</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
+                            <span class="n">brushing_dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;&gt;=&#39;</span><span class="p">),</span> <span class="mi">3</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;&gt;=&#39;</span><span class="p">),</span> <span class="mi">4</span><span class="p">:</span> <span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">)})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/8dfdde14cb5a3eae2a515da81b9f54fb9d041afa9ef8cb20d0c5fe003ffc33fd.png" src="../_images/8dfdde14cb5a3eae2a515da81b9f54fb9d041afa9ef8cb20d0c5fe003ffc33fd.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Now color by a categorical variable that isnt one of the axes</span>
+<span class="n">color_dict_categorical</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;HighCost&#39;</span><span class="p">:</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;viridis&#39;</span><span class="p">)(</span><span class="mf">0.9</span><span class="p">),</span> <span class="s1">&#39;MidCost&#39;</span><span class="p">:</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;viridis&#39;</span><span class="p">)(</span><span class="mf">0.5</span><span class="p">),</span> <span class="s1">&#39;LowCost&#39;</span><span class="p">:</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;viridis&#39;</span><span class="p">)(</span><span class="mf">0.1</span><span class="p">)}</span>
+<span class="n">objs</span><span class="p">[</span><span class="s1">&#39;Set&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HighCost&#39;</span> <span class="k">if</span> <span class="n">c</span><span class="o">&gt;=</span><span class="mi">1000</span> <span class="k">else</span> <span class="s1">&#39;MidCost&#39;</span> <span class="k">if</span> <span class="n">c</span><span class="o">&gt;=</span><span class="mi">200</span> <span class="k">else</span> <span class="s1">&#39;LowCost&#39;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">objs</span><span class="p">[</span><span class="s1">&#39;cog_wp_p90&#39;</span><span class="p">]]</span>
+
+<span class="n">custom_parallel_coordinates</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">columns_axes</span><span class="o">=</span><span class="n">columns_axes</span><span class="p">,</span> <span class="n">axis_labels</span> <span class="o">=</span> <span class="n">axis_labels</span><span class="p">,</span> <span class="n">zorder_by</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">ideal_direction</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span>
+                            <span class="n">alpha_base</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">lw_base</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
+                            <span class="n">minmaxs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">],</span> <span class="n">colorbar_ticks_continuous</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
+                            <span class="n">color_by_categorical</span> <span class="o">=</span> <span class="s1">&#39;Set&#39;</span><span class="p">,</span> <span class="n">color_dict_categorical</span><span class="o">=</span><span class="n">color_dict_categorical</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/25370a458a33203d66c8cd0b3a646b2530b9d2b71439081fabfe8aab692cff65.png" src="../_images/25370a458a33203d66c8cd0b3a646b2530b9d2b71439081fabfe8aab692cff65.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Now color by a categorical variable that isnt one of the axes, with brushing</span>
+<span class="n">color_dict_categorical</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;HighCost&#39;</span><span class="p">:</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;viridis&#39;</span><span class="p">)(</span><span class="mf">0.9</span><span class="p">),</span> <span class="s1">&#39;MidCost&#39;</span><span class="p">:</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;viridis&#39;</span><span class="p">)(</span><span class="mf">0.5</span><span class="p">),</span> <span class="s1">&#39;LowCost&#39;</span><span class="p">:</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;viridis&#39;</span><span class="p">)(</span><span class="mf">0.1</span><span class="p">)}</span>
+<span class="n">objs</span><span class="p">[</span><span class="s1">&#39;Set&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HighCost&#39;</span> <span class="k">if</span> <span class="n">c</span><span class="o">&gt;=</span><span class="mi">1000</span> <span class="k">else</span> <span class="s1">&#39;MidCost&#39;</span> <span class="k">if</span> <span class="n">c</span><span class="o">&gt;=</span><span class="mi">200</span> <span class="k">else</span> <span class="s1">&#39;LowCost&#39;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">objs</span><span class="p">[</span><span class="s1">&#39;cog_wp_p90&#39;</span><span class="p">]]</span>
+
+<span class="n">custom_parallel_coordinates</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">columns_axes</span><span class="o">=</span><span class="n">columns_axes</span><span class="p">,</span> <span class="n">axis_labels</span> <span class="o">=</span> <span class="n">axis_labels</span><span class="p">,</span> <span class="n">zorder_by</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">ideal_direction</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span>
+                            <span class="n">alpha_base</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">lw_base</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
+                            <span class="n">minmaxs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">],</span> <span class="n">colorbar_ticks_continuous</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
+                            <span class="n">color_by_categorical</span> <span class="o">=</span> <span class="s1">&#39;Set&#39;</span><span class="p">,</span> <span class="n">color_dict_categorical</span><span class="o">=</span><span class="n">color_dict_categorical</span><span class="p">,</span>
+                            <span class="n">brushing_dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;&gt;=&#39;</span><span class="p">),</span> <span class="mi">3</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;&gt;=&#39;</span><span class="p">),</span> <span class="mi">4</span><span class="p">:</span> <span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">)})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/344fda24732312c8cf6019ce0c18512e5a93e17b696823594f8f7a9091c03b8a.png" src="../_images/344fda24732312c8cf6019ce0c18512e5a93e17b696823594f8f7a9091c03b8a.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./FigureLibrary"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="FigureLibrary.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Figure Library</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="synthetic_generation_diagnostics.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Synthetic Streamflow Diagnostic Figure Library</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Reed Group at Cornell CEE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

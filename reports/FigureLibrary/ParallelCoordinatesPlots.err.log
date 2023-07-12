@@ -1,0 +1,62 @@
+Traceback (most recent call last):
+  File "/home/runner/.virtualenvs/.venv/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/runner/.virtualenvs/.venv/lib/python3.8/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/runner/.virtualenvs/.venv/lib/python3.8/site-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+    return loop.run_until_complete(inner)
+  File "/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/home/runner/.virtualenvs/.venv/lib/python3.8/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/home/runner/.virtualenvs/.venv/lib/python3.8/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/runner/.virtualenvs/.venv/lib/python3.8/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+### basic parallel axis plot
+custom_parallel_coordinates(objs, columns_axes=objs.columns, axis_labels = axis_labels, color_by_continuous=0, zorder_by=0, ideal_direction='top',
+                            alpha_base = 0.8, lw_base=1.5, fontsize=fontsize, figsize=figsize,
+                            minmaxs=['max','max','max','max','min'], colorbar_ticks_continuous=range(2,25,4))
+------------------
+
+----- stderr -----
+/tmp/ipykernel_1860/17955147.py:38: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.
+  color = cm.get_cmap(color_palette_continuous)(value)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+Cell [0;32mIn[4], line 2[0m
+[1;32m      1[0m [38;5;66;03m### basic parallel axis plot[39;00m
+[0;32m----> 2[0m [43mcustom_parallel_coordinates[49m[43m([49m[43mobjs[49m[43m,[49m[43m [49m[43mcolumns_axes[49m[38;5;241;43m=[39;49m[43mobjs[49m[38;5;241;43m.[39;49m[43mcolumns[49m[43m,[49m[43m [49m[43maxis_labels[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43maxis_labels[49m[43m,[49m[43m [49m[43mcolor_by_continuous[49m[38;5;241;43m=[39;49m[38;5;241;43m0[39;49m[43m,[49m[43m [49m[43mzorder_by[49m[38;5;241;43m=[39;49m[38;5;241;43m0[39;49m[43m,[49m[43m [49m[43mideal_direction[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mtop[39;49m[38;5;124;43m'[39;49m[43m,[49m
+[1;32m      3[0m [43m                            [49m[43malpha_base[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;241;43m0.8[39;49m[43m,[49m[43m [49m[43mlw_base[49m[38;5;241;43m=[39;49m[38;5;241;43m1.5[39;49m[43m,[49m[43m [49m[43mfontsize[49m[38;5;241;43m=[39;49m[43mfontsize[49m[43m,[49m[43m [49m[43mfigsize[49m[38;5;241;43m=[39;49m[43mfigsize[49m[43m,[49m
+[1;32m      4[0m [43m                            [49m[43mminmaxs[49m[38;5;241;43m=[39;49m[43m[[49m[38;5;124;43m'[39;49m[38;5;124;43mmax[39;49m[38;5;124;43m'[39;49m[43m,[49m[38;5;124;43m'[39;49m[38;5;124;43mmax[39;49m[38;5;124;43m'[39;49m[43m,[49m[38;5;124;43m'[39;49m[38;5;124;43mmax[39;49m[38;5;124;43m'[39;49m[43m,[49m[38;5;124;43m'[39;49m[38;5;124;43mmax[39;49m[38;5;124;43m'[39;49m[43m,[49m[38;5;124;43m'[39;49m[38;5;124;43mmin[39;49m[38;5;124;43m'[39;49m[43m][49m[43m,[49m[43m [49m[43mcolorbar_ticks_continuous[49m[38;5;241;43m=[39;49m[38;5;28;43mrange[39;49m[43m([49m[38;5;241;43m2[39;49m[43m,[49m[38;5;241;43m25[39;49m[43m,[49m[38;5;241;43m4[39;49m[43m)[49m[43m)[49m
+
+Cell [0;32mIn[3], line 187[0m, in [0;36mcustom_parallel_coordinates[0;34m(objs, columns_axes, axis_labels, ideal_direction, minmaxs, brushing_dict, color_by_continuous, color_palette_continuous, colorbar_ticks_continuous, color_by_categorical, color_palette_categorical, color_dict_categorical, zorder_by, zorder_num_classes, zorder_direction, alpha_base, lw_base, fontsize, figsize)[0m
+[1;32m    185[0m     cb [38;5;241m=[39m plt[38;5;241m.[39mcolorbar(mappable, ax[38;5;241m=[39max, orientation[38;5;241m=[39m[38;5;124m'[39m[38;5;124mhorizontal[39m[38;5;124m'[39m, shrink[38;5;241m=[39m[38;5;241m0.4[39m, label[38;5;241m=[39maxis_labels[color_by_continuous], pad[38;5;241m=[39m[38;5;241m0.03[39m, alpha[38;5;241m=[39malpha_base)
+[1;32m    186[0m     [38;5;28;01mif[39;00m colorbar_ticks_continuous [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[0;32m--> 187[0m         _ [38;5;241m=[39m [43mcb[49m[38;5;241;43m.[39;49m[43max[49m[38;5;241;43m.[39;49m[43mset_xticks[49m[43m([49m[43mcolorbar_ticks_continuous[49m[43m,[49m[43m [49m[43mfontsize[49m[38;5;241;43m=[39;49m[43mfontsize[49m[43m)[49m
+[1;32m    188[0m     _ [38;5;241m=[39m cb[38;5;241m.[39max[38;5;241m.[39mset_xlabel(cb[38;5;241m.[39max[38;5;241m.[39mget_xlabel(), fontsize[38;5;241m=[39mfontsize)  
+[1;32m    189[0m [38;5;28;01melif[39;00m color_by_categorical [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+
+File [0;32m~/.virtualenvs/.venv/lib/python3.8/site-packages/matplotlib/axes/_base.py:74[0m, in [0;36m_axis_method_wrapper.__set_name__.<locals>.wrapper[0;34m(self, *args, **kwargs)[0m
+[1;32m     73[0m [38;5;28;01mdef[39;00m [38;5;21mwrapper[39m([38;5;28mself[39m, [38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs):
+[0;32m---> 74[0m     [38;5;28;01mreturn[39;00m [43mget_method[49m[43m([49m[38;5;28;43mself[39;49m[43m)[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m~/.virtualenvs/.venv/lib/python3.8/site-packages/matplotlib/axis.py:2072[0m, in [0;36mAxis.set_ticks[0;34m(self, ticks, labels, minor, **kwargs)[0m
+[1;32m   2038[0m [38;5;250m[39m[38;5;124;03m"""[39;00m
+[1;32m   2039[0m [38;5;124;03mSet this Axis' tick locations and optionally labels.[39;00m
+[1;32m   2040[0m 
+[0;32m   (...)[0m
+[1;32m   2069[0m [38;5;124;03mticks.[39;00m
+[1;32m   2070[0m [38;5;124;03m"""[39;00m
+[1;32m   2071[0m [38;5;28;01mif[39;00m labels [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m kwargs:
+[0;32m-> 2072[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124m'[39m[38;5;124mlabels argument cannot be None when [39m[38;5;124m'[39m
+[1;32m   2073[0m                      [38;5;124m'[39m[38;5;124mkwargs are passed[39m[38;5;124m'[39m)
+[1;32m   2074[0m result [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_set_tick_locations(ticks, minor[38;5;241m=[39mminor)
+[1;32m   2075[0m [38;5;28;01mif[39;00m labels [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+
+[0;31mValueError[0m: labels argument cannot be None when kwargs are passed
+
