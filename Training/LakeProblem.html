@@ -411,9 +411,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-objectives">Training objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-activities">Training activities</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-software">Necessary Software</a></li>
 </ul>
             </nav>
         </div>
@@ -427,12 +430,12 @@ document.write(`
                   
   <section id="the-shallow-lake-problem">
 <h1>The Shallow Lake Problem<a class="headerlink" href="#the-shallow-lake-problem" title="Permalink to this heading">#</a></h1>
-<section id="background">
-<h2>Background<a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>Managing socio-ecological systems is a challenge wrought by competing societal objectives, deep uncertainties, and potentially irreversible tipping points. A classic example is the shallow lake problem in which a hypothetical town situated on a lake must develop pollution control strategies to maximize its economic benefits while minimizing the probability of the lake crossing a critical phosphorus (P) threshold, above which it irreversibly transitions into a eutrophic (polluted) state. Here, you’ll explore two optimization strategies to design robust pollution control rules for the town that account for deeply uncertain system characteristics and conflicting objectives.</p>
 </section>
-<section id="training-objectives">
-<h2>Training objectives<a class="headerlink" href="#training-objectives" title="Permalink to this heading">#</a></h2>
+<section id="learning-objectives">
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Visualize dynamics of a socio-ecological system and identify tipping points</p></li>
 <li><p>Get familiar with Python code to simulate the shallow lake problem</p></li>
@@ -442,14 +445,21 @@ document.write(`
 <li><p>Examine the impact of uncertainties using global sensitivity analysis</p></li>
 <li><p>Discover thresholds in the uncertainty space that lead to policy alternatives crossing the irreversible tipping point</p></li>
 </ul>
-<p><img alt="Phosphorus fluxes" src="../_images/lake_problem.png" /></p>
-<table class="table">
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<p>A working knowledge of Python</p>
+</section>
+<section id="training-activities">
+<h2>Training activities<a class="headerlink" href="#training-activities" title="Permalink to this heading">#</a></h2>
+<table class="table" id="id1">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">TRAINING TITLE Activities</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Topic</p></th>
-<th class="head"><p>Est. Time</p></th>
-<th class="head"><p>Exercises</p></th>
-<th class="head"><p>Reading</p></th>
-<th class="head"><p>Supporting Resources</p></th>
+<th class="head"><p>Commitment</p></th>
+<th class="head"><p>Tasks</p></th>
+<th class="head"><p>Readings</p></th>
+<th class="head"><p>Outcomes</p></th>
 </tr>
 </thead>
 <tbody>
@@ -457,43 +467,37 @@ document.write(`
 <td><p>M</p></td>
 <td><p>Review the basic <a class="reference external" href="https://github.com/antonia-had/Rhodium-LakeProblem-MORDM-workflow/blob/master/example.py">Shallow Lake Problem Function</a></p></td>
 <td><p>[1]</p></td>
-<td><p></p></td>
+<td><p>Gain an understanding of the Shallow Lake Problem</p></td>
 </tr>
 <tr class="row-odd"><td><p>Examining tipping points</p></td>
 <td><p>M</p></td>
-<td><p>Recreate the Figure 1 in [2] (non-linear dynamics of the lake)</p></td>
-<td><p>[2] - sections 1 and 2</p></td>
-<td><p></p></td>
+<td><p>Recreate Figure 1 in [2] (non-linear dynamics of the lake)</p></td>
+<td><p>[2] (sections 1 and 2)</p></td>
+<td><p>Explore equilibrium concepts and tipping points</p></td>
 </tr>
 <tr class="row-even"><td><p>Introduction to Rhodium</p></td>
 <td><p>S</p></td>
 <td><p>Install Rhodium</p></td>
-<td><p>[3]</p></td>
-<td><p></p></td>
+<td><p>[3], <a class="reference external" href="https://github.com/Project-Platypus/Rhodium">Rhodium Github</a></p></td>
+<td><p>Install and get started using Rhodium</p></td>
 </tr>
 <tr class="row-odd"><td><p>Intertemporal optimization and open-loop control</p></td>
 <td><p>M</p></td>
 <td><p>Implement an intertemporal optimization formulation and examine tradeoffs</p></td>
 <td><p>[4]</p></td>
-<td><p></p></td>
+<td><p>Use optimization to come up with a simple strategy to manage the lake</p></td>
 </tr>
 <tr class="row-even"><td><p>Direct Policy Search</p></td>
 <td><p>M</p></td>
-<td><p>Implement the DPS formulation of the problem</p></td>
+<td><p>Implement the Direct Policy Search formulation for phosphorus</p></td>
 <td><p>[2] sections 3-6</p></td>
-<td><p></p></td>
+<td><p>Compare Direct Policy Search with intertemporal optimization</p></td>
 </tr>
-<tr class="row-odd"><td><p>Evaluating robustness</p></td>
+<tr class="row-odd"><td><p>Sensitivity analysis and scenario discovery</p></td>
 <td><p>M</p></td>
-<td><p>Use Rhodium to explore robustness of policy alternatives</p></td>
-<td><p></p></td>
-<td><p>https://waterprogramming.wordpress.com/2019/06/27/examining-robustness-metrics-using-rhodium/</p></td>
-</tr>
-<tr class="row-even"><td><p>Sensitivity analysis and scenario discovery</p></td>
-<td><p>M</p></td>
-<td><p>Use Rhodium to perform Sensitivity analysis and scenario discovery</p></td>
-<td><p></p></td>
-<td><p></p></td>
+<td><p>Use Rhodium to perform sensitivity analysis and scneario discovery</p></td>
+<td></td>
+<td><p>Explore how uncertainties impact the performance of lake policies</p></td>
 </tr>
 </tbody>
 </table>
@@ -508,6 +512,12 @@ document.write(`
 [3] Hadjimichael, A., Gold, D., Hadka, D., &amp; Reed, P. (2020). Rhodium: Python library for many-objective robust decision making and exploratory modeling. Journal of Open Research Software, 8. <br />
 [4] Ward, V. L., Singh, R., Reed, P. M., &amp; Keller, K. (2015). Confronting tipping points: Can multi-objective evolutionary algorithms discover pollution control tradeoffs given environmental thresholds?. Environmental Modelling &amp; Software, 73, 27-43. <br />
 [5] Herman, J. D., Reed, P. M., Zeff, H. B., &amp; Characklis, G. W. (2015). How should robustness be defined for water systems planning under change?. Journal of Water Resources Planning and Management, 141(10), 04015012.</p>
+</section>
+<section id="necessary-software">
+<h2>Necessary Software<a class="headerlink" href="#necessary-software" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>https://github.com/Project-Platypus/Rhodium</p></li>
+</ol>
 </section>
 </section>
 
@@ -578,9 +588,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-objectives">Training objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-activities">Training activities</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-software">Necessary Software</a></li>
 </ul>
   </nav></div>
 
