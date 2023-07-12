@@ -32,7 +32,7 @@ See the Required Software at the bottom of this page prior to starting the train
 \[10] Knaflic, C.N. (2015) Storytelling with data: A Data Visualization Guide for Business Professionals. Hoboken, NJ: John Wiley &amp; Sons, Inc. [Cornell Library](https://catalog.library.cornell.edu/catalog/12015645) <br>
 \[11] Cairo, A. (2020) The truthful art: Data, charts, and maps for communication. Berkeley: New Riders. [Cornell Library](https://catalog.library.cornell.edu/catalog/9458682https://catalog.library.cornell.edu/catalog/9458682)
 
-## Necessary software
+## Required software
 1. Download your desired HPC APIs. Some recommendations include:
     - [Cygwin](https://www.cygwin.com/) for Mac OR Windwos
     - [MobaXTerm](https://mobaxterm.mobatek.net/download.html)  for Windows

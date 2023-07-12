@@ -388,7 +388,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -404,6 +406,18 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-activities">Training activities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -415,33 +429,96 @@ document.write(`
                   
   <section id="introduction-to-sensitivity-analysis">
 <h1>Introduction to Sensitivity Analysis<a class="headerlink" href="#introduction-to-sensitivity-analysis" title="Permalink to this heading">#</a></h1>
-<p><em>This site is still under construction</em></p>
-<p>If you’re wondering what the deal with Sensitivity Analysis, is, please follow tutorial in the <a class="reference external" href="https://mybinder.org/v2/gh/lbl59/lab_manual_resources/8546b1278e46f9d8b31d9de4bac6a74352799377?urlpath=lab%2Ftree%2Fsensitivity_analysis.ipynb">Jupyter notebook
-here</a>. After completing this tutorial, you will be able to:</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>This training page introduces you to sensitivity analysis (SA). Each component within the “Training activities” section provide you with the necessary background information to understand SA. It will also walk you through the tutorial in the <a class="reference external" href="https://mybinder.org/v2/gh/lbl59/lab_manual_resources/8546b1278e46f9d8b31d9de4bac6a74352799377?urlpath=lab%2Ftree%2Fsensitivity_analysis.ipynb">Jupyter notebook
+here</a></p>
+</section>
+<section id="learning-objectives">
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
+<p>After completing this tutorial, you will be able to:</p>
 <ol class="arabic simple">
-<li><p>Install and use basic Python sensitivity analysis packages</p></li>
-<li><p>Understand the uses and limitations of different sensitivity analysis methods</p></li>
-<li><p>Implement local and global sensitivity analysis methods</p></li>
+<li><p>Install and use basic Python SA packages</p></li>
+<li><p>Understand the uses and limitations of different SA methods</p></li>
+<li><p>Implement local and global SA methods</p></li>
 <li><p>Understand the differences in the mathematical formulations of these methods</p></li>
-<li><p>Apply sensitivity analyis to a small dataset</p></li>
+<li><p>Apply SA to a small dataset</p></li>
 </ol>
-<p>In this tutorial, the dataset you will be using consists of two files :</p>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<p>In this tutorial, some experience with using Python is useful. You should also have some understanding of basic SA, why we do it, and a few of its methods (local, Delta Moment-Independent, Sobol, etc). You should also identify the files you will be using for this exercise. Here are two files required in this exercise that can be obtained from the Jupyter Binder folder from the link provided in the Introduction:</p>
 <ol class="arabic simple">
-<li><p>Objectives_f125.csv</p></li>
-<li><p>financial_model_DVs.csv</p></li>
+<li><p><a class="reference external" href="https://notebooks.gesis.org/binder/jupyter/user/lbl59-lab_manual_resources-smcn2zji/lab/tree/Objectives_f125.csv">Objectives_f125.csv</a></p></li>
+<li><p><a class="reference external" href="https://notebooks.gesis.org/binder/jupyter/user/lbl59-lab_manual_resources-smcn2zji/lab/tree/Objectives_f125.csv">financial_model_DVs.csv</a></p></li>
 </ol>
-<p>Please ensure that both these files are in the same folder as your Jupyter notebook before beginning.
-Once you’ve completed this tutorial, here are some other resources to help you advance your sensitivity analysis skills:</p>
-<ol class="arabic simple">
-<li><p><a class="reference external" href="https://uc-ebook.org/docs/html/3_sensitivity_analysis_the_basics.html">The MSD UC Ebook</a></p></li>
-<li><p><a class="reference external" href="https://waterprogramming.wordpress.com/2020/02/25/open-source-sensitivity-analysis-tools/">Sensitivity analysis tools in different computing languages</a></p></li>
-<li><p><a class="reference external" href="https://waterprogramming.wordpress.com/2022/04/26/mordm-viii-characterizing-the-effects-of-deep-uncertainty/">Sensitivity analysis within the context of MORDM</a></p></li>
-<li><p><a class="reference external" href="https://waterprogramming.wordpress.com/2022/02/17/milton-friedmans-thermostat-and-sensitivity-analysis-of-control-policies/">Milton Freedman’s thermostat</a></p></li>
-<li><p><a class="reference external" href="https://waterprogramming.wordpress.com/2022/04/26/mordm-viii-characterizing-the-effects-of-deep-uncertainty/">Information theory and moment-independent sensitivity indices</a></p></li>
-<li><p><a class="reference external" href="https://waterprogramming.wordpress.com/2020/03/23/determining-the-appropriate-number-of-samples-for-a-sensitivity-analysis/">Sampling for sensitivity analysis</a></p></li>
-<li><p><a class="reference external" href="https://waterprogramming.wordpress.com/2019/08/27/a-python-implementation-of-grouped-radial-convergence-plots-to-visualize-sobol-sensitivity-analysis-results/">Visualizing Sobol sensitvity indices using radial plots</a></p></li>
-<li><p>Magnitude-varying sensitivity analysis <a class="reference external" href="https://waterprogramming.wordpress.com/2019/02/26/magnitude-varying-sensitivity-analysis-and-visualization-part-1/">Part 1</a> and <a class="reference external" href="https://waterprogramming.wordpress.com/2019/02/28/magnitude-varying-sensitivity-analysis-and-visualization-part-2/">Part 2</a></p></li>
-</ol>
+<p>Please ensure that both these files are in the same folder as your Jupyter notebook before beginning.</p>
+</section>
+<section id="training-activities">
+<h2>Training activities<a class="headerlink" href="#training-activities" title="Permalink to this heading">#</a></h2>
+<p>The following training sequence is suggested, but should be used as a general guideline instead of a fixed schedule. We will also be referencing a significant amount of material from the <a class="reference external" href="https://uc-ebook.org/docs/html/index.html">MSD UC E-Book</a>.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>Commitment</p></th>
+<th class="head"><p>Tasks</p></th>
+<th class="head"><p>Readings</p></th>
+<th class="head"><p>Outcomes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Introduction to Sensitivity Analysis</p></td>
+<td><p>Short</p></td>
+<td><p>None</p></td>
+<td><p>[1] <a class="reference external" href="https://uc-ebook.org/docs/html/3_sensitivity_analysis_the_basics.html">Global vs Local Sensitivity Analysis</a></p></td>
+<td><p>Understand the different types of SA and their associated methods</p></td>
+</tr>
+<tr class="row-odd"><td><p>Understanding different SA methods</p></td>
+<td><p>Medium</p></td>
+<td><p>None</p></td>
+<td><p>[1] <a class="reference external" href="https://uc-ebook.org/docs/html/3_sensitivity_analysis_the_basics.html">Sensitivity Analysis: The Basics</a></p></td>
+<td><p>Distinguishing different SA methods (variance-based, PDF-based, etc.)</p></td>
+</tr>
+<tr class="row-even"><td><p>Exploring sensitivity analysis in different languages</p></td>
+<td><p>Short</p></td>
+<td><p>None</p></td>
+<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2020/02/25/open-source-sensitivity-analysis-tools/">Sensitivity analysis tools in different computing languages</a></p></td>
+<td><p>Explore different SA packages available</p></td>
+</tr>
+<tr class="row-odd"><td><p>Using the SALib package</p></td>
+<td><p>Short</p></td>
+<td><p><a class="reference external" href="https://salib.readthedocs.io/en/latest/">Download SALib</a></p></td>
+<td><p>[2]</p></td>
+<td><p>Obtain and install the SALib package</p></td>
+</tr>
+<tr class="row-even"><td><p>Performing sensitivity analysis</p></td>
+<td><p>Medium</p></td>
+<td><p>Complete the [Jupyter notebook</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>activity](https://mybinder.org/v2/gh/lbl59/lab_manual_resources/8546b1278e46f9d8b31d9de4bac6a74352799377?urlpath=lab%2Ftree%2Fsensitivity_analysis.ipynb)</p></td>
+<td><p>None</p></td>
+<td><p>Apply SA on a simple water wholesaler problem</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="reading-list">
+<h2>Reading list<a class="headerlink" href="#reading-list" title="Permalink to this heading">#</a></h2>
+<p>Once you’ve completed this tutorial, here are some other resources to help you advance your sensitivity analysis skills:
+[1] Reed, P.M., Hadjimichael, A., Malek, K., Karimi, T., Vernon, C.R., Srikrishnan, V., Gupta, R.S., Gold, D.F., Lee, B., Keller, K., Thurber, T.B, &amp; Rice, J.S. (2022). Addressing Uncertainty in Multisector Dynamics Research [Book]. Zenodo. https://doi.org/10.5281/zenodo.6110623 <br>
+[2] Herman, J., &amp; Usher, W. (2017). Salib: An open-source python library for Sensitivity Analysis. The Journal of Open Source Software, 2(9), 97. https://doi.org/10.21105/joss.00097 <br>
+[3] <a class="reference external" href="https://waterprogramming.wordpress.com/2020/02/25/open-source-sensitivity-analysis-tools/">Sensitivity analysis tools in different computing languages</a><br>
+[4] <a class="reference external" href="https://waterprogramming.wordpress.com/2022/04/26/mordm-viii-characterizing-the-effects-of-deep-uncertainty/">Sensitivity analysis within the context of MORDM</a><br>
+[5] <a class="reference external" href="https://waterprogramming.wordpress.com/2022/02/17/milton-friedmans-thermostat-and-sensitivity-analysis-of-control-policies/">Milton Freedman’s thermostat</a><br>
+[6] <a class="reference external" href="https://waterprogramming.wordpress.com/2022/04/26/mordm-viii-characterizing-the-effects-of-deep-uncertainty/">Information theory and moment-independent sensitivity indices</a><br>
+[7] <a class="reference external" href="https://waterprogramming.wordpress.com/2020/03/23/determining-the-appropriate-number-of-samples-for-a-sensitivity-analysis/">Sampling for sensitivity analysis</a><br>
+[8] <a class="reference external" href="https://waterprogramming.wordpress.com/2019/08/27/a-python-implementation-of-grouped-radial-convergence-plots-to-visualize-sobol-sensitivity-analysis-results/">Visualizing Sobol sensitvity indices using radial plots</a><br>
+[9] Magnitude-varying sensitivity analysis <a class="reference external" href="https://waterprogramming.wordpress.com/2019/02/26/magnitude-varying-sensitivity-analysis-and-visualization-part-1/">Part 1</a> and <a class="reference external" href="https://waterprogramming.wordpress.com/2019/02/28/magnitude-varying-sensitivity-analysis-and-visualization-part-2/">Part 2</a></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -502,6 +579,24 @@ Once you’ve completed this tutorial, here are some other resources to help you
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-activities">Training activities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
