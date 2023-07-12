@@ -19,7 +19,7 @@ In this tutorial, some experience with using Python is useful. You should also h
 Please ensure that both these files are in the same folder as your Jupyter notebook before beginning. 
 
 ## Training activities
-The following training sequence is suggested, but should be used as a general guideline instead of a fixed schedule. We will also be referencing a significant amount of material from the [MSD UC E-Book](https://uc-ebook.org/docs/html/index.html).
+The following training sequence is suggested, but should be used as a general guideline instead of a fixed schedule. We will also be referencing a significant amount of material from the [MSD UC E-Book](https://uc-ebook.org/docs/html/index.html). <br>
 
 | Topic               | Commitment   |  Tasks      | Readings | Outcomes |
 | ---------------------- |-------------| --------------- | ---------| ---------|
