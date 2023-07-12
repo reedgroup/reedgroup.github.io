@@ -4,6 +4,8 @@
 
 Managing socio-ecological systems is a challenge wrought by competing societal objectives, deep uncertainties, and potentially irreversible tipping points. A classic example is the shallow lake problem in which a hypothetical town situated on a lake must develop pollution control strategies to maximize its economic benefits while minimizing the probability of the lake crossing a critical phosphorus (P) threshold, above which it irreversibly transitions into a eutrophic (polluted) state. Here, you'll explore two optimization strategies to design robust pollution control rules for the town that account for deeply uncertain system characteristics and conflicting objectives. 
 
+![Phosphorus fluxes](lake_problem.png "Lake problem")
+
 ## Learning objectives
 
 * Visualize dynamics of a socio-ecological system and identify tipping points
