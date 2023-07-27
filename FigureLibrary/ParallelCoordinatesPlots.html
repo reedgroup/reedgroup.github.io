@@ -732,9 +732,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_8076/3983194004.py:2: ParserWarning: Falling back to the &#39;python&#39; engine because the &#39;c&#39; engine does not support regex separators (separators &gt; 1 char and different from &#39;\s+&#39; are interpreted as regex); you can avoid this warning by specifying engine=&#39;python&#39;.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7305/3983194004.py:2: ParserWarning: Falling back to the &#39;python&#39; engine because the &#39;c&#39; engine does not support regex separators (separators &gt; 1 char and different from &#39;\s+&#39; are interpreted as regex); you can avoid this warning by specifying engine=&#39;python&#39;.
   objs = pd.read_csv(&#39;example_data/objs_wcu_pareto_5objs.csv&#39;, delimiter=&#39;, &#39;)
-/tmp/ipykernel_8076/3983194004.py:9: SettingWithCopyWarning: 
+/tmp/ipykernel_7305/3983194004.py:9: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
@@ -874,96 +874,6 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">### basic parallel axis plot</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">custom_parallel_coordinates</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">columns_axes</span><span class="o">=</span><span class="n">objs</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">axis_labels</span> <span class="o">=</span> <span class="n">axis_labels</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                             <span class="n">color_by_continuous</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">zorder_by</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ideal_direction</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                             <span class="n">alpha_base</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">lw_base</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>                             <span class="n">minmaxs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">],</span> 
-<span class="g g-Whitespace">      </span><span class="mi">6</span>                             <span class="n">colorbar_ticks_continuous</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>                             <span class="n">save_fig_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">fig_dir</span><span class="si">}</span><span class="s1">/paraxis1.png&#39;</span><span class="p">)</span>
-
-<span class="nn">Cell In[5], line 167,</span> in <span class="ni">custom_parallel_coordinates</span><span class="nt">(objs, columns_axes, axis_labels, ideal_direction, minmaxs, color_by_continuous, color_palette_continuous, color_by_categorical, color_palette_categorical, colorbar_ticks_continuous, color_dict_categorical, zorder_by, zorder_num_classes, zorder_direction, alpha_base, brushing_dict, alpha_brush, lw_base, fontsize, figsize, save_fig_filename)</span>
-<span class="g g-Whitespace">    </span><span class="mi">165</span> <span class="c1">### save figure</span>
-<span class="g g-Whitespace">    </span><span class="mi">166</span> <span class="k">if</span> <span class="n">save_fig_filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">167</span>     <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">save_fig_filename</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
-
-<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/matplotlib/pyplot.py:1023,</span> in <span class="ni">savefig</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1020</span> <span class="nd">@_copy_docstring_and_deprecators</span><span class="p">(</span><span class="n">Figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1021</span> <span class="k">def</span> <span class="nf">savefig</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1022</span>     <span class="n">fig</span> <span class="o">=</span> <span class="n">gcf</span><span class="p">()</span>
-<span class="ne">-&gt; </span><span class="mi">1023</span>     <span class="n">res</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1024</span>     <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw_idle</span><span class="p">()</span>  <span class="c1"># Need this if &#39;transparent=True&#39;, to reset colors.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1025</span>     <span class="k">return</span> <span class="n">res</span>
-
-<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/matplotlib/figure.py:3378,</span> in <span class="ni">Figure.savefig</span><span class="nt">(self, fname, transparent, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3374</span>     <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">3375</span>         <span class="n">stack</span><span class="o">.</span><span class="n">enter_context</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">3376</span>             <span class="n">ax</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">_cm_set</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">))</span>
-<span class="ne">-&gt; </span><span class="mi">3378</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">print_figure</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/matplotlib/backend_bases.py:2366,</span> in <span class="ni">FigureCanvasBase.print_figure</span><span class="nt">(self, filename, dpi, facecolor, edgecolor, orientation, format, bbox_inches, pad_inches, bbox_extra_artists, backend, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2362</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2363</span>     <span class="c1"># _get_renderer may change the figure dpi (as vector formats</span>
-<span class="g g-Whitespace">   </span><span class="mi">2364</span>     <span class="c1"># force the figure dpi to 72), so we need to set it again here.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2365</span>     <span class="k">with</span> <span class="n">cbook</span><span class="o">.</span><span class="n">_setattr_cm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">2366</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">print_method</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2367</span>             <span class="n">filename</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2368</span>             <span class="n">facecolor</span><span class="o">=</span><span class="n">facecolor</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2369</span>             <span class="n">edgecolor</span><span class="o">=</span><span class="n">edgecolor</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2370</span>             <span class="n">orientation</span><span class="o">=</span><span class="n">orientation</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2371</span>             <span class="n">bbox_inches_restore</span><span class="o">=</span><span class="n">_bbox_inches_restore</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2372</span>             <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2373</span> <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2374</span>     <span class="k">if</span> <span class="n">bbox_inches</span> <span class="ow">and</span> <span class="n">restore_bbox</span><span class="p">:</span>
-
-<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/matplotlib/backend_bases.py:2232,</span> in <span class="ni">FigureCanvasBase._switch_canvas_and_return_print_method.&lt;locals&gt;.&lt;lambda&gt;</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2228</span>     <span class="n">optional_kws</span> <span class="o">=</span> <span class="p">{</span>  <span class="c1"># Passed by print_figure for other renderers.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2229</span>         <span class="s2">&quot;dpi&quot;</span><span class="p">,</span> <span class="s2">&quot;facecolor&quot;</span><span class="p">,</span> <span class="s2">&quot;edgecolor&quot;</span><span class="p">,</span> <span class="s2">&quot;orientation&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2230</span>         <span class="s2">&quot;bbox_inches_restore&quot;</span><span class="p">}</span>
-<span class="g g-Whitespace">   </span><span class="mi">2231</span>     <span class="n">skip</span> <span class="o">=</span> <span class="n">optional_kws</span> <span class="o">-</span> <span class="p">{</span><span class="o">*</span><span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">meth</span><span class="p">)</span><span class="o">.</span><span class="n">parameters</span><span class="p">}</span>
-<span class="ne">-&gt; </span><span class="mi">2232</span>     <span class="n">print_method</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">meth</span><span class="p">)(</span><span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">meth</span><span class="p">(</span>
-<span class="nn">   2233         *args, **{k: v for k, v</span> in <span class="ni">kwargs.items</span><span class="nt">() if k not in skip}))</span>
-<span class="g g-Whitespace">   </span><span class="mi">2234</span> <span class="k">else</span><span class="p">:</span>  <span class="c1"># Let third-parties do as they see fit.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2235</span>     <span class="n">print_method</span> <span class="o">=</span> <span class="n">meth</span>
-
-<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/matplotlib/backends/backend_agg.py:509,</span> in <span class="ni">FigureCanvasAgg.print_png</span><span class="nt">(self, filename_or_obj, metadata, pil_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span> <span class="k">def</span> <span class="nf">print_png</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename_or_obj</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pil_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span><span class="sd">     Write the figure to a PNG file.</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">507</span><span class="sd">         *metadata*, including the default &#39;Software&#39; key.</span>
-<span class="g g-Whitespace">    </span><span class="mi">508</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">509</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_print_pil</span><span class="p">(</span><span class="n">filename_or_obj</span><span class="p">,</span> <span class="s2">&quot;png&quot;</span><span class="p">,</span> <span class="n">pil_kwargs</span><span class="p">,</span> <span class="n">metadata</span><span class="p">)</span>
-
-<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/matplotlib/backends/backend_agg.py:458,</span> in <span class="ni">FigureCanvasAgg._print_pil</span><span class="nt">(self, filename_or_obj, fmt, pil_kwargs, metadata)</span>
-<span class="g g-Whitespace">    </span><span class="mi">453</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">454</span><span class="sd"> Draw the canvas, then save it using `.image.imsave` (to which</span>
-<span class="g g-Whitespace">    </span><span class="mi">455</span><span class="sd"> *pil_kwargs* and *metadata* are forwarded).</span>
-<span class="g g-Whitespace">    </span><span class="mi">456</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">457</span> <span class="n">FigureCanvasAgg</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">458</span> <span class="n">mpl</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">459</span>     <span class="n">filename_or_obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer_rgba</span><span class="p">(),</span> <span class="nb">format</span><span class="o">=</span><span class="n">fmt</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;upper&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span>     <span class="n">dpi</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">dpi</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span> <span class="n">pil_kwargs</span><span class="o">=</span><span class="n">pil_kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/matplotlib/image.py:1689,</span> in <span class="ni">imsave</span><span class="nt">(fname, arr, vmin, vmax, cmap, format, origin, dpi, metadata, pil_kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1687</span> <span class="n">pil_kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;format&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1688</span> <span class="n">pil_kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;dpi&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">dpi</span><span class="p">,</span> <span class="n">dpi</span><span class="p">))</span>
-<span class="ne">-&gt; </span><span class="mi">1689</span> <span class="n">image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="o">**</span><span class="n">pil_kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/PIL/Image.py:2410,</span> in <span class="ni">Image.save</span><span class="nt">(self, fp, format, **params)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2408</span>         <span class="n">fp</span> <span class="o">=</span> <span class="n">builtins</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;r+b&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2409</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2410</span>         <span class="n">fp</span> <span class="o">=</span> <span class="n">builtins</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;w+b&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2412</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2413</span>     <span class="n">save_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;temp_figs//paraxis1.png&#39;
-</pre></div>
-</div>
 <img alt="../_images/f71d56005ce084665aeed02a33448415b273997b9c43e89abe52c5a8e02f6ff8.png" src="../_images/f71d56005ce084665aeed02a33448415b273997b9c43e89abe52c5a8e02f6ff8.png" />
 </div>
 </div>
@@ -982,7 +892,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0fc98914cc1456bc3547b6c7d604a521bab7c5c3d5faf756a0ce3415d5838574.png" src="../_images/0fc98914cc1456bc3547b6c7d604a521bab7c5c3d5faf756a0ce3415d5838574.png" />
+<img alt="../_images/6d11fd6691c0f6398c634eb1e521bd7869e1634e19d3a38322da266110cb5e6a.png" src="../_images/6d11fd6691c0f6398c634eb1e521bd7869e1634e19d3a38322da266110cb5e6a.png" />
 </div>
 </div>
 <p>Now let’s add some brushing. Brushing is the act of filtering out solutions that fail to meet certain satisficing criteria. In the figure below, I filter out all solutions that fail to meet one or more of these 3 criteria: (1) the number of partners is at least 16; (2) The Captured water gains for non-partners is non-negative; and (3) The cost of gains for the worst-off partner is less than $500/ML. These criterion are added in a straightforward way using the “brushing_dict” dictionary format, as demonstrated below. The function will automatically add grey boxes over the filtered-out region for each brushing criterion.</p>
@@ -1000,7 +910,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/96b1c984ca9cd967d2432d05b3558991b8e674331103fae91ce50e7e71eb5f16.png" src="../_images/96b1c984ca9cd967d2432d05b3558991b8e674331103fae91ce50e7e71eb5f16.png" />
+<img alt="../_images/fb89c8ee693e663dc24d7fbdfc7caeadbc662d0802a73562e4af806d47e1e8d9.png" src="../_images/fb89c8ee693e663dc24d7fbdfc7caeadbc662d0802a73562e4af806d47e1e8d9.png" />
 </div>
 </div>
 <p>This function also has the ability to color solutions based on a categorical variable rather than a continuous palette. The following example defines a new categorical variable by binning the continuous cost variable into three discrete classes. It then defines a color dictionary that assigns a different color to each possible value of the categorical variable. The legend is automatically created based on the color dictionary.</p>
@@ -1022,7 +932,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9f4024c8e698b7596b6c47a654c3267c39e19eab3ae1fb5e954abd34b589c424.png" src="../_images/9f4024c8e698b7596b6c47a654c3267c39e19eab3ae1fb5e954abd34b589c424.png" />
+<img alt="../_images/79bd11c16f9715004a6ebcd742ca088e17fc3aa54ef9183f13493b0f69d15eec.png" src="../_images/79bd11c16f9715004a6ebcd742ca088e17fc3aa54ef9183f13493b0f69d15eec.png" />
 </div>
 </div>
 <p>Finally, here is an example that combines brushing with categorical coloration. This shows that no LowCost or HighCost solutions are able to meet the given satisficing criteria.</p>
@@ -1041,7 +951,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ac2b2feda113397b5c6e76ffbeb87402d1510d31fb486fb746e25e0fd180d4b9.png" src="../_images/ac2b2feda113397b5c6e76ffbeb87402d1510d31fb486fb746e25e0fd180d4b9.png" />
+<img alt="../_images/ba605a8aaa561e8d86847be05b9a8523e03a88b9f4dbba3102c60a3e4a7fe4eb.png" src="../_images/ba605a8aaa561e8d86847be05b9a8523e03a88b9f4dbba3102c60a3e4a7fe4eb.png" />
 </div>
 </div>
 </section>
