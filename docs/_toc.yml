@@ -63,3 +63,4 @@ parts:
     - file: Contributing/mdExample.md
     - file: Contributing/nbExample.ipynb
     - file: Contributing/training_template.md
+    - file: Contributing/FAQs.md
