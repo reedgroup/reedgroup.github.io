@@ -218,6 +218,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Contributing/mdExample.html">Markdown example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Contributing/nbExample.html">Jupyter notebook example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Contributing/training_template.html">Training Title</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Contributing/FAQs.html">Frequently-asked questions (FAQs)</a></li>
 </ul>
 </li>
 </ul>
@@ -675,12 +676,12 @@ document.write(`
 <span class="g g-Whitespace">     </span><span class="mi">68</span> <span class="c1">## Usage</span>
 <span class="ne">---&gt; </span><span class="mi">69</span> <span class="n">plot_fdc_ranges</span><span class="p">(</span><span class="n">Qh</span><span class="p">,</span> <span class="n">Qs</span><span class="p">,</span> <span class="n">savefig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 
-<span class="nn">Cell In[3], line 41,</span> in <span class="ni">plot_fdc_ranges</span><span class="nt">(Qh, Qs, units, y_scale, savefig, fig_dir, figsize, colors, title_addon)</span>
+<span class="nn">Cell In[3], line 40,</span> in <span class="ni">plot_fdc_ranges</span><span class="nt">(Qh, Qs, units, y_scale, savefig, fig_dir, figsize, colors, title_addon)</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="n">annual_historic</span> <span class="o">=</span> <span class="n">Qh</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">Qh</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">39</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">quant</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nonexceedance</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span>         <span class="n">s_fdc_max</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">annual_synthetics</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">quant</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">41</span>         <span class="n">s_fdc_min</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">annual_synthetics</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">quant</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">40</span>         <span class="n">s_fdc_max</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">annual_synthetics</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">quant</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span>         <span class="n">s_fdc_min</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">annual_synthetics</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">quant</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
 <span class="g g-Whitespace">     </span><span class="mi">42</span>         <span class="n">h_fdc_max</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">annual_historic</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">quant</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span>         <span class="n">h_fdc_min</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">annual_historic</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">quant</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
 
 <span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/pandas/core/groupby/groupby.py:3303,</span> in <span class="ni">GroupBy.quantile</span><span class="nt">(self, q, interpolation, numeric_only)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3300</span>     <span class="k">return</span> <span class="n">post_processor</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">inference</span><span class="p">,</span> <span class="n">result_mask</span><span class="p">,</span> <span class="n">orig_vals</span><span class="p">)</span>
@@ -931,16 +932,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: ".venv"
+            mode: "python"
         },
         kernelOptions: {
-            name: ".venv",
+            name: "python3",
             path: "./FigureLibrary"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = '.venv'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
