@@ -8,3 +8,10 @@ The table below contains posts from the [Water Programming Blog](https://waterpr
   frameborder="0" allowfullscreen>
   </iframe>
 </div>
+
+
+
+### Updating this table:
+Current Reed Group members looking to update the table should read the instructions listed in the [reedgroup/waterprogramming_archive/README](https://github.com/reedgroup/waterprogramming_archive).  
+
+*Note that this is only accessible to current members of the Reed Group GitHub organization.*
