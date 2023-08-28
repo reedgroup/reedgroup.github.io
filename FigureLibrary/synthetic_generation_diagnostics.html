@@ -663,65 +663,13 @@ document.write(`
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
     <span class="k">return</span>
 
-<span class="c1">## Usage</span>
-<span class="n">plot_fdc_ranges</span><span class="p">(</span><span class="n">Qh</span><span class="p">,</span> <span class="n">Qs</span><span class="p">,</span> <span class="n">savefig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="c1">## Usage </span>
+<span class="n">plot_fdc_ranges</span><span class="p">(</span><span class="n">Qh</span><span class="p">,</span> <span class="n">Qs</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">30</span><span class="p">],</span> <span class="n">savefig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">69</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span>     <span class="k">return</span>
-<span class="g g-Whitespace">     </span><span class="mi">68</span> <span class="c1">## Usage</span>
-<span class="ne">---&gt; </span><span class="mi">69</span> <span class="n">plot_fdc_ranges</span><span class="p">(</span><span class="n">Qh</span><span class="p">,</span> <span class="n">Qs</span><span class="p">,</span> <span class="n">savefig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-
-<span class="nn">Cell In[3], line 41,</span> in <span class="ni">plot_fdc_ranges</span><span class="nt">(Qh, Qs, units, y_scale, savefig, fig_dir, figsize, colors, title_addon)</span>
-<span class="g g-Whitespace">     </span><span class="mi">39</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">quant</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nonexceedance</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span>         <span class="n">s_fdc_max</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">annual_synthetics</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">quant</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">41</span>         <span class="n">s_fdc_min</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">annual_synthetics</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">quant</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span>         <span class="n">h_fdc_max</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">annual_historic</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">quant</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span>         <span class="n">h_fdc_min</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">annual_historic</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">quant</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-
-<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/pandas/core/groupby/groupby.py:3303,</span> in <span class="ni">GroupBy.quantile</span><span class="nt">(self, q, interpolation, numeric_only)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3300</span>     <span class="k">return</span> <span class="n">post_processor</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">inference</span><span class="p">,</span> <span class="n">result_mask</span><span class="p">,</span> <span class="n">orig_vals</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3302</span> <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_data_to_aggregate</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="n">numeric_only</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;quantile&quot;</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">3303</span> <span class="n">res_mgr</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">grouped_reduce</span><span class="p">(</span><span class="n">blk_func</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3305</span> <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wrap_agged_manager</span><span class="p">(</span><span class="n">res_mgr</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3307</span> <span class="k">if</span> <span class="n">orig_scalar</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">3308</span>     <span class="c1"># Avoid expensive MultiIndex construction</span>
-
-<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/pandas/core/internals/managers.py:1506,</span> in <span class="ni">BlockManager.grouped_reduce</span><span class="nt">(self, func)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1504</span>             <span class="n">result_blocks</span> <span class="o">=</span> <span class="n">extend_blocks</span><span class="p">(</span><span class="n">applied</span><span class="p">,</span> <span class="n">result_blocks</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1505</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1506</span>         <span class="n">applied</span> <span class="o">=</span> <span class="n">blk</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1507</span>         <span class="n">result_blocks</span> <span class="o">=</span> <span class="n">extend_blocks</span><span class="p">(</span><span class="n">applied</span><span class="p">,</span> <span class="n">result_blocks</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1509</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result_blocks</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-
-<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/pandas/core/internals/blocks.py:329,</span> in <span class="ni">Block.apply</span><span class="nt">(self, func, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">323</span> <span class="nd">@final</span>
-<span class="g g-Whitespace">    </span><span class="mi">324</span> <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Block</span><span class="p">]:</span>
-<span class="g g-Whitespace">    </span><span class="mi">325</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">326</span><span class="sd">     apply the function to my values; return a block if we are not</span>
-<span class="g g-Whitespace">    </span><span class="mi">327</span><span class="sd">     one</span>
-<span class="g g-Whitespace">    </span><span class="mi">328</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">329</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">331</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_split_op_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-
-<span class="nn">File ~/.virtualenvs/.venv/lib/python3.8/site-packages/pandas/core/groupby/groupby.py:3274,</span> in <span class="ni">GroupBy.quantile.&lt;locals&gt;.blk_func</span><span class="nt">(values)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3272</span> <span class="c1"># Get an index of values sorted by values and then labels</span>
-<span class="g g-Whitespace">   </span><span class="mi">3273</span> <span class="n">order</span> <span class="o">=</span> <span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">shaped_labels</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">3274</span> <span class="n">sort_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">lexsort</span><span class="p">(</span><span class="n">order</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">intp</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3276</span> <span class="k">if</span> <span class="n">is_datetimelike</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">3277</span>     <span class="c1"># This casting needs to happen after the lexsort in order</span>
-<span class="g g-Whitespace">   </span><span class="mi">3278</span>     <span class="c1">#  to ensure that NaTs are placed at the end and not the front</span>
-<span class="g g-Whitespace">   </span><span class="mi">3279</span>     <span class="n">vals</span> <span class="o">=</span> <span class="n">vals</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="s2">&quot;i8&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
-
-<span class="nn">File &lt;__array_function__ internals&gt;:200,</span> in <span class="ni">lexsort</span><span class="nt">(*args, **kwargs)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
+<img alt="../_images/fb87162c75ff343c8c1da0d921e059577f0ee7923a296893b6942342a59ad20b.png" src="../_images/fb87162c75ff343c8c1da0d921e059577f0ee7923a296893b6942342a59ad20b.png" />
 </div>
 </div>
 <p>Similar to the flow range plot above, we see that the synthetic ensemble is nicely enveloping the historic data; there are synthetic instances where the extreme flows in a particular year are more extreme than historic observations. However, the FDC of the total synthetic ensemble (if all synthetics were combined) is almost exactly equal to the total historic FDC.</p>
@@ -820,7 +768,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9a192bed80275df004736133bb4f676820a4e71f2d7707a1667b8147ff1afb15.png" src="../_images/9a192bed80275df004736133bb4f676820a4e71f2d7707a1667b8147ff1afb15.png" />
+<img alt="../_images/b0e64a1cb2f86d2931cc95a2a94a1f4fe241082cf9f1cc2655b0965ce2f60a19.png" src="../_images/b0e64a1cb2f86d2931cc95a2a94a1f4fe241082cf9f1cc2655b0965ce2f60a19.png" />
 </div>
 </div>
 </section>
@@ -912,7 +860,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/eb8c399aed255bb817699e425f9d2f98893cd216aad15c6a2edebf9d666a4516.png" src="../_images/eb8c399aed255bb817699e425f9d2f98893cd216aad15c6a2edebf9d666a4516.png" />
+<img alt="../_images/975df704c25360eb1dbe83e3f0a4991788c9e68031b01751e6c4b43fdf04be24.png" src="../_images/975df704c25360eb1dbe83e3f0a4991788c9e68031b01751e6c4b43fdf04be24.png" />
 </div>
 </div>
 </section>
@@ -932,16 +880,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: ".venv"
         },
         kernelOptions: {
-            name: "python3",
+            name: ".venv",
             path: "./FigureLibrary"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = '.venv'</script>
 
                 </article>
               
