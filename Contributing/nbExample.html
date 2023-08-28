@@ -452,10 +452,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f6278ab5580&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fbea5b28700&gt;
 </pre></div>
 </div>
-<img alt="../_images/3c8793317e848587d60bbd9bfd9359c78bf4a104a98ac98a9d45b597a4ed023f.png" src="../_images/3c8793317e848587d60bbd9bfd9359c78bf4a104a98ac98a9d45b597a4ed023f.png" />
+<img alt="../_images/7d91b932ecde1b04d10ca10c8034d2232f41bed365c3bc231e33038d89403e9c.png" src="../_images/7d91b932ecde1b04d10ca10c8034d2232f41bed365c3bc231e33038d89403e9c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -495,78 +495,10 @@ ggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error in library(ggforce) : there is no package called ‘ggforce’
-In addition: Warning message:
-In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :
-  libraries ‘/usr/local/lib/R/site-library’, ‘/usr/lib/R/site-library’ contain no packages
-Error in library(ggforce) : there is no package called ‘ggforce’
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: ggplot2
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
-RRuntimeError                             Traceback (most recent call last)
-File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/ipython/rmagic.py:401, in RMagics.eval(self, code)
-    400     r_expr = ri.parse(code)
---&gt; 401     value, visible = ri.evalr_expr_with_visible(
-    402         r_expr
-    403     )
-    404 except (ri.embedded.RRuntimeError, ValueError) as exception:
-    405     # Otherwise next return seems to have copy of error.
-
-File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/rinterface.py:196, in evalr_expr_with_visible(expr, envir)
-    195 if error_occured[0]:
---&gt; 196     raise embedded.RRuntimeError(_rinterface._geterrmessage())
-    197 res = conversion._cdata_to_rinterface(r_res)
-
-RRuntimeError: Error in library(ggforce) : there is no package called ‘ggforce’
-
-
-During handling of the above exception, another exception occurred:
-
-RInterpreterError                         Traceback (most recent call last)
-Cell In[4], line 1
-----&gt; 1 get_ipython().run_cell_magic(&#39;R&#39;, &#39;&#39;, &#39;### R cell using %%R magic\n\nlibrary(ggforce)\nggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +\n    geom_point() +\n    facet_zoom(x = Species == &quot;versicolor&quot;)\n&#39;)
-
-File ~/.virtualenvs/.venv/lib/python3.8/site-packages/IPython/core/interactiveshell.py:2478, in InteractiveShell.run_cell_magic(self, magic_name, line, cell)
-   2476 with self.builtin_trap:
-   2477     args = (magic_arg_s, cell)
--&gt; 2478     result = fn(*args, **kwargs)
-   2480 # The code below prevents the output from being displayed
-   2481 # when using magics with decodator @output_can_be_silenced
-   2482 # when the last Python token in the expression is a &#39;;&#39;.
-   2483 if getattr(fn, magic.MAGIC_OUTPUT_CAN_BE_SILENCED, False):
-
-File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/ipython/rmagic.py:978, in RMagics.R(self, line, cell, local_ns)
-    976     if not e.stdout.endswith(e.err):
-    977         print(e.err)
---&gt; 978     raise e
-    979 finally:
-    980     if self.device in DEVICES_STATIC:
-
-File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/ipython/rmagic.py:943, in RMagics.R(self, line, cell, local_ns)
-    941         return_output = False
-    942 else:
---&gt; 943     text_result, result, visible = self.eval(code)
-    944     text_output += text_result
-    945     if visible:
-
-File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/ipython/rmagic.py:407, in RMagics.eval(self, code)
-    404 except (ri.embedded.RRuntimeError, ValueError) as exception:
-    405     # Otherwise next return seems to have copy of error.
-    406     warning_or_other_msg = self.flush()
---&gt; 407     raise RInterpreterError(code, str(exception),
-    408                             warning_or_other_msg)
-    409 finally:
-    410     ro._print_deferred_warnings()
-
-RInterpreterError: Failed to parse and evaluate line &#39;### R cell using %%R magic\n\nlibrary(ggforce)\nggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +\n    geom_point() +\n    facet_zoom(x = Species == &quot;versicolor&quot;)\n&#39;.
-R error message: &#39;Error in library(ggforce) : there is no package called ‘ggforce’&#39;
-R stdout:
-Error in library(ggforce) : there is no package called ‘ggforce’
-In addition: Warning message:
-In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :
-  libraries ‘/usr/local/lib/R/site-library’, ‘/usr/lib/R/site-library’ contain no packages
-</pre></div>
-</div>
+<img alt="../_images/0fd57a606b6df51e376e38211d80e1479237b11b723006adc6a1b477d3349c8b.png" src="../_images/0fd57a606b6df51e376e38211d80e1479237b11b723006adc6a1b477d3349c8b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -604,16 +536,16 @@ In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: ".venv"
         },
         kernelOptions: {
-            name: "python3",
+            name: ".venv",
             path: "./Contributing"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = '.venv'</script>
 
                 </article>
               
