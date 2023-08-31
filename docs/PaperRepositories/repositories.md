@@ -1,4 +1,4 @@
-# Repositories
+# List of Paper Repositories
 
 |Paper|Year|Repository Link|
 |:----|:----|:----|
