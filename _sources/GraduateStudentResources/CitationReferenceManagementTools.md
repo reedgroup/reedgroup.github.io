@@ -1,8 +1,10 @@
 # Citation and Reference Management Tools
-*This site is still under construction*
+
+Exploring, contextualizing, and documenting literature is a critical part of the graduate research process. Members of the Reed group use a variety of different tools to help navigate and manage publication citations. This page highlights some of the favorites from the group. 
+
+Click on the title of each tool's description to take a look at their individual sites.
 
 ## Citation Tools
-Here are some citation tools we regularly use in the Reed Group. Click on the title of each tool's description to take a look at their individual sites.
 
 ### [Research Rabbit](https://researchrabbitapp.com/)
 Self-described as "Spotify for Papers", the main idea behind Research Rabbit can be boiled down into three main points:
@@ -31,10 +33,13 @@ Zotero is a free, open-source reference managment software. Using Zotero, you ca
 ## Visualizing this information
 Everything is (or potentially is) connected! There are visualization tools you can use to view our group's and our collaborators' bibliographic networks.
 
-### [VosViewer](https://www.vosviewer.com/)
-Some description about VosViewer here
+### [VOSviewer](https://www.vosviewer.com/)
+
+VOSviewer is a tool for crafting your own bibliometric networks. It allows for more customization in the data vizualization, while stil allowing for interactive maps. 
+
+For more tips on getting started with VOSviewers, see Rohini's blog post: [Viewing your scientific landscape with VOSviewer](https://waterprogramming.wordpress.com/2022/07/05/viewing-your-scientific-landscape-with-vosviewer/)
+
 
 ### [Gephi](https://gephi.org/)
-Some description about Gephi here
 
-## Tips on effective use of these tools
+Gephi is an alternative custom network visualization tool. This open source software is not designed for biliometric data specifically, as oppossed to VOSviewer, but is a general graph network visualization software. 
