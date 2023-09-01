@@ -15,6 +15,7 @@ parts:
     - file: GraduateStudentResources/WritingProcess.md
     - file: GraduateStudentResources/Scheduling.md
     - file: GraduateStudentResources/Organization.md
+    - file: GraduateStudentResources/CitationReferenceManagementTools.md
   - file: ComputationalResources/ComputationalResources.md
     sections:
     - file: ComputationalResources/ClusterBasics.md
@@ -22,7 +23,6 @@ parts:
     - file: ComputationalResources/Machine_Learning_Resources.md
     - file: ComputationalResources/IntroToLinux.md
     - file: ComputationalResources/IntroToGitHub.md
-    - file: ComputationalResources/CitationReferenceManagementTools.md
     - file: ComputationalResources/Websites.md
   - file: Software/Software.md
     sections:
