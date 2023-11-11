@@ -17,14 +17,14 @@ When you start a new project, you should create a GitHub meta-repository right a
 
 ## Example Repositories 
 
-There is no one repository template that needs to be followed. You will likely develop your own repository style over time that best facilitates introducing new users to your code. The examples below are great templates that have been used by members of our own group that you can build off. 
+There is no one repository template that needs to be followed. You will likely develop your own repository style over time that best facilitates introducing new users to your code. The examples below are great templates that have been used by members of our own group that you can build off and that contain all the essential elements needed for a paper repository. 
 
-* [IM3 Metarepository](https://github.com/IMMM-SFA/metarepo): This repository is a required template for any IM3 projects, which many students in our group are involved in. This template was created by the IM3 DSC team and is a great starting point for any new students (including non DOE-funded students). In order to use this meta-repository, clone the repository from GitHub and fill out the `metarepo_template.md` with the relevant information. You'll notice that the meta-repository requires: 
+* [IM3 Meta-repository](https://github.com/IMMM-SFA/metarepo): This repository is a required template for any IM3 projects, which many students in our group are involved in. This template was created by the IM3 DSC team and is a great starting point for any new students (including non DOE-funded students). In order to use this meta-repository, clone the repository from GitHub and fill out the `metarepo_template.md` with the relevant information. You'll notice that the meta-repository contains: 
 
-		1. A Zenodo badge if relevant, which contains the data required to reproduce your code 
-		2. The abstract, journal citation, and references to any external code and data.
-		3. Steps to reproduce results
-		4. Steps to reproduce figures
+1. A Zenodo badge if relevant, which contains the data required to reproduce your code 
+2. The abstract, journal citation, and references to any external code and data.
+3. Steps to reproduce results
+4. Steps to reproduce figures
 
 Examples of papers that have used this repository stye are [here](https://github.com/antonia-had/Hadjimichael-etal_2021_JWRPM) and [here](https://github.com/lbl59/implementation-uncertainty)		
 
