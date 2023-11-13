@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -76,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -136,13 +146,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Reed group lab manual - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Reed group lab manual - Home"/>`);</script>
   
   
 </a></div>
@@ -164,6 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Conferences.html">Conferences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/PresentationTemplates.html">Presentation Templates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/WritingProcess.html">Writing your first paper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/PaperRepoTemplates.html">Paper Repository Templates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Scheduling.html">Scheduling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Organization.html">Organizational Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/CitationReferenceManagementTools.html">Citation and Reference Management Tools</a></li>
@@ -377,10 +389,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -388,7 +400,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -505,11 +517,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1906/1694872728.py:37: MatplotlibDeprecationWarning: Unable to determine Axes to steal space for Colorbar. Using gca(), but will raise in the future. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_9376/1694872728.py:37: MatplotlibDeprecationWarning: Unable to determine Axes to steal space for Colorbar. Using gca(), but will raise in the future. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
   cbar = plt.colorbar(sm)
 </pre></div>
 </div>
-<img alt="../_images/198f4eea5cce680e619e87c4b5536a2d9066292e45d3a5b62b734d3a453d4da0.png" src="../_images/198f4eea5cce680e619e87c4b5536a2d9066292e45d3a5b62b734d3a453d4da0.png" />
+<img alt="../_images/73ad993d15783dfc74fb2c368e0541a53a3777a2fc6ff0e43ce59a1051ed7264.png" src="../_images/73ad993d15783dfc74fb2c368e0541a53a3777a2fc6ff0e43ce59a1051ed7264.png" />
 </div>
 </div>
 </section>
@@ -554,11 +566,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1906/1664175611.py:28: MatplotlibDeprecationWarning: Unable to determine Axes to steal space for Colorbar. Using gca(), but will raise in the future. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_9376/1664175611.py:28: MatplotlibDeprecationWarning: Unable to determine Axes to steal space for Colorbar. Using gca(), but will raise in the future. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
   cbar = plt.colorbar(sm)
 </pre></div>
 </div>
-<img alt="../_images/f1fbcfba0d089817e36b3b87a337974b3333d65cc931346d6289e988a8ffcf36.png" src="../_images/f1fbcfba0d089817e36b3b87a337974b3333d65cc931346d6289e988a8ffcf36.png" />
+<img alt="../_images/119093e16dcd304d2e4f50c0e15e765c7cc3126aab4ee34932ed1b6295373311.png" src="../_images/119093e16dcd304d2e4f50c0e15e765c7cc3126aab4ee34932ed1b6295373311.png" />
 </div>
 </div>
 </section>
@@ -601,7 +613,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Runtime Dynamics&#39;)
 </pre></div>
 </div>
-<img alt="../_images/946c3042a8d766c0f0b1376cc7fba609e9ff2f1f0e378e8a9e973edaa2435203.png" src="../_images/946c3042a8d766c0f0b1376cc7fba609e9ff2f1f0e378e8a9e973edaa2435203.png" />
+<img alt="../_images/bc95946b49d8f0808fc6c5a700347028253defac873f1b574b04f4c1204a15b3.png" src="../_images/bc95946b49d8f0808fc6c5a700347028253defac873f1b574b04f4c1204a15b3.png" />
 </div>
 </div>
 </section>
@@ -625,7 +637,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Approximate Pareto Sets&#39;)
 </pre></div>
 </div>
-<img alt="../_images/1317c4b7421b76f475744cc751f763ec2aceb161a9acf966cc0b4f5dcb9bf495.png" src="../_images/1317c4b7421b76f475744cc751f763ec2aceb161a9acf966cc0b4f5dcb9bf495.png" />
+<img alt="../_images/661c0fb167f42acf9290c12c8ff223f891cf3ea9cd8979ab9175435a2c1811fe.png" src="../_images/661c0fb167f42acf9290c12c8ff223f891cf3ea9cd8979ab9175435a2c1811fe.png" />
 </div>
 </div>
 </section>
@@ -647,27 +659,26 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: ".venv"
         },
         kernelOptions: {
-            name: "python3",
+            name: ".venv",
             path: "./FigureLibrary"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = '.venv'</script>
 
                 </article>
               
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="scatter3d.html"
@@ -687,10 +698,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -757,8 +765,8 @@ By The Reed Group at Cornell CEE
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>

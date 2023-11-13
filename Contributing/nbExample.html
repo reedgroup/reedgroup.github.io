@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -76,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -136,13 +146,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Reed group lab manual - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Reed group lab manual - Home"/>`);</script>
   
   
 </a></div>
@@ -164,6 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Conferences.html">Conferences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/PresentationTemplates.html">Presentation Templates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/WritingProcess.html">Writing your first paper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/PaperRepoTemplates.html">Paper Repository Templates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Scheduling.html">Scheduling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Organization.html">Organizational Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/CitationReferenceManagementTools.html">Citation and Reference Management Tools</a></li>
@@ -377,10 +389,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -388,7 +400,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -453,10 +465,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7ff6f8677580&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fad503583a0&gt;
 </pre></div>
 </div>
-<img alt="../_images/c5ee888fc03874c76073be6855ffb416913d8d63c6e987e1bf95d728cb49dd26.png" src="../_images/c5ee888fc03874c76073be6855ffb416913d8d63c6e987e1bf95d728cb49dd26.png" />
+<img alt="../_images/40035e212d9351b81949db20fad680aadeb36416c37c48e2343b9a8ede54fc58.png" src="../_images/40035e212d9351b81949db20fad680aadeb36416c37c48e2343b9a8ede54fc58.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -482,6 +494,18 @@ pwd
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
+package ‘methods’ was built under R version 4.3.2 
+During startup - Warning messages:
+1: package ‘datasets’ was built under R version 4.3.2 
+2: package ‘utils’ was built under R version 4.3.2 
+3: package ‘grDevices’ was built under R version 4.3.2 
+4: package ‘graphics’ was built under R version 4.3.2 
+5: package ‘stats’ was built under R version 4.3.2 
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -496,78 +520,12 @@ ggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error in library(ggforce) : there is no package called ‘ggforce’
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: ggplot2
 In addition: Warning message:
-In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :
-  libraries ‘/usr/local/lib/R/site-library’, ‘/usr/lib/R/site-library’ contain no packages
-Error in library(ggforce) : there is no package called ‘ggforce’
+package ‘tools’ was built under R version 4.3.2 
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
-RRuntimeError                             Traceback (most recent call last)
-File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/ipython/rmagic.py:401, in RMagics.eval(self, code)
-    400     r_expr = ri.parse(code)
---&gt; 401     value, visible = ri.evalr_expr_with_visible(
-    402         r_expr
-    403     )
-    404 except (ri.embedded.RRuntimeError, ValueError) as exception:
-    405     # Otherwise next return seems to have copy of error.
-
-File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/rinterface.py:196, in evalr_expr_with_visible(expr, envir)
-    195 if error_occured[0]:
---&gt; 196     raise embedded.RRuntimeError(_rinterface._geterrmessage())
-    197 res = conversion._cdata_to_rinterface(r_res)
-
-RRuntimeError: Error in library(ggforce) : there is no package called ‘ggforce’
-
-
-During handling of the above exception, another exception occurred:
-
-RInterpreterError                         Traceback (most recent call last)
-Cell In[4], line 1
-----&gt; 1 get_ipython().run_cell_magic(&#39;R&#39;, &#39;&#39;, &#39;### R cell using %%R magic\n\nlibrary(ggforce)\nggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +\n    geom_point() +\n    facet_zoom(x = Species == &quot;versicolor&quot;)\n&#39;)
-
-File ~/.virtualenvs/.venv/lib/python3.8/site-packages/IPython/core/interactiveshell.py:2478, in InteractiveShell.run_cell_magic(self, magic_name, line, cell)
-   2476 with self.builtin_trap:
-   2477     args = (magic_arg_s, cell)
--&gt; 2478     result = fn(*args, **kwargs)
-   2480 # The code below prevents the output from being displayed
-   2481 # when using magics with decodator @output_can_be_silenced
-   2482 # when the last Python token in the expression is a &#39;;&#39;.
-   2483 if getattr(fn, magic.MAGIC_OUTPUT_CAN_BE_SILENCED, False):
-
-File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/ipython/rmagic.py:978, in RMagics.R(self, line, cell, local_ns)
-    976     if not e.stdout.endswith(e.err):
-    977         print(e.err)
---&gt; 978     raise e
-    979 finally:
-    980     if self.device in DEVICES_STATIC:
-
-File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/ipython/rmagic.py:943, in RMagics.R(self, line, cell, local_ns)
-    941         return_output = False
-    942 else:
---&gt; 943     text_result, result, visible = self.eval(code)
-    944     text_output += text_result
-    945     if visible:
-
-File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/ipython/rmagic.py:407, in RMagics.eval(self, code)
-    404 except (ri.embedded.RRuntimeError, ValueError) as exception:
-    405     # Otherwise next return seems to have copy of error.
-    406     warning_or_other_msg = self.flush()
---&gt; 407     raise RInterpreterError(code, str(exception),
-    408                             warning_or_other_msg)
-    409 finally:
-    410     ro._print_deferred_warnings()
-
-RInterpreterError: Failed to parse and evaluate line &#39;### R cell using %%R magic\n\nlibrary(ggforce)\nggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +\n    geom_point() +\n    facet_zoom(x = Species == &quot;versicolor&quot;)\n&#39;.
-R error message: &#39;Error in library(ggforce) : there is no package called ‘ggforce’&#39;
-R stdout:
-Error in library(ggforce) : there is no package called ‘ggforce’
-In addition: Warning message:
-In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :
-  libraries ‘/usr/local/lib/R/site-library’, ‘/usr/lib/R/site-library’ contain no packages
-</pre></div>
-</div>
+<img alt="../_images/0fd57a606b6df51e376e38211d80e1479237b11b723006adc6a1b477d3349c8b.png" src="../_images/0fd57a606b6df51e376e38211d80e1479237b11b723006adc6a1b477d3349c8b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -605,27 +563,26 @@ In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: ".venv"
         },
         kernelOptions: {
-            name: "python3",
+            name: ".venv",
             path: "./Contributing"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = '.venv'</script>
 
                 </article>
               
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="mdExample.html"
@@ -645,10 +602,7 @@ In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -712,8 +666,8 @@ By The Reed Group at Cornell CEE
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>
