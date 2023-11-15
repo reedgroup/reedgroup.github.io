@@ -21,10 +21,10 @@ There is no one repository template that needs to be followed. You will likely d
 
 * [IM3 Meta-repository](https://github.com/IMMM-SFA/metarepo): This repository is a required template for any IM3 projects, which many students in our group are involved in. This template was created by the IM3 DSC team and is a great starting point for any new students (including non DOE-funded students). In order to use this meta-repository, clone the repository from GitHub and fill out the `metarepo_template.md` with the relevant information. You'll notice that the meta-repository contains: 
 
-1. A Zenodo badge if relevant, which contains the data required to reproduce your code 
-2. The abstract, journal citation, and references to any external code and data.
-3. Steps to reproduce results
-4. Steps to reproduce figures
+    1. A Zenodo badge if relevant, which contains the data required to reproduce your code 
+    2. The abstract, journal citation, and references to any external code and data.
+    3. Steps to reproduce results
+    4. Steps to reproduce figures
 
-Examples of papers that have used this repository stye are [here](https://github.com/antonia-had/Hadjimichael-etal_2021_JWRPM) and [here](https://github.com/lbl59/implementation-uncertainty)		
-
+    Examples of papers that have used this repository stye are [here](https://github.com/antonia-had/Hadjimichael-etal_2021_JWRPM) and [here](https://github.com/lbl59/implementation-uncertainty)		
+* [Implementation Uncertainty Repository](https://github.com/lbl59/implementation-uncertainty): This repository is based on the IM3 Meta-repository and is structured to facilitate a intuitively navigable experience for a person looking to replicate the experiments that were conducted for this paper. A table summarizing contributing software is shown to allow a potential user to gauge the hardware and software requirements of the experiments. An itemized list containing brief descriptions of each folders’ contents is also provided in case the user did not want to follow a step-by-step replication of the experiments, but instead was only interested in its specific parts. The key methods figure is displayed before to visually explain the sampling scheme to be implemented in the steps following it. In addition, the main steps of the paper’s methods are used as headlines for a simple one-to-one comparison between the details of each step in the repository and that of the paper. Finally, code for figure generation, as well as specific lines to modify depending on user preferences, is provided, so that the user can verify if their results are similar to that of the paper.
