@@ -31,6 +31,7 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
+ 
     # install virtual environment with caching, so only updates when requirements.txt changes,
     # based on https://github.com/marketplace/actions/restore-or-create-a-python-virtualenv#custom_virtualenv_dir
     # Note: virtual environment by default will be created under ~/.venv
@@ -40,6 +41,10 @@ jobs:
         requirement_files: docs/requirements_py.txt
     - uses: syphar/restore-pip-download-cache@v1
       if: steps.cache-virtualenv.outputs.cache-hit != 'true'
+
+    # install jupyter-books in case cache failed, which seems to happen on monthly auto redeploys sometimes
+    - name: Install jupyter-books
+      run: pip install jupyter-book
 
     # install python dependencies - only if [ipynb] triggered and environment out of date
     - name: Install python dependencies
