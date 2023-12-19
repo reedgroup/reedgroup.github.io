@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -139,6 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -387,6 +388,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -396,6 +398,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -470,6 +473,18 @@ document.write(`
 <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span>
 <span class="n">fig_dir</span> <span class="o">=</span> <span class="s1">&#39;temp_figs/&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
 </pre></div>
 </div>
 </div>
@@ -747,9 +762,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2058/3983194004.py:2: ParserWarning: Falling back to the &#39;python&#39; engine because the &#39;c&#39; engine does not support regex separators (separators &gt; 1 char and different from &#39;\s+&#39; are interpreted as regex); you can avoid this warning by specifying engine=&#39;python&#39;.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_14602/3983194004.py:2: ParserWarning: Falling back to the &#39;python&#39; engine because the &#39;c&#39; engine does not support regex separators (separators &gt; 1 char and different from &#39;\s+&#39; are interpreted as regex); you can avoid this warning by specifying engine=&#39;python&#39;.
   objs = pd.read_csv(&#39;example_data/objs_wcu_pareto_5objs.csv&#39;, delimiter=&#39;, &#39;)
-/tmp/ipykernel_2058/3983194004.py:9: SettingWithCopyWarning: 
+/tmp/ipykernel_14602/3983194004.py:9: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
@@ -889,7 +904,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/038e83fd3b940ef916036bfbd1ae5bd2bc6d7c5c08773e200ad7dbd580264381.png" src="../_images/038e83fd3b940ef916036bfbd1ae5bd2bc6d7c5c08773e200ad7dbd580264381.png" />
+<img alt="../_images/c32198c4774c35cba684a812b2bd2c61587e317adacf4696b67b1ba24e609ee6.png" src="../_images/c32198c4774c35cba684a812b2bd2c61587e317adacf4696b67b1ba24e609ee6.png" />
 </div>
 </div>
 <p>Here is an example where we flip the direction of preference to be “bottom” and switch the coloration and zorder to be based on column 3 rather than column 0. The zorder ranking is also switch to be descending rather than ascending.</p>
@@ -907,7 +922,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cfaef53b4bb1e2314cb7e02c84b4a61e779985896d10ff1c232c3a0b126513b0.png" src="../_images/cfaef53b4bb1e2314cb7e02c84b4a61e779985896d10ff1c232c3a0b126513b0.png" />
+<img alt="../_images/0fc98914cc1456bc3547b6c7d604a521bab7c5c3d5faf756a0ce3415d5838574.png" src="../_images/0fc98914cc1456bc3547b6c7d604a521bab7c5c3d5faf756a0ce3415d5838574.png" />
 </div>
 </div>
 <p>Now let’s add some brushing. Brushing is the act of filtering out solutions that fail to meet certain satisficing criteria. In the figure below, I filter out all solutions that fail to meet one or more of these 3 criteria: (1) the number of partners is at least 16; (2) The Captured water gains for non-partners is non-negative; and (3) The cost of gains for the worst-off partner is less than $500/ML. These criterion are added in a straightforward way using the “brushing_dict” dictionary format, as demonstrated below. The function will automatically add grey boxes over the filtered-out region for each brushing criterion.</p>
@@ -925,7 +940,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d35b9f1c8c68062708acb3e9755497f77374db8189e49d4603ac1f015c96e353.png" src="../_images/d35b9f1c8c68062708acb3e9755497f77374db8189e49d4603ac1f015c96e353.png" />
+<img alt="../_images/96b1c984ca9cd967d2432d05b3558991b8e674331103fae91ce50e7e71eb5f16.png" src="../_images/96b1c984ca9cd967d2432d05b3558991b8e674331103fae91ce50e7e71eb5f16.png" />
 </div>
 </div>
 <p>This function also has the ability to color solutions based on a categorical variable rather than a continuous palette. The following example defines a new categorical variable by binning the continuous cost variable into three discrete classes. It then defines a color dictionary that assigns a different color to each possible value of the categorical variable. The legend is automatically created based on the color dictionary.</p>
@@ -947,7 +962,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8bf401507b87b8bf2722832e83eb5971ae6fef8d3df4d4c957215e3c02fdd080.png" src="../_images/8bf401507b87b8bf2722832e83eb5971ae6fef8d3df4d4c957215e3c02fdd080.png" />
+<img alt="../_images/9f4024c8e698b7596b6c47a654c3267c39e19eab3ae1fb5e954abd34b589c424.png" src="../_images/9f4024c8e698b7596b6c47a654c3267c39e19eab3ae1fb5e954abd34b589c424.png" />
 </div>
 </div>
 <p>Finally, here is an example that combines brushing with categorical coloration. This shows that no LowCost or HighCost solutions are able to meet the given satisficing criteria.</p>
@@ -966,7 +981,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c16a701844ed7e4d6a9bdaaf67d456a8df5c938ca3db75144e27263f205c16de.png" src="../_images/c16a701844ed7e4d6a9bdaaf67d456a8df5c938ca3db75144e27263f205c16de.png" />
+<img alt="../_images/ac2b2feda113397b5c6e76ffbeb87402d1510d31fb486fb746e25e0fd180d4b9.png" src="../_images/ac2b2feda113397b5c6e76ffbeb87402d1510d31fb486fb746e25e0fd180d4b9.png" />
 </div>
 </div>
 </section>
@@ -1004,7 +1019,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="FigureLibrary.html"
@@ -1064,6 +1079,7 @@ By The Reed Group at Cornell CEE
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1090,8 +1106,8 @@ By The Reed Group at Cornell CEE
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

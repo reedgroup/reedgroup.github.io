@@ -3,7 +3,7 @@ Traceback (most recent call last):
     executenb(
   File "/home/runner/.virtualenvs/.venv/lib/python3.8/site-packages/nbclient/client.py", line 1305, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/home/runner/.virtualenvs/.venv/lib/python3.8/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
+  File "/home/runner/.virtualenvs/.venv/lib/python3.8/site-packages/jupyter_core/utils/__init__.py", line 172, in wrapped
     return loop.run_until_complete(inner)
   File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
     return future.result()
@@ -15,84 +15,22 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-%%R
-### R cell using %%R magic
+### python is the default for code cells, since we are running a Python3 kernel. This could be changed though.
+import numpy as np
+import matplotlib.pyplot as plt
 
-library(ggforce)
-ggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +
-    geom_point() +
-    facet_zoom(x = Species == "versicolor")
+xy = np.random.multivariate_normal([0,0], [[1, 0.8], [0.8, 1]], 1000)
+plt.scatter(xy[:,0], xy[:,1], alpha=0.3)
 ------------------
 
------ stdout -----
-Error in library(ggforce) : there is no package called ‘ggforce’
-In addition: Warning message:
-In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :
-  libraries ‘/usr/local/lib/R/site-library’, ‘/usr/lib/R/site-library’ contain no packages
-Error in library(ggforce) : there is no package called ‘ggforce’
-------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mRRuntimeError[0m                             Traceback (most recent call last)
-File [0;32m~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/ipython/rmagic.py:401[0m, in [0;36mRMagics.eval[0;34m(self, code)[0m
-[1;32m    400[0m     r_expr [38;5;241m=[39m ri[38;5;241m.[39mparse(code)
-[0;32m--> 401[0m     value, visible [38;5;241m=[39m [43mri[49m[38;5;241;43m.[39;49m[43mevalr_expr_with_visible[49m[43m([49m
-[1;32m    402[0m [43m        [49m[43mr_expr[49m
-[1;32m    403[0m [43m    [49m[43m)[49m
-[1;32m    404[0m [38;5;28;01mexcept[39;00m (ri[38;5;241m.[39membedded[38;5;241m.[39mRRuntimeError, [38;5;167;01mValueError[39;00m) [38;5;28;01mas[39;00m exception:
-[1;32m    405[0m     [38;5;66;03m# Otherwise next return seems to have copy of error.[39;00m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[1], line 2[0m
+[1;32m      1[0m [38;5;66;03m### python is the default for code cells, since we are running a Python3 kernel. This could be changed though.[39;00m
+[0;32m----> 2[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[1;32m      5[0m xy [38;5;241m=[39m np[38;5;241m.[39mrandom[38;5;241m.[39mmultivariate_normal([[38;5;241m0[39m,[38;5;241m0[39m], [[[38;5;241m1[39m, [38;5;241m0.8[39m], [[38;5;241m0.8[39m, [38;5;241m1[39m]], [38;5;241m1000[39m)
 
-File [0;32m~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/rinterface.py:196[0m, in [0;36mevalr_expr_with_visible[0;34m(expr, envir)[0m
-[1;32m    195[0m [38;5;28;01mif[39;00m error_occured[[38;5;241m0[39m]:
-[0;32m--> 196[0m     [38;5;28;01mraise[39;00m embedded[38;5;241m.[39mRRuntimeError(_rinterface[38;5;241m.[39m_geterrmessage())
-[1;32m    197[0m res [38;5;241m=[39m conversion[38;5;241m.[39m_cdata_to_rinterface(r_res)
-
-[0;31mRRuntimeError[0m: Error in library(ggforce) : there is no package called ‘ggforce’
-
-
-During handling of the above exception, another exception occurred:
-
-[0;31mRInterpreterError[0m                         Traceback (most recent call last)
-Cell [0;32mIn[4], line 1[0m
-[0;32m----> 1[0m [43mget_ipython[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mrun_cell_magic[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mR[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43m### R cell using [39;49m[38;5;132;43;01m%%[39;49;00m[38;5;124;43mR magic[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mlibrary(ggforce)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m    geom_point() +[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m    facet_zoom(x = Species == [39;49m[38;5;124;43m"[39;49m[38;5;124;43mversicolor[39;49m[38;5;124;43m"[39;49m[38;5;124;43m)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m'[39;49m[43m)[49m
-
-File [0;32m~/.virtualenvs/.venv/lib/python3.8/site-packages/IPython/core/interactiveshell.py:2478[0m, in [0;36mInteractiveShell.run_cell_magic[0;34m(self, magic_name, line, cell)[0m
-[1;32m   2476[0m [38;5;28;01mwith[39;00m [38;5;28mself[39m[38;5;241m.[39mbuiltin_trap:
-[1;32m   2477[0m     args [38;5;241m=[39m (magic_arg_s, cell)
-[0;32m-> 2478[0m     result [38;5;241m=[39m [43mfn[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
-[1;32m   2480[0m [38;5;66;03m# The code below prevents the output from being displayed[39;00m
-[1;32m   2481[0m [38;5;66;03m# when using magics with decodator @output_can_be_silenced[39;00m
-[1;32m   2482[0m [38;5;66;03m# when the last Python token in the expression is a ';'.[39;00m
-[1;32m   2483[0m [38;5;28;01mif[39;00m [38;5;28mgetattr[39m(fn, magic[38;5;241m.[39mMAGIC_OUTPUT_CAN_BE_SILENCED, [38;5;28;01mFalse[39;00m):
-
-File [0;32m~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/ipython/rmagic.py:978[0m, in [0;36mRMagics.R[0;34m(self, line, cell, local_ns)[0m
-[1;32m    976[0m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m e[38;5;241m.[39mstdout[38;5;241m.[39mendswith(e[38;5;241m.[39merr):
-[1;32m    977[0m         [38;5;28mprint[39m(e[38;5;241m.[39merr)
-[0;32m--> 978[0m     [38;5;28;01mraise[39;00m e
-[1;32m    979[0m [38;5;28;01mfinally[39;00m:
-[1;32m    980[0m     [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mdevice [38;5;129;01min[39;00m DEVICES_STATIC:
-
-File [0;32m~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/ipython/rmagic.py:943[0m, in [0;36mRMagics.R[0;34m(self, line, cell, local_ns)[0m
-[1;32m    941[0m         return_output [38;5;241m=[39m [38;5;28;01mFalse[39;00m
-[1;32m    942[0m [38;5;28;01melse[39;00m:
-[0;32m--> 943[0m     text_result, result, visible [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43meval[49m[43m([49m[43mcode[49m[43m)[49m
-[1;32m    944[0m     text_output [38;5;241m+[39m[38;5;241m=[39m text_result
-[1;32m    945[0m     [38;5;28;01mif[39;00m visible:
-
-File [0;32m~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/ipython/rmagic.py:407[0m, in [0;36mRMagics.eval[0;34m(self, code)[0m
-[1;32m    404[0m [38;5;28;01mexcept[39;00m (ri[38;5;241m.[39membedded[38;5;241m.[39mRRuntimeError, [38;5;167;01mValueError[39;00m) [38;5;28;01mas[39;00m exception:
-[1;32m    405[0m     [38;5;66;03m# Otherwise next return seems to have copy of error.[39;00m
-[1;32m    406[0m     warning_or_other_msg [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mflush()
-[0;32m--> 407[0m     [38;5;28;01mraise[39;00m RInterpreterError(code, [38;5;28mstr[39m(exception),
-[1;32m    408[0m                             warning_or_other_msg)
-[1;32m    409[0m [38;5;28;01mfinally[39;00m:
-[1;32m    410[0m     ro[38;5;241m.[39m_print_deferred_warnings()
-
-[0;31mRInterpreterError[0m: Failed to parse and evaluate line '### R cell using %%R magic\n\nlibrary(ggforce)\nggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +\n    geom_point() +\n    facet_zoom(x = Species == "versicolor")\n'.
-R error message: 'Error in library(ggforce) : there is no package called ‘ggforce’'
-R stdout:
-Error in library(ggforce) : there is no package called ‘ggforce’
-In addition: Warning message:
-In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :
-  libraries ‘/usr/local/lib/R/site-library’, ‘/usr/lib/R/site-library’ contain no packages
+[0;31mModuleNotFoundError[0m: No module named 'numpy'
 

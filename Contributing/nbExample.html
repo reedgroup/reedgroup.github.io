@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -139,6 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -387,6 +388,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -396,6 +398,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -465,10 +468,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fb9b1581b20&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">### python is the default for code cells, since we are running a Python3 kernel. This could be changed though.</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
 </pre></div>
 </div>
-<img alt="../_images/209c7af884db4069bb8a99b81a8b2fb33f159751fa741454f083de9bb735ee10.png" src="../_images/209c7af884db4069bb8a99b81a8b2fb33f159751fa741454f083de9bb735ee10.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -481,7 +491,7 @@ pwd
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/reedgroup.github.io/reedgroup.github.io/docs/Contributing
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/alh/PycharmProjects/reedgroup.github.io/docs/Section1
 </pre></div>
 </div>
 </div>
@@ -508,78 +518,10 @@ ggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error in library(ggforce) : there is no package called ‘ggforce’
-In addition: Warning message:
-In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :
-  libraries ‘/usr/local/lib/R/site-library’, ‘/usr/lib/R/site-library’ contain no packages
-Error in library(ggforce) : there is no package called ‘ggforce’
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R[write to console]: Loading required package: ggplot2
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
-RRuntimeError                             Traceback (most recent call last)
-File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/ipython/rmagic.py:401, in RMagics.eval(self, code)
-    400     r_expr = ri.parse(code)
---&gt; 401     value, visible = ri.evalr_expr_with_visible(
-    402         r_expr
-    403     )
-    404 except (ri.embedded.RRuntimeError, ValueError) as exception:
-    405     # Otherwise next return seems to have copy of error.
-
-File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/rinterface.py:196, in evalr_expr_with_visible(expr, envir)
-    195 if error_occured[0]:
---&gt; 196     raise embedded.RRuntimeError(_rinterface._geterrmessage())
-    197 res = conversion._cdata_to_rinterface(r_res)
-
-RRuntimeError: Error in library(ggforce) : there is no package called ‘ggforce’
-
-
-During handling of the above exception, another exception occurred:
-
-RInterpreterError                         Traceback (most recent call last)
-Cell In[4], line 1
-----&gt; 1 get_ipython().run_cell_magic(&#39;R&#39;, &#39;&#39;, &#39;### R cell using %%R magic\n\nlibrary(ggforce)\nggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +\n    geom_point() +\n    facet_zoom(x = Species == &quot;versicolor&quot;)\n&#39;)
-
-File ~/.virtualenvs/.venv/lib/python3.8/site-packages/IPython/core/interactiveshell.py:2478, in InteractiveShell.run_cell_magic(self, magic_name, line, cell)
-   2476 with self.builtin_trap:
-   2477     args = (magic_arg_s, cell)
--&gt; 2478     result = fn(*args, **kwargs)
-   2480 # The code below prevents the output from being displayed
-   2481 # when using magics with decodator @output_can_be_silenced
-   2482 # when the last Python token in the expression is a &#39;;&#39;.
-   2483 if getattr(fn, magic.MAGIC_OUTPUT_CAN_BE_SILENCED, False):
-
-File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/ipython/rmagic.py:978, in RMagics.R(self, line, cell, local_ns)
-    976     if not e.stdout.endswith(e.err):
-    977         print(e.err)
---&gt; 978     raise e
-    979 finally:
-    980     if self.device in DEVICES_STATIC:
-
-File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/ipython/rmagic.py:943, in RMagics.R(self, line, cell, local_ns)
-    941         return_output = False
-    942 else:
---&gt; 943     text_result, result, visible = self.eval(code)
-    944     text_output += text_result
-    945     if visible:
-
-File ~/.virtualenvs/.venv/lib/python3.8/site-packages/rpy2/ipython/rmagic.py:407, in RMagics.eval(self, code)
-    404 except (ri.embedded.RRuntimeError, ValueError) as exception:
-    405     # Otherwise next return seems to have copy of error.
-    406     warning_or_other_msg = self.flush()
---&gt; 407     raise RInterpreterError(code, str(exception),
-    408                             warning_or_other_msg)
-    409 finally:
-    410     ro._print_deferred_warnings()
-
-RInterpreterError: Failed to parse and evaluate line &#39;### R cell using %%R magic\n\nlibrary(ggforce)\nggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +\n    geom_point() +\n    facet_zoom(x = Species == &quot;versicolor&quot;)\n&#39;.
-R error message: &#39;Error in library(ggforce) : there is no package called ‘ggforce’&#39;
-R stdout:
-Error in library(ggforce) : there is no package called ‘ggforce’
-In addition: Warning message:
-In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :
-  libraries ‘/usr/local/lib/R/site-library’, ‘/usr/lib/R/site-library’ contain no packages
-</pre></div>
-</div>
+<img alt="../_images/0fd57a606b6df51e376e38211d80e1479237b11b723006adc6a1b477d3349c8b.png" src="../_images/0fd57a606b6df51e376e38211d80e1479237b11b723006adc6a1b477d3349c8b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -636,7 +578,7 @@ In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="mdExample.html"
@@ -694,6 +636,7 @@ By The Reed Group at Cornell CEE
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -720,8 +663,8 @@ By The Reed Group at Cornell CEE
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
