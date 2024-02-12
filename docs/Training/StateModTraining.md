@@ -23,7 +23,7 @@ This training requires an understanding of using a cluster. You can learn more a
 
 * - Introduction to StateMod
   - S
-  - Complete this training on compiling and running StateMod [link](https://waterprogramming.wordpress.com/2018/07/03/fitting-hidden-markov-models-part-i-background-and-methods/)
+  - Complete this training on compiling and running StateMod [link](https://cornell.app.box.com/folder/140253226518?s=obmxicki2qpbxgio4wh23dyrjxgribaq)
   - [1]
   - You will have working version of StateMod and a bank of methods to extract shortages for users in the San Juan basin.
 
