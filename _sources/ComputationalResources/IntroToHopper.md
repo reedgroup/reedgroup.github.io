@@ -4,12 +4,12 @@ Below is a breif intro to Hopper with links to other resources.
 >Contributions to this demo are welcome, preferably by extending the code while maintaining generalizability.
 
 ## Resources
-(1) [Cornell CAC wiki page for hopper](https://www.cac.cornell.edu/wiki/index.php?title=Hopper_Cluster)
-(2) [Cornell CAC wiki page for Slurm](https://www.cac.cornell.edu/wiki/index.php?title=Slurm)
-(3) [Reed Group Lab Manual: Cluster Basics](https://reedgroup.github.io/Resources/ClusterBasics.html)
-(4) [Dave's post on batch parallelization of code using mpi4py](https://waterprogramming.wordpress.com/2021/11/10/easy-batch-parallelization-of-code-in-any-language-using-mpi4py/)
-(5) [*A list of bash FAQ*](https://mywiki.wooledge.org/BashFAQ)
-(6) [A nice page of different example bash scripts with descriptions](https://tldp.org/LDP/abs/html/)
+- [Cornell CAC wiki page for hopper](https://www.cac.cornell.edu/wiki/index.php?title=Hopper_Cluster)
+- [Cornell CAC wiki page for Slurm](https://www.cac.cornell.edu/wiki/index.php?title=Slurm)
+- [Reed Group Lab Manual: Cluster Basics](https://reedgroup.github.io/Resources/ClusterBasics.html)
+- [Dave's post on batch parallelization of code using mpi4py](https://waterprogramming.wordpress.com/2021/11/10/easy-batch-parallelization-of-code-in-any-language-using-mpi4py/)
+- [*A list of bash FAQ*](https://mywiki.wooledge.org/BashFAQ)
+- [A nice page of different example bash scripts with descriptions](https://tldp.org/LDP/abs/html/)
 
 
 *********
