@@ -2,13 +2,13 @@
 
 ## Overview
 
-This training is designed to get you familiar with the core functionality of the [Pywr-DRB water resource model](../Software/PywrDRB.md). 
+This training is designed to get you familiar with the core functionality of the [Pywr-DRB water resource model (Hamilton, Amestoy & Reed, Under Review)](../Software/PywrDRB.md). 
 
 The training consists of several different jupyter notebook files which introduce key concepts and workflows associated with the model. 
 
-After stepping through the notebooks, you can replicate the study presented in Hamilton, Andrew L., Amestoy, Trevor J. and Reed, Patrick M., Pywr-Drb: An Open-Source Python Model for Water Availability and Drought Risk Assessment in the Delaware River Basin (In Review). A pre-print is available at SSRN: https://ssrn.com/abstract=4765247 or http://dx.doi.org/10.2139/ssrn.4765247
+After stepping through the notebooks, you can replicate the study presented in Hamilton, Amestoy, & Reed (Under Review; pre-print [here](https://ssrn.com/abstract=4765247 or http://dx.doi.org/10.2139/ssrn.4765247)).
 
-More trainings will be added in the future.  If you have any questions or requests please contact Trevor at tja73@cornell.edu. 
+More trainings will be added in the future.  If you have any questions or requests please contact Trevor at tja73 "at" cornell.edu. 
 
 ## Learning objectives
 
