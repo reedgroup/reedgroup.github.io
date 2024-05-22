@@ -28,7 +28,7 @@ You can access the Pywr-DRB github repository here: [https://github.com/Pywr-DRB
 
 | Activity | Est. Time   |  Topic      | Resources | Readings | Tasks                                   |
 | -------- | ----------- | ----------- | --------- | -------- | --------------------------------------- |
-| 1        | 2 days      | Background context on Pywr-DRB  | -   | \[1]         | - |
+| 1        | 2 days      | Background context on Pywr-DRB  | -   | \[1] & citations in \[1]       | - |
 | 2        | 2 days | Tutorial 01 Introduction to PywrDRB | [Notebook #1](https://github.com/Pywr-DRB/Pywr-DRB/blob/master/notebooks/Tutorial%2001%20Introduction%20to%20PywrDRB.ipynb) |\[1] |- Complete first simulation |
 | 3        | 1 day     | Tutorial 02 Prepare Input Data | [Notebook #2](https://github.com/Pywr-DRB/Pywr-DRB/blob/master/notebooks/Tutorial%2002%20Prepare%20Input%20Data.ipynb)  |  - |- |
 | 4        | 2 days  | Model Parameters | [Notebook #3](https://github.com/Pywr-DRB/Pywr-DRB/blob/master/notebooks/Tutorial%2003%20Model%20Parameters.ipynb)    | - | - |

@@ -189,7 +189,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Machine_Learning_Resources.html">Machine Learning Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="IntroToLinux.html">Introduction to Linux</a></li>
 <li class="toctree-l2"><a class="reference internal" href="IntroToGitHub.html">Introduction to Git &amp; GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="IntroToHopper.html">Introduction to Hopper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Websites.html">Building and deploying websites with Python</a></li>
 </ul>
 </li>
@@ -433,15 +432,49 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reed-group-clusters">Reed group clusters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cube">The Cube</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hopper">Hopper</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-a-cluster">0. Getting started with a cluster</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-secure-shell">0.1 Accessing Secure SHell</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-using-vs-code-remote-terminal">0.1.2 SSH using VS Code Remote Terminal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-for-windows">0.1.2 SSH for Windows</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-for-mac">0.1.3 SSH for Mac</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-log-in">0.2 SSH log-in</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-python-a-virtual-environment">0.3 Setting up python &amp; a virtual environment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-the-command-line">1. Navigating the command line</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-basics">1.1 Bash basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-bash-commands">1.1.1 Basic bash commands</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git">Git</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-jobs">2. Running jobs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-scripting">2.1 Bash scripting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#executing-bash-scripts">2.2 Executing bash scripts</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#executing-julia">2.2.1 Executing julia</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaining-access-to-hopper-and-the-cube">Gaining access to Hopper and the Cube</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cube">The Cube</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hopper">Hopper</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">The Cube</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Hopper</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-cluster">Accessing the Cluster</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mac">Mac</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Questions</a></li>
 </ul>
             </nav>
         </div>
@@ -455,16 +488,210 @@ document.write(`
                   
   <section id="cluster-basics">
 <h1>Cluster Basics<a class="headerlink" href="#cluster-basics" title="Permalink to this heading">#</a></h1>
+<p>Contains brief introductions to using HPC clusters, applicable to both The Cube and Hopper.</p>
+<blockquote>
+<div><p>Contributions to this demo are welcome, preferably by extending the code while maintaining generalizability.</p>
+</div></blockquote>
+<section id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.cac.cornell.edu/wiki/index.php?title=Hopper_Cluster">Cornell CAC wiki page for hopper</a></p></li>
+<li><p><a class="reference external" href="https://www.cac.cornell.edu/wiki/index.php?title=Slurm">Cornell CAC wiki page for Slurm</a></p></li>
+<li><p><a class="reference external" href="https://waterprogramming.wordpress.com/2021/11/10/easy-batch-parallelization-of-code-in-any-language-using-mpi4py/">Dave’s post on batch parallelization of code using mpi4py</a></p></li>
+<li><p><a class="reference external" href="https://mywiki.wooledge.org/BashFAQ"><em>A list of bash FAQ</em></a></p></li>
+<li><p><a class="reference external" href="https://tldp.org/LDP/abs/html/">A nice page of different example bash scripts with descriptions</a></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="reed-group-clusters">
+<h2>Reed group clusters<a class="headerlink" href="#reed-group-clusters" title="Permalink to this heading">#</a></h2>
+<section id="the-cube">
+<h3>The Cube<a class="headerlink" href="#the-cube" title="Permalink to this heading">#</a></h3>
+<p>The Cube is the personal cluster associated with the Reed Research Group. Any student in Reed Group will be provided access to the Cube and collaborators can request a guest access. In order to get access, email Pat and provide your name, email, address, and phone number so that he can register you as a user. You will get an email with your login information and a notice to set a password.</p>
+<p>Specs on the Cube: <a class="reference external" href="https://www.cac.cornell.edu/wiki/index.php?title=THECUBE_Cluster">HERE</a></p>
+</section>
+<section id="hopper">
+<h3>Hopper<a class="headerlink" href="#hopper" title="Permalink to this heading">#</a></h3>
+<p>Hopper is a newer cluster that is headed by the Srikrishnan Group in BEE and is shared across four groups: Srikrishnan, Steinschneider, Reed, and Anderson. Any student in Reed Group will also be allowed access to Hopper.</p>
+<p>Before getting started, you need to request access to Hopper by filling out the form <span class="xref myst">here</span>. You may want to email Vivek Srikrishnan as well to let him know you are requesting access.</p>
+<p>Once submitted, Vivek Srikrishnan will need to approve access. After access is granted, you should receive and email from cac-help&#64;cornell.edu with instructions on setting up your account. Be sure to remember your account password.</p>
+<p>Specs on Hopper: <a class="reference external" href="https://www.cac.cornell.edu/wiki/index.php?title=Hopper_Cluster">HERE</a></p>
+</section>
+<section id="questions">
+<h3>Questions<a class="headerlink" href="#questions" title="Permalink to this heading">#</a></h3>
+<p>If you have questions about installing packages on the cluster or questions about jobs, feel free to email: cac-help&#64;cornell.edu</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="getting-started-with-a-cluster">
+<h2>0. Getting started with a cluster<a class="headerlink" href="#getting-started-with-a-cluster" title="Permalink to this heading">#</a></h2>
+<section id="accessing-secure-shell">
+<h3>0.1 Accessing Secure SHell<a class="headerlink" href="#accessing-secure-shell" title="Permalink to this heading">#</a></h3>
+<p>Secure SHell, or SSH, is an <em>encrypted connection protocol</em> used to connect your local machine to a remote machine.</p>
+<p>We will use SSH to access Hopper or The Cube.  You have a few different SSH options.</p>
+<section id="ssh-using-vs-code-remote-terminal">
+<h4>0.1.2 SSH using VS Code Remote Terminal<a class="headerlink" href="#ssh-using-vs-code-remote-terminal" title="Permalink to this heading">#</a></h4>
+<p>Personally, I recommend accessing Hopper, and HPC resources generally, using the VS Code Remote Terminal tools. This allows for all the benefits of the VS code integrated development environment (e.g., extensions, nice user interface, git support, etc.).</p>
+<p>Andrew Dirks wrote a blog post which gives some guidance on how to access the remote terminal through SSH in this blog post: <a class="reference external" href="https://waterprogramming.wordpress.com/2020/03/31/remote-terminal-environment-using-vs-code-for-windows-and-mac/">Remote terminal environment using VS Code for Windows and Mac</a></p>
+</section>
+<section id="ssh-for-windows">
+<h4>0.1.2 SSH for Windows<a class="headerlink" href="#ssh-for-windows" title="Permalink to this heading">#</a></h4>
+<p>If you are are Windows user, one option for accessing Hopper via SSH is by using <a class="reference external" href="https://mobaxterm.mobatek.net/">MobaXTerm</a>. Many Reed Group members use this software.</p>
+<p><img alt="mobaxterm" src="../_images/mobaxterm.png" /></p>
+<p>MobaXterm allows you to see the file structure in the left hand side SFTP which is convenient for navigating.</p>
+</section>
+<section id="ssh-for-mac">
+<h4>0.1.3 SSH for Mac<a class="headerlink" href="#ssh-for-mac" title="Permalink to this heading">#</a></h4>
+<p>Mac users are able to SSH into Hopper straight from the <a class="reference external" href="https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac">Mac Terminal</a>. The only downside of the Mac Terminal is that it does not provide an interactive GUI (visual folder system), and you must rely entirely on the command line.</p>
+<p>Previous Reed group members have had luck using <a class="reference external" href="https://cyberduck.io/">CyberDuck</a> to have more control over File Transfer Protocol (FTP) and provide a visual GUI.  However, I am unable to provide any help here since I am a Windows user.</p>
+</section>
+</section>
+<section id="ssh-log-in">
+<h3>0.2 SSH log-in<a class="headerlink" href="#ssh-log-in" title="Permalink to this heading">#</a></h3>
+<p>However you access the SSH terminal, you should enter the following command to initialize the SSH:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">&lt;</span><span class="n">your_username</span><span class="o">&gt;@&lt;</span><span class="n">cluster</span><span class="o">&gt;.</span><span class="n">cac</span><span class="o">.</span><span class="n">cornell</span><span class="o">.</span><span class="n">edu</span>
+</pre></div>
+</div>
+<p>You will then be prompted to enter your password.</p>
+<p>For example, to log-in to Hopper is <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">&lt;netID&gt;&#64;hopper.cac.cornell.edu</span></code></p>
+<p>Once done with your work you can end the SSH connection by entering <code class="docutils literal notranslate"><span class="pre">exit</span></code> in the command line.</p>
+</section>
+<section id="setting-up-python-a-virtual-environment">
+<h3>0.3 Setting up python &amp; a virtual environment<a class="headerlink" href="#setting-up-python-a-virtual-environment" title="Permalink to this heading">#</a></h3>
+<p><strong>Note that Hopper has Python version 3.11.5 installed, however it may try to use Python version 3.6.6 by default!</strong> Similar considerations should be made for The Cube.</p>
+<p>Be sure to load the modern version (see code below) and check your version if unsure.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># load python</span>
+module<span class="w"> </span>load<span class="w"> </span>python/3.11.5
+
+<span class="c1"># Make a new environment</span>
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+
+<span class="c1"># activate the environment and upgrade pip</span>
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="navigating-the-command-line">
+<h2>1. Navigating the command line<a class="headerlink" href="#navigating-the-command-line" title="Permalink to this heading">#</a></h2>
+<p>To navigate on a cluster you need some basic knowledge of the <a class="reference external" href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">Bourne Again SHell</a> (bash).</p>
+<p>The clusters has a Linux OS, and can be controlled using <a class="reference external" href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a> shell and command language. Bash is was the default shell for the Mac OS Terminal prior to macOS 10.40, but it has been changed to <a class="reference external" href="https://en.wikipedia.org/wiki/Z_shell">zsh</a> after that.</p>
+<p>To change the shell to bash, see this <a class="reference external" href="https://support.apple.com/guide/terminal/change-the-default-shell-trml113/mac#:~:text=The%20default%20shell%20is%20zsh,windows%20and%20tabs%20open%20with.">user guide</a>.</p>
+<section id="bash-basics">
+<h3>1.1 Bash basics<a class="headerlink" href="#bash-basics" title="Permalink to this heading">#</a></h3>
+<p>A few notes on jargon, to avoid confusion:</p>
+<blockquote>
+<div><p><em><strong>Linux</strong></em> is an operating system kernel, which controls fundamental computer operations internally.   There are many different <em>linux distributions</em> which are each built upon the basic <em>linux kernel</em> while providing different command-line functionality and languages.</p>
+</div></blockquote>
+<blockquote>
+<div><p>A <em><strong>unix shell</strong></em> is used to facilitate command-line interaction with a linux OS.</p>
+</div></blockquote>
+<blockquote>
+<div><p><em><strong>Bash</strong></em> is a type of unix shell, and is thus a programming language which is used to operate a linux OS from the command-line.</p>
+</div></blockquote>
+<section id="basic-bash-commands">
+<h4>1.1.1 Basic bash commands<a class="headerlink" href="#basic-bash-commands" title="Permalink to this heading">#</a></h4>
+<p>This list is far from incomplete, but are the necessities when it comes to navigating your project via the command line.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code> : print working directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;directory&gt;</span></code> : change directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span></code> : List the contents of the directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">&lt;new_folder_location&gt;</span></code>: make a new folder in specified directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">&lt;file_name&gt;</span></code> : copy</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">&lt;file_name.txt&gt;</span></code> : remove</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">clear</span></code> : clear the terminal screen</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">&lt;more</span> <span class="pre">commands&gt;</span></code> : Temporarily elevate current user acount to have root privledge</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">&lt;file_name&gt;</span></code> : Create an empty file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">&lt;file_name&gt;</span></code> : Read content of one or more file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">echo</span></code> : Prints the text that follows it to the terminal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#</span></code> : Used to add comments to the script, explaining what the code does.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span></code> : Loads a specific software module that is needed to run the script.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">julia</span></code> : Runs the Julia interpreter.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$1</span></code>, <code class="docutils literal notranslate"><span class="pre">$2</span></code>, etc. : Used to access the arguments passed to the script</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> : Runs the command that follows it only if the previous command succeeded.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">;</span></code> : Runs the command that follows it regardless of whether the previous command succeeded or not</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> : Redirects the output of the command that precedes it to a file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> : Uses the contents of a file as input to the command that follows it.</p></li>
+</ul>
+</section>
+</section>
+<section id="git">
+<h3>Git<a class="headerlink" href="#git" title="Permalink to this heading">#</a></h3>
+<p>You can clone a <em>private</em> repository by using the modified command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">user</span><span class="p">:</span><span class="o">&lt;</span><span class="n">new_PAT</span><span class="o">&gt;</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="o">/&lt;</span><span class="n">username</span><span class="o">&gt;/&lt;</span><span class="n">repo_name</span><span class="o">&gt;.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>You may need to enter your passwords</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="running-jobs">
+<h2>2. Running jobs<a class="headerlink" href="#running-jobs" title="Permalink to this heading">#</a></h2>
+<section id="bash-scripting">
+<h3>2.1 Bash scripting<a class="headerlink" href="#bash-scripting" title="Permalink to this heading">#</a></h3>
+<p>Using bash straight from the command line is a necessary but not sufficient skill for good HPC usage. To do it right, you should use bash scripting, which consists of writing a series of bash commands within a bash script and running the script as a whole</p>
+<p>For example, you might write a bash script to:</p>
+<ul class="simple">
+<li><p>Load required software modules needed to run your code on the HPC</p></li>
+<li><p>Execute a program or script, such as a parallel code written in Python, Julia or other programming language, using MPI or other parallel computing libraries</p></li>
+<li><p>Process the output of your code, such as sorting and filtering results</p></li>
+<li><p>Repeat the above steps multiple times, each time with different input parameters</p></li>
+</ul>
+<p>Here is a generic bash script template:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1"># Load the required software module for the specific language</span>
+module<span class="w"> </span>load<span class="w"> </span>&lt;language&gt;
+
+<span class="c1"># Set the input variable</span>
+<span class="nv">input</span><span class="o">=</span><span class="s2">&quot;&lt;input&gt;&quot;</span>
+
+<span class="c1"># Execute the code with the specified input, and redirect both output and errors to text files</span>
+&lt;language&gt;<span class="w"> </span>&lt;code_file&gt;<span class="w"> </span><span class="nv">$input</span><span class="w"> </span>&gt;<span class="w"> </span>&lt;output_file&gt;.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>&lt;error_file&gt;.txt
+
+<span class="c1"># Check if the code execution was successful, and if not, print an error message</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Error: code execution failed&quot;</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+</section>
+<section id="executing-bash-scripts">
+<h3>2.2 Executing bash scripts<a class="headerlink" href="#executing-bash-scripts" title="Permalink to this heading">#</a></h3>
+<p>Enter the command:
+<code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">&lt;bash_file_name&gt;.sh</span></code></p>
+<section id="executing-julia">
+<h4>2.2.1 Executing julia<a class="headerlink" href="#executing-julia" title="Permalink to this heading">#</a></h4>
+<p>Here is an example bash script that can be used to execute Julia code:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1"># Load the Julia module</span>
+module<span class="w"> </span>load<span class="w"> </span>julia
+
+<span class="c1"># Run the Julia code (not parallel)</span>
+julia<span class="w"> </span>code.jl<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="nv">$2</span>
+</pre></div>
+</div>
+<p>In this script, the first line specifies that it is a bash script. The second line loads the Julia module, which is necessary to run Julia code on the HPC. The third line runs the Julia code using the <code class="docutils literal notranslate"><span class="pre">julia</span></code> command, with two arguments passed to the code.</p>
+<p>To run the script, open a terminal, navigate to the directory where the script and the Julia code are located, and type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sbatch</span> <span class="n">script</span><span class="o">.</span><span class="n">sh</span> <span class="n">arg1</span> <span class="n">arg2</span>
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">arg1</span></code> and <code class="docutils literal notranslate"><span class="pre">arg2</span></code> are the arguments passed to the Julia code.</p>
+</section>
+</section>
+</section>
+<hr class="docutils" />
 <section id="gaining-access-to-hopper-and-the-cube">
 <h2>Gaining access to Hopper and the Cube<a class="headerlink" href="#gaining-access-to-hopper-and-the-cube" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="the-cube">
-<h2>The Cube<a class="headerlink" href="#the-cube" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h2>The Cube<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>The Cube is the personal cluster associated with the Reed Research Group. Any student in Reed Group will be provided access to the Cube and collaborators can request a guest access. In order to get access, email Pat and provide your name, email, address, and phone number so that he can register you as a user. You will get an email with your login information and a notice to set a password.</p>
 <p>Specs on the Cube: https://www.cac.cornell.edu/wiki/index.php?title=THECUBE_Cluster</p>
 </section>
-<section id="hopper">
-<h2>Hopper<a class="headerlink" href="#hopper" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h2>Hopper<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>Hopper is a newer cluster that is headed by the Srikrishnan Group in BEE and is shared across four groups: Srikrishnan, Steinschneider, Reed, and Anderson. Any student in Reed Group will also be allowed access to Hopper. In order to get access, email Vivek Srikrishnan and provide your name, email, address, and phone number so that he can register you as a user. You will get an email with your login information and a notice to set a password.</p>
 <p>Specs on Hopper: https://www.cac.cornell.edu/wiki/index.php?title=Hopper_Cluster</p>
 </section>
@@ -482,8 +709,8 @@ document.write(`
 <p>If you use a Mac, you can immediately ssh into the clusters without having to download MobaXterm since Macs have Terminal. However, you may find that it’s harder to navigate just using the command line. Students who use Macs in our group have had success pairing their terminal use with Cyberduck (https://cyberduck.io/) which can serve as the SFTP.</p>
 </section>
 </section>
-<section id="questions">
-<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h2>Questions<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>If you have questions about installing packages on the cluster or questions about jobs, feel free to email: cac-help&#64;cornell.edu</p>
 </section>
 </section>
@@ -551,15 +778,49 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reed-group-clusters">Reed group clusters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cube">The Cube</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hopper">Hopper</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-a-cluster">0. Getting started with a cluster</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-secure-shell">0.1 Accessing Secure SHell</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-using-vs-code-remote-terminal">0.1.2 SSH using VS Code Remote Terminal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-for-windows">0.1.2 SSH for Windows</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-for-mac">0.1.3 SSH for Mac</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-log-in">0.2 SSH log-in</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-python-a-virtual-environment">0.3 Setting up python &amp; a virtual environment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-the-command-line">1. Navigating the command line</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-basics">1.1 Bash basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-bash-commands">1.1.1 Basic bash commands</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git">Git</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-jobs">2. Running jobs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-scripting">2.1 Bash scripting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#executing-bash-scripts">2.2 Executing bash scripts</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#executing-julia">2.2.1 Executing julia</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaining-access-to-hopper-and-the-cube">Gaining access to Hopper and the Cube</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cube">The Cube</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hopper">Hopper</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">The Cube</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Hopper</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-cluster">Accessing the Cluster</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mac">Mac</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Questions</a></li>
 </ul>
   </nav></div>
 
