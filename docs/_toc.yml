@@ -25,7 +25,6 @@ parts:
     - file: ComputationalResources/Machine_Learning_Resources.md
     - file: ComputationalResources/IntroToLinux.md
     - file: ComputationalResources/IntroToGitHub.md
-    - file: ComputationalResources/IntroToHopper.md
     - file: ComputationalResources/Websites.md
   - file: Software/Software.md
     sections:
