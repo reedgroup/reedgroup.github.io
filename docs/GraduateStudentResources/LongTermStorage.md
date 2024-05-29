@@ -14,6 +14,7 @@ If you publish a paper and have amassed data that you no longer actively use, bu
 
 ![](../images/globus2.png)
 
+There could be an issue in accessing CUBE Cluster using [Globus](https://www.globus.org/) (which is straight forward as explained for Hopper Cluster). On the CUBE, Globus endpoint requires an additional setup as defined in this [link](https://docs.globus.org/globus-connect-personal/install/linux/). This requires installation and configuration of Globus Connect Personal. Globus Connect Personal should run in the background on the CUBE to access/transfer your folder/data using [Globus](https://www.globus.org/). 
 
 4. Then, simply click "start" and wait for the transfer to complete. You can always transfer data back to Hopper if needed. 
 
