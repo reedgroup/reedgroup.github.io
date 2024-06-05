@@ -79,5 +79,3 @@ A working knowledge of Python
 ## Necessary Software
 1. https://github.com/Project-Platypus/Rhodium
 
-
-- Marilyn was here...
