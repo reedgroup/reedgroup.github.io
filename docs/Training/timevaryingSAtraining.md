@@ -6,7 +6,7 @@ This training follows a blog post that steps through the process of performing l
 
 ## Learning Objectives
 
-In these training, you will learn how to perform and visualize local variance-based time-varying sensitivity analysis.
+In this training, you will learn how to perform and visualize local variance-based time-varying sensitivity analysis.
 
 ## Prerequisites 
 These training require general proficiency in Python. If you are new to Python, you can get started [here](https://reedgroup.github.io/ComputationalResources/python_crash_course.html). 
