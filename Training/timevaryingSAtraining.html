@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Borg MOEA &#8212; Reed group lab manual</title>
+    <title>Time-Varying Sensitivity Analysis &#8212; Reed group lab manual</title>
   
   
   
@@ -62,11 +62,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Software/BorgMOEA';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Training/timevaryingSAtraining';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="WaterPaths" href="WaterPaths.html" />
-    <link rel="prev" title="Software" href="Software.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -168,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../GraduateStudentResources/GraduateStudentResources.html">Graduate Student Resources</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/LifeAtCornell.html">Housing Around Cornell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/VisitingScholars.html">A guide to Ithaca and Cornell for Visiting Scholars</a></li>
@@ -192,31 +190,31 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/Websites.html">Building and deploying websites with Python</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Software.html">Software</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Borg MOEA</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WaterPaths.html">WaterPaths</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PywrDRB.html">Pywr-DRB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CALFEWS.html">CALFEWS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SALib.html">SALib</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Rhodium.html">Rhodium</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MOEAFramework.html">MOEA Framework</a></li>
-<li class="toctree-l2"><a class="reference internal" href="J3.html">J3 Visualization</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Software/Software.html">Software</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Software/BorgMOEA.html">Borg MOEA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/WaterPaths.html">WaterPaths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/PywrDRB.html">Pywr-DRB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/CALFEWS.html">CALFEWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/SALib.html">SALib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/Rhodium.html">Rhodium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/MOEAFramework.html">MOEA Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/J3.html">J3 Visualization</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Training/Training.html">Training</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Training/Schedule.html">Suggested training schedule</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Training/Linux_MOEAs_HPC.html">Getting starting with MOEAs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Training/LakeProblem.html">The Shallow Lake Problem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Training/intro_to_sensitivity_analysis.html">Introduction to Sensitivity Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Training/intro_to_scenario_discovery.html">Intro to Scenario Discovery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Training/SyntheticStreamflowGeneration.html">Synthetic Streamflow Generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Training/StateModTraining.html">Getting Started with StateMod</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Training/pywrdrb_training.html">Pywr-DRB Training</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Training/MOEADiagnostics.html">Introduction to MOEA Diagnostics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Training/SyntheticWeatherGeneration.html">Synthetic Weather Generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Training/FisheriesGame.html">The Fisheries Game</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Training/WaterPaths_Training.html">WaterPaths</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Training/intro_mordm.html">Intro to MORDM</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Training.html">Training</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Schedule.html">Suggested training schedule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux_MOEAs_HPC.html">Getting starting with MOEAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LakeProblem.html">The Shallow Lake Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_to_sensitivity_analysis.html">Introduction to Sensitivity Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_to_scenario_discovery.html">Intro to Scenario Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SyntheticStreamflowGeneration.html">Synthetic Streamflow Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="StateModTraining.html">Getting Started with StateMod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pywrdrb_training.html">Pywr-DRB Training</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MOEADiagnostics.html">Introduction to MOEA Diagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SyntheticWeatherGeneration.html">Synthetic Weather Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FisheriesGame.html">The Fisheries Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WaterPaths_Training.html">WaterPaths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_mordm.html">Intro to MORDM</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../WaterProgramming/waterprogramming_post_catalog.html">Water Programming Blog Post Catalog</a></li>
@@ -308,7 +306,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reedgroup/reedgroup.github.io/issues/new?title=Issue%20on%20page%20%2FSoftware/BorgMOEA.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reedgroup/reedgroup.github.io/issues/new?title=Issue%20on%20page%20%2FTraining/timevaryingSAtraining.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -338,7 +336,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Software/BorgMOEA.md" target="_blank"
+      <li><a href="../_sources/Training/timevaryingSAtraining.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -422,7 +420,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Borg MOEA</h1>
+    <h1>Time-Varying Sensitivity Analysis</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -432,11 +430,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#borg-wrappers">BORG Wrappers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#borg-r-wrapper">Borg R Wrapper</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#borg-python-wrapper">Borg Python Wrapper</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-activities">Training activities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a></li>
 </ul>
             </nav>
         </div>
@@ -448,21 +446,65 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="borg-moea">
-<h1>Borg MOEA<a class="headerlink" href="#borg-moea" title="Permalink to this heading">#</a></h1>
-<p><img alt="" src="Software/Borg_logo.png" />
-As you are getting acclimated with the group, one of the tools you will hear a lot about is the Borg Multi-Objective Evolutionary Algorithm (MOEA). The Borg MOEA was developed by Pat and Dave Hadka at Penn State and has become an essential evolutionary algorithm for performing multi-objective optimization in our case studies. The first step to using Borg is to read the associated paper. It’s normal to not understand every detail, but as you start working on tutorials through your first semester, you’ll find that the paper becomes more understandable and a good resource.</p>
-<section id="borg-wrappers">
-<h2>BORG Wrappers<a class="headerlink" href="#borg-wrappers" title="Permalink to this heading">#</a></h2>
-<p>The BORG MOEA is written in C++ which makes it very fast. However, many problems that our collaborators bring to us are written in different languages like Python, R, and MATLAB. Thus, there have been a variety of wrappers that have been created that allows problems written in these languages to still be connected to the C version of Borg.</p>
-<section id="borg-r-wrapper">
-<h3>Borg R Wrapper<a class="headerlink" href="#borg-r-wrapper" title="Permalink to this heading">#</a></h3>
-<p>Currently, we have a Borg R wrapper that supports serial BORG (i.e. no parallelization). However, we spent a lot of time getting this wrapper to be somewhat foolproof so if you follow the steps of this post, everything should work out. Functionality that you might be used to like runtime files and implementing different seeds of Borg must be added after you download the wrapper, but these steps are all demonstrated in the post: https://waterprogramming.wordpress.com/2020/06/19/the-new-and-improved-r-wrapper/</p>
+  <section id="time-varying-sensitivity-analysis">
+<h1>Time-Varying Sensitivity Analysis<a class="headerlink" href="#time-varying-sensitivity-analysis" title="Permalink to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>This training follows a blog post that steps through the process of performing local variance-based sensitivity analysis (SA), and then plotting how it changes over time for a multi-reservoir system in the Red River Basin in Vietnam. This set of techniques are broadly applicable to other global SA methods, as well as specialized forms of SA such as magnitude-varying SA.</p>
 </section>
-<section id="borg-python-wrapper">
-<h3>Borg Python Wrapper<a class="headerlink" href="#borg-python-wrapper" title="Permalink to this heading">#</a></h3>
-<p>The Borg Python wrapper is a plugin included in the BorgMOEA GitHub Repository <code class="docutils literal notranslate"><span class="pre">plugin/</span></code> folder. It supports both serial and master-worker parallel Borg. Prior to using this wrapper, please follow the instructions provided <a class="reference external" href="https://github.com/BorgMOEA/BorgMOEA/tree/master/plugins">here</a>. Ensure that all necessary files are located within the folder you are currently working in before beginning. For a step-by-step tutorial on using the Borg MOEA Python wrapper to perform the optimization of the <a class="reference external" href="https://reedgroup.github.io/Training/LakeProblem.html">Shallow Lake Problem</a> and visualize its runtime dynamics using <a class="reference external" href="https://reedgroup.github.io/Software/MOEAFramework.html">MOEAFramework</a>, please see this WaterProgramming post.</p>
+<section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
+<p>In these training, you will learn how to perform and visualize local variance-based time-varying sensitivity analysis.</p>
 </section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<p>These training require general proficiency in Python. If you are new to Python, you can get started <a class="reference external" href="https://reedgroup.github.io/ComputationalResources/python_crash_course.html">here</a>.</p>
+</section>
+<section id="training-activities">
+<h2>Training activities<a class="headerlink" href="#training-activities" title="Permalink to this heading">#</a></h2>
+<table class="table" id="id1">
+<caption><span class="caption-text">Time-Varying Sensitivity Analysis</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>Commitment</p></th>
+<th class="head"><p>Tasks</p></th>
+<th class="head"><p>Readings</p></th>
+<th class="head"><p>Outcomes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Basic sensitivity analysis training</p></td>
+<td><p>L</p></td>
+<td><p>Complete the <a class="reference external" href="https://reedgroup.github.io/Training/intro_to_sensitivity_analysis.html">Intro to Sensitivity Analysis training sequence</a> available on the Reed Group Lab Manual.</p></td>
+<td><p>[6]</p></td>
+<td><p>You will develop a strong comprehension of existing sensitivity analysis techniques and understanding of appropriate contexts for their application.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Visualizing variance-based SA over time</p></td>
+<td><p>S</p></td>
+<td><p>Complete the steps outlined in <a class="reference external" href="https://waterprogramming.wordpress.com/2023/07/31/variance-based-global-time-varying-sensitivity-analysis-a-tutorial/">this blog post</a></p></td>
+<td><p>[1],[3],[4],[5]</p></td>
+<td><p>You will visualize how the system’s sensitivity to internal variables changes over time.</p></td>
+</tr>
+<tr class="row-even"><td><p>Further reading</p></td>
+<td><p>S</p></td>
+<td><p>Read <a class="reference external" href="https://doi.org/10.1029/2020wr028079">Hadjimichael et al (2020)</a></p></td>
+<td><p>[2]</p></td>
+<td><p>You will learn alternate potential applications for the same set of visualization techniques (i.e. visualizing magnitude-varying sensitivity analysis).</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Commitment: S = Short ( &lt; 1 day), M = Medium (1-5 days), L = Long (&gt;5 days)</p></li>
+</ul>
+</section>
+<section id="reading-list">
+<h2>Reading list<a class="headerlink" href="#reading-list" title="Permalink to this heading">#</a></h2>
+<p>[1] Doering, K., Quinn, J., Reed, P. M., &amp; Steinschneider, S. (2021). Diagnosing the time-varying value of forecasts in multiobjective reservoir control. Journal of Water Resources Planning and Management, 147(7). https://doi.org/10.1061/(asce)wr.1943-5452.0001386</p>
+<p>[2] Hadjimichael, A., Quinn, J., &amp; Reed, P. (2020). Advancing diagnostic model evaluation to better understand water shortage mechanisms in institutionally complex river basins. Water Resources Research, 56(10). https://doi.org/10.1029/2020wr028079</p>
+<p>[3] Herman, J. D., Reed, P. M., &amp; Wagener, T. (2013). Time-varying sensitivity analysis clarifies the effects of watershed model formulation on model behavior. Water Resources Research, 49(3), 1400–1414. https://doi.org/10.1002/wrcr.20124</p>
+<p>[4] Giuliani, M., Zaniolo, M., Castelletti, A., Davoli, G., &amp; Block, P. (2019). Detecting the state of the climate system via artificial intelligence to improve seasonal forecasts and inform reservoir operations. Water Resources Research, 55(11), 9133–9147. https://doi.org/10.1029/2019wr025035</p>
+<p>[5] Quinn, J. D., Reed, P. M., Giuliani, M., &amp; Castelletti, A. (2019). What is controlling our control rules? opening the black box of multireservoir operating policies using time‐varying sensitivity analysis. Water Resources Research, 55(7), 5962–5984. https://doi.org/10.1029/2018wr024177</p>
+<p>[6] Reed, P.M., Hadjimichael, A., Malek, K., Karimi, T., Vernon, C.R., Srikrishnan, V., Gupta, R.S., Gold, D.F., Lee, B., Keller, K., Thurber, T.B, &amp; Rice, J.S. (2022). Addressing Uncertainty in Multisector Dynamics Research [Book]. Zenodo. https://doi.org/10.5281/zenodo.6110623</p>
 </section>
 </section>
 
@@ -479,7 +521,7 @@ As you are getting acclimated with the group, one of the tools you will hear a l
         },
         kernelOptions: {
             name: "python3",
-            path: "./Software"
+            path: "./Training"
         },
         predefinedOutput: true
     }
@@ -496,24 +538,6 @@ As you are getting acclimated with the group, one of the tools you will hear a l
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="Software.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Software</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="WaterPaths.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">WaterPaths</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -529,11 +553,11 @@ As you are getting acclimated with the group, one of the tools you will hear a l
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#borg-wrappers">BORG Wrappers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#borg-r-wrapper">Borg R Wrapper</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#borg-python-wrapper">Borg Python Wrapper</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-activities">Training activities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a></li>
 </ul>
   </nav></div>
 

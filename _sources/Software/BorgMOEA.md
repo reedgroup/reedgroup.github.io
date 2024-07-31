@@ -10,3 +10,6 @@ The BORG MOEA is written in C++ which makes it very fast. However, many problems
 
 Currently, we have a Borg R wrapper that supports serial BORG (i.e. no parallelization). However, we spent a lot of time getting this wrapper to be somewhat foolproof so if you follow the steps of this post, everything should work out. Functionality that you might be used to like runtime files and implementing different seeds of Borg must be added after you download the wrapper, but these steps are all demonstrated in the post: https://waterprogramming.wordpress.com/2020/06/19/the-new-and-improved-r-wrapper/
 
+### Borg Python Wrapper
+
+The Borg Python wrapper is a plugin included in the BorgMOEA GitHub Repository `plugin/` folder. It supports both serial and master-worker parallel Borg. Prior to using this wrapper, please follow the instructions provided [here](https://github.com/BorgMOEA/BorgMOEA/tree/master/plugins). Ensure that all necessary files are located within the folder you are currently working in before beginning. For a step-by-step tutorial on using the Borg MOEA Python wrapper to perform the optimization of the [Shallow Lake Problem](https://reedgroup.github.io/Training/LakeProblem.html) and visualize its runtime dynamics using [MOEAFramework](https://reedgroup.github.io/Software/MOEAFramework.html), please see this WaterProgramming post.
