@@ -43,11 +43,13 @@ parts:
     - file: Training/Linux_MOEAs_HPC.md
     - file: Training/LakeProblem.md
     - file: Training/intro_to_sensitivity_analysis.md
+    - file: Training/timevaryingSAtraining.md
     - file: Training/intro_to_scenario_discovery.md
     - file: Training/SyntheticStreamflowGeneration.md
     - file: Training/StateModTraining.md
-    - file: Training/pywrdrb_training.md
+    - file: Training/BorgRuntimeDiagnosticsTraining.md
     - file: Training/MOEADiagnostics.md
+    - file: Training/
     - file: Training/SyntheticWeatherGeneration.md
     - file: Training/FisheriesGame.md
     - file: Training/WaterPaths_Training.md
