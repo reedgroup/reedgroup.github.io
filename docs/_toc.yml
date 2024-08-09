@@ -13,6 +13,7 @@ parts:
     - file: GraduateStudentResources/Conferences.md
     - file: GraduateStudentResources/PresentationTemplates.md
     - file: GraduateStudentResources/WritingProcess.md
+    - file: GraduateStudentResources/BlogPost.md
     - file: GraduateStudentResources/PaperRepoTemplates.md
     - file: GraduateStudentResources/Scheduling.md
     - file: GraduateStudentResources/Organization.md
