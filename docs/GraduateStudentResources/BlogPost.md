@@ -38,9 +38,9 @@ Begin with a clear introduction to set the stage for your topic. Follow with eng
 
 ### 4. Uploading to WordPress
 
-Get familiar with the WordPress dashboard for creating and formatting your post. Utilize headings, bullet points, and images to enhance readability. Here’s a helpful guide on creating a post in WordPress. Add relevant tags and categories.
+Get familiar with the WordPress dashboard for creating and formatting your post. Utilize headings, bullet points, images, and ensure to add relevant tags and categories to enhance readability and discoverability. You can find a helpful guide on creating posts on WordPress [here](https://wordpress.com/support/posts/).
 
-Use the preview option to ensure your post looks good across different devices before publishing. Remember, many readers access our posts via smartphones, so optimizing for mobile view is crucial. Believe it or not, I know for a fact people spend hours scrolling on their phones reading our posts :)
+Before publishing, use the preview option to ensure your post looks good across different devices. Since many readers access our posts via smartphones, optimizing for mobile view is crucial. Believe it or not, I know for a fact people spend hours scrolling on their phones reading our posts :)
 
 ### 5. Gaining Insights
 
