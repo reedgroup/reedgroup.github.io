@@ -436,8 +436,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activities">Activities</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-software">Necessary software</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-prediction-publications">ML Prediction Publications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supplemental-reading">Supplemental Reading</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -453,10 +457,9 @@ document.write(`
 <h1>Pywr-DRB Training<a class="headerlink" href="#pywr-drb-training" title="Permalink to this heading">#</a></h1>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
-<p>This training is designed to get you familiar with the core functionality of the <a class="reference internal" href="../Software/PywrDRB.html"><span class="doc std std-doc">Pywr-DRB water resource model (Hamilton, Amestoy &amp; Reed, Under Review)</span></a>.</p>
-<p>The training consists of several different jupyter notebook files which introduce key concepts and workflows associated with the model.</p>
-<p>After stepping through the notebooks, you can replicate the study presented in Hamilton, Amestoy, &amp; Reed (Under Review; pre-print [here](https://ssrn.com/abstract=4765247 or http://dx.doi.org/10.2139/ssrn.4765247)).</p>
-<p>More trainings will be added in the future.  If you have any questions or requests please contact Trevor at tja73 “at” cornell.edu.</p>
+<p>This training is designed to get you familiar with the core functionality of the <a class="reference internal" href="../Software/PywrDRB.html"><span class="doc std std-doc">Pywr-DRB water resource model</span></a>.</p>
+<p>The training consists of several different Jupyter notebook files which introduce key concepts and workflows associated with the model.</p>
+<p>After stepping through the notebooks, you can replicate the study presented in Hamilton, Amestoy &amp; Reed (2024).</p>
 </section>
 <section id="learning-objectives">
 <h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
@@ -468,7 +471,7 @@ document.write(`
 </section>
 <section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
-<p>Before starting this training it is recommended to read the preprint for Hamilton, Amestoy and Reed (In Review) available <a class="reference external" href="http://dx.doi.org/10.2139/ssrn.4765247">here.</a></p>
+<p>Before starting this training, read Hamilton, Amestoy and Reed (2024) <em>“Pywr-DRB: An open-source Python model for water availability and drought risk assessment in the Delaware River Basin”</em> available <a class="reference external" href="https://doi.org/10.1016/j.envsoft.2024.106185">here.</a></p>
 <p>Pywr-DRB is a python based model; you will need to have Python as well as the <a class="reference external" href="https://www.gnu.org/software/glpk/">GLPK</a> or similar linear programming solver installed.</p>
 <p>You can access the Pywr-DRB github repository here: <a class="github reference external" href="https://github.com/Pywr-DRB/Pywr-DRB/tree/master">Pywr-DRB/Pywr-DRB</a></p>
 </section>
@@ -476,56 +479,46 @@ document.write(`
 <h2>Activities<a class="headerlink" href="#activities" title="Permalink to this heading">#</a></h2>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Activity</p></th>
-<th class="head"><p>Est. Time</p></th>
+<tr class="row-odd"><th class="head"><p>Step</p></th>
 <th class="head"><p>Topic</p></th>
 <th class="head"><p>Resources</p></th>
-<th class="head"><p>Readings</p></th>
+<th class="head"><p>Read</p></th>
 <th class="head"><p>Tasks</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>1</p></td>
-<td><p>2 days</p></td>
-<td><p>Background context on Pywr-DRB</p></td>
+<td><p>Background context on Pywr-DRB &amp; DRB policy</p></td>
 <td><p>-</p></td>
-<td><p>[1] &amp; citations in [1]</p></td>
-<td><p>-</p></td>
+<td><p>[1], [4], [5]</p></td>
+<td><p>- Make note of major policy controls</p></td>
 </tr>
 <tr class="row-odd"><td><p>2</p></td>
-<td><p>2 days</p></td>
 <td><p>Tutorial 01 Introduction to PywrDRB</p></td>
 <td><p><a class="reference external" href="https://github.com/Pywr-DRB/Pywr-DRB/blob/master/notebooks/Tutorial%2001%20Introduction%20to%20PywrDRB.ipynb">Notebook #1</a></p></td>
-<td><p>[1]</p></td>
+<td><p>[1], [2]</p></td>
 <td><p>- Complete first simulation</p></td>
 </tr>
 <tr class="row-even"><td><p>3</p></td>
-<td><p>1 day</p></td>
 <td><p>Tutorial 02 Prepare Input Data</p></td>
 <td><p><a class="reference external" href="https://github.com/Pywr-DRB/Pywr-DRB/blob/master/notebooks/Tutorial%2002%20Prepare%20Input%20Data.ipynb">Notebook #2</a></p></td>
 <td><p>-</p></td>
 <td><p>-</p></td>
 </tr>
 <tr class="row-odd"><td><p>4</p></td>
-<td><p>2 days</p></td>
 <td><p>Model Parameters</p></td>
 <td><p><a class="reference external" href="https://github.com/Pywr-DRB/Pywr-DRB/blob/master/notebooks/Tutorial%2003%20Model%20Parameters.ipynb">Notebook #3</a></p></td>
-<td><p>-</p></td>
+<td><p>[3]</p></td>
 <td><p>-</p></td>
 </tr>
 <tr class="row-even"><td><p>5</p></td>
-<td><p>5 days</p></td>
 <td><p>Replication of [1]</p></td>
 <td><p>Instructions in <a class="reference external" href="https://github.com/Pywr-DRB/Pywr-DRB/tree/master">Pywr-DRB README</a></p></td>
 <td><p>-</p></td>
-<td><p>-</p></td>
+<td><p>- Generate all figures from [1]<br>- Interpret &amp; analyze results</p></td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="reading-list">
-<h2>Reading list<a class="headerlink" href="#reading-list" title="Permalink to this heading">#</a></h2>
-<p>[1] Hamilton, Andrew L., Amestoy, Trevor J. and Reed, Patrick M., Pywr-Drb: An Open-Source Python Model for Water Availability and Drought Risk Assessment in the Delaware River Basin (In Review). A pre-print is available at SSRN: https://ssrn.com/abstract=4765247 or http://dx.doi.org/10.2139/ssrn.4765247</p>
 </section>
 <section id="necessary-software">
 <h2>Necessary software<a class="headerlink" href="#necessary-software" title="Permalink to this heading">#</a></h2>
@@ -533,6 +526,31 @@ document.write(`
 <li><p><a class="reference internal" href="../Software/PywrDRB.html"><span class="doc std std-doc">Pywr-DRB</span></a>; Repository <a class="reference external" href="https://github.com/Pywr-DRB/Pywr-DRB/tree/master">here</a></p></li>
 <li><p><a class="reference external" href="https://www.gnu.org/software/glpk/">GLPK</a></p></li>
 </ol>
+</section>
+<section id="reading-list">
+<h2>Reading list<a class="headerlink" href="#reading-list" title="Permalink to this heading">#</a></h2>
+<p>[1] Hamilton, A. L., Amestoy, T. J., &amp; Reed, P. M. (2024). Pywr-DRB: An open-source Python model for water availability and drought risk assessment in the Delaware River Basin. Environmental Modelling &amp; Software, 106185.</p>
+<p>[2] Tomlinson, J. E., Arnott, J. H., &amp; Harou, J. J. (2020). A water resource simulator in Python. Environmental Modelling &amp; Software, 126, 104635.</p>
+<p>[3] Turner, S. W., Steyaert, J. C., Condon, L., &amp; Voisin, N. (2021). Water storage and release policies for all large reservoirs of conterminous United States. Journal of Hydrology, 603, 126843.</p>
+<p>[4] State of Delaware, State of New Jersey, State of New York, Commonwealth of Pennsylvania, City of New York, 2017. Flexible Flow Management Program Appendix A: 2017 Operations Plan. https://webapps.usgs.gov/odrm/documents/ffmp/Appendix_A_FFMP-20180716-Final.pdf</p>
+<p>[5] Delaware River Basin Commission (2022) Water Code. https://nj.gov/drbc/library/documents/watercode.pdf</p>
+<section id="ml-prediction-publications">
+<h3>ML Prediction Publications<a class="headerlink" href="#ml-prediction-publications" title="Permalink to this heading">#</a></h3>
+<p>[6] Zwart, J. A., Diaz, J., Hamshaw, S., Oliver, S., Ross, J. C., Sleckman, M., … &amp; White, E. (2023). Evaluating deep learning architecture and data assimilation for improving water temperature forecasts at unmonitored locations. Frontiers in Water, 5, 1184992.</p>
+<p>[7] Zwart, J. A., Oliver, S. K., Watkins, W. D., Sadler, J. M., Appling, A. P., Corson‐Dosch, H. R., … &amp; Read, J. S. (2023). Near‐term forecasts of stream temperature using deep learning and data assimilation in support of management decisions. JAWRA Journal of the American Water Resources Association, 59(2), 317-337.</p>
+<p>[8] Gorski, G., Cook, S., Snyder, A., Appling, A. P., Thompson, T., Smith, J. D., … &amp; Topp, S. N. (2024). Deep learning of estuary salinity dynamics is physically accurate at a fraction of hydrodynamic model computational cost. Limnology and Oceanography.</p>
+</section>
+<section id="supplemental-reading">
+<h3>Supplemental Reading<a class="headerlink" href="#supplemental-reading" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Kolesar, P., Serio, J., 2011. Breaking the deadlock: Improving Water-Release policies on the delaware river through operations research. Interfaces 41, 18–34. https://doi.org/10.1287/inte.1100.0536</p></li>
+<li><p>Kauffman, G.J., 2016. Economic Value of Nature and Ecosystems in the Delaware River Basin. J. Contemp. Water Res. Educ. 98–119.</p></li>
+<li><p>Kauffman, G.J., 2011. Socioeconomic Value of the Delaware River Basin in Delaware, New Jersey, New York, and Pennsylvania.</p></li>
+<li><p>Kauffman, G.J., Vonck, K.J., 2011. Frequency and intensity of extreme drought in the Delaware Basin, 1600-2002. Water Resour. Res. 47. https://doi.org/10.1029/2009WR008821</p></li>
+<li><p>McCabe, G.J., Wolock, D.M., 2020. Hydro-Climatic Drought in the Delaware River Basin. J. Am. Water Resour. Assoc. 56, 981–994. https://doi.org/10.1111/1752-1688.12875</p></li>
+<li><p>Thompson, M. Y., Pindar, C. E., 2021. Water withdrawal and consumptive use estimates for the Delaware River Basin (1990-2017) with projections through 2060: DRBC Report No: 2021-4. Delaware River Basin Commission.</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -585,8 +603,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activities">Activities</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-software">Necessary software</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-list">Reading list</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-prediction-publications">ML Prediction Publications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supplemental-reading">Supplemental Reading</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
