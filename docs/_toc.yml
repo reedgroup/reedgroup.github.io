@@ -50,7 +50,7 @@ parts:
     - file: Training/StateModTraining.md
     - file: Training/BorgRuntimeDiagnosticsTraining.md
     - file: Training/MOEADiagnostics.md
-    - file: Training/
+    - file: Training/pywrdrb_training.md
     - file: Training/SyntheticWeatherGeneration.md
     - file: Training/FisheriesGame.md
     - file: Training/WaterPaths_Training.md
