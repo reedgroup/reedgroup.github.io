@@ -1,0 +1,742 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>T-cup diagrams &#8212; Reed group lab manual</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'FigureLibrary/T-cup diagrams';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Reed group lab manual - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Reed group lab manual - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to our lab manual!
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../GraduateStudentResources/GraduateStudentResources.html">Graduate Student Resources</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/LifeAtCornell.html">Housing Around Cornell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/VisitingScholars.html">A guide to Ithaca and Cornell for Visiting Scholars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Courses.html">Course List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Conferences.html">Conferences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/PresentationTemplates.html">Presentation Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/WritingProcess.html">Writing your first paper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/BlogPost.html">Contributing to the Water Programming Blog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/PaperRepoTemplates.html">Paper Repository Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Scheduling.html">Scheduling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Organization.html">Organizational Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/CitationReferenceManagementTools.html">Citation and Reference Management Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/LongTermStorage.html">Long Term Storage</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ComputationalResources/ComputationalResources.html">Computational Resources</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/ClusterBasics.html">Cluster Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/python_crash_course.html">Crash Course in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/Machine_Learning_Resources.html">Machine Learning Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/IntroToLinux.html">Introduction to Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/IntroToGitHub.html">Introduction to Git &amp; GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/Websites.html">Building and deploying websites with Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Software/Software.html">Software</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Software/BorgMOEA.html">Borg MOEA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/WaterPaths.html">WaterPaths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/PywrDRB.html">Pywr-DRB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/CALFEWS.html">CALFEWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/SALib.html">SALib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/Rhodium.html">Rhodium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/MOEAFramework.html">MOEA Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/J3.html">J3 Visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Training/Training.html">Training</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Training/Schedule.html">Suggested training schedule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/Linux_MOEAs_HPC.html">Getting starting with MOEAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/LakeProblem.html">The Shallow Lake Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/intro_to_sensitivity_analysis.html">Introduction to Sensitivity Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/timevaryingSAtraining.html">Time-Varying Sensitivity Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/intro_to_scenario_discovery.html">Intro to Scenario Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/SyntheticStreamflowGeneration.html">Synthetic Streamflow Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/StateModTraining.html">Getting Started with StateMod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/BorgRuntimeDiagnosticsTraining.html">Multi-Master Borg MOEA Parallel Scaling Diagnotics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/MOEADiagnostics.html">Introduction to MOEA Diagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/pywrdrb_training.html">Pywr-DRB Training</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/SyntheticWeatherGeneration.html">Synthetic Weather Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/FisheriesGame.html">The Fisheries Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/WaterPaths_Training.html">WaterPaths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/intro_mordm.html">Intro to MORDM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../WaterProgramming/waterprogramming_post_catalog.html">Water Programming Blog Post Catalog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PaperRepositories/repositories.html">List of Paper Repositories</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="FigureLibrary.html">Figure Library</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="ParallelCoordinatesPlots.html">Parallel Coordinates Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="synthetic_generation_diagnostics.html">Synthetic Streamflow Diagnostic Figure Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scatterplot_colorbar.html">Scatter plots and colorbars using Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scatter3d.html">3D scatter plots, point sizes, and positioning legends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MOEADiagnostics.html">MOEA Diagnostics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Contributing/Contributing.html">Contributing to this lab manual</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Contributing/Instructions.html">Instructions on contributing to the lab manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Contributing/mdExample.html">Markdown example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Contributing/nbExample.html">Jupyter notebook example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Contributing/training_template.html">Training Title</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Contributing/FAQs.html">Frequently-asked questions (FAQs)</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/reedgroup/reedgroup.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/reedgroup/reedgroup.github.io/issues/new?title=Issue%20on%20page%20%2FFigureLibrary/T-cup diagrams.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/FigureLibrary/T-cup diagrams.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>T-cup diagrams</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-for-flexible-parallel-coordinatessample-t-cup-plot">Functions for flexible parallel coordinatessample T-cup plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="t-cup-diagrams">
+<h1>T-cup diagrams<a class="headerlink" href="#t-cup-diagrams" title="Permalink to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>T-cup diagrams are generally used to represent storages in the reservoir. An example of T-cup diagram is shown below</p>
+<img src="sample_T-cup.PNG"><p>In the T-cup sample figure shown, the blue color filling shows the level of the water in the reservoir which is around 60% of the capacity. An example usage of these figures are the live storage volumes representation on the [map] (https://www.usbr.gov/uc/water/basin/index.html). The fraction of water fill is in comparison to the total capacity of the reservoir. In the exploratory experiments, the question is how we show different states of the world or an ensemble of scenarios. First I define a function to plot as shown in the above figure and then we shall make edits to this function for a randomly generated values assuming thousand scenarios.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="k">as</span> <span class="nn">cm</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="functions-for-flexible-parallel-coordinatessample-t-cup-plot">
+<h2>Functions for flexible parallel coordinatessample T-cup plot<a class="headerlink" href="#functions-for-flexible-parallel-coordinatessample-t-cup-plot" title="Permalink to this heading">#</a></h2>
+<p>First, let’s use a function to plot the sample T-cup figure shown above for a single case say for a median or current value of storage. This function takes the single value as the storage level, along with the x and y-limits of the plot. The T-cup includes drawing a trapezoid in two steps: a) rectangle b)filling the corners as shown in the figure below</p>
+<img src="Steps_T-cup.PNG">
+<p>Two different xlimits and ylimits are defined. xlim and ylim called in the function are the limits of the plot whereas inside the function the limits are defined for the trapezoid</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#function to make teacups</span>
+<span class="k">def</span> <span class="nf">med_make_teacups</span><span class="p">(</span><span class="n">hist_median</span><span class="p">,</span> <span class="n">xlim</span><span class="p">,</span> <span class="n">ylim</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;hist_median is the storage level of the lake/reservoir</span>
+<span class="sd">    xlim and ylim are limits of the plot&#39;&#39;&#39;</span>
+    <span class="c1"># make the plot</span>
+
+    <span class="c1">#define limits for trapezoid</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">16.8955</span><span class="p">,</span> <span class="mf">43.15</span><span class="p">]</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">129.45</span><span class="p">,</span> <span class="mf">155.70</span><span class="p">]</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+
+    <span class="c1">#plotting rectangle as in fig (a)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">([</span><span class="n">x1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x2</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">hist_median</span><span class="p">,</span> <span class="n">hist_median</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+    <span class="c1"># fill corners as show in fig (b)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">([</span><span class="n">x1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x1</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="n">hist_median</span><span class="p">,</span> <span class="n">hist_median</span><span class="p">],</span>
+                    <span class="p">[</span><span class="n">hist_median</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#1f77b4&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">([</span><span class="n">x2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x2</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="n">hist_median</span><span class="p">,</span> <span class="n">hist_median</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">hist_median</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#1f77b4&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">xlim</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">ylim</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="c1">#draw the borders of the trapezoid</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">43.15</span><span class="p">],</span> <span class="p">[</span><span class="mf">86.3</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">43.15</span><span class="p">,</span> <span class="mf">129.45</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">129.45</span><span class="p">,</span> <span class="mf">172.6</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">86.3</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">172.6</span><span class="p">],</span> <span class="p">[</span><span class="mf">86.3</span><span class="p">,</span> <span class="mf">86.3</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">get_xaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="c1">#save fig in desired format</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;T-cup_med.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+
+
+<span class="c1">#calling the function</span>
+<span class="n">med_make_teacups</span><span class="p">(</span><span class="mf">54.8</span><span class="p">,</span> <span class="mf">172.6</span><span class="p">,</span> <span class="mf">86.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/45dfe7177e7260b10e0e974431417592ff1a6fd4df843f710913878489c6e18b.png" src="../_images/45dfe7177e7260b10e0e974431417592ff1a6fd4df843f710913878489c6e18b.png" />
+</div>
+</div>
+<p>Here, we define a function to determine the x coordinates of the trapezoid for the input data reservoir levels. These coordinates were defined for the sample T-cup above randomly to plot a trapezoid.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_x_coords</span><span class="p">(</span><span class="n">yvalues</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    returns x coordinates for teacup plot</span>
+
+<span class="sd">    :param yvalues:         numpy array of reservoir levels</span>
+<span class="sd">    :return:</span>
+<span class="sd">        x1:                 array of right side of teacup</span>
+<span class="sd">        x2:                 array of left side of teacup</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">x1</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">yvalues</span><span class="p">))</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">yvalues</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">yvalues</span><span class="p">)):</span>
+        <span class="n">x1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">yvalues</span><span class="p">)</span> <span class="o">-</span> <span class="n">yvalues</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span>
+        <span class="n">x2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="nb">max</span><span class="p">(</span><span class="n">yvalues</span><span class="p">)</span> <span class="o">+</span> <span class="n">yvalues</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span>
+
+    <span class="k">return</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The next function gets the color for each percentile in the ensemble to represent the storage colored differently for different percentiles of the ensemble. The historical median and critical values of the reservoir are input to the function to compare these with the ensemble. The data is read as csv file inside the function that contains 99 rows for each percentile varying from 1 to 99 and 1000 columns for each scenario in the ensemble.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_teacups</span><span class="p">(</span><span class="n">res_abbrev</span><span class="p">,</span> <span class="n">hist_median</span><span class="p">,</span> <span class="n">crit</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Plots teacup diagrams for a reservoir for an ensemble</span>
+
+<span class="sd">    :param res_abbrev:                      str, abbrev of res name (BM)</span>
+<span class="sd">    :param crit:                            float, low storage level to plot as a benchmark</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">baseline_rels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">res_abbrev</span> <span class="o">+</span> <span class="s1">&#39;_realizationPercentiles_baseline_run_1_to_99.csv&#39;</span><span class="p">,</span>
+                               <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="n">baseline_means</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">baseline_rels</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">10000</span>
+
+    <span class="c1"># add zeros to each array</span>
+    <span class="n">baseline_means</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">baseline_means</span><span class="p">])</span>
+
+    <span class="n">baseline_x1</span><span class="p">,</span> <span class="n">baseline_x2</span> <span class="o">=</span> <span class="n">find_x_coords</span><span class="p">(</span><span class="n">baseline_means</span><span class="p">)</span>
+
+    <span class="c1"># copy the baseline means and set them as the historical, then add the historical median to the middle entry</span>
+    <span class="c1"># This overly complicated method of adding the historical median is done to make plotting the teacups easier</span>
+    <span class="n">hist_percentiles</span> <span class="o">=</span> <span class="n">baseline_means</span>
+    <span class="n">hist_percentiles</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="n">hist_median</span>
+
+    <span class="c1"># make the plot</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">99</span><span class="p">)):</span>
+        <span class="c1"># make base plot</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">([</span><span class="n">baseline_x1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">baseline_x2</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="p">[</span><span class="n">baseline_means</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">baseline_means</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span>
+                        <span class="p">[</span><span class="n">baseline_means</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">baseline_means</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">BrBG</span><span class="p">(</span><span class="n">p</span> <span class="o">/</span> <span class="mi">100</span><span class="p">),</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+
+        <span class="c1"># fill corners</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">([</span><span class="n">baseline_x1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">baseline_x1</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="n">baseline_means</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">baseline_means</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]],</span>
+                        <span class="p">[</span><span class="n">baseline_means</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">baseline_means</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">BrBG</span><span class="p">(</span><span class="n">p</span> <span class="o">/</span> <span class="mi">100</span><span class="p">),</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+
+        <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">([</span><span class="n">baseline_x2</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">baseline_x2</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="n">baseline_means</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">baseline_means</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]],</span>
+                        <span class="p">[</span><span class="n">baseline_means</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">baseline_means</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">BrBG</span><span class="p">(</span><span class="n">p</span> <span class="o">/</span> <span class="mi">100</span><span class="p">),</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+
+    <span class="n">hist_mean_x1</span><span class="p">,</span> <span class="n">hist_mean_x2</span> <span class="o">=</span> <span class="n">find_x_coords</span><span class="p">(</span><span class="n">hist_percentiles</span><span class="p">)</span>
+
+    <span class="n">crit_mean_x1</span><span class="p">,</span> <span class="n">crit_mean_x2</span> <span class="o">=</span> <span class="n">find_x_coords</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">crit</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">baseline_means</span><span class="p">)])</span>
+
+    <span class="c1">#plot historical line </span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">hist_mean_x1</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">hist_mean_x2</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">hist_percentiles</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span>
+            <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkblue&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+    <span class="c1">#plot critical line</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([((</span><span class="nb">max</span><span class="p">(</span><span class="n">baseline_means</span><span class="p">)</span> <span class="o">-</span> <span class="n">crit</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.5</span> <span class="o">*</span> <span class="nb">max</span><span class="p">(</span><span class="n">baseline_means</span><span class="p">)</span> <span class="o">+</span> <span class="n">crit</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)],</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">crit</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;hotpink&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="nb">max</span><span class="p">(</span><span class="n">baseline_means</span><span class="p">)])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">baseline_means</span><span class="p">)])</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">get_xaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="c1">#add color bar as legend and include percentiles</span>
+    <span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">mpl</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;BrBG&#39;</span><span class="p">),</span>
+             <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Ensemble Percentile&#39;</span><span class="p">)</span>
+    <span class="n">cbar</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;1$^</span><span class="si">{st}</span><span class="s1">$&#39;</span><span class="p">,</span><span class="s1">&#39;50$^</span><span class="si">{th}</span><span class="s1">$&#39;</span><span class="p">,</span><span class="s1">&#39;99$^</span><span class="si">{th}</span><span class="s1">$&#39;</span><span class="p">])</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">res_abbrev</span> <span class="o">+</span> <span class="s1">&#39;_teacups.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+
+<span class="n">make_teacups</span><span class="p">(</span><span class="s1">&#39;BM&#39;</span><span class="p">,</span> <span class="mf">54.8</span><span class="p">,</span> <span class="mf">20.8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/8b7d4d1d739334a4042deb0bec3994199355613a29a2c92ed8074b331c160d6a.png" src="../_images/8b7d4d1d739334a4042deb0bec3994199355613a29a2c92ed8074b331c160d6a.png" />
+</div>
+</div>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
+<p>This example should provide a guideline to plot reserovir storages for an ensemble varying based on percentile values. If you have any suggestions to improve this style of figure, feel free to open a GitHub Issue or contribute directly to <a class="reference external" href="https://github.com/reedgroup/reedgroup.github.io/blob/main/docs/FigureLibrary/T-cupdiagrams.ipynb">this page</a> in the Reed Group Lab Manual repository.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./FigureLibrary"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-for-flexible-parallel-coordinatessample-t-cup-plot">Functions for flexible parallel coordinatessample T-cup plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Reed Group at Cornell CEE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
