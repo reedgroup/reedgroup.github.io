@@ -64,6 +64,7 @@ parts:
     - file: FigureLibrary/scatterplot_colorbar.md
     - file: FigureLibrary/scatter3d.md
     - file: FigureLibrary/MOEADiagnostics.ipynb
+    - file: FigureLibrary/T-cup diagrams.ipynb
   - file: Contributing/Contributing.md
     sections:
     - file: Contributing/Instructions.md
