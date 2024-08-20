@@ -455,7 +455,7 @@ document.write(`
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>T-cup diagrams are generally used to represent storages in the reservoir. An example of T-cup diagram is shown below</p>
-<img src="sample_T-cup.png"><p>In the T-cup sample figure shown, the blue color filling shows the level of the water in the reservoir which is around 60% of the capacity. An example usage of these figures are the live storage volumes representation on the [map] (https://www.usbr.gov/uc/water/basin/index.html). The fraction of water fill is in comparison to the total capacity of the reservoir. In the exploratory experiments, the question is how we show different states of the world or an ensemble of scenarios. First I define a function to plot as shown in the above figure and then we shall make edits to this function for a randomly generated values assuming thousand scenarios.</p>
+<img src="sample_T-cup.png"><p>In the T-cup sample figure shown, the blue color filling shows the level of the water in the reservoir which is around 60% of the capacity. An example usage of these figures are the live storage volumes representation on the <a class="reference external" href="https://www.usbr.gov/uc/water/basin/index.html">map</a>. The fraction of water fill is in comparison to the total capacity of the reservoir. In the exploratory experiments, the question is how we show different states of the world or an ensemble of scenarios. First I define a function to plot as shown in the above figure and then we shall make edits to this function for a dataset assuming a thousand scenarios.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -483,7 +483,7 @@ document.write(`
 <section id="functions-for-flexible-parallel-coordinatessample-t-cup-plot">
 <h2>Functions for flexible parallel coordinatessample T-cup plot<a class="headerlink" href="#functions-for-flexible-parallel-coordinatessample-t-cup-plot" title="Permalink to this heading">#</a></h2>
 <p>First, let’s use a function to plot the sample T-cup figure shown above for a single case say for a median or current value of storage. This function takes the single value as the storage level, along with the x and y-limits of the plot. The T-cup includes drawing a trapezoid in two steps: a) rectangle b)filling the corners as shown in the figure below</p>
-<img src="Steps_T-cup.PNG">
+<img src="Steps_T-cup.png">
 <p>Two different xlimits and ylimits are defined. xlim and ylim called in the function are the limits of the plot whereas inside the function the limits are defined for the trapezoid</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
