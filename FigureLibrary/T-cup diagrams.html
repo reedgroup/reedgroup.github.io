@@ -438,6 +438,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-for-sample-t-cup-plot">Functions for sample T-cup plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#t-cup-plot-function-for-an-ensemble">T-cup plot function for an ensemble</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
 </ul>
             </nav>
@@ -531,7 +532,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/45dfe7177e7260b10e0e974431417592ff1a6fd4df843f710913878489c6e18b.png" src="../_images/45dfe7177e7260b10e0e974431417592ff1a6fd4df843f710913878489c6e18b.png" />
+<img alt="../_images/90e3e00f5662c6ace9d6ca30fc408e1b715d27571efd69968c1dbd19242fbdbf.png" src="../_images/90e3e00f5662c6ace9d6ca30fc408e1b715d27571efd69968c1dbd19242fbdbf.png" />
 </div>
 </div>
 <p>Here, we define a function to determine the x coordinates of the trapezoid for the input data reservoir levels. These coordinates were defined for the sample T-cup above randomly to plot a trapezoid.</p>
@@ -559,6 +560,9 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
+<section id="t-cup-plot-function-for-an-ensemble">
+<h2>T-cup plot function for an ensemble<a class="headerlink" href="#t-cup-plot-function-for-an-ensemble" title="Permalink to this heading">#</a></h2>
 <p>The next function gets the color for each percentile in the ensemble to represent the storage colored differently for different percentiles of the ensemble. The historical median and critical values of the reservoir are input to the function to compare these with the ensemble. The data is read as csv file inside the function that contains 99 rows for each percentile varying from 1 to 99 and 1000 columns for each scenario in the ensemble.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -630,13 +634,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8b7d4d1d739334a4042deb0bec3994199355613a29a2c92ed8074b331c160d6a.png" src="../_images/8b7d4d1d739334a4042deb0bec3994199355613a29a2c92ed8074b331c160d6a.png" />
+<img alt="../_images/24c2a11279c80922732120add2f11d06d25758c0f593ff007e335b2961676b84.png" src="../_images/24c2a11279c80922732120add2f11d06d25758c0f593ff007e335b2961676b84.png" />
 </div>
 </div>
 </section>
 <section id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
-<p>This example should provide a guideline to plot reserovir storages for an ensemble varying based on percentile values. If you have any suggestions to improve this style of figure, feel free to open a GitHub Issue or contribute directly to <a class="reference external" href="https://github.com/reedgroup/reedgroup.github.io/blob/main/docs/FigureLibrary/T-cupdiagrams.ipynb">this page</a> in the Reed Group Lab Manual repository.</p>
+<p>This example should provide a guideline to plot reserovir storages for an ensemble varying based on percentile values. If you have any suggestions to improve this style of figure, feel free to open a GitHub Issue or contribute directly to <a class="reference external" href="https://github.com/reedgroup/reedgroup.github.io/blob/main/docs/FigureLibrary/T-cup%20diagrams.ipynb">this page</a> in the Reed Group Lab Manual repository.</p>
 </section>
 </section>
 
@@ -705,6 +709,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-for-sample-t-cup-plot">Functions for sample T-cup plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#t-cup-plot-function-for-an-ensemble">T-cup plot function for an ensemble</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
 </ul>
   </nav></div>
