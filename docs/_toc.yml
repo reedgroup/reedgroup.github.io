@@ -55,6 +55,7 @@ parts:
     - file: Training/FisheriesGame.md
     - file: Training/WaterPaths_Training.md
     - file: Training/intro_mordm.md
+    - file: Training/DataCompression.md
   - file: WaterProgramming/waterprogramming_post_catalog.md
   - file: PaperRepositories/repositories.md
   - file: FigureLibrary/FigureLibrary.md
