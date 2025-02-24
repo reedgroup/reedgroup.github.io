@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Parallel Coordinates Plots &#8212; Reed group lab manual</title>
   
@@ -15,53 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'FigureLibrary/ParallelCoordinatesPlots';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -76,28 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -119,12 +109,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -140,6 +138,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -158,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -169,7 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../GraduateStudentResources/GraduateStudentResources.html">Graduate Student Resources</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../GraduateStudentResources/GraduateStudentResources.html">Graduate Student Resources</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/LifeAtCornell.html">Housing Around Cornell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/VisitingScholars.html">A guide to Ithaca and Cornell for Visiting Scholars</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Courses.html">Course List</a></li>
@@ -182,9 +193,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Organization.html">Organizational Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/CitationReferenceManagementTools.html">Citation and Reference Management Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/LongTermStorage.html">Long Term Storage</a></li>
+
+
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ComputationalResources/ComputationalResources.html">Computational Resources</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ComputationalResources/ComputationalResources.html">Computational Resources</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/ClusterBasics.html">Cluster Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/python_crash_course.html">Crash Course in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/Machine_Learning_Resources.html">Machine Learning Resources</a></li>
@@ -192,8 +205,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/IntroToGitHub.html">Introduction to Git &amp; GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/Websites.html">Building and deploying websites with Python</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Software/Software.html">Software</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Software/Software.html">Software</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Software/BorgMOEA.html">Borg MOEA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Software/WaterPaths.html">WaterPaths</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Software/PywrDRB.html">Pywr-DRB</a></li>
@@ -203,8 +216,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Software/MOEAFramework.html">MOEA Framework</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Software/J3.html">J3 Visualization</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Training/Training.html">Training</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Training/Training.html">Training</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Training/Schedule.html">Suggested training schedule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Training/Linux_MOEAs_HPC.html">Getting starting with MOEAs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Training/LakeProblem.html">The Shallow Lake Problem</a></li>
@@ -220,27 +233,27 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Training/FisheriesGame.html">The Fisheries Game</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Training/WaterPaths_Training.html">WaterPaths</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Training/intro_mordm.html">Intro to MORDM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/DataCompression.html">Data types and compression methods</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../WaterProgramming/waterprogramming_post_catalog.html">Water Programming Blog Post Catalog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../PaperRepositories/repositories.html">List of Paper Repositories</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="FigureLibrary.html">Figure Library</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="FigureLibrary.html">Figure Library</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Parallel Coordinates Plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="synthetic_generation_diagnostics.html">Synthetic Streamflow Diagnostic Figure Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scatterplot_colorbar.html">Scatter plots and colorbars using Matplotlib</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scatter3d.html">3D scatter plots, point sizes, and positioning legends</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MOEADiagnostics.html">MOEA Diagnostics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="T-cup%20diagrams.html">T-cup diagrams</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Contributing/Contributing.html">Contributing to this lab manual</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Contributing/Contributing.html">Contributing to this lab manual</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Contributing/Instructions.html">Instructions on contributing to the lab manual</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Contributing/mdExample.html">Markdown example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Contributing/nbExample.html">Jupyter notebook example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Contributing/training_template.html">Training Title</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Contributing/FAQs.html">Frequently-asked questions (FAQs)</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -256,7 +269,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -265,14 +278,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -397,10 +410,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -408,14 +421,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -449,12 +462,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section id="parallel-coordinates-plots">
-<h1>Parallel Coordinates Plots<a class="headerlink" href="#parallel-coordinates-plots" title="Permalink to this heading">#</a></h1>
+<h1>Parallel Coordinates Plots<a class="headerlink" href="#parallel-coordinates-plots" title="Link to this heading">#</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>Parallel coordinates plots (also known as parallel axis plots) are a common way to visualize many-dimensional data. There are many different tools that can be used to create parallel coordinates plots in Python. For example, Pandas has a built-in version, as demonstrated in the <a class="reference external" href="https://reedgroup.github.io/FigureLibrary/MOEADiagnostics.html">MOEA Diagnostics page</a> of this manual. There are also many different posts on the Water Programming Blog that demonstrate different ways to create parallel coordinates plots in Python as well as several GUI-based visualization engines (e.g., <a class="reference external" href="https://waterprogramming.wordpress.com/2020/11/09/parallel-axis-plots-for-the-absolute-beginner/">Lau 2020</a>, <a class="reference external" href="https://waterprogramming.wordpress.com/2022/09/14/fisheries-training-part-2-tradeoff-visualization-and-introduction-to-j3/">Lau 2022</a>, <a class="reference external" href="https://waterprogramming.wordpress.com/2020/08/10/using-rhodium-for-exploratory-modeling/">Dircks 2020</a>, <a class="reference external" href="https://waterprogramming.wordpress.com/2018/05/18/creating-parallel-axis-plots-with-multiple-datasets-color-gradients-and-brushing-in-python/">Trindade 2018</a>, <a class="reference external" href="https://waterprogramming.wordpress.com/2018/11/05/introduction-to-discoverydv/">Gupta 2018</a>, and more).</p>
 <p>So why the need for yet another page on parallel coordinates plots? In my experience, the pre-packaged functions for creating these plots (e.g., Pandas) are great for getting a quick-and-dirty look at the data, but they are insufficiently flexible to create more complex and aesthetically pleasing figures. When it comes time to create figures for papers and presentations, I have generally had to start from scratch to create a parallel coordinates plot that suits my particular needs at the time. I imagine this is true for many other researchers as well. This process can be tedious, especially when there is a need to create several distinct versions of a figure, such as when coloring along different axes, or when creating multiple “brushing” scenarios where solutions are filtered out based on satisficing criteria.</p>
 <p>Over the years, I have developed a set of functions for creating different types of parallel coordinates plots. The goal of this page is to present these functions with the hope that they will facilitate the creation of flexible and attractive parallel coordinates plots for other researchers. The functions below are capable of applying a range of customizations, such as:</p>
@@ -467,14 +480,14 @@ document.write(`
 <p>My hope is that others will add to this over time as new use cases arise so that we can all benefit from improved flexibility &amp; functionality and not have to reinvent the wheel each time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">colormaps</span><span class="p">,</span> <span class="n">cm</span>
-<span class="kn">from</span> <span class="nn">matplotlib.collections</span> <span class="kn">import</span> <span class="n">PatchCollection</span>
-<span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Rectangle</span>
-<span class="kn">from</span> <span class="nn">matplotlib.lines</span> <span class="kn">import</span> <span class="n">Line2D</span>
-<span class="kn">from</span> <span class="nn">pandas.plotting</span> <span class="kn">import</span> <span class="n">parallel_coordinates</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">colormaps</span><span class="p">,</span> <span class="n">cm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">PatchCollection</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="kn">import</span> <span class="n">Rectangle</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.lines</span><span class="w"> </span><span class="kn">import</span> <span class="n">Line2D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pandas.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">parallel_coordinates</span>
 
 <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span>
@@ -486,9 +499,9 @@ document.write(`
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
 </pre></div>
@@ -497,13 +510,13 @@ document.write(`
 </div>
 </section>
 <section id="functions-for-flexible-parallel-coordinates-plots">
-<h2>Functions for flexible parallel coordinates plots<a class="headerlink" href="#functions-for-flexible-parallel-coordinates-plots" title="Permalink to this heading">#</a></h2>
+<h2>Functions for flexible parallel coordinates plots<a class="headerlink" href="#functions-for-flexible-parallel-coordinates-plots" title="Link to this heading">#</a></h2>
 <p>First, we need a function for reorganizing &amp; normalizing the input data. This function takes the data as a Pandas DataFrame (“objs”) as well as a list of column names corresponding to the subset of variables you want to plot (“column_axes”) as parallel axes. In addition, “ideal_direction” gives the direction of preference for ideal performance (“top” or “bottom”), while “minmaxs” should be a list with the same length as “column_axes”, with each element either “min” or “max”. For variables labeled “max”, the axis will be oriented with its maximum values pointing in the “ideal_direction”, while variables labeled “min” will point in the opposite direction. After normalization, each column in the dataframe will scale from 0 (which maps to the bottom of the figure) to 1 (which maps to the top of the figure). This function returns the normalized dataframe “objs_reorg”, as well as the lists “tops” and “bottoms” that store the numerical values corresponding to the top and bottom of each axis prior to normalization.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### function to normalize data based on direction of preference and whether each objective is minimized or maximized</span>
 <span class="c1">###   -&gt; output dataframe will have values ranging from 0 (which maps to bottom of figure) to 1 (which maps to top)</span>
-<span class="k">def</span> <span class="nf">reorganize_objs</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">columns_axes</span><span class="p">,</span> <span class="n">ideal_direction</span><span class="p">,</span> <span class="n">minmaxs</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">reorganize_objs</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">columns_axes</span><span class="p">,</span> <span class="n">ideal_direction</span><span class="p">,</span> <span class="n">minmaxs</span><span class="p">):</span>
     <span class="c1">### if min/max directions not given for each axis, assume all should be maximized</span>
     <span class="k">if</span> <span class="n">minmaxs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">minmaxs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">columns_axes</span><span class="p">)</span>
@@ -545,7 +558,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### function to get color based on continuous color map or categorical map</span>
-<span class="k">def</span> <span class="nf">get_color</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">color_by_continuous</span><span class="p">,</span> <span class="n">color_palette_continuous</span><span class="p">,</span> 
+<span class="k">def</span><span class="w"> </span><span class="nf">get_color</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">color_by_continuous</span><span class="p">,</span> <span class="n">color_palette_continuous</span><span class="p">,</span> 
               <span class="n">color_by_categorical</span><span class="p">,</span> <span class="n">color_dict_categorical</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">color_by_continuous</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">color</span> <span class="o">=</span> <span class="n">colormaps</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="n">color_palette_continuous</span><span class="p">)(</span><span class="n">value</span><span class="p">)</span>
@@ -561,7 +574,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### function to get zorder value for ordering lines on plot. </span>
 <span class="c1">### This works by binning a given axis&#39; values and mapping to discrete classes.</span>
-<span class="k">def</span> <span class="nf">get_zorder</span><span class="p">(</span><span class="n">norm_value</span><span class="p">,</span> <span class="n">zorder_num_classes</span><span class="p">,</span> <span class="n">zorder_direction</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_zorder</span><span class="p">(</span><span class="n">norm_value</span><span class="p">,</span> <span class="n">zorder_num_classes</span><span class="p">,</span> <span class="n">zorder_direction</span><span class="p">):</span>
     <span class="n">xgrid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.001</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">zorder_num_classes</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">zorder_direction</span> <span class="o">==</span> <span class="s1">&#39;ascending&#39;</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">norm_value</span> <span class="o">&gt;</span> <span class="n">xgrid</span><span class="p">)</span>
@@ -577,7 +590,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### customizable parallel coordinates plot</span>
-<span class="k">def</span> <span class="nf">custom_parallel_coordinates</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">columns_axes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis_labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+<span class="k">def</span><span class="w"> </span><span class="nf">custom_parallel_coordinates</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">columns_axes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis_labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
                                 <span class="n">ideal_direction</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">minmaxs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
                                 <span class="n">color_by_continuous</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color_palette_continuous</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
                                 <span class="n">color_by_categorical</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color_palette_categorical</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -749,8 +762,8 @@ document.write(`
 </div>
 </section>
 <section id="example-application">
-<h2>Example application<a class="headerlink" href="#example-application" title="Permalink to this heading">#</a></h2>
-<p>As an example, I will visualize data from my recent work on multiobjective design of water supply infrastructure partnerships in California. Those interested can find more details in the <a class="reference external" href="https://doi.org/10.21203/rs.3.rs-3143783/v1">in-review preprint</a>, or stay tuned for the final peer-reviewed version. If you want to follow along, you can download the dataset from the Lab Manual repository <span class="xref myst">here</span>.</p>
+<h2>Example application<a class="headerlink" href="#example-application" title="Link to this heading">#</a></h2>
+<p>As an example, I will visualize data from my recent work on multiobjective design of water supply infrastructure partnerships in California. Those interested can find more details in the <a class="reference external" href="https://doi.org/10.21203/rs.3.rs-3143783/v1">in-review preprint</a>, or stay tuned for the final peer-reviewed version. If you want to follow along, you can download the dataset from the Lab Manual repository <a class="reference internal" href="#github.com/reedgroup/reedgroup.github.io/blob/main/docs/FigureLibrary/example_data/objs_wcu_pareto_5objs.csv"><span class="xref myst">here</span></a>.</p>
 <p>But the details are not important for the context of this post - the point of this flexible tool is that we could create similar figures for any multivariate dataset! The only requirement is that the data be stored in a Pandas DataFrame with a separate row for each solution/datapoint and a separate column for each objective/variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -992,7 +1005,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </section>
 <section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
 <p>I hope this serves as a useful baseline for other Reed Group members who regularly create custom parallel coordinates plots. It would be great to see others add to this over time as new use cases arise so that we can all benefit from improved flexibility &amp; functionality and not have to regularly reinvent the wheel. If you have ideas to improve these functions or add new functionality, feel free to open a GitHub Issue or contribute directly to <a class="reference external" href="https://github.com/reedgroup/reedgroup.github.io/blob/main/docs/FigureLibrary/ParallelCoordinatesPlots.ipynb">this page</a> in the Reed Group Lab Manual repository.</p>
 </section>
 </section>
@@ -1024,7 +1037,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1053,6 +1066,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1088,7 +1102,7 @@ By The Reed Group at Cornell CEE
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1112,8 +1126,8 @@ By The Reed Group at Cornell CEE
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Cluster Basics &#8212; Reed group lab manual</title>
   
@@ -15,53 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ComputationalResources/ClusterBasics';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -76,28 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -119,12 +109,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -140,6 +138,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -158,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -169,7 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../GraduateStudentResources/GraduateStudentResources.html">Graduate Student Resources</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../GraduateStudentResources/GraduateStudentResources.html">Graduate Student Resources</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/LifeAtCornell.html">Housing Around Cornell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/VisitingScholars.html">A guide to Ithaca and Cornell for Visiting Scholars</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Courses.html">Course List</a></li>
@@ -182,9 +193,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Organization.html">Organizational Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/CitationReferenceManagementTools.html">Citation and Reference Management Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/LongTermStorage.html">Long Term Storage</a></li>
+
+
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="ComputationalResources.html">Computational Resources</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ComputationalResources.html">Computational Resources</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Cluster Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_crash_course.html">Crash Course in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Machine_Learning_Resources.html">Machine Learning Resources</a></li>
@@ -192,8 +205,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="IntroToGitHub.html">Introduction to Git &amp; GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Websites.html">Building and deploying websites with Python</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Software/Software.html">Software</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Software/Software.html">Software</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Software/BorgMOEA.html">Borg MOEA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Software/WaterPaths.html">WaterPaths</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Software/PywrDRB.html">Pywr-DRB</a></li>
@@ -203,8 +216,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Software/MOEAFramework.html">MOEA Framework</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Software/J3.html">J3 Visualization</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Training/Training.html">Training</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Training/Training.html">Training</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Training/Schedule.html">Suggested training schedule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Training/Linux_MOEAs_HPC.html">Getting starting with MOEAs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Training/LakeProblem.html">The Shallow Lake Problem</a></li>
@@ -220,27 +233,27 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Training/FisheriesGame.html">The Fisheries Game</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Training/WaterPaths_Training.html">WaterPaths</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Training/intro_mordm.html">Intro to MORDM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Training/DataCompression.html">Data types and compression methods</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../WaterProgramming/waterprogramming_post_catalog.html">Water Programming Blog Post Catalog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../PaperRepositories/repositories.html">List of Paper Repositories</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../FigureLibrary/FigureLibrary.html">Figure Library</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../FigureLibrary/FigureLibrary.html">Figure Library</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../FigureLibrary/ParallelCoordinatesPlots.html">Parallel Coordinates Plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../FigureLibrary/synthetic_generation_diagnostics.html">Synthetic Streamflow Diagnostic Figure Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../FigureLibrary/scatterplot_colorbar.html">Scatter plots and colorbars using Matplotlib</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../FigureLibrary/scatter3d.html">3D scatter plots, point sizes, and positioning legends</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../FigureLibrary/MOEADiagnostics.html">MOEA Diagnostics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../FigureLibrary/T-cup%20diagrams.html">T-cup diagrams</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Contributing/Contributing.html">Contributing to this lab manual</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Contributing/Contributing.html">Contributing to this lab manual</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Contributing/Instructions.html">Instructions on contributing to the lab manual</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Contributing/mdExample.html">Markdown example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Contributing/nbExample.html">Jupyter notebook example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Contributing/training_template.html">Training Title</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Contributing/FAQs.html">Frequently-asked questions (FAQs)</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -256,7 +269,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -265,14 +278,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -397,10 +410,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -408,14 +421,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -488,16 +501,16 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section id="cluster-basics">
-<h1>Cluster Basics<a class="headerlink" href="#cluster-basics" title="Permalink to this heading">#</a></h1>
+<h1>Cluster Basics<a class="headerlink" href="#cluster-basics" title="Link to this heading">#</a></h1>
 <p>Contains brief introductions to using HPC clusters, applicable to both The Cube and Hopper.</p>
 <blockquote>
 <div><p>Contributions to this demo are welcome, preferably by extending the code while maintaining generalizability.</p>
 </div></blockquote>
 <section id="resources">
-<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h2>
+<h2>Resources<a class="headerlink" href="#resources" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.cac.cornell.edu/wiki/index.php?title=Hopper_Cluster">Cornell CAC wiki page for hopper</a></p></li>
 <li><p><a class="reference external" href="https://www.cac.cornell.edu/wiki/index.php?title=Slurm">Cornell CAC wiki page for Slurm</a></p></li>
@@ -508,50 +521,50 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="reed-group-clusters">
-<h2>Reed group clusters<a class="headerlink" href="#reed-group-clusters" title="Permalink to this heading">#</a></h2>
+<h2>Reed group clusters<a class="headerlink" href="#reed-group-clusters" title="Link to this heading">#</a></h2>
 <section id="the-cube">
-<h3>The Cube<a class="headerlink" href="#the-cube" title="Permalink to this heading">#</a></h3>
+<h3>The Cube<a class="headerlink" href="#the-cube" title="Link to this heading">#</a></h3>
 <p>The Cube is the personal cluster associated with the Reed Research Group. Any student in Reed Group will be provided access to the Cube and collaborators can request a guest access. In order to get access, email Pat and provide your name, email, address, and phone number so that he can register you as a user. You will get an email with your login information and a notice to set a password.</p>
 <p>Specs on the Cube: <a class="reference external" href="https://www.cac.cornell.edu/wiki/index.php?title=THECUBE_Cluster">HERE</a></p>
 </section>
 <section id="hopper">
-<h3>Hopper<a class="headerlink" href="#hopper" title="Permalink to this heading">#</a></h3>
+<h3>Hopper<a class="headerlink" href="#hopper" title="Link to this heading">#</a></h3>
 <p>Hopper is a newer cluster that is headed by the Srikrishnan Group in BEE and is shared across four groups: Srikrishnan, Steinschneider, Reed, and Anderson. Any student in Reed Group will also be allowed access to Hopper.</p>
-<p>Before getting started, you need to request access to Hopper by filling out the form <span class="xref myst">here</span>. You may want to email Vivek Srikrishnan as well to let him know you are requesting access.</p>
+<p>Before getting started, you need to request access to Hopper by filling out the form <a class="reference internal" href="#%5Bhttps://www.cac.cornell.edu/services/external/RequestCACid.aspx?ProjectID=vs498_0001%5D(https://www.cac.cornell.edu/services/external/RequestCACid.aspx?ProjectID=vs498_0001)"><span class="xref myst">here</span></a>. You may want to email Vivek Srikrishnan as well to let him know you are requesting access.</p>
 <p>Once submitted, Vivek Srikrishnan will need to approve access. After access is granted, you should receive and email from cac-help&#64;cornell.edu with instructions on setting up your account. Be sure to remember your account password.</p>
 <p>Specs on Hopper: <a class="reference external" href="https://www.cac.cornell.edu/wiki/index.php?title=Hopper_Cluster">HERE</a></p>
 </section>
 <section id="questions">
-<h3>Questions<a class="headerlink" href="#questions" title="Permalink to this heading">#</a></h3>
+<h3>Questions<a class="headerlink" href="#questions" title="Link to this heading">#</a></h3>
 <p>If you have questions about installing packages on the cluster or questions about jobs, feel free to email: cac-help&#64;cornell.edu</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="getting-started-with-a-cluster">
-<h2>0. Getting started with a cluster<a class="headerlink" href="#getting-started-with-a-cluster" title="Permalink to this heading">#</a></h2>
+<h2>0. Getting started with a cluster<a class="headerlink" href="#getting-started-with-a-cluster" title="Link to this heading">#</a></h2>
 <section id="accessing-secure-shell">
-<h3>0.1 Accessing Secure SHell<a class="headerlink" href="#accessing-secure-shell" title="Permalink to this heading">#</a></h3>
+<h3>0.1 Accessing Secure SHell<a class="headerlink" href="#accessing-secure-shell" title="Link to this heading">#</a></h3>
 <p>Secure SHell, or SSH, is an <em>encrypted connection protocol</em> used to connect your local machine to a remote machine.</p>
 <p>We will use SSH to access Hopper or The Cube.  You have a few different SSH options.</p>
 <section id="ssh-using-vs-code-remote-terminal">
-<h4>0.1.2 SSH using VS Code Remote Terminal<a class="headerlink" href="#ssh-using-vs-code-remote-terminal" title="Permalink to this heading">#</a></h4>
+<h4>0.1.2 SSH using VS Code Remote Terminal<a class="headerlink" href="#ssh-using-vs-code-remote-terminal" title="Link to this heading">#</a></h4>
 <p>Personally, I recommend accessing Hopper, and HPC resources generally, using the VS Code Remote Terminal tools. This allows for all the benefits of the VS code integrated development environment (e.g., extensions, nice user interface, git support, etc.).</p>
 <p>Andrew Dirks wrote a blog post which gives some guidance on how to access the remote terminal through SSH in this blog post: <a class="reference external" href="https://waterprogramming.wordpress.com/2020/03/31/remote-terminal-environment-using-vs-code-for-windows-and-mac/">Remote terminal environment using VS Code for Windows and Mac</a></p>
 </section>
 <section id="ssh-for-windows">
-<h4>0.1.2 SSH for Windows<a class="headerlink" href="#ssh-for-windows" title="Permalink to this heading">#</a></h4>
+<h4>0.1.2 SSH for Windows<a class="headerlink" href="#ssh-for-windows" title="Link to this heading">#</a></h4>
 <p>If you are are Windows user, one option for accessing Hopper via SSH is by using <a class="reference external" href="https://mobaxterm.mobatek.net/">MobaXTerm</a>. Many Reed Group members use this software.</p>
 <p><img alt="mobaxterm" src="../_images/mobaxterm.png" /></p>
 <p>MobaXterm allows you to see the file structure in the left hand side SFTP which is convenient for navigating.</p>
 </section>
 <section id="ssh-for-mac">
-<h4>0.1.3 SSH for Mac<a class="headerlink" href="#ssh-for-mac" title="Permalink to this heading">#</a></h4>
+<h4>0.1.3 SSH for Mac<a class="headerlink" href="#ssh-for-mac" title="Link to this heading">#</a></h4>
 <p>Mac users are able to SSH into Hopper straight from the <a class="reference external" href="https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac">Mac Terminal</a>. The only downside of the Mac Terminal is that it does not provide an interactive GUI (visual folder system), and you must rely entirely on the command line.</p>
 <p>Previous Reed group members have had luck using <a class="reference external" href="https://cyberduck.io/">CyberDuck</a> to have more control over File Transfer Protocol (FTP) and provide a visual GUI.  However, I am unable to provide any help here since I am a Windows user.</p>
 </section>
 </section>
 <section id="ssh-log-in">
-<h3>0.2 SSH log-in<a class="headerlink" href="#ssh-log-in" title="Permalink to this heading">#</a></h3>
+<h3>0.2 SSH log-in<a class="headerlink" href="#ssh-log-in" title="Link to this heading">#</a></h3>
 <p>However you access the SSH terminal, you should enter the following command to initialize the SSH:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">&lt;</span><span class="n">your_username</span><span class="o">&gt;@&lt;</span><span class="n">cluster</span><span class="o">&gt;.</span><span class="n">cac</span><span class="o">.</span><span class="n">cornell</span><span class="o">.</span><span class="n">edu</span>
 </pre></div>
@@ -561,7 +574,7 @@ document.write(`
 <p>Once done with your work you can end the SSH connection by entering <code class="docutils literal notranslate"><span class="pre">exit</span></code> in the command line.</p>
 </section>
 <section id="setting-up-python-a-virtual-environment">
-<h3>0.3 Setting up python &amp; a virtual environment<a class="headerlink" href="#setting-up-python-a-virtual-environment" title="Permalink to this heading">#</a></h3>
+<h3>0.3 Setting up python &amp; a virtual environment<a class="headerlink" href="#setting-up-python-a-virtual-environment" title="Link to this heading">#</a></h3>
 <p><strong>Note that Hopper has Python version 3.11.5 installed, however it may try to use Python version 3.6.6 by default!</strong> Similar considerations should be made for The Cube.</p>
 <p>Be sure to load the modern version (see code below) and check your version if unsure.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># load python</span>
@@ -579,12 +592,12 @@ pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="
 </section>
 <hr class="docutils" />
 <section id="navigating-the-command-line">
-<h2>1. Navigating the command line<a class="headerlink" href="#navigating-the-command-line" title="Permalink to this heading">#</a></h2>
+<h2>1. Navigating the command line<a class="headerlink" href="#navigating-the-command-line" title="Link to this heading">#</a></h2>
 <p>To navigate on a cluster you need some basic knowledge of the <a class="reference external" href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">Bourne Again SHell</a> (bash).</p>
 <p>The clusters has a Linux OS, and can be controlled using <a class="reference external" href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a> shell and command language. Bash is was the default shell for the Mac OS Terminal prior to macOS 10.40, but it has been changed to <a class="reference external" href="https://en.wikipedia.org/wiki/Z_shell">zsh</a> after that.</p>
 <p>To change the shell to bash, see this <a class="reference external" href="https://support.apple.com/guide/terminal/change-the-default-shell-trml113/mac#:~:text=The%20default%20shell%20is%20zsh,windows%20and%20tabs%20open%20with.">user guide</a>.</p>
 <section id="bash-basics">
-<h3>1.1 Bash basics<a class="headerlink" href="#bash-basics" title="Permalink to this heading">#</a></h3>
+<h3>1.1 Bash basics<a class="headerlink" href="#bash-basics" title="Link to this heading">#</a></h3>
 <p>A few notes on jargon, to avoid confusion:</p>
 <blockquote>
 <div><p><em><strong>Linux</strong></em> is an operating system kernel, which controls fundamental computer operations internally.   There are many different <em>linux distributions</em> which are each built upon the basic <em>linux kernel</em> while providing different command-line functionality and languages.</p>
@@ -596,7 +609,7 @@ pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="
 <div><p><em><strong>Bash</strong></em> is a type of unix shell, and is thus a programming language which is used to operate a linux OS from the command-line.</p>
 </div></blockquote>
 <section id="basic-bash-commands">
-<h4>1.1.1 Basic bash commands<a class="headerlink" href="#basic-bash-commands" title="Permalink to this heading">#</a></h4>
+<h4>1.1.1 Basic bash commands<a class="headerlink" href="#basic-bash-commands" title="Link to this heading">#</a></h4>
 <p>This list is far from incomplete, but are the necessities when it comes to navigating your project via the command line.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code> : print working directory</p></li>
@@ -622,7 +635,7 @@ pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="
 </section>
 </section>
 <section id="git">
-<h3>Git<a class="headerlink" href="#git" title="Permalink to this heading">#</a></h3>
+<h3>Git<a class="headerlink" href="#git" title="Link to this heading">#</a></h3>
 <p>You can clone a <em>private</em> repository by using the modified command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">user</span><span class="p">:</span><span class="o">&lt;</span><span class="n">new_PAT</span><span class="o">&gt;</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="o">/&lt;</span><span class="n">username</span><span class="o">&gt;/&lt;</span><span class="n">repo_name</span><span class="o">&gt;.</span><span class="n">git</span>
 </pre></div>
@@ -632,9 +645,9 @@ pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="
 </section>
 <hr class="docutils" />
 <section id="running-jobs">
-<h2>2. Running jobs<a class="headerlink" href="#running-jobs" title="Permalink to this heading">#</a></h2>
+<h2>2. Running jobs<a class="headerlink" href="#running-jobs" title="Link to this heading">#</a></h2>
 <section id="bash-scripting">
-<h3>2.1 Bash scripting<a class="headerlink" href="#bash-scripting" title="Permalink to this heading">#</a></h3>
+<h3>2.1 Bash scripting<a class="headerlink" href="#bash-scripting" title="Link to this heading">#</a></h3>
 <p>Using bash straight from the command line is a necessary but not sufficient skill for good HPC usage. To do it right, you should use bash scripting, which consists of writing a series of bash commands within a bash script and running the script as a whole</p>
 <p>For example, you might write a bash script to:</p>
 <ul class="simple">
@@ -662,11 +675,11 @@ module<span class="w"> </span>load<span class="w"> </span>&lt;language&gt;
 </div>
 </section>
 <section id="executing-bash-scripts">
-<h3>2.2 Executing bash scripts<a class="headerlink" href="#executing-bash-scripts" title="Permalink to this heading">#</a></h3>
+<h3>2.2 Executing bash scripts<a class="headerlink" href="#executing-bash-scripts" title="Link to this heading">#</a></h3>
 <p>Enter the command:
 <code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">&lt;bash_file_name&gt;.sh</span></code></p>
 <section id="executing-julia">
-<h4>2.2.1 Executing julia<a class="headerlink" href="#executing-julia" title="Permalink to this heading">#</a></h4>
+<h4>2.2.1 Executing julia<a class="headerlink" href="#executing-julia" title="Link to this heading">#</a></h4>
 <p>Here is an example bash script that can be used to execute Julia code:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1"># Load the Julia module</span>
@@ -687,34 +700,34 @@ julia<span class="w"> </span>code.jl<span class="w"> </span><span class="nv">$1<
 </section>
 <hr class="docutils" />
 <section id="gaining-access-to-hopper-and-the-cube">
-<h2>Gaining access to Hopper and the Cube<a class="headerlink" href="#gaining-access-to-hopper-and-the-cube" title="Permalink to this heading">#</a></h2>
+<h2>Gaining access to Hopper and the Cube<a class="headerlink" href="#gaining-access-to-hopper-and-the-cube" title="Link to this heading">#</a></h2>
 </section>
 <section id="id1">
-<h2>The Cube<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>The Cube<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>The Cube is the personal cluster associated with the Reed Research Group. Any student in Reed Group will be provided access to the Cube and collaborators can request a guest access. In order to get access, email Pat and provide your name, email, address, and phone number so that he can register you as a user. You will get an email with your login information and a notice to set a password.</p>
 <p>Specs on the Cube: https://www.cac.cornell.edu/wiki/index.php?title=THECUBE_Cluster</p>
 </section>
 <section id="id2">
-<h2>Hopper<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>Hopper<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>Hopper is a newer cluster that is headed by the Srikrishnan Group in BEE and is shared across four groups: Srikrishnan, Steinschneider, Reed, and Anderson. Any student in Reed Group will also be allowed access to Hopper. In order to get access, email Vivek Srikrishnan and provide your name, email, address, and phone number so that he can register you as a user. You will get an email with your login information and a notice to set a password.</p>
 <p>Specs on Hopper: https://www.cac.cornell.edu/wiki/index.php?title=Hopper_Cluster</p>
 </section>
 <section id="accessing-the-cluster">
-<h2>Accessing the Cluster<a class="headerlink" href="#accessing-the-cluster" title="Permalink to this heading">#</a></h2>
+<h2>Accessing the Cluster<a class="headerlink" href="#accessing-the-cluster" title="Link to this heading">#</a></h2>
 <p>In order to access the cluster, which is housed and maintained by Cornell University Center for Advanced Computing (CAC), you will have to connect remotely using SSH.</p>
 <section id="windows">
-<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this heading">#</a></h3>
+<h3>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h3>
 <p>The easiest way to remote into the above clusters if you are a Windows user is to download MobaXterm here: https://mobaxterm.mobatek.net/. Start the local terminal and then ssh into the terminal as in the following image, but using you own username.</p>
 <p><img alt="mobaxterm" src="../_images/mobaxterm.png" /></p>
 <p>MobaXterm allows you to see the file structure in the left hand side SFTP which is convenient for navigating.</p>
 </section>
 <section id="mac">
-<h3>Mac<a class="headerlink" href="#mac" title="Permalink to this heading">#</a></h3>
+<h3>Mac<a class="headerlink" href="#mac" title="Link to this heading">#</a></h3>
 <p>If you use a Mac, you can immediately ssh into the clusters without having to download MobaXterm since Macs have Terminal. However, you may find that it’s harder to navigate just using the command line. Students who use Macs in our group have had success pairing their terminal use with Cyberduck (https://cyberduck.io/) which can serve as the SFTP.</p>
 </section>
 </section>
 <section id="id3">
-<h2>Questions<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>Questions<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>If you have questions about installing packages on the cluster or questions about jobs, feel free to email: cac-help&#64;cornell.edu</p>
 </section>
 </section>
@@ -746,7 +759,7 @@ julia<span class="w"> </span>code.jl<span class="w"> </span><span class="nv">$1<
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -775,6 +788,7 @@ julia<span class="w"> </span>code.jl<span class="w"> </span><span class="nv">$1<
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -849,7 +863,7 @@ By The Reed Group at Cornell CEE
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -873,8 +887,8 @@ By The Reed Group at Cornell CEE
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
