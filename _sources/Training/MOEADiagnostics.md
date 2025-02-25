@@ -15,7 +15,7 @@ Please complete the training called "Getting Started with MOEAs" first.
 
 ## Training activities
 
-```{list-table} Synthetic Weather Generation Reading
+```{list-table} Performing MOEA Diagnostics
 :header-rows: 1
 
 * - Topic
@@ -73,6 +73,32 @@ Please complete the training called "Getting Started with MOEAs" first.
   - You will learn to create control maps, attainment plots, and show the random seed analysis  
 
 ```
+
+## MOEA Diagnostics for Borg Python wrapper
+
+```{list-table} Performing MOEA Diagnostics
+:header-rows: 1
+
+* - Topic
+  - Commitment
+  - Tasks
+  - Readings
+  - Outcomes
+
+* - Using Borg in Serial with a Python wrapper and perform runtime diagnostics
+  - S
+  - Do [this blog post](https://waterprogramming.wordpress.com/2025/02/04/everything-you-need-to-run-borg-moea-and-serial-python-wrapper-part-1/)
+  - N/A
+  - You will learn how to assess the performance of Borg MOEA for the python wrapper.  
+
+* - Runtime Diagnostics of Borg python wrapper in parallel
+  - M
+  - Run the example in this [repository](https://github.com/philip928lin/BorgTraining). Contact Patrick Reed/Chung-Yi/Sai Veena for access
+  - Do this blog post [link](https://waterprogramming.wordpress.com/2025/02/19/everything-you-need-to-run-borg-moea-and-python-wrapper-part-2/) 
+  - You will learn run to perform runtime diagnostics for parallel version of Borg MOEA (python wrapper). 
+
+```
+
 
 * Commitment: S = Short ( < 1 day), M = Medium (1-5 days), L = Long (>5 days)
 
