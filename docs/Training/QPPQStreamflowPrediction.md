@@ -21,10 +21,16 @@ N/A
 ```{list-table} QPPQ Streamflow Prediction Activities
 :header-rows: 1
 
+* - Topic
+  - Commitment
+  - Tasks
+  - Readings
+  - Outcomes
+
 * - PUB Literature Review
   - M
-  - Quick read [1-2]; focus read intro to [3],
-  - Readings
+  - Literature review
+  - Quick read [1-2]; focus read intro to [3]
   - Be able to distinguish and describe different PUB, and specifically QPPQ, methods.
 
 * - QPPQ Code Replication
