@@ -192,9 +192,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Scheduling.html">Scheduling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Organization.html">Organizational Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/CitationReferenceManagementTools.html">Citation and Reference Management Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/LongTermStorage.html">Long Term Storage</a></li>
-
-
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ComputationalResources/ComputationalResources.html">Computational Resources</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -204,6 +201,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/IntroToLinux.html">Introduction to Linux</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/IntroToGitHub.html">Introduction to Git &amp; GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/Websites.html">Building and deploying websites with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/LongTermStorage.html">Long Term Storage</a></li>
+
+
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Software.html">Software</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -472,7 +472,7 @@ document.write(`
 As you are getting acclimated with the group, one of the tools you will hear a lot about is the Borg Multi-Objective Evolutionary Algorithm (MOEA). The Borg MOEA was developed by Pat and Dave Hadka at Penn State and has become an essential evolutionary algorithm for performing multi-objective optimization in our case studies. The first step to using Borg is to read the associated paper. It’s normal to not understand every detail, but as you start working on tutorials through your first semester, you’ll find that the paper becomes more understandable and a good resource.</p>
 <section id="borg-wrappers">
 <h2>BORG Wrappers<a class="headerlink" href="#borg-wrappers" title="Link to this heading">#</a></h2>
-<p>The BORG MOEA is written in C++ which makes it very fast. However, many problems that our collaborators bring to us are written in different languages like Python, R, and MATLAB. Thus, there have been a variety of wrappers that have been created that allows problems written in these languages to still be connected to the C version of Borg.</p>
+<p>The BORG MOEA is written in C which makes it very fast. However, many problems that our collaborators bring to us are written in different languages like Python, R, and MATLAB. Thus, there have been a variety of wrappers that have been created that allows problems written in these languages to still be connected to the C version of Borg.</p>
 <section id="borg-r-wrapper">
 <h3>Borg R Wrapper<a class="headerlink" href="#borg-r-wrapper" title="Link to this heading">#</a></h3>
 <p>Currently, we have a Borg R wrapper that supports serial BORG (i.e. no parallelization). However, we spent a lot of time getting this wrapper to be somewhat foolproof so if you follow the steps of this post, everything should work out. Functionality that you might be used to like runtime files and implementing different seeds of Borg must be added after you download the wrapper, but these steps are all demonstrated in the post: https://waterprogramming.wordpress.com/2020/06/19/the-new-and-improved-r-wrapper/</p>
@@ -480,6 +480,35 @@ As you are getting acclimated with the group, one of the tools you will hear a l
 <section id="borg-python-wrapper">
 <h3>Borg Python Wrapper<a class="headerlink" href="#borg-python-wrapper" title="Link to this heading">#</a></h3>
 <p>The Borg Python wrapper is a plugin included in the BorgMOEA GitHub Repository <code class="docutils literal notranslate"><span class="pre">plugin/</span></code> folder. It supports both serial and master-worker parallel Borg. Prior to using this wrapper, please follow the instructions provided <a class="reference external" href="https://github.com/BorgMOEA/BorgMOEA/tree/master/plugins">here</a>. Ensure that all necessary files are located within the folder you are currently working in before beginning. For a step-by-step tutorial on using the Borg MOEA Python wrapper to perform the optimization of the <a class="reference external" href="https://reedgroup.github.io/Training/LakeProblem.html">Shallow Lake Problem</a> and visualize its runtime dynamics using <a class="reference external" href="https://reedgroup.github.io/Software/MOEAFramework.html">MOEAFramework</a>, please see this WaterProgramming post.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Language</p></td>
+<td><p>Perform optimization</p></td>
+<td><p>Runtime diagnostics using <a class="reference external" href="https://moeaframework.org/">MOEA Framework</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Borg C wrapper</p></td>
+<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2020/07/21/using-the-python-borg-wrapper-lake-problem-example/">Using the Python Borg Wrapper – Lake Problem Example</a></p></td>
+<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2019/08/20/moeaframework-training-part-4-processing-metrics-and-creating-visualizations/">MOEAFramework Training Part 4: Processing Metrics and Creating Visualizations</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Borg Python wrapper</p></td>
+<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2020/07/21/using-the-python-borg-wrapper-lake-problem-example/">Using the Python Borg Wrapper – Lake Problem Example</a></p></td>
+<td><p>Everything You Need to Run Borg MOEA and Python Wrapper <a class="reference external" href="https://waterprogramming.wordpress.com/2025/02/04/everything-you-need-to-run-borg-moea-and-serial-python-wrapper-part-1/">Part 1</a> <a class="reference external" href="https://waterprogramming.wordpress.com/2025/02/19/everything-you-need-to-run-borg-moea-and-python-wrapper-part-2/">Part 2</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Borg R wrapper</p></td>
+<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2020/06/19/the-new-and-improved-r-wrapper/">The New and Improved Borg R Wrapper</a></p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Borg Matlab wrapper</p></td>
+<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2018/07/19/update-on-setting-up-the-borg-matlab-wrapper-on-windows-and-tips-for-its-use/">Update on setting up the Borg Matlab Wrapper on Windows and tips for its use</a></p></td>
+<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2019/04/17/performing-random-seed-analysis-and-runtime-diagnostics-with-the-serial-borg-matlab-wrapper/">Performing random seed analysis and runtime diagnostics with the serial Borg Matlab wrapper</a></p></td>
+</tr>
+<tr class="row-even"><td><p>PyBorg</p></td>
+<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2021/08/13/introduction-to-pyborg-basic-setup-and-running/">Introduction to PyBorg – basic setup and running</a></p></td>
+<td><p><a class="reference external" href="https://waterprogramming.wordpress.com/2022/08/08/fisheries-training-part-1-harvest-optimization-and-moea-diagnostics/">Fisheries Training Part 1 – Harvest Optimization and MOEA Diagnostics</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
 </section>
