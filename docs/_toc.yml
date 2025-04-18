@@ -43,10 +43,12 @@ parts:
       #    - file: Training/Reading.md
     - file: Training/BorgMOEADiagnostics.md
       sections:
+      - file: Training/BorgMOEADiagnostics/Linux_MOEAs_HPC.md
+      - file: Training/BorgMOEADiagnostics/MOEADiagnostics.md
       - file: Training/BorgMOEADiagnosticsMOEADiagnostics.md
       - file: Training/BorgMOEADiagnostics/BorgRuntimeDiagnosticsTraining.md
-      - file: Training/BorgMOEADiagnostics/MOEADiagnostics.md
-      - file: Training/BorgMOEADiagnostics/Linux_MOEAs_HPC.md
+      - file: Training/BorgMOEADiagnostics/AdvancedBorgDiagnostics.md
+      
     - file: Training/IntroCaseStudies.md
       sections:
       - file: Training/IntroCaseStudies/LakeProblem.md
