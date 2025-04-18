@@ -40,8 +40,7 @@ parts:
   - file: Training/Training.md
     sections:
     - file: Training/Schedule.md
-      #    - file: Training/Reading.md
-    - file: Training/BorgMOEADiagnostics.md
+    - file: Training/BorgMOEADiagnostics/BorgMOEADiagnostics.md
       sections:
       - file: Training/BorgMOEADiagnostics/Linux_MOEAs_HPC.md
       - file: Training/BorgMOEADiagnostics/MOEADiagnostics.md
@@ -49,28 +48,27 @@ parts:
       - file: Training/BorgMOEADiagnostics/BorgRuntimeDiagnosticsTraining.md
       - file: Training/BorgMOEADiagnostics/AdvancedBorgDiagnostics.md
       
-    - file: Training/IntroCaseStudies.md
+    - file: Training/IntroCaseStudies/IntroCaseStudies.md
       sections:
       - file: Training/IntroCaseStudies/LakeProblem.md
       - file: Training/IntroCaseStudies/FisheriesGame.md
-    - file: Training/SDSA.md
+    - file: Training/SDSA/SDSA.md
       sections:
       - file: Training/SDSA/intro_to_sensitivity_analysis.md
       - file: Training/SDSA/timevaryingSAtraining.md
       - file: Training/SDSA/intro_to_scenario_discovery.md
-    - file: Training/SyntheticDataGeneration.md 
+    - file: Training/SyntheticDataGeneration/SyntheticDataGeneration.md 
       sections:
       - file: Training/SyntheticDataGeneration/SyntheticStreamflowGeneration.md
       - file: Training/SyntheticDataGeneration/SyntheticWeatherGeneration.md
-    - file: Training/AdvancedMethodsCases.md
+    - file: Training/AdvancedMethodsCases/AdvancedMethodsCases.md
       sections:
       - file: Training/AdvancedMethodsCases/pywrdrb_training.md
       - file: Training/AdvancedMethodsCases/WaterPaths_Training.md
       - file: Training/AdvancedMethodsCases/StateModTraining.md
       - file: Training/AdvancedMethodsCases/QPPQStreamflowPrediction.md
       - file: Training/AdvancedMethodsCases/intro_mordm.md
-    #- file: Training/BorgRuntimeDiagnosticsTraining.md
-    - file: Training/DataManagement.md
+    - file: Training/DataManagement/DataManagement.md
       sections:
       - file: Training/DataManagement/DataCompression.md
   
@@ -84,11 +82,11 @@ parts:
     - file: FigureLibrary/scatter3d.md
     - file: FigureLibrary/MOEADiagnostics.ipynb
     - file: FigureLibrary/T-cup diagrams.ipynb
-  
-  - file: Contributing/Contributing.md
-    sections:
-    - file: Contributing/Instructions.md
-    - file: Contributing/mdExample.md
-    - file: Contributing/nbExample.ipynb
-    - file: Contributing/training_template.md
-    - file: Contributing/FAQs.md
+
+- file: Contributing/Contributing.md
+  sections:
+  - file: Contributing/Instructions.md
+  - file: Contributing/mdExample.md
+  - file: Contributing/nbExample.ipynb
+  - file: Contributing/training_template.md
+  - file: Contributing/FAQs.md
