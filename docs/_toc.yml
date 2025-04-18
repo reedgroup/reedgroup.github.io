@@ -25,6 +25,7 @@ parts:
     - file: ComputationalResources/Machine_Learning_Resources.md
     - file: ComputationalResources/IntroToLinux.md
     - file: ComputationalResources/IntroToGitHub.md
+    - file: ComputationalResources/MetaRepos.md
     - file: ComputationalResources/Websites.md
     - file: GraduateStudentResources/LongTermStorage.md
   - file: Software/Software.md
@@ -69,9 +70,7 @@ parts:
     - file: Training/DataManagement.md
       sections:
       - file: Training/DataManagement/DataCompression.md
-  
-  - file: WaterProgramming/waterprogramming_post_catalog.md
-  - file: PaperRepositories/repositories.md
+
   - file: FigureLibrary/FigureLibrary.md
     sections:
     - file: FigureLibrary/ParallelCoordinatesPlots.md
@@ -80,7 +79,10 @@ parts:
     - file: FigureLibrary/scatter3d.md
     - file: FigureLibrary/MOEADiagnostics.ipynb
     - file: FigureLibrary/T-cup diagrams.ipynb
-
+  
+  - file: WaterProgramming/waterprogramming_post_catalog.md
+  - file: PaperRepositories/repositories.md
+  
   - file: Contributing/Contributing.md
     sections:
     - file: Contributing/Instructions.md
