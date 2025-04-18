@@ -81,10 +81,10 @@ parts:
     - file: FigureLibrary/MOEADiagnostics.ipynb
     - file: FigureLibrary/T-cup diagrams.ipynb
 
-- file: Contributing/Contributing.md
-  sections:
-  - file: Contributing/Instructions.md
-  - file: Contributing/mdExample.md
-  - file: Contributing/nbExample.ipynb
-  - file: Contributing/training_template.md
-  - file: Contributing/FAQs.md
+  - file: Contributing/Contributing.md
+    sections:
+    - file: Contributing/Instructions.md
+    - file: Contributing/mdExample.md
+    - file: Contributing/nbExample.ipynb
+    - file: Contributing/training_template.md
+    - file: Contributing/FAQs.md
