@@ -4,14 +4,12 @@
 
 One style of study that Reed Group conducts often is called an MOEA Diagnostic. At a high level, the goal of these studies are to demonstrate the ability of different types of MOEAs to solve either theoretical or real-world optimization problems. Often times, MOEAs use different methods of searching for solutions and some are better than others. We want our MOEAs to be able to find the best Pareto fronts (i.e. that are close to a hypothetical ideal) and that can find a diverse set of solutions that span the space. Below, we provide links to the key posts that have been written on diagnostics. 
 
-
 ## Learning Objectives
 
 This training is the next step after completing the introductory "Getting Started with MOEAs" training. This training focuses more on application to real-world problems rather than simpler mathematical test cases.  
 
 ## Prerequisites
 Please complete the training called "Getting Started with MOEAs" first. 
-
 
 ## Training activities
 
