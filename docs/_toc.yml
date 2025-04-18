@@ -40,7 +40,7 @@ parts:
   - file: Training/Training.md
     sections:
     - file: Training/Schedule.md
-    - file: Training/BorgMOEADiagnostics/BorgMOEADiagnostics.md
+    - file: Training/BorgMOEADiagnostics.md
       sections:
       - file: Training/BorgMOEADiagnostics/Linux_MOEAs_HPC.md
       - file: Training/BorgMOEADiagnostics/MOEADiagnostics.md
@@ -48,27 +48,27 @@ parts:
       - file: Training/BorgMOEADiagnostics/BorgRuntimeDiagnosticsTraining.md
       - file: Training/BorgMOEADiagnostics/AdvancedBorgDiagnostics.md
       
-    - file: Training/IntroCaseStudies/IntroCaseStudies.md
+    - file: Training/IntroCaseStudies.md
       sections:
       - file: Training/IntroCaseStudies/LakeProblem.md
       - file: Training/IntroCaseStudies/FisheriesGame.md
-    - file: Training/SDSA/SDSA.md
+    - file: Training/SDSA.md
       sections:
-      - file: Training/SDSA/intro_to_sensitivity_analysis.md
+      - file: Training/intro_to_sensitivity_analysis.md
       - file: Training/SDSA/timevaryingSAtraining.md
       - file: Training/SDSA/intro_to_scenario_discovery.md
-    - file: Training/SyntheticDataGeneration/SyntheticDataGeneration.md 
+    - file: Training/SyntheticDataGeneration.md 
       sections:
       - file: Training/SyntheticDataGeneration/SyntheticStreamflowGeneration.md
       - file: Training/SyntheticDataGeneration/SyntheticWeatherGeneration.md
-    - file: Training/AdvancedMethodsCases/AdvancedMethodsCases.md
+    - file: Training/AdvancedMethodsCases.md
       sections:
       - file: Training/AdvancedMethodsCases/pywrdrb_training.md
       - file: Training/AdvancedMethodsCases/WaterPaths_Training.md
       - file: Training/AdvancedMethodsCases/StateModTraining.md
       - file: Training/AdvancedMethodsCases/QPPQStreamflowPrediction.md
       - file: Training/AdvancedMethodsCases/intro_mordm.md
-    - file: Training/DataManagement/DataManagement.md
+    - file: Training/DataManagement.md
       sections:
       - file: Training/DataManagement/DataCompression.md
   
