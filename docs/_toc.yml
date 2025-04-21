@@ -85,6 +85,6 @@ parts:
     - file: Contributing/nbExample.ipynb
     - file: Contributing/training_template.md
     - file: Contributing/FAQs.md
-    
-  - file: WaterProgramming/all_posts_catalog.md
+
+  - file: WaterProgramming/waterprogramming_post_catalog.md
   - file: PaperRepositories/repositories.md
