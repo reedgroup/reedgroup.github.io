@@ -38,7 +38,6 @@ parts:
     - file: Software/Rhodium.md
     - file: Software/MOEAFramework.md
     - file: Software/J3.md
-  - file: WaterProgramming/waterprogramming_post_catalog.md
   - file: Training/Training.md
     sections:
     - file: Training/Schedule.md
@@ -78,8 +77,7 @@ parts:
     - file: FigureLibrary/scatterplot_colorbar.md
     - file: FigureLibrary/scatter3d.md
     - file: FigureLibrary/MOEADiagnostics.ipynb
-    - file: FigureLibrary/T-cup diagrams.ipynb
-  - file: PaperRepositories/repositories.md
+    - file: FigureLibrary/Teacup diagrams.ipynb
   - file: Contributing/Contributing.md
     sections:
     - file: Contributing/Instructions.md
@@ -87,3 +85,5 @@ parts:
     - file: Contributing/nbExample.ipynb
     - file: Contributing/training_template.md
     - file: Contributing/FAQs.md
+  - file: WaterProgramming/waterprogramming_post_catalog.md
+  - file: PaperRepositories/repositories.md
