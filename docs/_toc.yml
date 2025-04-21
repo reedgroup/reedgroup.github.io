@@ -70,7 +70,6 @@ parts:
     - file: Training/DataManagement.md
       sections:
       - file: Training/DataManagement/DataCompression.md
-
   - file: FigureLibrary/FigureLibrary.md
     sections:
     - file: FigureLibrary/ParallelCoordinatesPlots.md
@@ -79,10 +78,8 @@ parts:
     - file: FigureLibrary/scatter3d.md
     - file: FigureLibrary/MOEADiagnostics.ipynb
     - file: FigureLibrary/T-cup diagrams.ipynb
-  
   - file: WaterProgramming/waterprogramming_post_catalog.md
   - file: PaperRepositories/repositories.md
-  
   - file: Contributing/Contributing.md
     sections:
     - file: Contributing/Instructions.md
