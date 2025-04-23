@@ -75,7 +75,7 @@ parts:
     - file: FigureLibrary/ParallelCoordinatesPlots.md
     - file: FigureLibrary/synthetic_generation_diagnostics.ipynb
     - file: FigureLibrary/scatterplot_colorbar.md
-    - file: FigureLibrary/scatter3d.md
+    - file: FigureLibrary/scatter_threedim.md
     - file: FigureLibrary/MOEADiagnostics.ipynb
     - file: FigureLibrary/T-cup_diagrams.ipynb
   - file: Contributing/Contributing.md
