@@ -79,8 +79,8 @@ parts:
     - file: FigureLibrary/MOEADiagnostics.ipynb
     - file: FigureLibrary/T-cup_diagrams.ipynb
     - file: FigureLibrary/SpatialPlottingtoc.md
-      sections:
-      -file: FigureLibrary/SpatialPlotting/MakingWatershedMaps.ipynb
+    sections:
+      - file: FigureLibrary/SpatialPlotting/MakingWatershedMaps.ipynb
   - file: Contributing/Contributing.md
     sections:
     - file: Contributing/Instructions.md
