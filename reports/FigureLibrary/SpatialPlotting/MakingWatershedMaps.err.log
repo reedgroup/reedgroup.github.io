@@ -38,47 +38,12 @@ m.drawcountries(color='k',linewidth=1.25)
 
 [31m---------------------------------------------------------------------------[39m
 [31mModuleNotFoundError[39m                       Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m [43mget_ipython[49m[43m([49m[43m)[49m[43m.[49m[43mrun_line_magic[49m[43m([49m[33;43m'[39;49m[33;43mmatplotlib[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[33;43m'[39;49m[33;43minline[39;49m[33;43m'[39;49m[43m)[49m
+[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 3[39m
+[32m      1[39m get_ipython().run_line_magic([33m'[39m[33mmatplotlib[39m[33m'[39m, [33m'[39m[33minline[39m[33m'[39m)
 [32m      2[39m [38;5;66;03m#%pip install basemap-data-hires #installation of basemap[39;00m
-[32m      3[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mmpl_toolkits[39;00m[34;01m.[39;00m[34;01mbasemap[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Basemap
+[32m----> [39m[32m3[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mmpl_toolkits[39;00m[34;01m.[39;00m[34;01mbasemap[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Basemap
+[32m      4[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mmatplotlib[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m pyplot [38;5;28;01mas[39;00m plt
+[32m      5[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mnp[39;00m
 
-[36mFile [39m[32m~/.virtualenvs/.venv/lib/python3.11/site-packages/IPython/core/interactiveshell.py:2486[39m, in [36mInteractiveShell.run_line_magic[39m[34m(self, magic_name, line, _stack_depth)[39m
-[32m   2484[39m     kwargs[[33m'[39m[33mlocal_ns[39m[33m'[39m] = [38;5;28mself[39m.get_local_scope(stack_depth)
-[32m   2485[39m [38;5;28;01mwith[39;00m [38;5;28mself[39m.builtin_trap:
-[32m-> [39m[32m2486[39m     result = [43mfn[49m[43m([49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
-[32m   2488[39m [38;5;66;03m# The code below prevents the output from being displayed[39;00m
-[32m   2489[39m [38;5;66;03m# when using magics with decorator @output_can_be_silenced[39;00m
-[32m   2490[39m [38;5;66;03m# when the last Python token in the expression is a ';'.[39;00m
-[32m   2491[39m [38;5;28;01mif[39;00m [38;5;28mgetattr[39m(fn, magic.MAGIC_OUTPUT_CAN_BE_SILENCED, [38;5;28;01mFalse[39;00m):
-
-[36mFile [39m[32m~/.virtualenvs/.venv/lib/python3.11/site-packages/IPython/core/magics/pylab.py:103[39m, in [36mPylabMagics.matplotlib[39m[34m(self, line)[39m
-[32m     98[39m     [38;5;28mprint[39m(
-[32m     99[39m         [33m"[39m[33mAvailable matplotlib backends: [39m[38;5;132;01m%s[39;00m[33m"[39m
-[32m    100[39m         % _list_matplotlib_backends_and_gui_loops()
-[32m    101[39m     )
-[32m    102[39m [38;5;28;01melse[39;00m:
-[32m--> [39m[32m103[39m     gui, backend = [38;5;28;43mself[39;49m[43m.[49m[43mshell[49m[43m.[49m[43menable_matplotlib[49m[43m([49m[43margs[49m[43m.[49m[43mgui[49m[43m)[49m
-[32m    104[39m     [38;5;28mself[39m._show_matplotlib_backend(args.gui, backend)
-
-[36mFile [39m[32m~/.virtualenvs/.venv/lib/python3.11/site-packages/IPython/core/interactiveshell.py:3758[39m, in [36mInteractiveShell.enable_matplotlib[39m[34m(self, gui)[39m
-[32m   3755[39m     [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mmatplotlib_inline[39;00m[34;01m.[39;00m[34;01mbackend_inline[39;00m
-[32m   3757[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mIPython[39;00m[34;01m.[39;00m[34;01mcore[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m pylabtools [38;5;28;01mas[39;00m pt
-[32m-> [39m[32m3758[39m gui, backend = [43mpt[49m[43m.[49m[43mfind_gui_and_backend[49m[43m([49m[43mgui[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[43m.[49m[43mpylab_gui_select[49m[43m)[49m
-[32m   3760[39m [38;5;28;01mif[39;00m gui != [38;5;28;01mNone[39;00m:
-[32m   3761[39m     [38;5;66;03m# If we have our first gui selection, store it[39;00m
-[32m   3762[39m     [38;5;28;01mif[39;00m [38;5;28mself[39m.pylab_gui_select [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
-
-[36mFile [39m[32m~/.virtualenvs/.venv/lib/python3.11/site-packages/IPython/core/pylabtools.py:338[39m, in [36mfind_gui_and_backend[39m[34m(gui, gui_select)[39m
-[32m    321[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mfind_gui_and_backend[39m(gui=[38;5;28;01mNone[39;00m, gui_select=[38;5;28;01mNone[39;00m):
-[32m    322[39m [38;5;250m    [39m[33;03m"""Given a gui string return the gui and mpl backend.[39;00m
-[32m    323[39m 
-[32m    324[39m [33;03m    Parameters[39;00m
-[32m   (...)[39m[32m    335[39m [33;03m    'WXAgg','Qt4Agg','module://matplotlib_inline.backend_inline','agg').[39;00m
-[32m    336[39m [33;03m    """[39;00m
-[32m--> [39m[32m338[39m     [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mmatplotlib[39;00m
-[32m    340[39m     [38;5;28;01mif[39;00m _matplotlib_manages_backends():
-[32m    341[39m         backend_registry = matplotlib.backends.registry.backend_registry
-
-[31mModuleNotFoundError[39m: No module named 'matplotlib'
+[31mModuleNotFoundError[39m: No module named 'mpl_toolkits.basemap'
 
