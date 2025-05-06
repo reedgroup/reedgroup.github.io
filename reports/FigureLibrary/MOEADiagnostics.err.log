@@ -18,21 +18,95 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from matplotlib import pyplot as plt
-import numpy as np
-import pandas as pd
-from matplotlib.cm import ScalarMappable
-import matplotlib
-from scipy.ndimage import gaussian_filter
+def attainment_plot(performance_file, metric):
+    '''
+    Creates an attainment plot comparing the performance of multiple algorithms across random seeds
+
+    :param performance_file:            the path to a file containing performance metrics from diagnostic evaluation.
+                                        the first row is assumed to be titles describing each algorithm
+
+    :param metric:                      the name of the metric being plotted
+    '''
+    # load data
+    performance_data = np.loadtxt(performance_file, delimiter=',', skiprows=1)
+
+    # create a figure and get the axis object
+    fig, ax = plt.subplots()
+
+    # add a row of zeros
+    performance_data = np.vstack((performance_data, np.ones(len(performance_data[0,:]))))
+
+    # sort the hypervolume of each algorithm across all seeds from largest to smallest
+    for i in range(len(performance_data[0,:])):
+        performance_data[:,i] = np.sort(performance_data[:, i])[::-1]
+
+    # plot a bar with the hypervolume achieved by each seed
+    # start with 1 (full red), then highest, 2nd highest, etc.
+    cmap = matplotlib.colormaps['RdBu'] # a color map for the plot
+    for j in range(len(performance_data)):
+        bar_color = (j)/len(performance_data) # color of the bar being plotted
+        pcolor = cmap(bar_color) # pull color from colormap
+        ax.bar(np.arange(len(performance_data[0,:])), performance_data[j,:], color=pcolor, alpha=1) # plot the seed
+
+    # plot a the best hypervolume achieved by each Algorithm
+    ax.scatter(np.arange(len(performance_data[0,:])), performance_data[1,:], color='w')
+
+    # create a color bar
+    sm = ScalarMappable(cmap= cmap)
+    sm.set_array([])
+    cbar = plt.colorbar(sm)
+    cbar.set_label('Probability of Attainment')
+
+    # format the plot
+    #ax.set_xticks(np.arange(4))
+    title_df = pd.read_csv(performance_file)
+    #print(list(title_df.columns))
+    ax.set_xticks(np.arange(len(performance_data[0,:])))
+    ax.set_xticklabels(title_df.columns)
+    ax.set_ylabel(metric +'\nPreference $\longrightarrow$')
+
+#Example Usage
+attainment_plot('HV_20_Seeds.csv', 'Relative Hypervolume')
 ------------------
 
 
 [31m---------------------------------------------------------------------------[39m
-[31mModuleNotFoundError[39m                       Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mmatplotlib[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m pyplot [38;5;28;01mas[39;00m plt
-[32m      2[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mnp[39;00m
-[32m      3[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mpandas[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mpd[39;00m
+[31mValueError[39m                                Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 49[39m
+[32m     46[39m     ax.set_ylabel(metric +[33m'[39m[38;5;130;01m\n[39;00m[33mPreference $[39m[33m\[39m[33mlongrightarrow$[39m[33m'[39m)
+[32m     48[39m [38;5;66;03m#Example Usage[39;00m
+[32m---> [39m[32m49[39m [43mattainment_plot[49m[43m([49m[33;43m'[39;49m[33;43mHV_20_Seeds.csv[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[33;43m'[39;49m[33;43mRelative Hypervolume[39;49m[33;43m'[39;49m[43m)[49m
 
-[31mModuleNotFoundError[39m: No module named 'matplotlib'
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 37[39m, in [36mattainment_plot[39m[34m(performance_file, metric)[39m
+[32m     35[39m sm = ScalarMappable(cmap= cmap)
+[32m     36[39m sm.set_array([])
+[32m---> [39m[32m37[39m cbar = [43mplt[49m[43m.[49m[43mcolorbar[49m[43m([49m[43msm[49m[43m)[49m
+[32m     38[39m cbar.set_label([33m'[39m[33mProbability of Attainment[39m[33m'[39m)
+[32m     40[39m [38;5;66;03m# format the plot[39;00m
+[32m     41[39m [38;5;66;03m#ax.set_xticks(np.arange(4))[39;00m
+
+[36mFile [39m[32m~/.virtualenvs/.venv/lib/python3.11/site-packages/matplotlib/pyplot.py:2341[39m, in [36mcolorbar[39m[34m(mappable, cax, ax, **kwargs)[39m
+[32m   2336[39m     [38;5;28;01mif[39;00m mappable [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m   2337[39m         [38;5;28;01mraise[39;00m [38;5;167;01mRuntimeError[39;00m([33m'[39m[33mNo mappable was found to use for colorbar [39m[33m'[39m
+[32m   2338[39m                            [33m'[39m[33mcreation. First define a mappable such as [39m[33m'[39m
+[32m   2339[39m                            [33m'[39m[33man image (with imshow) or a contour set ([39m[33m'[39m
+[32m   2340[39m                            [33m'[39m[33mwith contourf).[39m[33m'[39m)
+[32m-> [39m[32m2341[39m ret = [43mgcf[49m[43m([49m[43m)[49m[43m.[49m[43mcolorbar[49m[43m([49m[43mmappable[49m[43m,[49m[43m [49m[43mcax[49m[43m=[49m[43mcax[49m[43m,[49m[43m [49m[43max[49m[43m=[49m[43max[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m   2342[39m [38;5;28;01mreturn[39;00m ret
+
+[36mFile [39m[32m~/.virtualenvs/.venv/lib/python3.11/site-packages/matplotlib/figure.py:1285[39m, in [36mFigureBase.colorbar[39m[34m(self, mappable, cax, ax, use_gridspec, **kwargs)[39m
+[32m   1283[39m [38;5;28;01mif[39;00m cax [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m   1284[39m     [38;5;28;01mif[39;00m ax [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m-> [39m[32m1285[39m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[32m   1286[39m             [33m'[39m[33mUnable to determine Axes to steal space for Colorbar. [39m[33m'[39m
+[32m   1287[39m             [33m'[39m[33mEither provide the *cax* argument to use as the Axes for [39m[33m'[39m
+[32m   1288[39m             [33m'[39m[33mthe Colorbar, provide the *ax* argument to steal space [39m[33m'[39m
+[32m   1289[39m             [33m'[39m[33mfrom it, or add *mappable* to an Axes.[39m[33m'[39m)
+[32m   1290[39m     fig = (  [38;5;66;03m# Figure of first axes; logic copied from make_axes.[39;00m
+[32m   1291[39m         [*ax.flat] [38;5;28;01mif[39;00m [38;5;28misinstance[39m(ax, np.ndarray)
+[32m   1292[39m         [38;5;28;01melse[39;00m [*ax] [38;5;28;01mif[39;00m np.iterable(ax)
+[32m   1293[39m         [38;5;28;01melse[39;00m [ax])[[32m0[39m].figure
+[32m   1294[39m     current_ax = fig.gca()
+
+[31mValueError[39m: Unable to determine Axes to steal space for Colorbar. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
 
