@@ -3,7 +3,6 @@ matplotlib
 numpy
 pandas
 seaborn
-rpy2
 ghp-import
 scipy
 mpl_toolkits
