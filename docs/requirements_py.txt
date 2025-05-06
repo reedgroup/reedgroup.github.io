@@ -5,5 +5,4 @@ pandas
 seaborn
 ghp-import
 scipy
-basemap
 basemap-data-hires
