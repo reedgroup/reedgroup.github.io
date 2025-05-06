@@ -1,4 +1,4 @@
-# Figure Library
+# Spatial Plotting
 
 This section focuses on spatial plotting and analyzing spatial data. The following are some resources from blog posts:
 
