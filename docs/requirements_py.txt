@@ -6,5 +6,5 @@ seaborn
 rpy2
 ghp-import
 scipy
-basemap-data-hires
 mpl_toolkits
+basemap-data-hires
