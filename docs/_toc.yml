@@ -80,7 +80,7 @@ parts:
     - file: FigureLibrary/T-cup_diagrams.ipynb
     - file: FigureLibrary/SpatialPlotting/SpatialPlottingtoc.md
       sections:
-      - file: FigureLibrary/SpatialPlotting/MakingWatershedMaps_trial.ipynb
+      - file: FigureLibrary/SpatialPlotting/MakingWatershedMaps.ipynb
   - file: Contributing/Contributing.md
     sections:
     - file: Contributing/Instructions.md
