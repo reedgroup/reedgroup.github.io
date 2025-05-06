@@ -5,5 +5,5 @@ pandas
 seaborn
 ghp-import
 scipy
-mpl_toolkits
+basemap
 basemap-data-hires
