@@ -78,7 +78,7 @@ parts:
     - file: FigureLibrary/scatter_threedim.md
     - file: FigureLibrary/MOEADiagnostics.ipynb
     - file: FigureLibrary/T-cup_diagrams.ipynb
-    - file: FigureLibrary/SpatialPlottingtoc.md
+    - file: FigureLibrary/SpatialPlotting/SpatialPlottingtoc.md
       sections:
       - file: FigureLibrary/SpatialPlotting/MakingWatershedMaps_trial.ipynb
   - file: Contributing/Contributing.md
