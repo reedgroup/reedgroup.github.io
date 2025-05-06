@@ -500,6 +500,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <section id="attainment-plots">
 <h2>Attainment Plots<a class="headerlink" href="#attainment-plots" title="Link to this heading">#</a></h2>
@@ -560,48 +572,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">49</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span>     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">metric</span> <span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Preference $\longrightarrow$&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="c1">#Example Usage</span>
-<span class="ne">---&gt; </span><span class="mi">49</span> <span class="n">attainment_plot</span><span class="p">(</span><span class="s1">&#39;HV_20_Seeds.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;Relative Hypervolume&#39;</span><span class="p">)</span>
-
-<span class="nn">Cell In[2], line 37,</span> in <span class="ni">attainment_plot</span><span class="nt">(performance_file, metric)</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="n">sm</span> <span class="o">=</span> <span class="n">ScalarMappable</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span> <span class="n">cmap</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span> <span class="n">sm</span><span class="o">.</span><span class="n">set_array</span><span class="p">([])</span>
-<span class="ne">---&gt; </span><span class="mi">37</span> <span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">sm</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;Probability of Attainment&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="c1"># format the plot</span>
-<span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="c1">#ax.set_xticks(np.arange(4))</span>
-
-<span class="nn">File ~/.virtualenvs/.venv/lib/python3.11/site-packages/matplotlib/pyplot.py:2526,</span> in <span class="ni">colorbar</span><span class="nt">(mappable, cax, ax, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2521</span>     <span class="k">if</span> <span class="n">mappable</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2522</span>         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;No mappable was found to use for colorbar &#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2523</span>                            <span class="s1">&#39;creation. First define a mappable such as &#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2524</span>                            <span class="s1">&#39;an image (with imshow) or a contour set (&#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2525</span>                            <span class="s1">&#39;with contourf).&#39;</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">2526</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">mappable</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2527</span> <span class="k">return</span> <span class="n">ret</span>
-
-<span class="nn">File ~/.virtualenvs/.venv/lib/python3.11/site-packages/matplotlib/figure.py:1273,</span> in <span class="ni">FigureBase.colorbar</span><span class="nt">(self, mappable, cax, ax, use_gridspec, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1271</span> <span class="k">if</span> <span class="n">cax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1272</span>     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1273</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1274</span>             <span class="s1">&#39;Unable to determine Axes to steal space for Colorbar. &#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1275</span>             <span class="s1">&#39;Either provide the *cax* argument to use as the Axes for &#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1276</span>             <span class="s1">&#39;the Colorbar, provide the *ax* argument to steal space &#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1277</span>             <span class="s1">&#39;from it, or add *mappable* to an Axes.&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1278</span>     <span class="n">fig</span> <span class="o">=</span> <span class="p">(</span>  <span class="c1"># Figure of first Axes; logic copied from make_axes.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1279</span>         <span class="p">[</span><span class="o">*</span><span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">]</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1280</span>         <span class="k">else</span> <span class="p">[</span><span class="o">*</span><span class="n">ax</span><span class="p">]</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">iterable</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1281</span>         <span class="k">else</span> <span class="p">[</span><span class="n">ax</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_figure</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1282</span>     <span class="n">current_ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-
-<span class="ne">ValueError</span>: Unable to determine Axes to steal space for Colorbar. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\dgold\AppData\Local\Temp\ipykernel_27236\3490351943.py:37: MatplotlibDeprecationWarning: Unable to determine Axes to steal space for Colorbar. Using gca(), but will raise in the future. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
+  cbar = plt.colorbar(sm)
 </pre></div>
 </div>
-<img alt="../_images/759ad483f359a21a30c6064f535ccf547e65f38152effd212c02eaa87e480f82.png" src="../_images/759ad483f359a21a30c6064f535ccf547e65f38152effd212c02eaa87e480f82.png" />
+<img alt="../_images/1403e038838ce88f473effca123d47e5ffbe0ffb0b8bf75c20fe1f47243b990a.png" src="../_images/1403e038838ce88f473effca123d47e5ffbe0ffb0b8bf75c20fe1f47243b990a.png" />
 </div>
 </div>
 </section>
@@ -739,16 +714,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: ".venv"
+            mode: "python"
         },
         kernelOptions: {
-            name: ".venv",
+            name: "python3",
             path: "./FigureLibrary"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = '.venv'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               

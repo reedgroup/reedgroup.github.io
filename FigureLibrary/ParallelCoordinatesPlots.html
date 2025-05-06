@@ -516,6 +516,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="functions-for-flexible-parallel-coordinates-plots">
@@ -790,20 +802,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7597/3983194004.py:2: ParserWarning: Falling back to the &#39;python&#39; engine because the &#39;c&#39; engine does not support regex separators (separators &gt; 1 char and different from &#39;\s+&#39; are interpreted as regex); you can avoid this warning by specifying engine=&#39;python&#39;.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_14602/3983194004.py:2: ParserWarning: Falling back to the &#39;python&#39; engine because the &#39;c&#39; engine does not support regex separators (separators &gt; 1 char and different from &#39;\s+&#39; are interpreted as regex); you can avoid this warning by specifying engine=&#39;python&#39;.
   objs = pd.read_csv(&#39;example_data/objs_wcu_pareto_5objs.csv&#39;, delimiter=&#39;, &#39;)
-/tmp/ipykernel_7597/3983194004.py:9: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
-You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
-A typical example is when you are setting values in a column of a DataFrame, like:
-
-df[&quot;col&quot;][row_indexer] = value
-
-Use `df.loc[row_indexer, &quot;col&quot;] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-
-  objs[&#39;cog_wp_p90&#39;].loc[objs[&#39;cog_wp_p90&#39;] &gt; 1000] = 1000
-/tmp/ipykernel_7597/3983194004.py:9: SettingWithCopyWarning: 
+/tmp/ipykernel_14602/3983194004.py:9: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
@@ -943,34 +944,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7597/3852042614.py:29: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise in a future error of pandas. Value &#39;0      0.045455
-1      0.545455
-2      0.636364
-3      0.681818
-4      0.454545
-         ...   
-369    0.272727
-370    0.318182
-371    0.409091
-372    0.409091
-373    0.181818
-Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
-  objs_reorg.iloc[:, i] = (objs_reorg.iloc[:, i] - objs_reorg.iloc[:, i].min(axis=0)) / \
-/tmp/ipykernel_7597/3852042614.py:32: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  bottoms[i], tops[i] = tops[i], bottoms[i]
-/tmp/ipykernel_7597/3852042614.py:32: FutureWarning: Series.__setitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To set a value by position, use `ser.iloc[pos] = value`
-  bottoms[i], tops[i] = tops[i], bottoms[i]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7597/2617170973.py:110: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  ax.annotate(str(round(tops[j])), [j, 1.02], ha=&#39;center&#39;, va=&#39;bottom&#39;,
-/tmp/ipykernel_7597/2617170973.py:116: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  ax.annotate(str(round(bottoms[j])), [j, -0.02], ha=&#39;center&#39;, va=&#39;top&#39;,
-/tmp/ipykernel_7597/2617170973.py:113: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  ax.annotate(str(round(bottoms[j])) + &#39;+&#39;, [j, -0.02], ha=&#39;center&#39;, va=&#39;top&#39;,
-</pre></div>
-</div>
-<img alt="../_images/81fc670cfb93170c2ab56d5d4505092811da9b07deaf61a6d71e3c57103bf16d.png" src="../_images/81fc670cfb93170c2ab56d5d4505092811da9b07deaf61a6d71e3c57103bf16d.png" />
+<img alt="../_images/c32198c4774c35cba684a812b2bd2c61587e317adacf4696b67b1ba24e609ee6.png" src="../_images/c32198c4774c35cba684a812b2bd2c61587e317adacf4696b67b1ba24e609ee6.png" />
 </div>
 </div>
 <p>Here is an example where we flip the direction of preference to be “bottom” and switch the coloration and zorder to be based on column 3 rather than column 0. The zorder ranking is also switch to be descending rather than ascending.</p>
@@ -988,34 +962,7 @@ Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7597/3852042614.py:18: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise in a future error of pandas. Value &#39;0      0.954545
-1      0.454545
-2      0.363636
-3      0.318182
-4      0.545455
-         ...   
-369    0.727273
-370    0.681818
-371    0.590909
-372    0.590909
-373    0.818182
-Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
-  objs_reorg.iloc[:, i] = (objs_reorg.iloc[:, i].max(axis=0) - objs_reorg.iloc[:, i]) / \
-/tmp/ipykernel_7597/3852042614.py:21: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  bottoms[i], tops[i] = tops[i], bottoms[i]
-/tmp/ipykernel_7597/3852042614.py:21: FutureWarning: Series.__setitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To set a value by position, use `ser.iloc[pos] = value`
-  bottoms[i], tops[i] = tops[i], bottoms[i]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7597/2617170973.py:110: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  ax.annotate(str(round(tops[j])), [j, 1.02], ha=&#39;center&#39;, va=&#39;bottom&#39;,
-/tmp/ipykernel_7597/2617170973.py:116: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  ax.annotate(str(round(bottoms[j])), [j, -0.02], ha=&#39;center&#39;, va=&#39;top&#39;,
-/tmp/ipykernel_7597/2617170973.py:113: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  ax.annotate(str(round(bottoms[j])) + &#39;+&#39;, [j, -0.02], ha=&#39;center&#39;, va=&#39;top&#39;,
-</pre></div>
-</div>
-<img alt="../_images/9b8081ad2bbda4f372b0bbedde279e937c2a71a891bf1fa0db2b0822ec32e896.png" src="../_images/9b8081ad2bbda4f372b0bbedde279e937c2a71a891bf1fa0db2b0822ec32e896.png" />
+<img alt="../_images/0fc98914cc1456bc3547b6c7d604a521bab7c5c3d5faf756a0ce3415d5838574.png" src="../_images/0fc98914cc1456bc3547b6c7d604a521bab7c5c3d5faf756a0ce3415d5838574.png" />
 </div>
 </div>
 <p>Now let’s add some brushing. Brushing is the act of filtering out solutions that fail to meet certain satisficing criteria. In the figure below, I filter out all solutions that fail to meet one or more of these 3 criteria: (1) the number of partners is at least 16; (2) The Captured water gains for non-partners is non-negative; and (3) The cost of gains for the worst-off partner is less than $500/ML. These criterion are added in a straightforward way using the “brushing_dict” dictionary format, as demonstrated below. The function will automatically add grey boxes over the filtered-out region for each brushing criterion.</p>
@@ -1033,34 +980,7 @@ Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7597/3852042614.py:29: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise in a future error of pandas. Value &#39;0      0.045455
-1      0.545455
-2      0.636364
-3      0.681818
-4      0.454545
-         ...   
-369    0.272727
-370    0.318182
-371    0.409091
-372    0.409091
-373    0.181818
-Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
-  objs_reorg.iloc[:, i] = (objs_reorg.iloc[:, i] - objs_reorg.iloc[:, i].min(axis=0)) / \
-/tmp/ipykernel_7597/3852042614.py:32: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  bottoms[i], tops[i] = tops[i], bottoms[i]
-/tmp/ipykernel_7597/3852042614.py:32: FutureWarning: Series.__setitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To set a value by position, use `ser.iloc[pos] = value`
-  bottoms[i], tops[i] = tops[i], bottoms[i]
-/tmp/ipykernel_7597/2617170973.py:45: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  threshold_norm = (threshold - bottoms[col_idx]) / (tops[col_idx] - bottoms[col_idx])
-/tmp/ipykernel_7597/2617170973.py:110: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  ax.annotate(str(round(tops[j])), [j, 1.02], ha=&#39;center&#39;, va=&#39;bottom&#39;,
-/tmp/ipykernel_7597/2617170973.py:116: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  ax.annotate(str(round(bottoms[j])), [j, -0.02], ha=&#39;center&#39;, va=&#39;top&#39;,
-/tmp/ipykernel_7597/2617170973.py:113: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  ax.annotate(str(round(bottoms[j])) + &#39;+&#39;, [j, -0.02], ha=&#39;center&#39;, va=&#39;top&#39;,
-</pre></div>
-</div>
-<img alt="../_images/d843f72631a790bebd6a06a65a9fc816dab90fd1b2f80254f5e403bd4b7d2d21.png" src="../_images/d843f72631a790bebd6a06a65a9fc816dab90fd1b2f80254f5e403bd4b7d2d21.png" />
+<img alt="../_images/96b1c984ca9cd967d2432d05b3558991b8e674331103fae91ce50e7e71eb5f16.png" src="../_images/96b1c984ca9cd967d2432d05b3558991b8e674331103fae91ce50e7e71eb5f16.png" />
 </div>
 </div>
 <p>This function also has the ability to color solutions based on a categorical variable rather than a continuous palette. The following example defines a new categorical variable by binning the continuous cost variable into three discrete classes. It then defines a color dictionary that assigns a different color to each possible value of the categorical variable. The legend is automatically created based on the color dictionary.</p>
@@ -1082,32 +1002,7 @@ Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7597/3852042614.py:29: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise in a future error of pandas. Value &#39;0      0.045455
-1      0.545455
-2      0.636364
-3      0.681818
-4      0.454545
-         ...   
-369    0.272727
-370    0.318182
-371    0.409091
-372    0.409091
-373    0.181818
-Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
-  objs_reorg.iloc[:, i] = (objs_reorg.iloc[:, i] - objs_reorg.iloc[:, i].min(axis=0)) / \
-/tmp/ipykernel_7597/3852042614.py:32: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  bottoms[i], tops[i] = tops[i], bottoms[i]
-/tmp/ipykernel_7597/3852042614.py:32: FutureWarning: Series.__setitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To set a value by position, use `ser.iloc[pos] = value`
-  bottoms[i], tops[i] = tops[i], bottoms[i]
-/tmp/ipykernel_7597/2617170973.py:110: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  ax.annotate(str(round(tops[j])), [j, 1.02], ha=&#39;center&#39;, va=&#39;bottom&#39;,
-/tmp/ipykernel_7597/2617170973.py:116: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  ax.annotate(str(round(bottoms[j])), [j, -0.02], ha=&#39;center&#39;, va=&#39;top&#39;,
-/tmp/ipykernel_7597/2617170973.py:113: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  ax.annotate(str(round(bottoms[j])) + &#39;+&#39;, [j, -0.02], ha=&#39;center&#39;, va=&#39;top&#39;,
-</pre></div>
-</div>
-<img alt="../_images/43be782904c9f477e9c9a4790ec5231812e6d163b2c0fc18c5f45632ff1fe744.png" src="../_images/43be782904c9f477e9c9a4790ec5231812e6d163b2c0fc18c5f45632ff1fe744.png" />
+<img alt="../_images/9f4024c8e698b7596b6c47a654c3267c39e19eab3ae1fb5e954abd34b589c424.png" src="../_images/9f4024c8e698b7596b6c47a654c3267c39e19eab3ae1fb5e954abd34b589c424.png" />
 </div>
 </div>
 <p>Finally, here is an example that combines brushing with categorical coloration. This shows that no LowCost or HighCost solutions are able to meet the given satisficing criteria.</p>
@@ -1126,36 +1021,7 @@ Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7597/3852042614.py:29: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise in a future error of pandas. Value &#39;0      0.045455
-1      0.545455
-2      0.636364
-3      0.681818
-4      0.454545
-         ...   
-369    0.272727
-370    0.318182
-371    0.409091
-372    0.409091
-373    0.181818
-Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
-  objs_reorg.iloc[:, i] = (objs_reorg.iloc[:, i] - objs_reorg.iloc[:, i].min(axis=0)) / \
-/tmp/ipykernel_7597/3852042614.py:32: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  bottoms[i], tops[i] = tops[i], bottoms[i]
-/tmp/ipykernel_7597/3852042614.py:32: FutureWarning: Series.__setitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To set a value by position, use `ser.iloc[pos] = value`
-  bottoms[i], tops[i] = tops[i], bottoms[i]
-/tmp/ipykernel_7597/2617170973.py:45: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  threshold_norm = (threshold - bottoms[col_idx]) / (tops[col_idx] - bottoms[col_idx])
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7597/2617170973.py:110: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  ax.annotate(str(round(tops[j])), [j, 1.02], ha=&#39;center&#39;, va=&#39;bottom&#39;,
-/tmp/ipykernel_7597/2617170973.py:116: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  ax.annotate(str(round(bottoms[j])), [j, -0.02], ha=&#39;center&#39;, va=&#39;top&#39;,
-/tmp/ipykernel_7597/2617170973.py:113: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  ax.annotate(str(round(bottoms[j])) + &#39;+&#39;, [j, -0.02], ha=&#39;center&#39;, va=&#39;top&#39;,
-</pre></div>
-</div>
-<img alt="../_images/bc61da6740d12b4b76e02c13ea4becc943d3c624c9d8995deab7a9fa38f277e6.png" src="../_images/bc61da6740d12b4b76e02c13ea4becc943d3c624c9d8995deab7a9fa38f277e6.png" />
+<img alt="../_images/ac2b2feda113397b5c6e76ffbeb87402d1510d31fb486fb746e25e0fd180d4b9.png" src="../_images/ac2b2feda113397b5c6e76ffbeb87402d1510d31fb486fb746e25e0fd180d4b9.png" />
 </div>
 </div>
 </section>
@@ -1174,16 +1040,16 @@ Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, p
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: ".venv"
+            mode: "python"
         },
         kernelOptions: {
-            name: ".venv",
+            name: "python3",
             path: "./FigureLibrary"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = '.venv'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
