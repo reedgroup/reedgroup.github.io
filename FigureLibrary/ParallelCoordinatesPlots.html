@@ -794,9 +794,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7567/3983194004.py:2: ParserWarning: Falling back to the &#39;python&#39; engine because the &#39;c&#39; engine does not support regex separators (separators &gt; 1 char and different from &#39;\s+&#39; are interpreted as regex); you can avoid this warning by specifying engine=&#39;python&#39;.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7663/3983194004.py:2: ParserWarning: Falling back to the &#39;python&#39; engine because the &#39;c&#39; engine does not support regex separators (separators &gt; 1 char and different from &#39;\s+&#39; are interpreted as regex); you can avoid this warning by specifying engine=&#39;python&#39;.
   objs = pd.read_csv(&#39;example_data/objs_wcu_pareto_5objs.csv&#39;, delimiter=&#39;, &#39;)
-/tmp/ipykernel_7567/3983194004.py:9: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+/tmp/ipykernel_7663/3983194004.py:9: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
 You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
 A typical example is when you are setting values in a column of a DataFrame, like:
 
@@ -807,7 +807,7 @@ Use `df.loc[row_indexer, &quot;col&quot;] = values` instead, to perform the assi
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
 
   objs[&#39;cog_wp_p90&#39;].loc[objs[&#39;cog_wp_p90&#39;] &gt; 1000] = 1000
-/tmp/ipykernel_7567/3983194004.py:9: SettingWithCopyWarning: 
+/tmp/ipykernel_7663/3983194004.py:9: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
@@ -947,7 +947,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7567/3852042614.py:29: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise in a future error of pandas. Value &#39;0      0.045455
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7663/3852042614.py:29: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise in a future error of pandas. Value &#39;0      0.045455
 1      0.545455
 2      0.636364
 3      0.681818
@@ -960,17 +960,17 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 373    0.181818
 Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
   objs_reorg.iloc[:, i] = (objs_reorg.iloc[:, i] - objs_reorg.iloc[:, i].min(axis=0)) / \
-/tmp/ipykernel_7567/3852042614.py:32: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+/tmp/ipykernel_7663/3852042614.py:32: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   bottoms[i], tops[i] = tops[i], bottoms[i]
-/tmp/ipykernel_7567/3852042614.py:32: FutureWarning: Series.__setitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To set a value by position, use `ser.iloc[pos] = value`
+/tmp/ipykernel_7663/3852042614.py:32: FutureWarning: Series.__setitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To set a value by position, use `ser.iloc[pos] = value`
   bottoms[i], tops[i] = tops[i], bottoms[i]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7567/2617170973.py:110: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7663/2617170973.py:110: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   ax.annotate(str(round(tops[j])), [j, 1.02], ha=&#39;center&#39;, va=&#39;bottom&#39;,
-/tmp/ipykernel_7567/2617170973.py:116: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+/tmp/ipykernel_7663/2617170973.py:116: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   ax.annotate(str(round(bottoms[j])), [j, -0.02], ha=&#39;center&#39;, va=&#39;top&#39;,
-/tmp/ipykernel_7567/2617170973.py:113: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+/tmp/ipykernel_7663/2617170973.py:113: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   ax.annotate(str(round(bottoms[j])) + &#39;+&#39;, [j, -0.02], ha=&#39;center&#39;, va=&#39;top&#39;,
 </pre></div>
 </div>
@@ -992,7 +992,7 @@ Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7567/3852042614.py:18: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise in a future error of pandas. Value &#39;0      0.954545
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7663/3852042614.py:18: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise in a future error of pandas. Value &#39;0      0.954545
 1      0.454545
 2      0.363636
 3      0.318182
@@ -1005,17 +1005,17 @@ Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, p
 373    0.818182
 Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
   objs_reorg.iloc[:, i] = (objs_reorg.iloc[:, i].max(axis=0) - objs_reorg.iloc[:, i]) / \
-/tmp/ipykernel_7567/3852042614.py:21: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+/tmp/ipykernel_7663/3852042614.py:21: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   bottoms[i], tops[i] = tops[i], bottoms[i]
-/tmp/ipykernel_7567/3852042614.py:21: FutureWarning: Series.__setitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To set a value by position, use `ser.iloc[pos] = value`
+/tmp/ipykernel_7663/3852042614.py:21: FutureWarning: Series.__setitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To set a value by position, use `ser.iloc[pos] = value`
   bottoms[i], tops[i] = tops[i], bottoms[i]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7567/2617170973.py:110: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7663/2617170973.py:110: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   ax.annotate(str(round(tops[j])), [j, 1.02], ha=&#39;center&#39;, va=&#39;bottom&#39;,
-/tmp/ipykernel_7567/2617170973.py:116: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+/tmp/ipykernel_7663/2617170973.py:116: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   ax.annotate(str(round(bottoms[j])), [j, -0.02], ha=&#39;center&#39;, va=&#39;top&#39;,
-/tmp/ipykernel_7567/2617170973.py:113: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+/tmp/ipykernel_7663/2617170973.py:113: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   ax.annotate(str(round(bottoms[j])) + &#39;+&#39;, [j, -0.02], ha=&#39;center&#39;, va=&#39;top&#39;,
 </pre></div>
 </div>
@@ -1037,7 +1037,7 @@ Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7567/3852042614.py:29: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise in a future error of pandas. Value &#39;0      0.045455
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7663/3852042614.py:29: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise in a future error of pandas. Value &#39;0      0.045455
 1      0.545455
 2      0.636364
 3      0.681818
@@ -1050,19 +1050,19 @@ Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, p
 373    0.181818
 Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
   objs_reorg.iloc[:, i] = (objs_reorg.iloc[:, i] - objs_reorg.iloc[:, i].min(axis=0)) / \
-/tmp/ipykernel_7567/3852042614.py:32: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+/tmp/ipykernel_7663/3852042614.py:32: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   bottoms[i], tops[i] = tops[i], bottoms[i]
-/tmp/ipykernel_7567/3852042614.py:32: FutureWarning: Series.__setitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To set a value by position, use `ser.iloc[pos] = value`
+/tmp/ipykernel_7663/3852042614.py:32: FutureWarning: Series.__setitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To set a value by position, use `ser.iloc[pos] = value`
   bottoms[i], tops[i] = tops[i], bottoms[i]
-/tmp/ipykernel_7567/2617170973.py:45: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+/tmp/ipykernel_7663/2617170973.py:45: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   threshold_norm = (threshold - bottoms[col_idx]) / (tops[col_idx] - bottoms[col_idx])
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7567/2617170973.py:110: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7663/2617170973.py:110: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   ax.annotate(str(round(tops[j])), [j, 1.02], ha=&#39;center&#39;, va=&#39;bottom&#39;,
-/tmp/ipykernel_7567/2617170973.py:116: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+/tmp/ipykernel_7663/2617170973.py:116: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   ax.annotate(str(round(bottoms[j])), [j, -0.02], ha=&#39;center&#39;, va=&#39;top&#39;,
-/tmp/ipykernel_7567/2617170973.py:113: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+/tmp/ipykernel_7663/2617170973.py:113: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   ax.annotate(str(round(bottoms[j])) + &#39;+&#39;, [j, -0.02], ha=&#39;center&#39;, va=&#39;top&#39;,
 </pre></div>
 </div>
@@ -1088,7 +1088,7 @@ Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7567/3852042614.py:29: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise in a future error of pandas. Value &#39;0      0.045455
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7663/3852042614.py:29: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise in a future error of pandas. Value &#39;0      0.045455
 1      0.545455
 2      0.636364
 3      0.681818
@@ -1101,17 +1101,17 @@ Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, p
 373    0.181818
 Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
   objs_reorg.iloc[:, i] = (objs_reorg.iloc[:, i] - objs_reorg.iloc[:, i].min(axis=0)) / \
-/tmp/ipykernel_7567/3852042614.py:32: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+/tmp/ipykernel_7663/3852042614.py:32: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   bottoms[i], tops[i] = tops[i], bottoms[i]
-/tmp/ipykernel_7567/3852042614.py:32: FutureWarning: Series.__setitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To set a value by position, use `ser.iloc[pos] = value`
+/tmp/ipykernel_7663/3852042614.py:32: FutureWarning: Series.__setitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To set a value by position, use `ser.iloc[pos] = value`
   bottoms[i], tops[i] = tops[i], bottoms[i]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7567/2617170973.py:110: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7663/2617170973.py:110: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   ax.annotate(str(round(tops[j])), [j, 1.02], ha=&#39;center&#39;, va=&#39;bottom&#39;,
-/tmp/ipykernel_7567/2617170973.py:116: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+/tmp/ipykernel_7663/2617170973.py:116: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   ax.annotate(str(round(bottoms[j])), [j, -0.02], ha=&#39;center&#39;, va=&#39;top&#39;,
-/tmp/ipykernel_7567/2617170973.py:113: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+/tmp/ipykernel_7663/2617170973.py:113: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   ax.annotate(str(round(bottoms[j])) + &#39;+&#39;, [j, -0.02], ha=&#39;center&#39;, va=&#39;top&#39;,
 </pre></div>
 </div>
@@ -1134,7 +1134,7 @@ Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7567/3852042614.py:29: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise in a future error of pandas. Value &#39;0      0.045455
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7663/3852042614.py:29: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise in a future error of pandas. Value &#39;0      0.045455
 1      0.545455
 2      0.636364
 3      0.681818
@@ -1147,19 +1147,19 @@ Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, p
 373    0.181818
 Name: n_p, Length: 374, dtype: float64&#39; has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
   objs_reorg.iloc[:, i] = (objs_reorg.iloc[:, i] - objs_reorg.iloc[:, i].min(axis=0)) / \
-/tmp/ipykernel_7567/3852042614.py:32: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+/tmp/ipykernel_7663/3852042614.py:32: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   bottoms[i], tops[i] = tops[i], bottoms[i]
-/tmp/ipykernel_7567/3852042614.py:32: FutureWarning: Series.__setitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To set a value by position, use `ser.iloc[pos] = value`
+/tmp/ipykernel_7663/3852042614.py:32: FutureWarning: Series.__setitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To set a value by position, use `ser.iloc[pos] = value`
   bottoms[i], tops[i] = tops[i], bottoms[i]
-/tmp/ipykernel_7567/2617170973.py:45: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+/tmp/ipykernel_7663/2617170973.py:45: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   threshold_norm = (threshold - bottoms[col_idx]) / (tops[col_idx] - bottoms[col_idx])
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7567/2617170973.py:110: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7663/2617170973.py:110: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   ax.annotate(str(round(tops[j])), [j, 1.02], ha=&#39;center&#39;, va=&#39;bottom&#39;,
-/tmp/ipykernel_7567/2617170973.py:116: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+/tmp/ipykernel_7663/2617170973.py:116: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   ax.annotate(str(round(bottoms[j])), [j, -0.02], ha=&#39;center&#39;, va=&#39;top&#39;,
-/tmp/ipykernel_7567/2617170973.py:113: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+/tmp/ipykernel_7663/2617170973.py:113: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   ax.annotate(str(round(bottoms[j])) + &#39;+&#39;, [j, -0.02], ha=&#39;center&#39;, va=&#39;top&#39;,
 </pre></div>
 </div>
