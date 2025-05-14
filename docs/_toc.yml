@@ -81,6 +81,7 @@ parts:
     - file: FigureLibrary/SpatialPlotting/SpatialPlottingtoc.md
       sections:
       - file: FigureLibrary/SpatialPlotting/MakingWatershedMaps.ipynb
+      - file: FigureLibrary/SpatialPlotting/ClipRasterWithShapefile.ipynb
   - file: Contributing/Contributing.md
     sections:
     - file: Contributing/Instructions.md
