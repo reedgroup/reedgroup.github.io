@@ -7,3 +7,5 @@ ghp-import
 scipy
 basemap
 basemap-data-hires
+rasterio
+geopandas
