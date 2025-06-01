@@ -82,6 +82,8 @@ parts:
       sections:
       - file: FigureLibrary/SpatialPlotting/MakingWatershedMaps.ipynb
       - file: FigureLibrary/SpatialPlotting/ClipRasterWithShapefile.ipynb
+      - file: FigureLibrary/SpatialPlotting/TimeEvolvingAnimatedMaps.ipynb
+      - file: FigureLibrary/SpatialPlotting/ChoroplethMaps.ipynb
   - file: Contributing/Contributing.md
     sections:
     - file: Contributing/Instructions.md
