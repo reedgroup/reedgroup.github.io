@@ -38,6 +38,7 @@ parts:
     - file: Software/Rhodium.md
     - file: Software/MOEAFramework.md
     - file: Software/J3.md
+    - file: Software/statemodify.md
   - file: Training/Training.md
     sections:
     - file: Training/Schedule.md
