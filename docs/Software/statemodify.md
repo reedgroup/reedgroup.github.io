@@ -1,6 +1,6 @@
 # statemodify
 
-![](statemodifylogo.png)
+<img src="statemodifylogo.png" alt="Logo" width="100"/>
 
 statemodify is a Python package (Gupta et al., 2024) that enables dynamic input modification, ensemble simulation, and streamlined analysis, supporting adaptive planning under uncertainty developed to extend StateMod’s exploratory modeling capacity.
 
