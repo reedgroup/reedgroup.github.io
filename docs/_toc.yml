@@ -71,6 +71,12 @@ parts:
     - file: Training/DataManagement.md
       sections:
       - file: Training/DataManagement/DataCompression.md
+    - file: Training/CreativeToolsAccess.md
+      sections:
+      - file: Training/CreativeTools/powerpoint.md
+      - file: Training/CreativeTools/photoshop.md
+      - file: Training/CreativeTools/adobe_illustrator.md
+      - file: Training/CreativeTools/inkscape.md
   - file: FigureLibrary/FigureLibrary.md
     sections:
     - file: FigureLibrary/ParallelCoordinatesPlots.md
