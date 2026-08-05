@@ -18,6 +18,7 @@ parts:
     - file: GraduateStudentResources/Scheduling.md
     - file: GraduateStudentResources/Organization.md
     - file: GraduateStudentResources/CitationReferenceManagementTools.md
+    - file: GraduateStudentResources/GuideForMQAB.md
   - file: ComputationalResources/ComputationalResources.md
     sections:
     - file: ComputationalResources/ClusterBasics.md
