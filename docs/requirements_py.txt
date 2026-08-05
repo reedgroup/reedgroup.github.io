@@ -5,6 +5,7 @@ pandas
 seaborn
 ghp-import
 scipy
+statsmodels
 basemap
 basemap-data-hires
 rasterio
