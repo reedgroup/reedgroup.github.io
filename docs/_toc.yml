@@ -80,6 +80,7 @@ parts:
   - file: FigureLibrary/FigureLibrary.md
     sections:
     - file: FigureLibrary/ParallelCoordinatesPlots.md
+    - file: FigureLibrary/parallel_coordinate_kde.ipynb
     - file: FigureLibrary/synthetic_generation_diagnostics.ipynb
     - file: FigureLibrary/scatterplot_colorbar.md
     - file: FigureLibrary/scatter_threedim.md
