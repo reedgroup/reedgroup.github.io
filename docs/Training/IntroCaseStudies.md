@@ -1,3 +1,0 @@
-# Introductory Case Studies
-```{tableofcontents}
-```

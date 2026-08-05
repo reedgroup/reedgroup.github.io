@@ -1,5 +1,0 @@
-# Adove Illustrator
-
-##Introduction
-
-##Resources

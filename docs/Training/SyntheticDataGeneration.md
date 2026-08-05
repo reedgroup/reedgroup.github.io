@@ -1,3 +1,0 @@
-# Synthetic Data Generation
-```{tableofcontents}
-```

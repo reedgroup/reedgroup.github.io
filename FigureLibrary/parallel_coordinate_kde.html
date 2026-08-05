@@ -1,0 +1,1287 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Parallel Coordinate Plots with KDEs &#8212; Reed group lab manual</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'FigureLibrary/parallel_coordinate_kde';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Synthetic Streamflow Diagnostic Figure Library" href="synthetic_generation_diagnostics.html" />
+    <link rel="prev" title="Parallel Coordinates Plots" href="ParallelCoordinatesPlots.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Reed group lab manual - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Reed group lab manual - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to our lab manual!
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../GraduateStudentResources/GraduateStudentResources.html">Graduate Student Resources</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/LifeAtCornell.html">Housing Around Cornell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/VisitingScholars.html">A guide to Ithaca and Cornell for Visiting Scholars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Courses.html">Course List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Conferences.html">Conferences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/PresentationTemplates.html">Presentation Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/WritingProcess.html">Writing your first paper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/BlogPost.html">Contributing to the Water Programming Blog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/PaperRepoTemplates.html">Paper Repository Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Scheduling.html">Scheduling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/Organization.html">Organizational Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/CitationReferenceManagementTools.html">Citation and Reference Management Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/GuideForMQAB.html">Guide for M/Q, A and B Exams</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ComputationalResources/ComputationalResources.html">Computational Resources</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/ClusterBasics.html">Cluster Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/python_crash_course.html">Crash Course in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/Machine_Learning_Resources.html">Machine Learning Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/IntroToLinux.html">Introduction to Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/IntroToGitHub.html">Introduction to Git &amp; GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/MetaRepos.html">Creating and Using GitHub Meta Repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/Websites.html">Building and deploying websites with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GraduateStudentResources/LongTermStorage.html">Long Term Storage</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Software/Software.html">Software</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Software/BorgMOEA.html">Borg MOEA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/WaterPaths.html">WaterPaths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/PywrDRB.html">Pywr-DRB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/CALFEWS.html">CALFEWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/SALib.html">SALib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/Rhodium.html">Rhodium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/MOEAFramework.html">MOEA Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/J3.html">J3 Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Software/statemodify.html">statemodify</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Training/Training.html">Training</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Training/Schedule.html">Suggested training schedule</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Training/BorgMOEADiagnostics.html">Borg and MOEA Diagnostics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Training/BorgMOEADiagnostics/Linux_MOEAs_HPC.html">Getting starting with MOEAs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Training/BorgMOEADiagnostics/MOEADiagnostics.html">Introduction to MOEA Diagnostics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Training/BorgMOEADiagnostics/BorgRuntimeDiagnosticsTraining.html">Multi-Master Borg MOEA Parallel Scaling Diagnotics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Training/BorgMOEADiagnostics/AdvancedBorgDiagnostics.html">The Advanced Guide to Borg MOEA and Its Diagnostics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Training/IntroCaseStudies.html">Introductory Case Studies</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Training/IntroCaseStudies/LakeProblem.html">The Shallow Lake Problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Training/IntroCaseStudies/FisheriesGame.html">The Fisheries Game</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Training/SDSA.html">Scenario Discovery and Sensitivity Analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Training/SDSA/timevaryingSAtraining.html">Time-Varying Sensitivity Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Training/SDSA/intro_to_scenario_discovery.html">Intro to Scenario Discovery</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Training/SyntheticDataGeneration.html">Synthetic Data Generation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Training/SyntheticDataGeneration/SyntheticStreamflowGeneration.html">Synthetic Streamflow Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Training/SyntheticDataGeneration/SyntheticWeatherGeneration.html">Synthetic Weather Generation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Training/AdvancedMethodsCases.html">Advanced Methods and Case Studies</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Training/AdvancedMethodsCases/pywrdrb_training.html">Pywr-DRB Training</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Training/AdvancedMethodsCases/WaterPaths_Training.html">WaterPaths</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Training/AdvancedMethodsCases/StateModTraining.html">Getting Started with StateMod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Training/AdvancedMethodsCases/QPPQStreamflowPrediction.html">QPPQ Streamflow Prediction in Ungauged Basins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Training/AdvancedMethodsCases/intro_mordm.html">Intro to MORDM</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Training/DataManagement.html">Data Management</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Training/DataManagement/DataCompression.html">Data types and compression methods</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Training/CreativeToolsAccess.html">Creative Tools and Software</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Training/CreativeTools/powerpoint.html">PowerPoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Training/CreativeTools/photoshop.html">Photoshop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Training/CreativeTools/adobe_illustrator.html">Adove Illustrator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Training/CreativeTools/inkscape.html">InkScape</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="FigureLibrary.html">Figure Library</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ParallelCoordinatesPlots.html">Parallel Coordinates Plots</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Parallel Coordinate Plots with KDEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="synthetic_generation_diagnostics.html">Synthetic Streamflow Diagnostic Figure Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scatterplot_colorbar.html">Scatter plots and colorbars using Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scatter_threedim.html">3D scatter plots, point sizes, and positioning legends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MOEADiagnostics.html">MOEA Diagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="T-cup_diagrams.html">T-cup diagrams</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="SpatialPlotting/SpatialPlottingtoc.html">Spatial Plotting</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="SpatialPlotting/MakingWatershedMaps.html">Making Watershed Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SpatialPlotting/ClipRasterWithShapefile.html">Clipping Raster Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SpatialPlotting/TimeEvolvingAnimatedMaps.html">Animated Spatial Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SpatialPlotting/ChoroplethMaps.html">Choropleth maps</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Contributing/Contributing.html">Contributing to this lab manual</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Contributing/Instructions.html">Instructions on contributing to the lab manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Contributing/mdExample.html">Markdown example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Contributing/nbExample.html">Jupyter notebook example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Contributing/training_template.html">Training Title</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Contributing/FAQs.html">Frequently-asked questions (FAQs)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../WaterProgramming/waterprogramming_post_catalog.html">Water Programming Blog Post Catalog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PaperRepositories/repositories.html">List of Paper Repositories</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/reedgroup/reedgroup.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/reedgroup/reedgroup.github.io/issues/new?title=Issue%20on%20page%20%2FFigureLibrary/parallel_coordinate_kde.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/FigureLibrary/parallel_coordinate_kde.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Parallel Coordinate Plots with KDEs</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-using-parallel-coordinate-kde-plots">An example using parallel coordinate KDE plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-required-datasets">Import the required datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-parallel-tradeoffs">Plot the parallel tradeoffs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dryville-s-performance-tradeoffs">Dryville’s performance tradeoffs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="parallel-coordinate-plots-with-kdes">
+<h1>Parallel Coordinate Plots with KDEs<a class="headerlink" href="#parallel-coordinate-plots-with-kdes" title="Link to this heading">#</a></h1>
+<p>Overlaying kernel density estimation (KDE) plots on a parallel coordinate plot is a helpful way to visualize the distribution of the performance attained for each individual performance objective across all solutions within a Pareto-approximate reference set. KDE plots help:</p>
+<ol class="arabic simple">
+<li><p>Illustrate whether there are many alternatives that can achieve a desired performance level, or just a select few</p></li>
+<li><p>Compare the distribution of performance values across each performance metric for two (or more) distinct sets of solutions.</p></li>
+</ol>
+<p>These plots were first used in <a class="reference internal" href="#10.1038/s41467-024-51660-8"><span class="xref myst">Hamilton et al. (2024)</span></a> and will be demonstrated in the code below. Some of the code is adapted from <a class="reference external" href="https://github.com/IMMM-SFA/hamilton-etal_2024_naturecommunications">the paper’s GitHub repository</a>.</p>
+<section id="an-example-using-parallel-coordinate-kde-plots">
+<h2>An example using parallel coordinate KDE plots<a class="headerlink" href="#an-example-using-parallel-coordinate-kde-plots" title="Link to this heading">#</a></h2>
+<p>This example is based off <a class="reference external" href="https://onlinelibrary.wiley.com/doi/abs/10.1029/2023WR034841">Lau et al. (2023)</a> and shows how the performance tradeoffs of a given solution changes when its decision variables are modestly perturbed.</p>
+<p>To plot this figure, let’s begin by importing all the necessary libraries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">colormaps</span><span class="p">,</span> <span class="n">cm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">PatchCollection</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="kn">import</span> <span class="n">Rectangle</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.lines</span><span class="w"> </span><span class="kn">import</span> <span class="n">Line2D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pandas.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">parallel_coordinates</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">PatchCollection</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="kn">import</span> <span class="n">Rectangle</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.lines</span><span class="w"> </span><span class="kn">import</span> <span class="n">Line2D</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">parallel_coordinates</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;statsmodels&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, let’s define some helper functions (<a class="reference external" href="https://github.com/IMMM-SFA/hamilton-etal_2024_naturecommunications">see the GitHub repo they were derived from here</a>) to help plot the parallel coordinate KDE plots.</p>
+<p>In the code below, look out for the <code class="docutils literal notranslate"><span class="pre">custom_parallel_coordinates_kde</span></code> function that implements the parallel coordinate KDE plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># function to reorganize and normalize objective data for parallel coordinates plotting</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">reorganize_objs</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">columns_axes</span><span class="p">,</span> <span class="n">ideal_direction</span><span class="p">,</span> <span class="n">minmaxs</span><span class="p">,</span> <span class="n">axis_mins</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis_maxs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parameters:</span>
+<span class="sd">        objs (pd.DataFrame): Input dataframe.</span>
+<span class="sd">        columns_axes (list): List of columns to use as axes.</span>
+<span class="sd">        ideal_direction (str): &#39;top&#39; or &#39;bottom&#39;.</span>
+<span class="sd">        minmaxs (list): List of &#39;min&#39; or &#39;max&#39; for each axis.</span>
+<span class="sd">        axis_mins (list or None): Optional list of minimum values for each axis.</span>
+<span class="sd">        axis_maxs (list or None): Optional list of maximum values for each axis.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        objs_reorg (pd.DataFrame): Normalized dataframe.</span>
+<span class="sd">        tops (list): Top values for each axis.</span>
+<span class="sd">        bottoms (list): Bottom values for each axis.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># If min/max directions not given for each axis, assume all should be maximized</span>
+    <span class="k">if</span> <span class="n">minmaxs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">minmaxs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">columns_axes</span><span class="p">)</span>
+
+    <span class="c1"># Get subset of dataframe columns that will be shown as parallel axes</span>
+    <span class="n">objs_reorg</span> <span class="o">=</span> <span class="n">objs</span><span class="p">[</span><span class="n">columns_axes</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1"># Use provided axis min/max or compute from data</span>
+    <span class="k">if</span> <span class="n">axis_mins</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">axis_mins</span> <span class="o">=</span> <span class="n">objs_reorg</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+    <span class="k">if</span> <span class="n">axis_maxs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">axis_maxs</span> <span class="o">=</span> <span class="n">objs_reorg</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+
+    <span class="c1"># Set up tops and bottoms for annotation</span>
+    <span class="k">if</span> <span class="n">ideal_direction</span> <span class="o">==</span> <span class="s1">&#39;top&#39;</span><span class="p">:</span>
+        <span class="n">tops</span> <span class="o">=</span> <span class="n">axis_maxs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">bottoms</span> <span class="o">=</span> <span class="n">axis_mins</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tops</span> <span class="o">=</span> <span class="n">axis_mins</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">bottoms</span> <span class="o">=</span> <span class="n">axis_maxs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1"># Normalize each axis according to minmaxs and direction</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">minmax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">minmaxs</span><span class="p">):</span>
+        <span class="n">col</span> <span class="o">=</span> <span class="n">objs_reorg</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">min_val</span> <span class="o">=</span> <span class="n">axis_mins</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">max_val</span> <span class="o">=</span> <span class="n">axis_maxs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="c1">#min_val = objs_reorg[col].min()</span>
+        <span class="c1">#max_val = objs_reorg[col].max()</span>
+        <span class="n">denom</span> <span class="o">=</span> <span class="n">max_val</span> <span class="o">-</span> <span class="n">min_val</span> <span class="k">if</span> <span class="n">max_val</span> <span class="o">!=</span> <span class="n">min_val</span> <span class="k">else</span> <span class="mf">1.0</span>
+        <span class="k">if</span> <span class="n">ideal_direction</span> <span class="o">==</span> <span class="s1">&#39;top&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">minmax</span> <span class="o">==</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>
+                <span class="n">objs_reorg</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">objs_reorg</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">-</span> <span class="n">min_val</span><span class="p">)</span> <span class="o">/</span> <span class="n">denom</span>
+            <span class="k">else</span><span class="p">:</span>  <span class="c1"># min</span>
+                <span class="n">bottoms</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">tops</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">tops</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">bottoms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">objs_reorg</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">max_val</span> <span class="o">-</span> <span class="n">objs_reorg</span><span class="p">[</span><span class="n">col</span><span class="p">])</span> <span class="o">/</span> <span class="n">denom</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># ideal_direction == &#39;bottom&#39;</span>
+            <span class="k">if</span> <span class="n">minmax</span> <span class="o">==</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>
+                <span class="n">objs_reorg</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">max_val</span> <span class="o">-</span> <span class="n">objs_reorg</span><span class="p">[</span><span class="n">col</span><span class="p">])</span> <span class="o">/</span> <span class="n">denom</span>
+            <span class="k">else</span><span class="p">:</span>  <span class="c1"># min</span>
+                <span class="n">bottoms</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">tops</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">tops</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">bottoms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">objs_reorg</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">objs_reorg</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">-</span> <span class="n">min_val</span><span class="p">)</span> <span class="o">/</span> <span class="n">denom</span>
+
+    <span class="k">return</span> <span class="n">objs_reorg</span><span class="p">,</span> <span class="n">tops</span><span class="p">,</span> <span class="n">bottoms</span>
+
+<span class="c1">### function to get color based on continuous color map or categorical map</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_color</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">color_by_continuous</span><span class="p">,</span> <span class="n">color_palette_continuous</span><span class="p">,</span> 
+              <span class="n">color_by_categorical</span><span class="p">,</span> <span class="n">color_dict_categorical</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">color_by_continuous</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">colormaps</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="n">color_palette_continuous</span><span class="p">)(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">color_by_categorical</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1">#print(value)</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">color_dict_categorical</span><span class="p">[</span><span class="n">value</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">color</span>
+
+<span class="c1">### function to get zorder value for ordering lines on plot. </span>
+<span class="c1">### This works by binning a given axis&#39; values and mapping to discrete classes.</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_zorder</span><span class="p">(</span><span class="n">norm_value</span><span class="p">,</span> <span class="n">zorder_num_classes</span><span class="p">,</span> <span class="n">zorder_direction</span><span class="p">):</span>
+    <span class="n">xgrid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.001</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">zorder_num_classes</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">zorder_direction</span> <span class="o">==</span> <span class="s1">&#39;ascending&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">norm_value</span> <span class="o">&gt;</span> <span class="n">xgrid</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">zorder_direction</span> <span class="o">==</span> <span class="s1">&#39;descending&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">norm_value</span> <span class="o">&lt;</span> <span class="n">xgrid</span><span class="p">)</span>
+
+<span class="c1">### customizable parallel coordinates plot</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">custom_parallel_coordinates</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">objs</span><span class="p">,</span> <span class="n">columns_axes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis_labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                                <span class="n">ideal_direction</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">minmaxs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                                <span class="n">color_by_continuous</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color_palette_continuous</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                                <span class="n">color_by_categorical</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color_palette_categorical</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                <span class="n">colorbar_ticks_continuous</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color_dict_categorical</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                <span class="n">zorder_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zorder_num_classes</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">zorder_direction</span><span class="o">=</span><span class="s1">&#39;ascending&#39;</span><span class="p">,</span> 
+                                <span class="n">alpha_base</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">brushing_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">alpha_brush</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> 
+                                <span class="n">lw_base</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">save_fig_filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                <span class="n">axis_mins</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis_maxs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    
+    <span class="c1">### verify that all inputs take supported values</span>
+    <span class="k">assert</span> <span class="n">ideal_direction</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">,</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">zorder_direction</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;ascending&#39;</span><span class="p">,</span> <span class="s1">&#39;descending&#39;</span><span class="p">]</span>
+    
+    <span class="k">if</span> <span class="n">minmaxs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">minmax</span> <span class="ow">in</span> <span class="n">minmaxs</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="n">minmax</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">]</span>
+    
+    <span class="k">assert</span> <span class="n">color_by_continuous</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">color_by_categorical</span> <span class="ow">is</span> <span class="kc">None</span>
+    
+    <span class="k">if</span> <span class="n">columns_axes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">columns_axes</span> <span class="o">=</span> <span class="n">objs</span><span class="o">.</span><span class="n">columns</span>
+    <span class="k">if</span> <span class="n">axis_labels</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">axis_labels</span> <span class="o">=</span> <span class="n">columns_axes</span>
+
+    <span class="c1">### reorganize &amp; normalize objective data</span>
+    <span class="n">objs_reorg</span><span class="p">,</span> <span class="n">tops</span><span class="p">,</span> <span class="n">bottoms</span> <span class="o">=</span> <span class="n">reorganize_objs</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">columns_axes</span><span class="p">,</span> <span class="n">ideal_direction</span><span class="p">,</span> <span class="n">minmaxs</span><span class="p">,</span> 
+        <span class="n">axis_mins</span><span class="o">=</span><span class="n">axis_mins</span><span class="p">,</span> <span class="n">axis_maxs</span><span class="o">=</span><span class="n">axis_maxs</span><span class="p">)</span>
+
+    <span class="c1">### apply any brushing criteria</span>
+    <span class="k">if</span> <span class="n">brushing_dict</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">satisfice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">objs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="mf">0.</span>
+        <span class="c1">### iteratively apply all brushing criteria to get satisficing set of solutions</span>
+        <span class="k">for</span> <span class="n">col_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">threshold</span><span class="p">,</span> <span class="n">operator</span><span class="p">)</span> <span class="ow">in</span> <span class="n">brushing_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">:</span>
+                <span class="n">satisfice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">satisfice</span><span class="p">,</span> <span class="n">objs</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="n">col_idx</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;&lt;=&#39;</span><span class="p">:</span>
+                <span class="n">satisfice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">satisfice</span><span class="p">,</span> <span class="n">objs</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="n">col_idx</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">threshold</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;&gt;&#39;</span><span class="p">:</span>
+                <span class="n">satisfice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">satisfice</span><span class="p">,</span> <span class="n">objs</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="n">col_idx</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;&gt;=&#39;</span><span class="p">:</span>
+                <span class="n">satisfice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">satisfice</span><span class="p">,</span> <span class="n">objs</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="n">col_idx</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">threshold</span><span class="p">)</span>
+
+            <span class="c1">### add rectangle patch to plot to represent brushing</span>
+            <span class="n">threshold_norm</span> <span class="o">=</span> <span class="p">(</span><span class="n">threshold</span> <span class="o">-</span> <span class="n">bottoms</span><span class="p">[</span><span class="n">col_idx</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">tops</span><span class="p">[</span><span class="n">col_idx</span><span class="p">]</span> <span class="o">-</span> <span class="n">bottoms</span><span class="p">[</span><span class="n">col_idx</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">ideal_direction</span> <span class="o">==</span> <span class="s1">&#39;top&#39;</span> <span class="ow">and</span> <span class="n">minmaxs</span><span class="p">[</span><span class="n">col_idx</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;=&#39;</span><span class="p">]:</span>
+                    <span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">([</span><span class="n">col_idx</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">threshold_norm</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">threshold_norm</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;=&#39;</span><span class="p">]:</span>
+                    <span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">([</span><span class="n">col_idx</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">threshold_norm</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">ideal_direction</span> <span class="o">==</span> <span class="s1">&#39;top&#39;</span> <span class="ow">and</span> <span class="n">minmaxs</span><span class="p">[</span><span class="n">col_idx</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;=&#39;</span><span class="p">]:</span>
+                    <span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">([</span><span class="n">col_idx</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">threshold_norm</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;=&#39;</span><span class="p">]:</span>
+                    <span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">([</span><span class="n">col_idx</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">threshold_norm</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">threshold_norm</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">ideal_direction</span> <span class="o">==</span> <span class="s1">&#39;bottom&#39;</span> <span class="ow">and</span> <span class="n">minmaxs</span><span class="p">[</span><span class="n">col_idx</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;=&#39;</span><span class="p">]:</span>
+                    <span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">([</span><span class="n">col_idx</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">threshold_norm</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;=&#39;</span><span class="p">]:</span>
+                    <span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">([</span><span class="n">col_idx</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">threshold_norm</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">threshold_norm</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">ideal_direction</span> <span class="o">==</span> <span class="s1">&#39;bottom&#39;</span> <span class="ow">and</span> <span class="n">minmaxs</span><span class="p">[</span><span class="n">col_idx</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;=&#39;</span><span class="p">]:</span>
+                    <span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">([</span><span class="n">col_idx</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">threshold_norm</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">threshold_norm</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;=&#39;</span><span class="p">]:</span>
+                    <span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">([</span><span class="n">col_idx</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">threshold_norm</span><span class="p">)</span>
+                    
+            <span class="n">pc</span> <span class="o">=</span> <span class="n">PatchCollection</span><span class="p">([</span><span class="n">rect</span><span class="p">],</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">add_collection</span><span class="p">(</span><span class="n">pc</span><span class="p">)</span>
+    
+    <span class="c1">### loop over all solutions/rows &amp; plot on parallel axis plot</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">objs_reorg</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">color_by_continuous</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="n">get_color</span><span class="p">(</span><span class="n">objs_reorg</span><span class="p">[</span><span class="n">columns_axes</span><span class="p">[</span><span class="n">color_by_continuous</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> 
+                              <span class="n">color_by_continuous</span><span class="p">,</span> <span class="n">color_palette_continuous</span><span class="p">,</span> 
+                              <span class="n">color_by_categorical</span><span class="p">,</span> <span class="n">color_dict_categorical</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">color_by_categorical</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="n">get_color</span><span class="p">(</span><span class="n">objs</span><span class="p">[</span><span class="n">color_by_categorical</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> 
+                              <span class="n">color_by_continuous</span><span class="p">,</span> <span class="n">color_palette_continuous</span><span class="p">,</span> 
+                              <span class="n">color_by_categorical</span><span class="p">,</span> <span class="n">color_dict_categorical</span><span class="p">)</span>
+                        
+        <span class="c1">### order lines according to ascending or descending values of one of the objectives?</span>
+        <span class="k">if</span> <span class="n">zorder_by</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">zorder</span> <span class="o">=</span> <span class="mi">4</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">zorder</span> <span class="o">=</span> <span class="n">get_zorder</span><span class="p">(</span><span class="n">objs_reorg</span><span class="p">[</span><span class="n">columns_axes</span><span class="p">[</span><span class="n">zorder_by</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> 
+                                <span class="n">zorder_num_classes</span><span class="p">,</span> <span class="n">zorder_direction</span><span class="p">)</span>
+            
+        <span class="c1">### apply any brushing?</span>
+        <span class="k">if</span> <span class="n">brushing_dict</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">satisfice</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha_base</span>
+                <span class="n">lw</span> <span class="o">=</span> <span class="n">lw_base</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha_brush</span>
+                <span class="n">lw</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="n">zorder</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha_base</span>
+            <span class="n">lw</span> <span class="o">=</span> <span class="n">lw_base</span>
+            
+        <span class="c1">### loop over objective/column pairs &amp; plot lines between parallel axes</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">objs_reorg</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]]</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="n">zorder</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">)</span>
+                  
+    <span class="c1">### add top/bottom ranges</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">columns_axes</span><span class="p">)):</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">tops</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="mi">3</span><span class="p">)),</span> <span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mf">1.02</span><span class="p">],</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> 
+                    <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">columns_axes</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">bottoms</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.02</span><span class="p">],</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> 
+                        <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>    
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">bottoms</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="mi">3</span><span class="p">)),</span> <span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.02</span><span class="p">],</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> 
+                        <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>    
+
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1">### other aesthetics</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+    
+    <span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">,</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span><span class="s1">&#39;left&#39;</span><span class="p">,</span><span class="s1">&#39;right&#39;</span><span class="p">]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">spine</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">ideal_direction</span> <span class="o">==</span> <span class="s1">&#39;top&#39;</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.08</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">ideal_direction</span> <span class="o">==</span> <span class="s1">&#39;bottom&#39;</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.08</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;Direction of preference&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
+                <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+
+    <span class="c1">#ax.set_xlim(-0.4, 4.2)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">columns_axes</span><span class="p">)</span><span class="o">-</span><span class="mf">0.8</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">1.1</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">l</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axis_labels</span><span class="p">):</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="o">-</span><span class="mf">0.12</span><span class="p">),</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="c1">### colorbar for continuous legend</span>
+    <span class="k">if</span> <span class="n">color_by_continuous</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mappable</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">color_palette_continuous</span><span class="p">)</span>
+        <span class="n">mappable</span><span class="o">.</span><span class="n">set_clim</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">objs</span><span class="p">[</span><span class="n">columns_axes</span><span class="p">[</span><span class="n">color_by_continuous</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> 
+                          <span class="n">vmax</span><span class="o">=</span><span class="n">objs</span><span class="p">[</span><span class="n">columns_axes</span><span class="p">[</span><span class="n">color_by_continuous</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+        <span class="n">cb</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">mappable</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> 
+                          <span class="n">label</span><span class="o">=</span><span class="n">axis_labels</span><span class="p">[</span><span class="n">color_by_continuous</span><span class="p">],</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span> 
+                          <span class="n">alpha</span><span class="o">=</span><span class="n">alpha_base</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">colorbar_ticks_continuous</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_</span> <span class="o">=</span> <span class="n">cb</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">colorbar_ticks_continuous</span><span class="p">,</span> <span class="n">colorbar_ticks_continuous</span><span class="p">,</span> 
+                                 <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">cb</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">cb</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xlabel</span><span class="p">(),</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>  
+    
+    <span class="c1">### categorical legend</span>
+    <span class="k">elif</span> <span class="n">color_by_categorical</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">leg</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">label</span><span class="p">,</span><span class="n">color</span> <span class="ow">in</span> <span class="n">color_dict_categorical</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">leg</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> 
+                              <span class="n">alpha</span><span class="o">=</span><span class="n">alpha_base</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">))</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="n">leg</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower center&#39;</span><span class="p">,</span> 
+                      <span class="n">ncol</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">color_dict_categorical</span><span class="p">)),</span>
+                      <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="o">-</span><span class="mf">0.07</span><span class="p">],</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+
+<span class="c1">### customizable parallel coordinates plot</span>
+<span class="c1"># Adapted from Figure 5 of Hamilton et al 2024 (source: https://www.nature.com/articles/s41467-024-51660-8)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">custom_parallel_coordinates_kde</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">objs</span><span class="p">,</span> <span class="n">columns_axes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis_labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                                <span class="n">ideal_direction</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">minmaxs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                                <span class="n">zorder_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zorder_num_classes</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">zorder_direction</span><span class="o">=</span><span class="s1">&#39;ascending&#39;</span><span class="p">,</span> 
+                                <span class="n">color_original</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">color_ptb</span><span class="o">=</span><span class="s1">&#39;coral&#39;</span><span class="p">,</span>
+                                <span class="n">alpha_original</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">alpha_ptb</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> 
+                                <span class="n">lw_original</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">lw_ptb</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
+                                <span class="n">axis_mins</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis_maxs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    
+    <span class="c1">### verify that all inputs take supported values</span>
+    <span class="k">assert</span> <span class="n">ideal_direction</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">,</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">zorder_direction</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;ascending&#39;</span><span class="p">,</span> <span class="s1">&#39;descending&#39;</span><span class="p">]</span>
+    
+    <span class="k">if</span> <span class="n">minmaxs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">minmax</span> <span class="ow">in</span> <span class="n">minmaxs</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="n">minmax</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">]</span>
+        
+    <span class="k">if</span> <span class="n">columns_axes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">columns_axes</span> <span class="o">=</span> <span class="n">objs</span><span class="o">.</span><span class="n">columns</span>
+    <span class="k">if</span> <span class="n">axis_labels</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">axis_labels</span> <span class="o">=</span> <span class="n">columns_axes</span>
+
+    <span class="n">objs_original</span> <span class="o">=</span> <span class="n">objs</span><span class="p">[</span><span class="n">objs</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;original&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">objs_ptb</span> <span class="o">=</span> <span class="n">objs</span><span class="p">[</span><span class="n">objs</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;perturbations&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1">### reorganize &amp; normalize objective data</span>
+    <span class="n">objs_reorg_ptb</span><span class="p">,</span> <span class="n">tops_ptb</span><span class="p">,</span> <span class="n">bottoms_ptb</span> <span class="o">=</span> <span class="n">reorganize_objs</span><span class="p">(</span><span class="n">objs_ptb</span><span class="p">,</span> <span class="n">columns_axes</span><span class="p">,</span> <span class="n">ideal_direction</span><span class="p">,</span> 
+                                                            <span class="n">minmaxs</span><span class="p">,</span> <span class="n">axis_mins</span><span class="o">=</span><span class="n">axis_mins</span><span class="p">,</span> <span class="n">axis_maxs</span><span class="o">=</span><span class="n">axis_maxs</span><span class="p">)</span>
+    <span class="n">objs_reorg_original</span><span class="p">,</span> <span class="n">tops_original</span><span class="p">,</span> <span class="n">bottoms_original</span> <span class="o">=</span> <span class="n">reorganize_objs</span><span class="p">(</span><span class="n">objs_original</span><span class="p">,</span> <span class="n">columns_axes</span><span class="p">,</span> 
+                                                                           <span class="n">ideal_direction</span><span class="p">,</span> <span class="n">minmaxs</span><span class="p">,</span> 
+                                                                           <span class="n">axis_mins</span><span class="o">=</span><span class="n">axis_mins</span><span class="p">,</span> <span class="n">axis_maxs</span><span class="o">=</span><span class="n">axis_maxs</span><span class="p">)</span>
+
+    <span class="c1">### loop over all solutions/rows &amp; plot on parallel axis plot</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">objs_reorg_original</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">objs_reorg_original</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">objs_reorg_original</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]]</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color_original</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha_original</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">4</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw_original</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">objs_reorg_ptb</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>                       
+        <span class="c1">### order lines according to ascending or descending values of one of the objectives?</span>
+        <span class="k">if</span> <span class="n">zorder_by</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">zorder</span> <span class="o">=</span> <span class="mi">4</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">zorder</span> <span class="o">=</span> <span class="n">get_zorder</span><span class="p">(</span><span class="n">objs_reorg_ptb</span><span class="p">[</span><span class="n">columns_axes</span><span class="p">[</span><span class="n">zorder_by</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> 
+                                <span class="n">zorder_num_classes</span><span class="p">,</span> <span class="n">zorder_direction</span><span class="p">)</span>
+            
+        <span class="c1">### loop over objective/column pairs &amp; plot lines between parallel axes</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">objs_reorg_ptb</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">objs_reorg_ptb</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">objs_reorg_ptb</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]]</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color_ptb</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha_ptb</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw_ptb</span><span class="p">)</span>
+                 
+    <span class="c1">### add top/bottom ranges</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">columns_axes</span><span class="p">)):</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">tops_ptb</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="mi">3</span><span class="p">)),</span> <span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mf">1.02</span><span class="p">],</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> 
+                    <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">columns_axes</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">bottoms_ptb</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.02</span><span class="p">],</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> 
+                        <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>    
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">bottoms_ptb</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="mi">3</span><span class="p">)),</span> <span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.02</span><span class="p">],</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> 
+                        <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>    
+
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># add distribution of perturbed objectives </span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">columns_axes</span><span class="p">)):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">objs_reorg_ptb</span><span class="p">[</span><span class="n">columns_axes</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span>
+        <span class="n">data_scaled</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="n">kde</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">nonparametric</span><span class="o">.</span><span class="n">KDEUnivariate</span><span class="p">(</span><span class="n">data_scaled</span><span class="p">)</span>
+        <span class="n">kde</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">bw</span><span class="o">=</span><span class="mf">0.025</span><span class="p">)</span>
+
+        <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">[]</span> 
+        <span class="k">for</span> <span class="n">yy</span> <span class="ow">in</span> <span class="n">y</span><span class="p">:</span>
+            <span class="n">xx</span> <span class="o">=</span> <span class="n">kde</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">yy</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.095</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">xx</span><span class="p">):</span> 
+                <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">0.</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">xx</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="c1"># ensure that the KDE filled area is plotted over the lines</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">fill_betweenx</span><span class="p">(</span><span class="n">y</span><span class="o">+</span><span class="mf">0.075</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">j</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mf">0.00005</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.65</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="n">color_ptb</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+    <span class="c1">### other aesthetics</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+    
+    <span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">,</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span><span class="s1">&#39;left&#39;</span><span class="p">,</span><span class="s1">&#39;right&#39;</span><span class="p">]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">spine</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">ideal_direction</span> <span class="o">==</span> <span class="s1">&#39;top&#39;</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.08</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">ideal_direction</span> <span class="o">==</span> <span class="s1">&#39;bottom&#39;</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.08</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;Direction of preference&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
+                <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">columns_axes</span><span class="p">)</span><span class="o">+</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">1.1</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">l</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axis_labels</span><span class="p">):</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="o">-</span><span class="mf">0.12</span><span class="p">),</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    
+    
+<span class="c1">### customizable parallel coordinates plot</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">single_parallel_coordinates</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">objs</span><span class="p">,</span> <span class="n">columns_axes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis_labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                                <span class="n">ideal_direction</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">minmaxs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                                <span class="n">color_by_categorical</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color_palette_categorical</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color_dict_categorical</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                <span class="n">zorder_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zorder_num_classes</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">zorder_direction</span><span class="o">=</span><span class="s1">&#39;ascending&#39;</span><span class="p">,</span> 
+                                <span class="n">alpha_base</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">lw_base</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">save_fig_filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                <span class="n">axis_mins</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis_maxs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    
+    <span class="c1">### verify that all inputs take supported values</span>
+    <span class="k">assert</span> <span class="n">ideal_direction</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">,</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">zorder_direction</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;ascending&#39;</span><span class="p">,</span> <span class="s1">&#39;descending&#39;</span><span class="p">]</span>
+    
+    <span class="k">if</span> <span class="n">minmaxs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">minmax</span> <span class="ow">in</span> <span class="n">minmaxs</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="n">minmax</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">]</span>
+        
+    <span class="k">if</span> <span class="n">columns_axes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">columns_axes</span> <span class="o">=</span> <span class="n">objs</span><span class="o">.</span><span class="n">columns</span>
+    <span class="k">if</span> <span class="n">axis_labels</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">axis_labels</span> <span class="o">=</span> <span class="n">columns_axes</span>
+
+    <span class="c1">### reorganize &amp; normalize objective data</span>
+    <span class="n">objs_reorg</span><span class="p">,</span> <span class="n">tops</span><span class="p">,</span> <span class="n">bottoms</span> <span class="o">=</span> <span class="n">reorganize_objs</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">columns_axes</span><span class="p">,</span> <span class="n">ideal_direction</span><span class="p">,</span> <span class="n">minmaxs</span><span class="p">,</span>
+        <span class="n">axis_mins</span><span class="o">=</span><span class="n">axis_mins</span><span class="p">,</span> <span class="n">axis_maxs</span><span class="o">=</span><span class="n">axis_maxs</span><span class="p">)</span>
+    
+    <span class="c1">### loop over all solutions/rows &amp; plot on parallel axis plot</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">objs_reorg</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="n">sol_i_cat</span> <span class="o">=</span> <span class="n">objs</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">color_by_categorical</span><span class="p">]</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">color_dict_categorical</span><span class="p">[</span><span class="n">sol_i_cat</span><span class="p">]</span>
+                        
+        <span class="c1">### order lines according to ascending or descending values of one of the objectives?</span>
+        <span class="k">if</span> <span class="n">zorder_by</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">zorder</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">zorder</span> <span class="o">=</span> <span class="n">get_zorder</span><span class="p">(</span><span class="n">objs_reorg</span><span class="p">[</span><span class="n">columns_axes</span><span class="p">[</span><span class="n">zorder_by</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> 
+                                <span class="n">zorder_num_classes</span><span class="p">,</span> <span class="n">zorder_direction</span><span class="p">)</span>
+        <span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha_base</span>
+        <span class="n">lw</span> <span class="o">=</span> <span class="n">lw_base</span>
+            
+        <span class="c1">### loop over objective/column pairs &amp; plot lines between parallel axes</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">objs_reorg</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">objs_reorg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]]</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="n">zorder</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_objs_util</span><span class="p">(</span><span class="n">objs_df</span><span class="p">,</span> <span class="n">util</span><span class="p">):</span>
+    <span class="n">objs_util_df</span> <span class="o">=</span> <span class="n">objs_df</span><span class="p">[[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">objs_df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;_</span><span class="si">{</span><span class="n">util</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)]]</span>
+    <span class="k">return</span> <span class="n">objs_util_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="import-the-required-datasets">
+<h2>Import the required datasets<a class="headerlink" href="#import-the-required-datasets" title="Link to this heading">#</a></h2>
+<p>In this example, we have three hypothetical utilities: Watertown (W), Dryville (D) and Fallsland (F). Each utility have five performance objectives to meet:</p>
+<ul class="simple">
+<li><p>Reliability (REL)</p></li>
+<li><p>Restriction frequency (RF)</p></li>
+<li><p>Infrastructure Net Present Cost (INPC)</p></li>
+<li><p>Peak financial cost (PFC)</p></li>
+<li><p>Drought mitigation cost (DMC)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># original solution colors</span>
+<span class="n">color_sol1</span> <span class="o">=</span> <span class="s2">&quot;#B66D0D&quot;</span> 
+<span class="n">color_sol2</span> <span class="o">=</span> <span class="s2">&quot;#34563A&quot;</span>
+
+<span class="c1"># perturbed solution colors</span>
+<span class="n">color_sol1_ptb</span> <span class="o">=</span> <span class="s2">&quot;#EACCA4&quot;</span> 
+<span class="n">color_sol2_ptb</span> <span class="o">=</span> <span class="s2">&quot;#B9DFC7&quot;</span>
+
+<span class="c1"># the different objectives and utilities</span>
+<span class="n">objs_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;REL&#39;</span><span class="p">,</span> <span class="s1">&#39;RF&#39;</span><span class="p">,</span> <span class="s1">&#39;INPC&#39;</span><span class="p">,</span> <span class="s1">&#39;PFC&#39;</span><span class="p">,</span> <span class="s1">&#39;WCC&#39;</span><span class="p">]</span>
+<span class="n">util_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Watertown&#39;</span><span class="p">,</span> <span class="s1">&#39;Dryville&#39;</span><span class="p">,</span> <span class="s1">&#39;Fallsland&#39;</span><span class="p">]</span>
+<span class="n">util_dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;Watertown&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;Dryville&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;Fallsland&#39;</span><span class="p">}</span>
+
+<span class="c1"># create a list of all objective names for all utilities</span>
+<span class="n">objs_names_allutils</span> <span class="o">=</span> <span class="p">[</span><span class="n">obj_name</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="n">util_name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">util_name</span> <span class="ow">in</span> <span class="n">util_names</span> <span class="k">for</span> <span class="n">obj_name</span> <span class="ow">in</span> <span class="n">objs_names</span><span class="p">]</span>
+
+<span class="n">obj_names_W</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;REL_W&#39;</span><span class="p">,</span> <span class="s1">&#39;RF_W&#39;</span><span class="p">,</span> <span class="s1">&#39;INPC_W&#39;</span><span class="p">,</span> <span class="s1">&#39;PFC_W&#39;</span><span class="p">,</span> <span class="s1">&#39;WCC_W&#39;</span><span class="p">]</span>
+<span class="n">obj_names_D</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;REL_D&#39;</span><span class="p">,</span> <span class="s1">&#39;RF_D&#39;</span><span class="p">,</span> <span class="s1">&#39;INPC_D&#39;</span><span class="p">,</span> <span class="s1">&#39;PFC_D&#39;</span><span class="p">,</span> <span class="s1">&#39;WCC_D&#39;</span><span class="p">]</span>
+<span class="n">obj_names_F</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;REL_F&#39;</span><span class="p">,</span> <span class="s1">&#39;RF_F&#39;</span><span class="p">,</span> <span class="s1">&#39;INPC_F&#39;</span><span class="p">,</span> <span class="s1">&#39;PFC_F&#39;</span><span class="p">,</span> <span class="s1">&#39;WCC_F&#39;</span><span class="p">]</span>
+
+<span class="c1"># create a dictionary to map utility names to their corresponding objective names</span>
+<span class="n">obj_names_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;W&#39;</span><span class="p">:</span> <span class="n">obj_names_W</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">obj_names_D</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="n">obj_names_F</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once the utilities and their respective performance objectives have been specified, let’s load the data for the perturbed solutions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get the perturbed versions of the solutions without regional values</span>
+<span class="n">objectives_ptb_sol1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;example_data/objs_ptb_set1.csv&#39;</span><span class="p">,</span> 
+                                     <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">objectives_ptb_sol1</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">objs_names_allutils</span>
+<span class="n">objectives_ptb_sol2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;example_data/objs_ptb_set2.csv&#39;</span><span class="p">,</span> 
+                                       <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">objectives_ptb_sol2</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">objs_names_allutils</span>
+
+<span class="c1"># create categories for the perturbed solutions for plotting</span>
+<span class="n">objectives_perturbed_sol1_cat</span> <span class="o">=</span> <span class="n">objectives_ptb_sol1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">objectives_perturbed_sol1_cat</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;perturbations&#39;</span>
+<span class="n">objectives_perturbed_sol2_cat</span> <span class="o">=</span> <span class="n">objectives_ptb_sol2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">objectives_perturbed_sol2_cat</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;perturbations&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similarly, we can upload the performance tradeoffs of the original solutions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read in the original objectives for the two solutions</span>
+<span class="n">objectives_original</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;example_data/objectives_original.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                                  <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">objs_names_allutils</span><span class="p">)</span>
+
+<span class="n">objectives_og_sol1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">objectives_original</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">objectives_og_sol2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">objectives_original</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span><span class="o">.</span><span class="n">T</span>
+
+<span class="c1"># create categories for the orignal solutions for plotting</span>
+<span class="n">objectives_og_sol1_cat</span> <span class="o">=</span> <span class="n">objectives_og_sol1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">objectives_og_sol1_cat</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;original&#39;</span>
+<span class="n">objectives_og_sol2_cat</span> <span class="o">=</span> <span class="n">objectives_og_sol2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">objectives_og_sol2_cat</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;original&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s combine the two sets of solutions so we can plot them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># combine the perturbed and original versions of the solutions</span>
+<span class="n">objectives_sol1_combined_cat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">objectives_perturbed_sol1_cat</span><span class="p">,</span> <span class="n">objectives_og_sol1_cat</span><span class="p">),</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">objectives_sol2_combined_cat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">objectives_perturbed_sol2_cat</span><span class="p">,</span> <span class="n">objectives_og_sol2_cat</span><span class="p">),</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-the-parallel-tradeoffs">
+<h2>Plot the parallel tradeoffs<a class="headerlink" href="#plot-the-parallel-tradeoffs" title="Link to this heading">#</a></h2>
+<p>Here, we first select a utility to plot using the <code class="docutils literal notranslate"><span class="pre">util_to_plot</span></code> variable</p>
+<p>This is how you can interpret figure:</p>
+<ul class="simple">
+<li><p>The KDE plots show the distribution of performance tradeoffs of each perturbed instance of a solution.</p></li>
+<li><p>The solid, thick line shows the original performance tradeoffs of the solution</p></li>
+<li><p>The thinner, slightly transparent lines show the performance tradeoff of each perturbed instance of the solution.</p></li>
+</ul>
+<p>But first, let’s set up the datasets and figure specifications we want to plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># specify the utility to plot</span>
+<span class="n">util_to_plot</span> <span class="o">=</span> <span class="s2">&quot;Dryville&quot;</span>
+
+<span class="c1"># get the objectives for the original and perturbed solutions for plotting</span>
+<span class="n">objs_to_plot_sol1</span> <span class="o">=</span> <span class="n">get_objs_util</span><span class="p">(</span><span class="n">objectives_sol1_combined_cat</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]),</span> <span class="n">util_to_plot</span><span class="p">)</span>
+<span class="n">objs_to_plot_sol1</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">objectives_sol1_combined_cat</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span>
+
+<span class="n">objs_to_plot_sol2</span> <span class="o">=</span> <span class="n">get_objs_util</span><span class="p">(</span><span class="n">objectives_sol2_combined_cat</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]),</span> <span class="n">util_to_plot</span><span class="p">)</span>
+<span class="n">objs_to_plot_sol2</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">objectives_sol2_combined_cat</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span>
+
+<span class="c1"># specify the axis min and max values for the parallel coordinates plot</span>
+<span class="n">axis_mins</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.93</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+<span class="n">axis_maxs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">200.0</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">]</span>
+
+<span class="c1"># get the axis labels (all but the last Category column) for the parallel coordinates plot</span>
+<span class="n">columns_axes</span> <span class="o">=</span> <span class="n">objs_to_plot_sol1</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">axis_labels</span> <span class="o">=</span> <span class="n">columns_axes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="dryville-s-performance-tradeoffs">
+<h3>Dryville’s performance tradeoffs<a class="headerlink" href="#dryville-s-performance-tradeoffs" title="Link to this heading">#</a></h3>
+<p>Let’s take a look at how modest perturbations to Watertown’s decision variables change its performance tradeoffs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># setup figure specifications and dimensions</span>
+<span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span> <span class="n">gridspec_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;hspace&#39;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;wspace&#39;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">})</span>
+
+<span class="n">custom_parallel_coordinates_kde</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">objs_to_plot_sol1</span><span class="p">,</span> <span class="n">columns_axes</span><span class="o">=</span><span class="n">columns_axes</span><span class="p">,</span> <span class="n">axis_labels</span><span class="o">=</span><span class="n">axis_labels</span><span class="p">,</span> 
+                                <span class="n">ideal_direction</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">minmaxs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">],</span> 
+                                <span class="n">color_original</span><span class="o">=</span><span class="n">color_sol1</span><span class="p">,</span> <span class="n">color_ptb</span><span class="o">=</span><span class="n">color_sol1_ptb</span><span class="p">,</span>
+                                <span class="n">alpha_original</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">alpha_ptb</span><span class="o">=</span><span class="mf">0.075</span><span class="p">,</span>  
+                                <span class="n">lw_original</span><span class="o">=</span><span class="mf">3.5</span><span class="p">,</span> <span class="n">lw_ptb</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
+                                <span class="n">axis_mins</span><span class="o">=</span><span class="n">axis_mins</span><span class="p">,</span> <span class="n">axis_maxs</span><span class="o">=</span><span class="n">axis_maxs</span><span class="p">)</span>
+
+<span class="n">custom_parallel_coordinates_kde</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">objs_to_plot_sol2</span><span class="p">,</span> <span class="n">columns_axes</span><span class="o">=</span><span class="n">columns_axes</span><span class="p">,</span> <span class="n">axis_labels</span><span class="o">=</span><span class="n">axis_labels</span><span class="p">,</span> 
+                                <span class="n">ideal_direction</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">minmaxs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">],</span> 
+                                <span class="n">color_original</span><span class="o">=</span><span class="n">color_sol2</span><span class="p">,</span> <span class="n">color_ptb</span><span class="o">=</span><span class="n">color_sol2_ptb</span><span class="p">,</span>
+                                <span class="n">alpha_original</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">alpha_ptb</span><span class="o">=</span><span class="mf">0.075</span><span class="p">,</span>
+                                <span class="n">lw_original</span><span class="o">=</span><span class="mf">3.5</span><span class="p">,</span> <span class="n">lw_ptb</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
+                                <span class="n">axis_mins</span><span class="o">=</span><span class="n">axis_mins</span><span class="p">,</span> <span class="n">axis_maxs</span><span class="o">=</span><span class="n">axis_maxs</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Parallel KDE plot for </span><span class="si">{</span><span class="n">util_to_plot</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1feb715c9ef1382480b46f9ed8cbcfdceb207d15ee8bf85b71f759f7e5a500a3.png" src="../_images/1feb715c9ef1382480b46f9ed8cbcfdceb207d15ee8bf85b71f759f7e5a500a3.png" />
+</div>
+</div>
+<p>Feel free to try this out with Watertown and Fallsland as well! Be careful to make the necessary modifications to the figure specifications before plotting to get the best result.</p>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>This example provides a guideline on how to plot a figure that combines both KDE plots and parallel coordinate plots. If you have any suggestions to improve this style of figure, feel free to open a GitHub Issue or <a class="reference external" href="https://reedgroup.github.io/Contributing/Instructions.html">contribute directly to this page</a> in the Reed Group Lab Manual repository.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: ".venv"
+        },
+        kernelOptions: {
+            name: ".venv",
+            path: "./FigureLibrary"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = '.venv'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ParallelCoordinatesPlots.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Parallel Coordinates Plots</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="synthetic_generation_diagnostics.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Synthetic Streamflow Diagnostic Figure Library</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-using-parallel-coordinate-kde-plots">An example using parallel coordinate KDE plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-required-datasets">Import the required datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-parallel-tradeoffs">Plot the parallel tradeoffs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dryville-s-performance-tradeoffs">Dryville’s performance tradeoffs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Reed Group at Cornell CEE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

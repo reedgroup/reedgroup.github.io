@@ -4,26 +4,22 @@ Contains brief introductions to using HPC clusters, applicable to both The Cube 
 >Contributions to this demo are welcome, preferably by extending the code while maintaining generalizability.
 
 ## Resources
-- [Cornell CAC wiki page for hopper](https://www.cac.cornell.edu/wiki/index.php?title=Hopper_Cluster)
-- [Cornell CAC wiki page for Slurm](https://www.cac.cornell.edu/wiki/index.php?title=Slurm)
+- [Cornell CAC wiki page for hopper](https://portal.cac.cornell.edu/TechDocs/clusters/Hopper/)
+- [Cornell CAC wiki page for Slurm](https://portal.cac.cornell.edu/techdocs/clusterinfo/slurm/)
 - [Dave's post on batch parallelization of code using mpi4py](https://waterprogramming.wordpress.com/2021/11/10/easy-batch-parallelization-of-code-in-any-language-using-mpi4py/)
 - [*A list of bash FAQ*](https://mywiki.wooledge.org/BashFAQ)
 - [A nice page of different example bash scripts with descriptions](https://tldp.org/LDP/abs/html/)
 
 *********
 ## Reed group clusters
-### The Cube
-The Cube is the personal cluster associated with the Reed Research Group. Any student in Reed Group will be provided access to the Cube and collaborators can request a guest access. In order to get access, email Pat and provide your name, email, address, and phone number so that he can register you as a user. You will get an email with your login information and a notice to set a password.
 
-Specs on the Cube: [HERE](https://www.cac.cornell.edu/wiki/index.php?title=THECUBE_Cluster)
 ### Hopper
 Hopper is a newer cluster that is headed by the Srikrishnan Group in BEE and is shared across four groups: Srikrishnan, Steinschneider, Reed, and Anderson. Any student in Reed Group will also be allowed access to Hopper. 
 
-Before getting started, you need to request access to Hopper by filling out the form [here]([https://www.cac.cornell.edu/services/external/RequestCACid.aspx?ProjectID=vs498_0001](https://www.cac.cornell.edu/services/external/RequestCACid.aspx?ProjectID=vs498_0001)). You may want to email Vivek Srikrishnan as well to let him know you are requesting access. 
+To gain access to Hopper email Prof. Vivek Srikrishnan, you will be sent a digital form to complete before you gain access. Once submitted, Vivek Srikrishnan will need to approve access. After access is granted, you should receive and email from cac-help@cornell.edu with instructions on setting up your account. Be sure to remember your account password. 
 
-Once submitted, Vivek Srikrishnan will need to approve access. After access is granted, you should receive and email from cac-help@cornell.edu with instructions on setting up your account. Be sure to remember your account password. 
+Specs on Hopper: [HERE](https://portal.cac.cornell.edu/TechDocs/clusters/Hopper/)
 
-Specs on Hopper: [HERE](https://www.cac.cornell.edu/wiki/index.php?title=Hopper_Cluster)
 ### Questions
 If you have questions about installing packages on the cluster or questions about jobs, feel free to email: cac-help@cornell.edu
 
@@ -34,7 +30,7 @@ If you have questions about installing packages on the cluster or questions abou
 
 Secure SHell, or SSH, is an *encrypted connection protocol* used to connect your local machine to a remote machine.  
 
-We will use SSH to access Hopper or The Cube.  You have a few different SSH options.
+We will use SSH to access Hopper.  You have a few different SSH options.
 #### 0.1.2 SSH using VS Code Remote Terminal 
 Personally, I recommend accessing Hopper, and HPC resources generally, using the VS Code Remote Terminal tools. This allows for all the benefits of the VS code integrated development environment (e.g., extensions, nice user interface, git support, etc.).
 
@@ -65,7 +61,7 @@ Once done with your work you can end the SSH connection by entering `exit` in th
 
 ### 0.3 Setting up python & a virtual environment
 
-**Note that Hopper has Python version 3.11.5 installed, however it may try to use Python version 3.6.6 by default!** Similar considerations should be made for The Cube.
+**Note that Hopper has Python version 3.11.5 installed, however it may try to use Python version 3.6.6 by default!**
 
 Be sure to load the modern version (see code below) and check your version if unsure. 
 
@@ -186,12 +182,7 @@ Where `arg1` and `arg2` are the arguments passed to the Julia code.
 *******
 
 
-## Gaining access to Hopper and the Cube 
-
-## The Cube 
-The Cube is the personal cluster associated with the Reed Research Group. Any student in Reed Group will be provided access to the Cube and collaborators can request a guest access. In order to get access, email Pat and provide your name, email, address, and phone number so that he can register you as a user. You will get an email with your login information and a notice to set a password. 
-
-Specs on the Cube: https://www.cac.cornell.edu/wiki/index.php?title=THECUBE_Cluster
+## Gaining access to Hopper
 
 ## Hopper
 Hopper is a newer cluster that is headed by the Srikrishnan Group in BEE and is shared across four groups: Srikrishnan, Steinschneider, Reed, and Anderson. Any student in Reed Group will also be allowed access to Hopper. In order to get access, email Vivek Srikrishnan and provide your name, email, address, and phone number so that he can register you as a user. You will get an email with your login information and a notice to set a password. 

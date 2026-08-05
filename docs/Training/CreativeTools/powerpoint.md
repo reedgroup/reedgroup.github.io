@@ -1,5 +1,0 @@
-# PowerPoint
-
-##Introduction
-
-##Resources

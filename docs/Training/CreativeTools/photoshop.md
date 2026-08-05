@@ -1,5 +1,0 @@
-# Photoshop
-
-##Introduction
-
-##Resources
