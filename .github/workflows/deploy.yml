@@ -44,7 +44,7 @@ jobs:
 
     # install jupyter-books in case cache failed, which seems to happen on monthly auto redeploys sometimes
     - name: Install jupyter-books
-      run: pip install jupyter-book
+      run: pip install "jupyter-book<2"
 
     # install python dependencies - only if [ipynb] triggered and environment out of date
     - name: Install python dependencies
