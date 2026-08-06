@@ -1,5 +1,7 @@
 # Artificial Intelligence (AI) Tools and Resources 
+```{warning}
 ⚠️ Note that all AI tools should be used with caution. Ensure that permission is *not* granted to private/patented repositories or non-open access resources. ⚠️
+```
 
 ## Types of tool
 Here is an overview of the types of AI tools summarized below:
