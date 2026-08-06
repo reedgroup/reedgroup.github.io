@@ -1,21 +1,25 @@
 # Artificial Intelligence (AI) Tools and Resources 
+⚠️ Note that all AI tools should be used with caution. Ensure that permission is *not* granted to private/patented repositories or non-open access resources. ⚠️
+
+## Types of tool
+Here is an overview of the types of AI tools summarized below:
+* **Paper review tools**: These are used specifically to discover new topics of interest, identify gaps in your current corpus of papers, or to verify the findings of the papers you are interested in reviewing. These tools can often be integrated with academic paper organizers such as [Zotero](https://www.zotero.org/).
+* **Large language models (LLMs)**: Easy-to-interact with chatbots that work wel
+* **AI code editors**: Therse are code editors that integrates the LLM's chat interface with a coding IDE. Often integrates [AI Agents (read more about Agentic AI here)](https://mitsloan.mit.edu/ideas-made-to-matter/agentic-ai-explained?utm_source=mitsloangooglep&utm_medium=cpc&utm_campaign=agenticAI&gad_source=1&gad_campaignid=20986709924&gclid=CjwKCAjw4dDTBhAqEiwAkHYmSqb6Ejyq5iIqBsbVf8elPUSDI6Lk3v83ze8gsM2aFRas0vhMy9P76xoCmuMQAvD_BwE) that allow different coding tasks to be completed in parallel. 
 
 ## AI Research Tools
 Below is a collaboratively compiled list of AI tools that can be used for research, note-taking, literature review, and a multitude of other purposes. 
 
-| Category                   | Tool/Resource              | Description                            | Price  |
-|----------------------------|----------------------------|----------------------------------------|--------|
-| Paper review tools         | Elicit                     | A "ChatGPT for papers" Allows imports from Zotero             | The basic tier is free, with a Pro tier that begins at $49. I have personally found the basic tier to be sufficient for regular use | 
-|            | Research Rabbit            | A supercharged version of Connected Papers or CitationTrees | Price here | 
-| Large Language Models (LLMs) | ChatGPT | Description here | Price here | 
-| Large Language Models (LLMs) | Claude | Description here | Price here | 
-| Large Language Models (LLMs) | Gemini | Description here | Price here | 
-| Large Language Models (LLMs) | Perplexity | Description here | Price here | 
-| AI code editors | Cursor | Description here | Price here | 
-| AI code editors | Antigravity | Description here | Price here | 
-| AI code editors | Codex | Description here | Price here | 
-| AI code editors | VS Code | Description here | Price here | 
-| AI code editors | Antigravity | Description here | Price here | 
-
-## Agentic AI 
-Intro to Agentic AI here
+| **Category**               | **Tool/Resource**       | **Description**                                   | **Pricing**            |
+|----------------------------|-------------------------|---------------------------------------------------|------------------------|
+| Paper review tools | [Elicit](https://elicit.com/) | A "ChatGPT for papers" particularly helpful for discovering key literature on a specific topic or field. | A free Basic tier, with a Pro tier that begins at $49/month. I have personally found the basic tier sufficient for regular use. | 
+| Paper review tools  | [Research Rabbit](https://app.researchrabbit.ai/) | Helpful with identifying gaps in knowledge base. Integrates nicely with Zotero. | Largely free but offer a $10/month subscription for expanded search and citation reliability metrics. | 
+| Paper review tools | [Perplexity](https://scite.ai/home) | The LLM tailored specifically for literature reviews and verifies the findings of papers. Has access to a broad corpus of academic journals through collaborations with  PNAS, Wiley, and IOP, among many others. | No free tier. The basic tier begins att $20/month. | 
+| Large Language Models (LLMs) | [ChatGPT](https://chatgpt.com/) | The OG LLM developed by OpenAI that excels at writing, drafting, and image generation. | Free and $8 version available for basic tasks. The $20 Pro tier is required for more extensive coding tasks. | 
+| Large Language Models (LLMs) | [Claude](https://claude.ai/new) | Anthropic's flagship product that works great for data analysis and coding. The first LLM to integrate the [Model Context Protocol (MCP)](https://www.anthropic.com/news/model-context-protocol). | A free plan is available, but an $20/month or $200/year Pro tier is more suited for daily research tasks. | 
+| Large Language Models (LLMs) | [Gemini](https://gemini.google.com/app) | Google's in-house LLM that has arguably the most recent information given its access to the Google search engine. Works great for initial topic development. | Google offers a [free Education tier](https://gemini.google/students/) that works well for building resumes and reviewing course material for exam prep. | 
+| AI code editors | [Cursor](https://cursor.com/) | An agentic AI software development platform best for complex software development. Integrates with all popular LLMs (i.e. OpenAI, Claude, and Gemini with a limited selection of each product's more recent models). Often a little overkill for normal research tasks. | A free tier is available, with an $20/month Pro subscription offered. | 
+| AI code editors | [Antigravity](https://antigravity.google/) | Google'a agentic AI platform built on Gemini 2.0. Like Cursor, it allows the coordination of multiple AI agents and has a larger context capacity than other code editors at similar pricing tiers. | A free tier is available, with a Pro tier at $20/month. |  
+| AI code editors | [VS Code](https://code.visualstudio.com/) | The workhorse, OG code IDE. Its default built-in agent is based on Microsoft Copilot (that in turn is based on OpenAI's ChatGPT), but can be easily integrated with other LLMs and AI agents. Has a large preexisting and growing library of tools, and is by far the coding tool with the lowest barrier to entry. | Free to download and use. Cost only incurred via the connected AI services. | 
+| AI code editors | [Claude Code](https://claude.com/product/claude-code) | Anthropic's autonomous coding agent. It differs from other IDE-based code editors as it runs directly in your terminal (a terminal-based agent). This provides it access to your entire project codebase, allowing it to read files, write code, run tests, and commit changes. | Included in the Claude Pro tier. | 
+| AI code editors | Codex | OpenAI's version of a terminal-based AI agent. Unlike Claude Code, Codex allows you to select from low, minimal, medium, and high reasoning depending on the complexity of your problem. | Included in ChatGPT's Free tier.  |
