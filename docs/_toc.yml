@@ -24,7 +24,7 @@ parts:
     - file: ComputationalResources/ClusterBasics.md
     - file: ComputationalResources/python_crash_course.md
     - file: ComputationalResources/Machine_Learning_Resources.md
-    - file: ComputationalResources/AI_Resources.md
+    - file: ComputationalResources/AI_Resources_Tools.md
     - file: ComputationalResources/IntroToLinux.md
     - file: ComputationalResources/IntroToGitHub.md
     - file: ComputationalResources/MetaRepos.md
