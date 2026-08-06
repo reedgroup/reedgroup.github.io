@@ -239,6 +239,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/ClusterBasics.html">Cluster Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/python_crash_course.html">Crash Course in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/Machine_Learning_Resources.html">Machine Learning Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/AI_Resources.html">Artificial Intelligence (AI) Tools and Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/IntroToLinux.html">Introduction to Linux</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/IntroToGitHub.html">Introduction to Git &amp; GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/MetaRepos.html">Creating and Using GitHub Meta Repositories</a></li>
@@ -562,10 +563,18 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fe32c6e8190&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">### python is the default for code cells, since we are running a Python3 kernel. This could be changed though.</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
 </pre></div>
 </div>
-<img alt="../_images/fb6e3f5edd2a8eb66d4603ae5eeb5d70b70d5c64d347f66342125de7e5fd3555.png" src="../_images/fb6e3f5edd2a8eb66d4603ae5eeb5d70b70d5c64d347f66342125de7e5fd3555.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -578,7 +587,7 @@ pwd
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/reedgroup.github.io/reedgroup.github.io/docs/Contributing
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/alh/PycharmProjects/reedgroup.github.io/docs/Section1
 </pre></div>
 </div>
 </div>
@@ -603,6 +612,12 @@ pwd
 <span class="c1">#     facet_zoom(x = Species == &quot;versicolor&quot;)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R[write to console]: Loading required package: ggplot2
+</pre></div>
+</div>
+<img alt="../_images/0fd57a606b6df51e376e38211d80e1479237b11b723006adc6a1b477d3349c8b.png" src="../_images/0fd57a606b6df51e376e38211d80e1479237b11b723006adc6a1b477d3349c8b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -640,16 +655,16 @@ pwd
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: ".venv"
+            mode: "python"
         },
         kernelOptions: {
-            name: ".venv",
+            name: "python3",
             path: "./Contributing"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = '.venv'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               

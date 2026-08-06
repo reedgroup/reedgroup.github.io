@@ -239,6 +239,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../ComputationalResources/ClusterBasics.html">Cluster Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../ComputationalResources/python_crash_course.html">Crash Course in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../ComputationalResources/Machine_Learning_Resources.html">Machine Learning Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ComputationalResources/AI_Resources.html">Artificial Intelligence (AI) Tools and Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../ComputationalResources/IntroToLinux.html">Introduction to Linux</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../ComputationalResources/IntroToGitHub.html">Introduction to Git &amp; GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../ComputationalResources/MetaRepos.html">Creating and Using GitHub Meta Repositories</a></li>
@@ -568,10 +569,17 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection at 0x7f6304cbb750&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#%pip install basemap-data-hires #installation of basemap</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.basemap</span><span class="w"> </span><span class="kn">import</span> <span class="n">Basemap</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
 </pre></div>
 </div>
-<img alt="../../_images/e35372fdd839d20cb04d5cf75b0b7156f4327508ced0c612eb80a33c0edff9c3.png" src="../../_images/e35372fdd839d20cb04d5cf75b0b7156f4327508ced0c612eb80a33c0edff9c3.png" />
 </div>
 </div>
 <p>Now let’s add a shaded outline of the Red River basin. To do this, you need a shapefile of the basin. The region is shaded in gray (facecolor=’0.33′) with a slightly darker border (edgecolor=’0.5′) and slight transparency (alpha=0.5). To do that, we need to collect all of the patches associated with the shapefile (called as ‘Basin’ when reading it in) that needed to be shaded.</p>
@@ -592,7 +600,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/46f40c4875f2babc2766d693f06ba6852a7c3233ee6a718d927ea9162a379cab.png" src="../../_images/46f40c4875f2babc2766d693f06ba6852a7c3233ee6a718d927ea9162a379cab.png" />
+<img alt="../../_images/45e58459325fe7b792a3c325bebe5f87ac2900f49e0e0c6066ffdd53dce0ff50.png" src="../../_images/45e58459325fe7b792a3c325bebe5f87ac2900f49e0e0c6066ffdd53dce0ff50.png" />
 </div>
 </div>
 <p>Now let’s add the locations of major dams and cities in the basin using ‘scatter’. You could again do this by adding a shapefile, but we are just going to add their locations manually, either by uploading their latitude and longitude coordinates from a .csv file or by passing them directly.</p>
@@ -613,7 +621,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/014a47863379ce969133de0d8c692498eff90d7cc39fd10c0d3b58e50c681e62.png" src="../../_images/014a47863379ce969133de0d8c692498eff90d7cc39fd10c0d3b58e50c681e62.png" />
+<img alt="../../_images/4f060ba3fce3c7985b795f35e61ff2560c6e34e1fa331a636a71a9f85dea1b8d.png" src="../../_images/4f060ba3fce3c7985b795f35e61ff2560c6e34e1fa331a636a71a9f85dea1b8d.png" />
 </div>
 </div>
 <p>If we want to label the dams and cities, we can add text specifying where on the map we’d like them to be located. This may require some guess-and-check work to determine the best place. One way could be to temporarily add gridlines to the map to aid in this process using ‘drawparallels’ and ‘drawmeridians’.</p>
@@ -630,7 +638,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b6228143b47bafa19bb8d48889e89775add4236f995bb3e14228905ef6df60a4.png" src="../../_images/b6228143b47bafa19bb8d48889e89775add4236f995bb3e14228905ef6df60a4.png" />
+<img alt="../../_images/27343cfec5f1436424a4170e23544ebef0244e3ac0cf0cea72ab836069ba61b2.png" src="../../_images/27343cfec5f1436424a4170e23544ebef0244e3ac0cf0cea72ab836069ba61b2.png" />
 </div>
 </div>
 <p>That looks nice, but it would be helpful to add some context as to where in the world the Red River basin is located. To illustrate this, we can create an inset of the greater geographical area by adding another set of axes with its own basemap. This one can be at a lower resolution.</p>
@@ -658,7 +666,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/531bde3ac5973853ac2409a2a54775feafc1b014754f1aead93ec823c5e26a3c.png" src="../../_images/531bde3ac5973853ac2409a2a54775feafc1b014754f1aead93ec823c5e26a3c.png" />
+<img alt="../../_images/04e1e87945820617b3cd38ed98c56e5d9bc38756eb2011dbfb99aee459c1fa62.png" src="../../_images/04e1e87945820617b3cd38ed98c56e5d9bc38756eb2011dbfb99aee459c1fa62.png" />
 </div>
 </div>
 <p>Now let’s highlight a country of interest (Vietnam) in green and also add the Red River basin in light gray again.</p>
@@ -680,7 +688,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5ebed800c2105777800f61df7815386f0ebdb2c30df75c7cd7a7bac11ef5f3e7.png" src="../../_images/5ebed800c2105777800f61df7815386f0ebdb2c30df75c7cd7a7bac11ef5f3e7.png" />
+<img alt="../../_images/73517169c77bef330ababe3f331704cc183e5cabc53a249cb4a7aa871883aa18.png" src="../../_images/73517169c77bef330ababe3f331704cc183e5cabc53a249cb4a7aa871883aa18.png" />
 </div>
 </div>
 <p>Finally, let’s label the countries in the inset. Some of the countries are too small to fit their name inside, so we’ll have to create arrows pointing to them using ‘annotate‘. In this function, ‘xy’ specifies where the arrow points to and ‘xytext’ where the text is written relative to where the arrow points.</p>
@@ -700,7 +708,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/80d39904dd2ecb27d3549aa2bff96a8d1cc0ed5a2b005f9e0c8417f1c97d5daf.png" src="../../_images/80d39904dd2ecb27d3549aa2bff96a8d1cc0ed5a2b005f9e0c8417f1c97d5daf.png" />
+<img alt="../../_images/fcb5dfefb56be5056076b409ef03cd8f4ef10e689ca4b6e20a04de79b0cceabc.png" src="../../_images/fcb5dfefb56be5056076b409ef03cd8f4ef10e689ca4b6e20a04de79b0cceabc.png" />
 </div>
 </div>
 </section>

@@ -239,6 +239,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/ClusterBasics.html">Cluster Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/python_crash_course.html">Crash Course in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/Machine_Learning_Resources.html">Machine Learning Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/AI_Resources.html">Artificial Intelligence (AI) Tools and Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/IntroToLinux.html">Introduction to Linux</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/IntroToGitHub.html">Introduction to Git &amp; GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ComputationalResources/MetaRepos.html">Creating and Using GitHub Meta Repositories</a></li>
@@ -607,6 +608,19 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="flow-magnitude-range">
@@ -692,7 +706,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1269161224c2800dc9252db64e0d17eced8051445271354770ab791f8e68409c.png" src="../_images/1269161224c2800dc9252db64e0d17eced8051445271354770ab791f8e68409c.png" />
+<img alt="../_images/78757962ad4b536b081cb9e47e6aa3f3242f6c250ceea6736e40a9269b7fc602.png" src="../_images/78757962ad4b536b081cb9e47e6aa3f3242f6c250ceea6736e40a9269b7fc602.png" />
 </div>
 </div>
 <p>This figure provides a lot of useful information about our synthetic ensemble:</p>
@@ -779,7 +793,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/751b746a2153168ef2f4d3b81db3a352b211aabe5a8d2bc21de09581efd1ae17.png" src="../_images/751b746a2153168ef2f4d3b81db3a352b211aabe5a8d2bc21de09581efd1ae17.png" />
+<img alt="../_images/d34252a16150560347fd57ec3a54aeb1b0d8f61c601f88ce6548d2bf1c36df6d.png" src="../_images/d34252a16150560347fd57ec3a54aeb1b0d8f61c601f88ce6548d2bf1c36df6d.png" />
 </div>
 </div>
 <p>Similar to the flow range plot above, we see that the synthetic ensemble is nicely enveloping the historic data; there are synthetic instances where the extreme flows in a particular year are more extreme than historic observations. However, the FDC of the total synthetic ensemble (if all synthetics were combined) is almost exactly equal to the total historic FDC.</p>
@@ -878,7 +892,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2df1c55d0ec039c7743ea634d0967f3367ba82b9a54b792955c0c5660ac40538.png" src="../_images/2df1c55d0ec039c7743ea634d0967f3367ba82b9a54b792955c0c5660ac40538.png" />
+<img alt="../_images/9a192bed80275df004736133bb4f676820a4e71f2d7707a1667b8147ff1afb15.png" src="../_images/9a192bed80275df004736133bb4f676820a4e71f2d7707a1667b8147ff1afb15.png" />
 </div>
 </div>
 </section>
@@ -970,7 +984,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/712921920e78198a66ca33d5b5ea0b6b3f282680e3113741d09b0dc3bd032915.png" src="../_images/712921920e78198a66ca33d5b5ea0b6b3f282680e3113741d09b0dc3bd032915.png" />
+<img alt="../_images/eb8c399aed255bb817699e425f9d2f98893cd216aad15c6a2edebf9d666a4516.png" src="../_images/eb8c399aed255bb817699e425f9d2f98893cd216aad15c6a2edebf9d666a4516.png" />
 </div>
 </div>
 </section>
@@ -990,16 +1004,16 @@
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: ".venv"
+            mode: "python"
         },
         kernelOptions: {
-            name: ".venv",
+            name: "python3",
             path: "./FigureLibrary"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = '.venv'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
