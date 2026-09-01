@@ -730,14 +730,14 @@ pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="
 module<span class="w"> </span>load<span class="w"> </span>&lt;language&gt;
 
 <span class="c1"># Set the input variable</span>
-<span class="nv">input</span><span class="o">=</span><span class="s2">&quot;&lt;input&gt;&quot;</span>
+<span class="nv">input</span><span class="o">=</span><span class="s2">"&lt;input&gt;"</span>
 
 <span class="c1"># Execute the code with the specified input, and redirect both output and errors to text files</span>
 &lt;language&gt;<span class="w"> </span>&lt;code_file&gt;<span class="w"> </span><span class="nv">$input</span><span class="w"> </span>&gt;<span class="w"> </span>&lt;output_file&gt;.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>&lt;error_file&gt;.txt
 
 <span class="c1"># Check if the code execution was successful, and if not, print an error message</span>
 <span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Error: code execution failed&quot;</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Error: code execution failed"</span>
 <span class="k">fi</span>
 </pre></div>
 </div>

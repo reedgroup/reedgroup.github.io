@@ -564,14 +564,14 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">tifffile</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tiff</span>          <span class="c1"># pip install tifffile</span>
 
 <span class="c1"># Load the image </span>
-<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;SupportingFiles/wc2.1_10m_prec_2002-08.tif&quot;</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s2">"SupportingFiles/wc2.1_10m_prec_2002-08.tif"</span>
 <span class="n">img</span> <span class="o">=</span> <span class="n">tiff</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>          
 <span class="c1"># plot the image</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"viridis"</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
 <span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>  <span class="c1"># tweak size/spacing</span>
-<span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s2">&quot;Precipitation&quot;</span><span class="p">)</span>                            <span class="c1"># colorbar axis label  </span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s2">"Precipitation"</span><span class="p">)</span>                            <span class="c1"># colorbar axis label  </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -585,7 +585,7 @@
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">tifffile</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tiff</span>          <span class="c1"># pip install tifffile</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> 
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+<span class="ne">ModuleNotFoundError</span>: No module named 'numpy'
 </pre></div>
 </div>
 </div>
@@ -601,7 +601,7 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span> 
 
 <span class="c1"># Get all tif files in the current directory #different files could also be called as list of names</span>
-<span class="n">image_files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;SupportingFiles/*.tif&quot;</span><span class="p">))</span> 
+<span class="n">image_files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">"SupportingFiles/*.tif"</span><span class="p">))</span> 
 <span class="c1">#sorted() ensures frames are in the correct order.</span>
 
 <span class="c1"># Open all the images</span>
@@ -609,7 +609,7 @@
 
 <span class="c1"># Save as an animated GIF</span>
 <span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">save</span><span class="p">(</span>
-    <span class="s2">&quot;globe_Cost_Reduction_faster.gif&quot;</span><span class="p">,</span>
+    <span class="s2">"globe_Cost_Reduction_faster.gif"</span><span class="p">,</span>
     <span class="n">save_all</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">append_images</span><span class="o">=</span><span class="n">images</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
     <span class="n">duration</span><span class="o">=</span><span class="mi">45</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span>  <span class="c1"># Convert delay from ImageMagick (1/100 sec) to milliseconds</span>
@@ -631,27 +631,27 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="n">frames</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">tif</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;SupportingFiles/wc2.1_10m_prec_2*.tif&quot;</span><span class="p">)):</span> <span class="c1">#reading the selected files with name starting with</span>
+<span class="k">for</span> <span class="n">tif</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">"SupportingFiles/wc2.1_10m_prec_2*.tif"</span><span class="p">)):</span> <span class="c1">#reading the selected files with name starting with</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">tiff</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">tif</span><span class="p">)</span>
     
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
     <span class="c1"># p2,p98 = np.nanpercentile(data,(2,98))</span>
-    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span> <span class="c1">#vmin and vmax could be defined based on the percentile values or desired range</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"viridis"</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span> <span class="c1">#vmin and vmax could be defined based on the percentile values or desired range</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
     <span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>  <span class="c1"># tweak size/spacing</span>
-    <span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s2">&quot;Precipitation&quot;</span><span class="p">)</span>                            <span class="c1"># axis label</span>
+    <span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s2">"Precipitation"</span><span class="p">)</span>                            <span class="c1"># axis label</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">tif</span><span class="p">)[</span><span class="o">-</span><span class="mi">11</span><span class="p">:</span><span class="o">-</span><span class="mi">7</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>   <span class="c1"># title line</span>
     <span class="c1"># capture PNG bytes from the figure</span>
     <span class="n">buf</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">()</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">,</span> <span class="n">pad_inches</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">"png"</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">"tight"</span><span class="p">,</span> <span class="n">pad_inches</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
     <span class="n">buf</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
     
     <span class="n">frames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">iio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">buf</span><span class="p">))</span>           <span class="c1"># convert PNG to ndarray</span>
 
 <span class="c1"># save GIF </span>
-<span class="n">iio</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s2">&quot;stack.gif&quot;</span><span class="p">,</span> <span class="n">frames</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">loop</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#fps is frames per second</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;stack.gif created with&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">frames</span><span class="p">),</span> <span class="s2">&quot;frames&quot;</span><span class="p">)</span>
+<span class="n">iio</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s2">"stack.gif"</span><span class="p">,</span> <span class="n">frames</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">loop</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#fps is frames per second</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"stack.gif created with"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">frames</span><span class="p">),</span> <span class="s2">"frames"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

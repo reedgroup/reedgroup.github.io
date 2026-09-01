@@ -535,7 +535,7 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 
 <span class="c1"># set the figure background format</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"white"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Nice work! Now, let’s use the <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code> function to read in our dataset, <code class="docutils literal notranslate"><span class="pre">scatter_colorbar.csv</span></code>. This dataset contains three variables:</p>
@@ -545,12 +545,12 @@
 <li><p>The restriction frequency’s regret measure (<code class="docutils literal notranslate"><span class="pre">RF_regret</span></code>, more on that <a class="reference external" href="https://waterprogramming.wordpress.com/2019/06/27/examining-robustness-metrics-using-rhodium/">here</a>).</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import data</span>
-<span class="n">df_scatter</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;scatter_colorbar.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df_scatter</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"scatter_colorbar.csv"</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># extract the data to plot</span>
-<span class="n">RF</span> <span class="o">=</span> <span class="n">df_scatter</span><span class="p">[</span><span class="s1">&#39;RF&#39;</span><span class="p">]</span>
-<span class="n">inf_trigger</span> <span class="o">=</span> <span class="n">df_scatter</span><span class="p">[</span><span class="s1">&#39;inf_trigger&#39;</span><span class="p">]</span>
-<span class="n">RF_regret</span> <span class="o">=</span> <span class="n">df_scatter</span><span class="p">[</span><span class="s1">&#39;RF_regret&#39;</span><span class="p">]</span>
+<span class="n">RF</span> <span class="o">=</span> <span class="n">df_scatter</span><span class="p">[</span><span class="s1">'RF'</span><span class="p">]</span>
+<span class="n">inf_trigger</span> <span class="o">=</span> <span class="n">df_scatter</span><span class="p">[</span><span class="s1">'inf_trigger'</span><span class="p">]</span>
+<span class="n">RF_regret</span> <span class="o">=</span> <span class="n">df_scatter</span><span class="p">[</span><span class="s1">'RF_regret'</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Before we plot any colors, its generally good practice to normalize the values of the variable we would like to plot as the color. Let’s make a function that will automate this for us:</p>
@@ -565,17 +565,17 @@
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 
 <span class="c1"># plot the data using the reversed viridis colormap</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">inf_trigger</span><span class="p">,</span> <span class="n">RF</span><span class="p">,</span>  <span class="n">c</span><span class="o">=</span><span class="n">normalize_regret</span><span class="p">(</span><span class="n">RF_regret</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis_r&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Infrastructure</span><span class="se">\n</span><span class="s2">trigger&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Restriction freq.&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Example scatter plot&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">inf_trigger</span><span class="p">,</span> <span class="n">RF</span><span class="p">,</span>  <span class="n">c</span><span class="o">=</span><span class="n">normalize_regret</span><span class="p">(</span><span class="n">RF_regret</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'viridis_r'</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"Infrastructure</span><span class="se">\n</span><span class="s2">trigger"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"Restriction freq."</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Example scatter plot"</span><span class="p">)</span>
 
 <span class="c1"># Create the color bar</span>
 <span class="c1"># the darker the color, the higher the regret</span>
 <span class="n">norm</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">normalize_regret</span><span class="p">(</span><span class="n">RF_regret</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">normalize_regret</span><span class="p">(</span><span class="n">RF_regret</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
 <span class="n">cax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.94</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">])</span>  <span class="c1"># [left, bottom, width 5% of figure width, height 75% of figure height]</span>
-<span class="n">cax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;RF regret&#39;</span><span class="p">)</span>
-<span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">mpl</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis_r&#39;</span><span class="p">),</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">)</span>
+<span class="n">cax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'RF regret'</span><span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">mpl</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'viridis_r'</span><span class="p">),</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">'vertical'</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
